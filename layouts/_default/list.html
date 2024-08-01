@@ -1,5 +1,6 @@
 {{ define "main" }}
 <content>
+  <h2>Articles:</h2>
   {{ if .Data.Singular }}
     <h3 class="blog-filter">{{ i18n "filtering-for" }} "{{ .Title }}"</h3>
   {{ end }}
@@ -27,6 +28,7 @@
   </ul>
   {{ if not .Data.Singular }}
     <div>
+      <h3>Tags:</h3>
       {{ range .Site.Taxonomies.tags }}
         <a class="blog-tags" href="{{ .Page.RelPermalink }}">#{{ lower .Page.Title }}</a>
       {{ end }}

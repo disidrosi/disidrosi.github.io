@@ -20,3 +20,8 @@ In my spare time, I love reading and writing about science, technology, and
 philosophy. [Here](/reading/) you can find a list of my current and past
 reading. I use my [blog](/blog/) as a learning space to improve my understanding
 about chemistry, materials science, and anything else I might find interesting.
+
+Want to get in touch? You can write me at :email:
+[cavalli.tobia@gmail.com](mailto:cavalli.tobia@gmail.com) or you can reach out
+to me via Linkedin at :link:
+[tobia-cavalli](https://www.linkedin.com/in/tobia-cavalli).
