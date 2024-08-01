@@ -1,0 +1,429 @@
+---
+title: Reading
+menu: main
+weight: 2
+---
+
+## Currently reading
+
+- _How to Read a Book_ -- Mortimer J. Adler
+
+## Books I read
+
+### 2024
+
+- _An Elegant Puzzle_ -- Will Larson
+- _Never Split the Difference_ -- Chris Voss
+- _Four Thousand Weeks_ -- Oliver Burkeman
+- _Good Strategy -- Bad Strategy_ -- Richard Rumelt
+- _Essentialism_ -- Greg McEwon
+
+### 2021
+
+- _Die unendliche Geschichte_ -- Michael Ende :star::star::star::star::star:
+- _Die Vermessung der Welt_ -- Daniel Kehlmann :star::star::star::star:
+- _Der Vorleser_ -- Bernhard Schlink :star::star::star::star:
+- _Tschick_ -- Wolfgang Herrndorf :star::star::star:
+
+### 2020
+
+- _L'amica geniale_ -- Elena Ferrante :star::star::star::star:
+- _A Room of One's Own_ -- Virginia Woolf :star::star::star::star:
+- _Epitaph of a Small Winner_ -- Machado de Assis :star::star::star::star:
+- _Uno, nessuno e centomila_ -- Luigi Pirandello :star::star::star::star:
+- _Clear and Simple as the Truth_ -- Francis-Noel Thomas :star::star::star::star:
+- _White Teeth_ -- Zadie Smith :star::star::star:
+- _Storia di chi fugge e di chi resta_ -- Elena Ferrante :star::star::star:
+- _Storia del nuovo cognome_ -- Elena Ferrante :star::star::star:
+- _On Writing_ -- Jorge Luis Borges :star::star::star:
+- _Confessions of a Mask_ -- Yukio Mishima :star::star::star:
+- _Story of the Eye_ -- Georges Bataille :star::star::star:
+- _Flow_ -- Mihály Csíkszentmihályi :star::star:
+- _Reasons to Stay Alive_ -- Matt Haig :star::star:
+- _Scritti corsari_ -- Pier Paolo Pasolini :star::star:
+- _L'Invenzione Occasionale_ -- Elena Ferrante :star::star:
+- _The Presentation of Self in Everyday Life_ -- Erving Goffman :star::star:
+- _The Sense of Style_ -- Steven Pinker :star::star:
+- _Lezioni americane_ -- Italo Calvino :star::star:
+- _The Procrastination Equation_ -- Piers Steel :star:
+- _Bird by Bird_ -- Anne Lamott
+- _Procrastination_ -- Jane B. Burka
+- _Il dispatrio_ -- Luigi Meneghello
+- _The Book Of Disquiet_ -- Fernando Pessoa
+- _Snow Crash_ -- Neal Stephenson
+- _The Art of Rhetoric_ -- Aristotle
+- _Why We Sleep_ -- Matthew Walker
+
+### 2019
+
+- _East of Eden_ -- John Steinbeck :star::star::star::star:
+- _On Writing Well_ -- William Zinsser :star::star::star::star:
+- _Stoner_ -- John Williams :star::star::star::star:
+- _Piracy_ -- Adrian Johns :star::star::star::star:
+- _I fratelli Karamazov_ -- Fyodor Dostoevsky :star::star::star::star:
+- _Il buio oltre la siepe_ -- Harper Lee:star::star::star:
+- _The Time Machine_ -- H.G. Wells :star::star::star:
+- _The Good Earth_ -- Pearl S. Buck :star::star::star:
+- _Liespotting_ -- PamelaMeyer :star::star:
+- _Power_ -- Jeffrey Pfeffer :star::star:
+- _Where Good Ideas Come from_ -- Steven Johnson :star::star:
+- _How to Speak / How to Listen_ -- Mortimer J. Adler :star::star:
+- _So You've Been Publicly Shamed_ -- Jon Ronson :star::star:
+- _No Longer Human_ -- Osamu Dazai :star::star:
+- _Orthodoxy_ -- G.K. Chesterton :star::star:
+- _The 48 Laws of Power_ -- Robert Greene :star:
+- _Actionable Gamification_ -- Yu-kai Chou :star:
+- _Uncivil Agreement_ -- Lilliana Mason
+- _Eleven Kinds of Loneliness_ -- Richard Yates
+
+### 2017
+
+- _Una vita violenta_ -- Pier Paolo Pasolini :star::star::star:
+- _La cospirazione contro la razza umana_ -- Thomas Ligotti :star::star::star:
+- _Antifragile_ -- Nassim Nicholas Taleb :star::star::star:
+- _L'astore_ -- T.H. White :star::star:
+- _The Organized Mind_ -- Daniel J. Levitin :star::star:
+- _Un mondo perduto e ritrovato_ -- Alexander R. Luria :star::star:
+- _Trattato di storia delle religioni_ -- Mircea Eliade :star::star:
+- _I quaranta giorni del Mussa Dagh_ -- Franz Werfel :star::star:
+- _Tra Mosca e Petuski_ -- Venedikt Erofeev :star::star:
+- _La strada_ -- Cormac McCarthy :star::star:
+- _American storytelling_ -- Federico Di Chio :star::star:
+- _Medici eretici_ -- Massimo Fioranelli :star::star:
+- _Io sono vivo, voi siete morti_ -- Emmanuel Carrère :star::star:
+
+### 2016
+
+- _La famiglia Karnowski_ -- Israel J. Singer :star::star::star::star:
+- _La versione di Barney_ -- Mordecai Richler :star::star::star::star:
+- _Contro il metodo_ -- Paul Karl Feyerabend :star::star::star::star:
+- _La ribellione delle masse_ -- José Ortega y Gasset :star::star::star::star:
+- _Allegro ma non troppo_ -- Carlo M. Cipolla :star::star::star::star:
+- _Storia del Partito del progresso moderato nei limiti della legge_ -- Jaroslav Hašek :star::star::star::star:
+- _Madame Bovary_ -- Gustave Flaubert :star::star::star::star:
+- _Il Maestro e Margherita_ -- Mikhail Bulgakov :star::star::star::star:
+- _Malone muore_ -- Samuel Beckett :star::star::star::star:
+- _Infinite Jest_ -- David Foster Wallace :star::star::star::star:
+- _L'apprendistato di Duddy Kravitz_ -- Mordecai Richler :star::star::star:
+- _Il rosso e il nero_ -- Stendhal :star::star::star:
+- _Ghiaccio-nove_ -- Kurt Vonnegut Jr. :star::star::star:
+- _Lo Zen e l'arte della manutenzione della motocicletta_ -- Robert M. Pirsig :star::star::star:
+- _Il soccombente_ -- Thomas Bernhard :star::star::star:
+- _Kim_ -- Rudyard Kipling :star::star::star:
+- _Herzog_ -- Saul Bellow :star::star::star:
+- _Ubik_ -- Philip K. Dick :star::star::star:
+- _Gelo_ -- Thomas Bernhard :star::star::star:
+- _Il più grande uomo scimmia del Pleistocene_ -- Roy Lewis :star::star::star:
+- _Nature and Selected Essays_ -- Ralph Waldo Emerson :star::star::star:
+- _Limonov_ -- Emmanuel Carrère :star::star::star:
+- _Tecnica del colpo di Stato_ -- Curzio Malaparte :star::star::star:
+- _Perturbamento_ -- Thomas Bernhard :star::star::star:
+- _The Roman Inquisition and the Venetian Press_ -- Paul F. Grendler :star::star::star:
+- _L'opera d'arte nell'epoca della sua riproducibilità tecnica_ -- Walter Benjamin :star::star::star:
+- _Radical chic_ -- Tom Wolfe :star::star::star:
+- _L'insostenibile leggerezza dell'essere_ -- Milan Kundera :star::star::star:
+- _Patrizi, informatori, barbieri_ -- Filippo de Vivo :star::star::star:
+- _Da dove sto chiamando_ -- Raymond Carver :star::star::star:
+- _Camminare_ -- Henry David Thoreau :star::star:
+- _Niente di nuovo sul fronte occidentale_ -- Erich Maria Remarque :star::star:
+- _Cold Spring Harbor_ -- Richard Yates :star::star:
+- _Uomovivo_ -- G.K. Chesterton :star::star:
+- _La cultura del piagnisteo_ -- Robert Hughes :star::star:
+- _Il mestiere di scrivere_ -- Raymond Carver :star::star:
+- _I quaderni di Malte Laurids Brigge_ -- Rainer Maria Rilke :star::star:
+- _Se vi pare che questo mondo sia brutto_ -- Philip K. Dick :star::star:
+- _Esegesi dei luoghi comuni_ -- Léon Bloy :star::star:
+- _Babbo Natale giustiziato_ -- Claude Lévi-Strauss :star::star:
+- _Il Canone occidentale_ -- Harold Bloom :star::star:
+- _La cura della ragione_ -- Fabio Paglieri :star::star:
+- _The Shallows_ -- Nicholas Carr :star::star:
+- _La Grande Vienna_ -- Allan Janik :star::star:
+- _Breviario del caos_ -- Albert Caraco :star::star:
+- _L'arte di ricordare tutto_ -- Joshua Foer :star:
+- _Alta fedeltà_ -- Nick Hornby :star:
+- _La libertà ritrovata_ -- Franck Schirrmacher :star:
+- _La vita agra_ -- Luciano Bianciardi :star:
+- _Come stare soli_ -- Jonathan Franzen :star:
+- _La Società dello Spettacolo_ -- Guy Debord
+- _Trilogia della città di K._ -- Ágota Kristóf
+- _L'ingenuità della rete_ -- Morozov Evgeny
+- _Flow_ -- Mihály Csíkszentmihályi
+- _Willpower_ -- Roy F. Baumeister
+- _The Filter Bubble_ -- Eli Pariser
+
+### Undated
+
+- _Il sergente nella neve_ -- Mario Rigoni Stern :star::star::star::star::star:
+- _The Foundations of Science_ -- Henri Poincaré :star::star::star::star::star:
+- _Classical Rhetoric for the Modern Student_ -- Edward P.J. Corbett :star::star::star::star::star:
+- _Lettere morali a Lucilio_ -- Seneca :star::star::star::star::star:
+- _The Elements of Style_ -- William Strunk Jr. :star::star::star::star::star:
+- _Guida galattica per gli autostoppisti_ -- Douglas Adams :star::star::star::star::star:
+- _Lamento di Portnoy_ -- Philip Roth :star::star::star::star::star:
+- _Il grande Gatsby_ -- F. Scott Fitzgerald :star::star::star::star::star:
+- _Il Gattopardo_ -- Giuseppe Tomasi di Lampedusa :star::star::star::star::star:
+- _Furore_ -- John Steinbeck :star::star::star::star::star:
+- _Gödel, Escher, Bach_ -- Douglas R. Hofstadter :star::star::star::star::star:
+- _Libera nos a malo_ -- Luigi Meneghello :star::star::star::star::star:
+- _Il conte di Montecristo_ -- Alexandre Dumas :star::star::star::star::star:
+- _Alla ricerca del tempo perduto_ -- Marcel Proust :star::star::star::star::star:
+- _Viaggio al termine della notte_ -- Louis-Ferdinand Céline :star::star::star::star::star:
+- _I viaggi di Gulliver_ -- Jonathan Swift :star::star::star::star::star:
+- _Le avventure di Huckleberry Finn_ -- Mark Twain :star::star::star::star::star:
+- _Le avventure di Tom Sawyer_ -- Mark Twain :star::star::star::star::star:
+- _Moby Dick_ -- Herman Melville :star::star::star::star::star:
+- _Il Circolo Pickwick_ -- Charles Dickens :star::star::star::star::star:
+- _Le vicende del bravo soldato Švejk_ -- Jaroslav Hašek :star::star::star::star::star:
+- _Il processo_ -- Franz Kafka :star::star::star::star::star:
+- _Detti e contraddetti_ -- Karl Kraus :star::star::star::star::star:
+- _La metamorfosi e tutti i racconti pubblicati in vita_ -- Franz Kafka :star::star::star::star::star:
+- _Anna Karenina_ -- Leo Tolstoy :star::star::star::star::star:
+- _Il dottor Živago_ -- Boris Pasternak :star::star::star::star::star:
+- _Forse Queneau_ -- Paolo Della Bella :star::star::star::star::star:
+- _Le avanguardie artistiche del Novecento_ -- Mario De Micheli :star::star::star::star::star:
+- _L'unico e la sua proprietà_ -- Max Stirner :star::star::star::star::star:
+- _Pastorale Americana_ -- Philip Roth :star::star::star::star::star:
+- _Storia del Medio Oriente moderno_ -- James L. Gelvin :star::star::star::star::star:
+- _La montagna incantata_ -- Thomas Mann :star::star::star::star::star:
+- _Storia degli ebrei_ -- Paul Johnson :star::star::star::star::star:
+- _I miserabili_ -- Victor Hugo :star::star::star::star::star:
+- _La struttura delle rivoluzioni scientifiche_ -- Thomas S. Kuhn :star::star::star::star::star:
+- _Tre donne_ -- Robert Musil :star::star::star::star::star:
+- _L'uomo senza qualità vol. I_ -- Robert Musil :star::star::star::star::star:
+- _L'uomo senza qualità vol. II_ -- Robert Musil :star::star::star::star:
+- _Tractatus logico-philosophicus e Quaderni 1914-1916_ -- Ludwig Wittgenstein :star::star::star::star::star:
+- _Al di là di ogni ragionevole dubbio_ -- Sean B. Carroll :star::star::star::star::star:
+- _Pasque di sangue_ -- Ariel Toaff :star::star::star::star:
+- _Le correnti dello spazio­ - Il tiranno dei mondi­ - Paria dei cieli_ -- Isaac Asimov :star::star::star::star:
+- _The Work of Art in the Age of Mechanical Reproduction_ -- Walter Benjamin :star::star::star::star:
+- _Spillover_ -- David Quammen :star::star::star::star:
+- _The Road to Serfdom_ -- Friedrich A. Hayek :star::star::star::star:
+- _The Logic of Scientific Discovery_ -- Karl Popper :star::star::star::star:
+- _The Open Society and Its Enemies_ -- Karl Popper :star::star::star::star:
+- _Against Method_ -- Paul Karl Feyerabend :star::star::star::star:
+- _Moscow to the End of the Line_ -- Venedikt Erofeev :star::star::star::star:
+- _Cathedral_ -- Raymond Carver :star::star::star::star:
+- _A Handlist of Rhetorical Terms_ -- Richard A. Lanham :star::star::star::star:
+- _Black Rights / White Wrongs_ -- Charles W. Mills :star::star::star::star:
+- _The Diamond Age_ -- Neal Stephenson :star::star::star::star:
+- _How to Read a Book_ -- Mortimer J. Adler :star::star::star::star:
+- _Revolutionary Road_ -- Richard Yates :star::star::star::star:
+- _Il Signore degli Anelli_ -- J.R.R. Tolkien :star::star::star::star:
+- _Cuore di tenebra_ -- Joseph Conrad :star::star::star::star:
+- _Lo hobbit o La riconquista del tesoro_ -- J.R.R. Tolkien :star::star::star::star:
+- _I tre moschettieri_ -- Alexandre Dumas :star::star::star::star:
+- _Ho sposato un comunista_ -- Philip Roth :star::star::star::star:
+- _Tenera è la notte_ -- F. Scott Fitzgerald :star::star::star::star:
+- _Robinson Crusoe_ -- Daniel Defoe :star::star::star::star:
+- _Cavalli selvaggi_ -- Cormac McCarthy :star::star::star::star:
+- _French Theory_ -- François Cusset :star::star::star:
+- _L'urlo e il furore_ -- William Faulkner :star::star::star::star:
+- _Ulisse_ -- James Joyce :star::star::star::star:
+- _Il deserto dei Tartari_ -- Dino Buzzati :star::star::star::star:
+- _L'ultima partita a carte_ -- Mario Rigoni Stern :star::star::star::star:
+- _Le stagioni di Giacomo_ -- Mario Rigoni Stern :star::star::star::star:
+- _Sentieri sotto la neve_ -- Mario Rigoni Stern :star::star::star::star:
+- _Il sistema periodico_ -- Primo Levi :star::star::star::star:
+- _Momo_ -- Michael Ende :star::star::star::star:
+- _I piccoli maestri_ -- Luigi Meneghello :star::star::star::star:
+- _Sommario di decomposizione_ -- Emil M. Cioran :star::star::star::star:
+- _Lo straniero_ -- Albert Camus :star::star::star::star:
+- _Luce d'agosto_ -- William Faulkner :star::star::star::star:
+- _Mattatoio n. 5_ -- Kurt Vonnegut Jr. :star::star::star::star:
+- _Frankenstein_ -- Mary Wollstonecraft Shelley :star::star::star::star:
+- _I fratelli Tanner_ -- Robert Walser :star::star::star::star:
+- _Le anime morte_ -- Nikolai Gogol :star::star::star::star:
+- _La figlia del capitano_ -- Alexander Pushkin :star::star::star::star:
+- _Cuore di cane_ -- Mikhail Bulgakov :star::star::star::star:
+- _Lolita_ -- Vladimir Nabokov :star::star::star::star:
+- _Padre Sergij_ -- Leo Tolstoy :star::star::star::star:
+- _I demonî_ -- Fyodor Dostoevsky :star::star::star::star:
+- _Gli oggetti frattali_ -- Benoît B. Mandelbrot :star::star::star::star:
+- _La strada che porta alla realtà_ -- Roger Penrose :star::star::star::star:
+- _Il sole nudo_ -- Isaac Asimov :star::star::star::star:
+- _I racconti dei Vedovi Neri_ -- Isaac Asimov :star::star::star::star:
+- _Lezioni di politica sociale_ -- Luigi Einaudi :star::star::star::star:
+- _L'origine sportiva dello Stato_ -- José Ortega y Gasset :star::star::star::star:
+- _Esercizi di stile_ -- Raymond Queneau :star::star::star::star:
+- _La peste_ -- Albert Camus :star::star::star::star:
+- _Chourmo_ -- Jean-Claude Izzo :star::star::star::star:
+- _Educazione di una canaglia_ -- Edward Bunker :star::star::star::star:
+- _Il ciclo delle Fondazioni_ -- Isaac Asimov :star::star::star::star:
+- _Alice nel paese delle meraviglie_ -- Lewis Carroll :star::star::star::star:
+- _L'uomo che scambiò sua moglie per un cappello_ -- Oliver Sacks :star::star::star:
+- _L'etica protestante e lo spirito del capitalismo_ -- Max Weber :star::star::star:
+- _Storia della follia nell'età classica_ -- Michel Foucault :star::star::star:
+- _The Attention Merchants_ -- Tim Wu :star::star::star:
+- _Chaos_ -- James Gleick :star::star::star:
+- _Incerto_ -- Nassim Nicholas Taleb :star::star::star:
+- _The Formula_ -- Albert-László Barabási :star::star::star:
+- _How Not to Be Wrong_ -- Jordan Ellenberg :star::star::star:
+- _The World According to Garp_ -- John Irving :star::star::star:
+- _Finding Ultra_ -- Rich Roll :star::star::star:
+- _Thank You for Arguing_ -- Jay Heinrichs :star::star::star:
+- _Cent'anni di solitudine_ -- Gabriel García Márquez :star::star::star:
+- _L'amore ai tempi del colera_ -- Gabriel García Márquez :star::star::star:
+- _Sulla strada_ -- Jack Kerouac :star::star::star:
+- _Comma 22_ -- Joseph Heller :star::star::star:
+- _Uomini e topi_ -- John Steinbeck :star::star::star:
+- _Il libro nero della guerra_ -- Gabriel Kolko :star::star::star:
+- _Storia d'Europa dalle invasioni al XVI secolo_ -- Henri Pirenne :star::star::star:
+- _La democrazia in America_ -- Alexis de Tocqueville :star::star::star:
+- _Stato e anarchia_ -- Mikhail Bakunin :star::star::star:
+- _Una teoria della giustizia_ -- John Rawls :star::star:
+- _L'origine delle specie_ -- Charles Darwin :star::star::star:
+- _Gli indifferenti_ -- Alberto Moravia :star::star::star:
+- _Tra due guerre e altre storie_ -- Mario Rigoni Stern :star::star::star:
+- _Le città invisibili_ -- Italo Calvino :star::star::star:
+- _L'Aleph_ -- Jorge Luis Borges :star::star::star:
+- _La morte felice_ -- Albert Camus :star::star::star:
+- _Quel fantastico giovedì_ -- John Steinbeck :star::star::star:
+- _Espiazione_ -- Ian McEwan :star::star::star:
+- _Nel ventre della balena e altri saggi_ -- George Orwell :star::star::star:
+- _1984_ -- George Orwell :star::star::star:
+- _Il vecchio e il mare_ -- Ernest Hemingway :star::star::star:
+- _La fattoria degli animali_ -- George Orwell :star::star::star:
+- _L'arcobaleno della gravità_ -- Thomas Pynchon :star::star::star:
+- _Dracula_ -- Bram Stoker :star::star::star:
+- _Lo strano caso del dottor Jekyll e del signor Hyde_ -- Robert Louis Stevenson :star::star::star:
+- _Il Caffè dell'Undicesima Musa_ -- Joseph Roth :star::star::star:
+- _Il libro dei motti e delle riflessioni_ -- Arthur Schnitzler :star::star::star:
+- _Le due città_ -- Charles Dickens :star::star::star:
+- _Lettere a Milena_ -- Franz Kafka :star::star::star:
+- _Il gene egoista_ -- Richard Dawkins :star::star::star:
+- _Siamo davvero liberi?_ -- Mario De Caro :star::star::star:
+- _Starship Troopers_ -- Robert A. Heinlein :star::star::star:
+- _Per la pace perpetua_ -- Immanuel Kant :star::star::star:
+- _L'essenza del Cristianesimo_ -- Ludwig Feuerbach :star::star::star:
+- _Trattato sulla tolleranza_ -- Voltaire :star::star::star:
+- _Sorvegliare e punire_ -- Michel Foucault :star::star::star:
+- _La banalità del male_ -- Hannah Arendt :star::star::star:
+- _Auto-da-Fé_ -- Elias Canetti :star::star::star:
+- _Tristi Tropici_ -- Claude Lévi-Strauss :star::star::star:
+- _Per chi suona la campana_ -- Ernest Hemingway :star::star::star:
+- _Addio alle armi_ -- Ernest Hemingway :star::star::star:
+- _Chiedi alla polvere_ -- John Fante :star::star::star:
+- _Siddharta_ -- Hermann Hesse :star::star::star:
+- _Critica della ragion cinica_ -- Peter Sloterdijk :star::star::star:
+- _Cattedrale_ -- Raymond Carver :star::star::star:
+- _Il grado zero della scrittura_ -- Roland Barthes :star::star::star:
+- _Il libro di sabbia_ -- Jorge Luis Borges :star::star::star:
+- _Chess Fundamentals_ -- José Raúl Capablanca :star::star::star:
+- _Faust e Urfaust - Vol. II_ -- Johann Wolfgang von Goethe :star::star::star:
+- _Scienza e filosofia_ -- Alfred North Whitehead :star::star::star:
+- _The Better Angels of Our Nature_ -- Steven Pinker :star::star:
+- _A PhD Is Not Enough!_ -- Peter J. Feibelman :star::star:
+- _12 Rules for Life_ -- Jordan B. Peterson :star::star:
+- _Atlas Shrugged_ -- Ayn Rand :star::star:
+- _Il piccolo principe_ -- Antoine de Saint-Exupéry :star::star:
+- _La coscienza di Zeno_ -- Italo Svevo :star::star:
+- _Tropico del Cancro_ -- Henry Miller :star::star:
+- _Il capitalismo ha i secoli contati_ -- Giorgio Ruffolo :star::star:
+- _Libera scienza in libero Stato_ -- Margherita Hack :star::star:
+- _Perché non possiamo essere cristiani_ -- Piergiorgio Odifreddi :star::star:
+- _I bottoni di Napoleone_ -- Penny Le Couteur :star::star:
+- _L'illusione di Dio_ -- Richard Dawkins :star::star:
+- _Ti amerò per sempre_ -- Piero Angela :star::star:
+- _Perché non sono cristiano_ -- Bertrand Russell :star::star:
+- _La conquista della felicità_ -- Bertrand Russell :star::star:
+- _Inizio del tempo e fine della fisica_ -- Stephen Hawking :star::star:
+- _Linguaggio e libertà_ -- Noam Chomsky :star::star:
+- _Anatomia della distruttività umana_ -- Erich Fromm :star::star:
+- _I Borgia_ -- Alexandre Dumas :star::star:
+- _Le correzioni_ -- Jonathan Franzen :star::star:
+- _Fahrenheit 451_ -- Ray Bradbury :star::star:
+- _Il funesto demiurgo_ -- Emil M. Cioran :star::star:
+- _Le lettere di Groucho Marx_ -- Groucho Marx :star::star:
+- _Il richiamo della foresta_ -- Jack London :star::star:
+- _Altai_ -- Wu Ming :star::star:
+- _Fiesta_ -- Ernest Hemingway :star::star:
+- _Goethe muore_ -- Thomas Bernhard :star::star:
+- _Il vecchio che leggeva romanzi d'amore_ -- Luis Sepúlveda :star::star:
+- _Signor Malaussène_ -- Daniel Pennac :star::star:
+- _La nausea_ -- Jean-Paul Sartre :star:
+- _The War of Art_ -- Steven Pressfield :star:
+- _Marx e Freud_ -- Erich Fromm :star:
+- _Il rinvio_ -- Jean-Paul Sartre :star:
+- _Atei o credenti?_ -- Onfray, Vattimo Gianni, Flores D'Arcais :star:
+- _Sante ragioni_ -- Carla Castellacci :star:
+- _Per ragioni di stato_ -- Noam Chomsky :star:
+- _Pirati e imperatori_ -- Noam Chomsky :star:
+- _Trattato del Ribelle_ -- Ernst Jünger :star:
+- _Der Mann ohne Eigenschaften_ -- Robert Musil
+- _Le stelle fredde_ -- Guido Piovene
+- _Less_ -- Andrew Sean Greer
+- _Il Capitale_ -- Karl Marx
+- _The Bonfire of the Vanities_ -- Tom Wolfe
+- _A Rhetoric of Motives_ -- Kenneth Burke
+- _Walden ovvero vita nei boschi_ -- Henry David Thoreau
+- _A Grammar of Motives_ -- Kenneth Burke
+- _Anarchy, State, and Utopia_ -- Robert Nozick
+- _Lezioni di letteratura_ -- Vladimir Nabokov
+- _The Metamorphosis_ -- Franz Kafka
+- _La variante di Lüneburg_ -- Paolo Maurensig
+- _Novella degli scacchi_ -- Stefan Zweig
+- _Man and Superman_ -- George Bernard Shaw
+- _Pygmalion_ -- George Bernard Shaw
+- _One-Dimensional Man_ -- Herbert Marcuse
+- _The Eyre Affair_ -- Jasper Fforde
+- _Three Novels: Molloy / Malone Dies / The Unnamable_ -- Samuel Beckett
+- _The Electric Kool-Aid Acid Test_ -- Tom Wolfe
+- _The Lonely City_ -- Olivia Laing
+- _Against Interpretation and Other Essays_ -- Susan Sontag
+- _The Medium is the Massage_ -- Marshall McLuhan
+- _Understanding Media_ -- Marshall McLuhan
+- _In Cold Blood_ -- Truman Capote
+- _On Booze_ -- F. Scott Fitzgerald
+- _The Intelligent Woman's Guide to Socialism, Capitalism, Sovietism and Fascism_ -- George Bernard Shaw
+- _100 Things Every Designer Needs to Know About People_ -- Susan M. Weinschenk
+- _The Design of Everyday Things_ -- Donald A. Norman
+- _Thinking With Type_ -- Ellen Lupton
+- _Geometry of Design_ -- Kimberly Elam
+- _How to use graphic design to sell things, explain things, make things look better, make people laugh, make people cry, and (every once in a while) change the world_ -- Bierut Michael
+- _Keys to Drawing_ -- Bert Dodson
+- _Deep Work_ -- Cal Newport
+- _Good to Go_ -- Christie Aschwanden
+- _A Pale View of Hills_ -- Kazuo Ishiguro
+- _The Matter Factory_ -- Peter J.T. Morris
+- _Tristes Tropiques_ -- Claude Lévi-Strauss
+- _A History of the Jews_ -- Paul Johnson
+- _Society of the Spectacle_ -- Guy Debord
+- _The Development of Modern Chemistry_ -- Aaron J. Ihde
+- _Pensieri_ -- Blaise Pascal
+- _L'ossessione dei numeri primi_ -- John Derbyshire
+- _The Crowded Universe_ -- Alan Boss
+- _Il programma dell'universo_ -- Seth Lloyd
+- _Link_ -- Albert-László Barabási
+- _Dieci domande alle quali la scienza non può (ancora) rispondere_ -- Michael Hanlon
+- _Mappe della storia dell'uomo_ -- Steve Olson
+- _Fatti di musica_ -- Daniel J. Levitin
+- _Alla ricerca della memoria_ -- Eric R. Kandel
+- _Origini_ -- Neil deGrasse Tyson
+- _La fine del tempo_ -- Julian Barbour
+- _Il velo di Einstein_ -- Anton Zeilinger
+- _Alfa e Omega_ -- Charles Seife
+- _La lunga estate_ -- Brian M. Fagan
+- _Human Action_ -- Ludwig von Mises
+- _Libertà e proprietà_ -- Ludwig von Mises
+- _America's Great Depression_ -- Murray N. Rothbard
+- _Socialism_ -- Ludwig von Mises
+- _Teoria e storia_ -- Ludwig von Mises
+- _Tutta la vita è risolvere problemi_ -- Karl Popper
+- _I Limiti Della Libertà_ -- James M. Buchanan
+- _Denationalisation of Money_ -- Friedrich A. Hayek
+- _Investigations into the Method of the Social Sciences with Special Reference to Economics_ -- Carl Menger
+- _Freedom and the Law_ -- Bruno Leoni
+- _The Machinery of Freedom_ -- David D. Friedman
+- _The Ethics of Liberty_ -- Murray N. Rothbard
+- _Democracy_ -- Hans-Hermann Hoppe
+- _Il sacco del Nord_ -- Luca Ricolfi
+- _On Power_ -- Bertrand de Jouvenel
+- _The Iron Wall_ -- Avi Shlaim
+- _Free Market Environmentalism_ -- Terry L. Anderson
+- _L'arte di ottenere ragione_ -- Arthur Schopenhauer
+- _Così parlò Zarathustra_ -- Friedrich Nietzsche
+- _Psicologia delle folle_ -- Gustave Le Bon
+- _L'Anticristo / Crepuscolo degli idoli / Ecce homo / La volontà di potenza_ -- Friedrich Nietzsche
+- _101 storie Zen_ -- Unknown
+- _Il principe_ -- Niccolò Machiavelli
+- _Il giudizio degli altri_ -- Arthur Schopenhauer

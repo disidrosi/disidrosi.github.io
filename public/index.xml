@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tobia Cavalli</title>
+    <link>https://example.org/</link>
+    <description>Recent content on Tobia Cavalli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>cavalli.tobia@gmail.com (Tobia Cavalli)</managingEditor>
+    <webMaster>cavalli.tobia@gmail.com (Tobia Cavalli)</webMaster>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CV</title>
+      <link>https://example.org/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>cavalli.tobia@gmail.com (Tobia Cavalli)</author>
+      <guid>https://example.org/cv/</guid>
+      <description>Where I worked December 2022 &amp;ndash; current: R&amp;amp;D Project Manager @ Barberini, EssilorLuxottica, Pescara, Italy and Grünenplan, Germany.&#xA;June 2021 &amp;ndash; August 2021: Freelance Consultant @ Sastre Consulting Ltd, Vienna, Austria. Consultant for in-depth country analysis to help guide investment decisions.&#xA;April 2017 &amp;ndash; June 2017: Project Assistant @ Technische Universität Wien, Vienna, Austria. Research role in synthesis and characterization of polyimide-based membranes.&#xA;2004 &amp;ndash; 2017: Exhibition Assistant @ Lineasette Snc, Marostica, Italy.</description>
+      <content:encoded><![CDATA[<h2 id="where-i-worked">Where I worked</h2>
+<p><strong>December 2022 &ndash; current:</strong> R&amp;D Project Manager @ Barberini, EssilorLuxottica, Pescara, Italy and Grünenplan, Germany.</p>
+<p><strong>June 2021 &ndash; August 2021:</strong> Freelance Consultant @ Sastre Consulting Ltd, Vienna, Austria. Consultant for in-depth country analysis to help guide investment decisions.</p>
+<p><strong>April 2017 &ndash; June 2017:</strong> Project Assistant @ Technische Universität Wien, Vienna, Austria. Research role in synthesis and characterization of polyimide-based membranes.</p>
+<p><strong>2004 &ndash; 2017:</strong> Exhibition Assistant @ Lineasette Snc, Marostica, Italy. Represent the company at international trade exhibitions in Milan, Frankfurt, New York, Dubai, and others, establishing contact with potential customers and ensuring business acquisition.</p>
+<p><strong>2008 &ndash; 2017:</strong> Freelance Private Tutor. One-on-one chemistry lessons for high-school students.</p>
+<h2 id="where-i-studied">Where I studied</h2>
+<h3 id="phd----materials-science-2017----ongoing">PhD &ndash; Materials Science (2017 &ndash; ongoing)</h3>
+<p>Synthesis and characterization of molecular crystals and their use for the synthesis of high-performance polymers.</p>
+<p>Institute of Materials Chemistry, Technische Universität Wien, Vienna, Austria. Supervisor: Prof. Miriam M. Unterlass (<a href="https://unterlasslab.com/">link to website</a>).</p>
+<h3 id="msc----pure-and-applied-chemistry-2013----2017">MSc &ndash; Pure and Applied Chemistry (2013 &ndash; 2017)</h3>
+<p>Synthesis of high-performance polymers using hydrothermal techniques.</p>
+<p>Dipartimento di Scienze Chimiche, Università degli Studi di Padova, Padova, Italy and Institute of Materials Chemistry, Technische Universität Wien, Vienna, Austria. Experimental work conducted within Erasmus+ at TU Wien in the group of Miriam M. Unterlass (<a href="https://unterlasslab.com/">link to website</a>). Supervisor at Università degli Studi di Padova: Prof. Silvia Gross (<a href="https://wwwdisc.chimica.unipd.it/silvia.gross/">link to website</a>).</p>
+<h3 id="bsc----pure-and-applied-chemistry-2008----2013">BSc &ndash; Pure and Applied Chemistry (2008 &ndash; 2013)</h3>
+<p>Characterization of structural properties of diphenytellurides using DFT computational techniques.</p>
+<p>Università degli Studi di Padova, Padova, Italy. Supervisor: Ass. Prof. Laura Orian (<a href="https://www.unipd.it/en/contatti/rubrica/?detail=Y&ruolo=1&checkout=cerca&persona=ORIAN&key=7700736A996CDF009B14C1A0FFDBAEDD">link to website</a>).</p>
+<h2 id="what-i-can-do">What I can do</h2>
+<p><strong>Languages:</strong> Italian (mother tongue), English (C2), German (B2/C1).</p>
+<p><strong>Materials synthesis:</strong> Crystal growth in gel and solution, solid-state polymerization, hydrothermal synthesis, mechanochemical synthesis, glass melting and casting.</p>
+<p><strong>Materials characterization:</strong> FT-ATR-IR and UV-Vis, X-ray diffraction (XRD), optical microscopy, scanning electron microscope (SEM), thermogravimetric analysis (TGA), differential scanning calorimetry (DSC), nuclear magnetic resonance (NMR).</p>
+<p><strong>Computational methods:</strong> Single-molecule and periodic density functional theory (DFT and TD-DFT) in Orca and Quantum Espresso.</p>
+<p><strong>Data production and analysis:</strong> Design of experiments (DOE) and multivariate analysis with Numpy, Scipy, Pandas, and Matplotlib or R (tidyverse).</p>
+<p><strong>Programming:</strong> Functional and object-oriented Python, R, SQL (SQLite, PostgreSQL), HTML, CSS, JavaScript, LaTeX, Git version control.</p>
+<p><strong>Other software:</strong> Windows, Mac OS, Linux, MS Office, CCDS Suite, Adobe Illustrator and Photoshop.</p>
+<h2 id="awards">Awards</h2>
+<h3 id="2019">2019</h3>
+<ul>
+<li>Best Presenter Award: FuNMat 2019, Berlin, Germany. <a href="https://web.archive.org/web/20210307044623/https://www.advancedsciencenews.com/awards-2019/">Featured article on Advanced Science News</a></li>
+<li>Best Poster Award: 11th European NESY Winter school &amp; Symposium on Neutron and Synchrotron Radiation, Altaussee, Austria. <a href="https://nesy.unileoben.ac.at/alte-veranstaltungen/nesy-winterschool-2019/awards">Link to NESY news</a></li>
+</ul>
+<h3 id="2018">2018</h3>
+<ul>
+<li>Best Poster Award, 2nd place: SACS &ndash; Self-Assembly of Colloidal Systems 2018, Bordeaux, France.</li>
+<li>Best Poster Award: VSS &ndash; Vienna Young Scientist Symposium, Vienna, Austria.</li>
+</ul>
+<h2 id="my-science-contributions">My science contributions</h2>
+<h3 id="publications">Publications</h3>
+<ul>
+<li>Sulzgruber, V.; Unterlass, M.; Cavalli, T.; Walter, H. Micro Encapsulated Phase Change Material for the Application in Thermal Energy Storage. <em>J. Energy Resour. Technol.</em> <strong>2022</strong>, <em>144</em> (5), 052001. <a href="https://doi.org/10.1115/1.4051734">https://doi.org/10.1115/1.4051734</a>.</li>
+</ul>
+<h3 id="talks">Talks</h3>
+<ul>
+<li>Cavalli, T; Unterlass M. M. Controlling the Crystallization of All-Organic Salts. Presented at FuNMat 2019, Berlin, Germany, May 2019.</li>
+<li>Cavalli, T; Unterlass M. M. Design of Non-Spherical Colloidal Polymer Particles for Self-Assembled Materials. Presented at Vienna Young Scientist Symposium (VSS), Vienna, Austria, June 2018.</li>
+<li>Cavalli, T; Taubländer, M. J.; Unterlass M. M. Expanding the Scope of Hydrothermal Polymerization. Presented at Vienna Polymer-Group Symposium 2018, Vienna, Austria, February 2018.</li>
+<li>Cavalli, T; Unterlass M. M. Self-assembly of Shape- and Function-Anisotropic Colloidal Particles. Presented at FuNMat 2017, Pilsen, Czech Republic, September 2017.</li>
+</ul>
+<h3 id="posters">Posters</h3>
+<ul>
+<li>Cavalli, T; Unterlass M. M. Synthesis and Characterization of Crystalline Shape-Anisometric Polymer Particles as Model Systems for Self-Assembled Materials. Presented at 11th European NESY Winter school &amp; Symposium on Neutron and Synchrotron Radiation, Altaussee, Austria, February 2018.</li>
+<li>Cavalli, T; Unterlass M. M. Synthesis of Angular Polymer Particles as Building Blocks for Advanced Materials by Self-Assembly. Presented at Self-Assembly of Colloidal Systems 2018, Bordeaux, France, September 2018.</li>
+<li>Cavalli, T; Unterlass M. M. Synthesis of Anisometric Polyhedral Homopolymer Particles. Presented at European Colloid and Interface Society (ECIS) 2018, Ljubljana, Slovenia, September 2018.</li>
+<li>Cavalli, T; Unterlass M. M. Salt Exchange Reactions &ndash; A Versatile Detour to Otherwise Hardly Accessible Monomer Salts. Presented at Danube Vltava Sava Polymer Meeting (DVSPM) 2017, Vienna, Austria, September 2017.</li>
+<li>Cavalli, T; Unterlass M. M. The Effect of Pressure in the Hydrothermal Polymerization of Polyimides. Presented at Austrian Chemistry Days 2015, Innsbruck, Austria, September 2015.</li>
+<li>Cavalli, T; Unterlass M. M. Synthesis of Highly Crystalline Polyimide/Carbon Composite Nanoparticles by Hydrothermal Polymerization. Presented at FuNMat 2015, Prague, Czech Republic, September 2015.</li>
+</ul>
+<h3 id="exhibitions">Exhibitions</h3>
+<ul>
+<li>Cavalli, T.; Cerrón-Infantes, D. A.; Unterlass, M. M. CRYS: Highly Crystalline Polyimide Particles for Polymer Composites. Presented at SIAE &ndash; 53rd International Paris Air Show 2019, Paris Le Bourget, France, June 2019.</li>
+</ul>
+<h2 id="public-outreach-and-science-communication">Public outreach and science communication</h2>
+<h3 id="2019-1">2019</h3>
+<ul>
+<li>Tutor at 2nd Workshop &ldquo;Introduction to Scientific Graphic Design&rdquo;. CeMM &ndash; Research Center for Molecular Medicine of the Austrian Academy of Science, Vienna, Austria, April 2nd &ndash; 3rd 2019.</li>
+<li>Tutor at 1st Workshop &ldquo;Introduction to Scientific Graphic Design&rdquo;. CeMM &ndash; Research Center for Molecular Medicine of the Austrian Academy of Science, Vienna, Austria, April 13th &ndash; 14th 2019.</li>
+</ul>
+<h3 id="2018-1">2018</h3>
+<ul>
+<li>Wiener Forschungfest, Vienna, Austria. Booth co-organizer.</li>
+<li>SOM18 &ndash; Synthesis of Organic Materials Symposium, Vienna, Austria. Conference co-organizer.</li>
+<li>Lange Nacht der Forschung, Vienna, Austria. Booth co-organizer.</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Reading</title>
+      <link>https://example.org/reading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>cavalli.tobia@gmail.com (Tobia Cavalli)</author>
+      <guid>https://example.org/reading/</guid>
+      <description>Currently reading How to Read a Book &amp;ndash; Mortimer J. Adler Books I read 2024 An Elegant Puzzle &amp;ndash; Will Larson Never Split the Difference &amp;ndash; Chris Voss Four Thousand Weeks &amp;ndash; Oliver Burkeman Good Strategy &amp;ndash; Bad Strategy &amp;ndash; Richard Rumelt Essentialism &amp;ndash; Greg McEwon 2021 Die unendliche Geschichte &amp;ndash; Michael Ende &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Die Vermessung der Welt &amp;ndash; Daniel Kehlmann &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Der Vorleser &amp;ndash; Bernhard Schlink &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Tschick &amp;ndash; Wolfgang Herrndorf &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; 2020 L&amp;rsquo;amica geniale &amp;ndash; Elena Ferrante &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; A Room of One&amp;rsquo;s Own &amp;ndash; Virginia Woolf &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Epitaph of a Small Winner &amp;ndash; Machado de Assis &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Uno, nessuno e centomila &amp;ndash; Luigi Pirandello &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Clear and Simple as the Truth &amp;ndash; Francis-Noel Thomas &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; White Teeth &amp;ndash; Zadie Smith &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Storia di chi fugge e di chi resta &amp;ndash; Elena Ferrante &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Storia del nuovo cognome &amp;ndash; Elena Ferrante &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; On Writing &amp;ndash; Jorge Luis Borges &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Confessions of a Mask &amp;ndash; Yukio Mishima &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Story of the Eye &amp;ndash; Georges Bataille &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Flow &amp;ndash; Mihály Csíkszentmihályi &amp;#x2b50;&amp;#x2b50; Reasons to Stay Alive &amp;ndash; Matt Haig &amp;#x2b50;&amp;#x2b50; Scritti corsari &amp;ndash; Pier Paolo Pasolini &amp;#x2b50;&amp;#x2b50; L&amp;rsquo;Invenzione Occasionale &amp;ndash; Elena Ferrante &amp;#x2b50;&amp;#x2b50; The Presentation of Self in Everyday Life &amp;ndash; Erving Goffman &amp;#x2b50;&amp;#x2b50; The Sense of Style &amp;ndash; Steven Pinker &amp;#x2b50;&amp;#x2b50; Lezioni americane &amp;ndash; Italo Calvino &amp;#x2b50;&amp;#x2b50; The Procrastination Equation &amp;ndash; Piers Steel &amp;#x2b50; Bird by Bird &amp;ndash; Anne Lamott Procrastination &amp;ndash; Jane B.</description>
+      <content:encoded><![CDATA[<h2 id="currently-reading">Currently reading</h2>
+<ul>
+<li><em>How to Read a Book</em> &ndash; Mortimer J. Adler</li>
+</ul>
+<h2 id="books-i-read">Books I read</h2>
+<h3 id="2024">2024</h3>
+<ul>
+<li><em>An Elegant Puzzle</em> &ndash; Will Larson</li>
+<li><em>Never Split the Difference</em> &ndash; Chris Voss</li>
+<li><em>Four Thousand Weeks</em> &ndash; Oliver Burkeman</li>
+<li><em>Good Strategy &ndash; Bad Strategy</em> &ndash; Richard Rumelt</li>
+<li><em>Essentialism</em> &ndash; Greg McEwon</li>
+</ul>
+<h3 id="2021">2021</h3>
+<ul>
+<li><em>Die unendliche Geschichte</em> &ndash; Michael Ende &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Die Vermessung der Welt</em> &ndash; Daniel Kehlmann &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Der Vorleser</em> &ndash; Bernhard Schlink &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Tschick</em> &ndash; Wolfgang Herrndorf &#x2b50;&#x2b50;&#x2b50;</li>
+</ul>
+<h3 id="2020">2020</h3>
+<ul>
+<li><em>L&rsquo;amica geniale</em> &ndash; Elena Ferrante &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>A Room of One&rsquo;s Own</em> &ndash; Virginia Woolf &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Epitaph of a Small Winner</em> &ndash; Machado de Assis &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Uno, nessuno e centomila</em> &ndash; Luigi Pirandello &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Clear and Simple as the Truth</em> &ndash; Francis-Noel Thomas &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>White Teeth</em> &ndash; Zadie Smith &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Storia di chi fugge e di chi resta</em> &ndash; Elena Ferrante &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Storia del nuovo cognome</em> &ndash; Elena Ferrante &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>On Writing</em> &ndash; Jorge Luis Borges &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Confessions of a Mask</em> &ndash; Yukio Mishima &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Story of the Eye</em> &ndash; Georges Bataille &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Flow</em> &ndash; Mihály Csíkszentmihályi &#x2b50;&#x2b50;</li>
+<li><em>Reasons to Stay Alive</em> &ndash; Matt Haig &#x2b50;&#x2b50;</li>
+<li><em>Scritti corsari</em> &ndash; Pier Paolo Pasolini &#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;Invenzione Occasionale</em> &ndash; Elena Ferrante &#x2b50;&#x2b50;</li>
+<li><em>The Presentation of Self in Everyday Life</em> &ndash; Erving Goffman &#x2b50;&#x2b50;</li>
+<li><em>The Sense of Style</em> &ndash; Steven Pinker &#x2b50;&#x2b50;</li>
+<li><em>Lezioni americane</em> &ndash; Italo Calvino &#x2b50;&#x2b50;</li>
+<li><em>The Procrastination Equation</em> &ndash; Piers Steel &#x2b50;</li>
+<li><em>Bird by Bird</em> &ndash; Anne Lamott</li>
+<li><em>Procrastination</em> &ndash; Jane B. Burka</li>
+<li><em>Il dispatrio</em> &ndash; Luigi Meneghello</li>
+<li><em>The Book Of Disquiet</em> &ndash; Fernando Pessoa</li>
+<li><em>Snow Crash</em> &ndash; Neal Stephenson</li>
+<li><em>The Art of Rhetoric</em> &ndash; Aristotle</li>
+<li><em>Why We Sleep</em> &ndash; Matthew Walker</li>
+</ul>
+<h3 id="2019">2019</h3>
+<ul>
+<li><em>East of Eden</em> &ndash; John Steinbeck &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>On Writing Well</em> &ndash; William Zinsser &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Stoner</em> &ndash; John Williams &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Piracy</em> &ndash; Adrian Johns &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>I fratelli Karamazov</em> &ndash; Fyodor Dostoevsky &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il buio oltre la siepe</em> &ndash; Harper Lee&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Time Machine</em> &ndash; H.G. Wells &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Good Earth</em> &ndash; Pearl S. Buck &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Liespotting</em> &ndash; PamelaMeyer &#x2b50;&#x2b50;</li>
+<li><em>Power</em> &ndash; Jeffrey Pfeffer &#x2b50;&#x2b50;</li>
+<li><em>Where Good Ideas Come from</em> &ndash; Steven Johnson &#x2b50;&#x2b50;</li>
+<li><em>How to Speak / How to Listen</em> &ndash; Mortimer J. Adler &#x2b50;&#x2b50;</li>
+<li><em>So You&rsquo;ve Been Publicly Shamed</em> &ndash; Jon Ronson &#x2b50;&#x2b50;</li>
+<li><em>No Longer Human</em> &ndash; Osamu Dazai &#x2b50;&#x2b50;</li>
+<li><em>Orthodoxy</em> &ndash; G.K. Chesterton &#x2b50;&#x2b50;</li>
+<li><em>The 48 Laws of Power</em> &ndash; Robert Greene &#x2b50;</li>
+<li><em>Actionable Gamification</em> &ndash; Yu-kai Chou &#x2b50;</li>
+<li><em>Uncivil Agreement</em> &ndash; Lilliana Mason</li>
+<li><em>Eleven Kinds of Loneliness</em> &ndash; Richard Yates</li>
+</ul>
+<h3 id="2017">2017</h3>
+<ul>
+<li><em>Una vita violenta</em> &ndash; Pier Paolo Pasolini &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La cospirazione contro la razza umana</em> &ndash; Thomas Ligotti &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Antifragile</em> &ndash; Nassim Nicholas Taleb &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;astore</em> &ndash; T.H. White &#x2b50;&#x2b50;</li>
+<li><em>The Organized Mind</em> &ndash; Daniel J. Levitin &#x2b50;&#x2b50;</li>
+<li><em>Un mondo perduto e ritrovato</em> &ndash; Alexander R. Luria &#x2b50;&#x2b50;</li>
+<li><em>Trattato di storia delle religioni</em> &ndash; Mircea Eliade &#x2b50;&#x2b50;</li>
+<li><em>I quaranta giorni del Mussa Dagh</em> &ndash; Franz Werfel &#x2b50;&#x2b50;</li>
+<li><em>Tra Mosca e Petuski</em> &ndash; Venedikt Erofeev &#x2b50;&#x2b50;</li>
+<li><em>La strada</em> &ndash; Cormac McCarthy &#x2b50;&#x2b50;</li>
+<li><em>American storytelling</em> &ndash; Federico Di Chio &#x2b50;&#x2b50;</li>
+<li><em>Medici eretici</em> &ndash; Massimo Fioranelli &#x2b50;&#x2b50;</li>
+<li><em>Io sono vivo, voi siete morti</em> &ndash; Emmanuel Carrère &#x2b50;&#x2b50;</li>
+</ul>
+<h3 id="2016">2016</h3>
+<ul>
+<li><em>La famiglia Karnowski</em> &ndash; Israel J. Singer &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La versione di Barney</em> &ndash; Mordecai Richler &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Contro il metodo</em> &ndash; Paul Karl Feyerabend &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La ribellione delle masse</em> &ndash; José Ortega y Gasset &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Allegro ma non troppo</em> &ndash; Carlo M. Cipolla &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Storia del Partito del progresso moderato nei limiti della legge</em> &ndash; Jaroslav Hašek &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Madame Bovary</em> &ndash; Gustave Flaubert &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il Maestro e Margherita</em> &ndash; Mikhail Bulgakov &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Malone muore</em> &ndash; Samuel Beckett &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Infinite Jest</em> &ndash; David Foster Wallace &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;apprendistato di Duddy Kravitz</em> &ndash; Mordecai Richler &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il rosso e il nero</em> &ndash; Stendhal &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Ghiaccio-nove</em> &ndash; Kurt Vonnegut Jr. &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Lo Zen e l&rsquo;arte della manutenzione della motocicletta</em> &ndash; Robert M. Pirsig &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il soccombente</em> &ndash; Thomas Bernhard &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Kim</em> &ndash; Rudyard Kipling &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Herzog</em> &ndash; Saul Bellow &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Ubik</em> &ndash; Philip K. Dick &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Gelo</em> &ndash; Thomas Bernhard &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il più grande uomo scimmia del Pleistocene</em> &ndash; Roy Lewis &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Nature and Selected Essays</em> &ndash; Ralph Waldo Emerson &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Limonov</em> &ndash; Emmanuel Carrère &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Tecnica del colpo di Stato</em> &ndash; Curzio Malaparte &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Perturbamento</em> &ndash; Thomas Bernhard &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Roman Inquisition and the Venetian Press</em> &ndash; Paul F. Grendler &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;opera d&rsquo;arte nell&rsquo;epoca della sua riproducibilità tecnica</em> &ndash; Walter Benjamin &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Radical chic</em> &ndash; Tom Wolfe &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;insostenibile leggerezza dell&rsquo;essere</em> &ndash; Milan Kundera &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Patrizi, informatori, barbieri</em> &ndash; Filippo de Vivo &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Da dove sto chiamando</em> &ndash; Raymond Carver &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Camminare</em> &ndash; Henry David Thoreau &#x2b50;&#x2b50;</li>
+<li><em>Niente di nuovo sul fronte occidentale</em> &ndash; Erich Maria Remarque &#x2b50;&#x2b50;</li>
+<li><em>Cold Spring Harbor</em> &ndash; Richard Yates &#x2b50;&#x2b50;</li>
+<li><em>Uomovivo</em> &ndash; G.K. Chesterton &#x2b50;&#x2b50;</li>
+<li><em>La cultura del piagnisteo</em> &ndash; Robert Hughes &#x2b50;&#x2b50;</li>
+<li><em>Il mestiere di scrivere</em> &ndash; Raymond Carver &#x2b50;&#x2b50;</li>
+<li><em>I quaderni di Malte Laurids Brigge</em> &ndash; Rainer Maria Rilke &#x2b50;&#x2b50;</li>
+<li><em>Se vi pare che questo mondo sia brutto</em> &ndash; Philip K. Dick &#x2b50;&#x2b50;</li>
+<li><em>Esegesi dei luoghi comuni</em> &ndash; Léon Bloy &#x2b50;&#x2b50;</li>
+<li><em>Babbo Natale giustiziato</em> &ndash; Claude Lévi-Strauss &#x2b50;&#x2b50;</li>
+<li><em>Il Canone occidentale</em> &ndash; Harold Bloom &#x2b50;&#x2b50;</li>
+<li><em>La cura della ragione</em> &ndash; Fabio Paglieri &#x2b50;&#x2b50;</li>
+<li><em>The Shallows</em> &ndash; Nicholas Carr &#x2b50;&#x2b50;</li>
+<li><em>La Grande Vienna</em> &ndash; Allan Janik &#x2b50;&#x2b50;</li>
+<li><em>Breviario del caos</em> &ndash; Albert Caraco &#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;arte di ricordare tutto</em> &ndash; Joshua Foer &#x2b50;</li>
+<li><em>Alta fedeltà</em> &ndash; Nick Hornby &#x2b50;</li>
+<li><em>La libertà ritrovata</em> &ndash; Franck Schirrmacher &#x2b50;</li>
+<li><em>La vita agra</em> &ndash; Luciano Bianciardi &#x2b50;</li>
+<li><em>Come stare soli</em> &ndash; Jonathan Franzen &#x2b50;</li>
+<li><em>La Società dello Spettacolo</em> &ndash; Guy Debord</li>
+<li><em>Trilogia della città di K.</em> &ndash; Ágota Kristóf</li>
+<li><em>L&rsquo;ingenuità della rete</em> &ndash; Morozov Evgeny</li>
+<li><em>Flow</em> &ndash; Mihály Csíkszentmihályi</li>
+<li><em>Willpower</em> &ndash; Roy F. Baumeister</li>
+<li><em>The Filter Bubble</em> &ndash; Eli Pariser</li>
+</ul>
+<h3 id="undated">Undated</h3>
+<ul>
+<li><em>Il sergente nella neve</em> &ndash; Mario Rigoni Stern &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Foundations of Science</em> &ndash; Henri Poincaré &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Classical Rhetoric for the Modern Student</em> &ndash; Edward P.J. Corbett &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Lettere morali a Lucilio</em> &ndash; Seneca &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Elements of Style</em> &ndash; William Strunk Jr. &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Guida galattica per gli autostoppisti</em> &ndash; Douglas Adams &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Lamento di Portnoy</em> &ndash; Philip Roth &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il grande Gatsby</em> &ndash; F. Scott Fitzgerald &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il Gattopardo</em> &ndash; Giuseppe Tomasi di Lampedusa &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Furore</em> &ndash; John Steinbeck &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Gödel, Escher, Bach</em> &ndash; Douglas R. Hofstadter &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Libera nos a malo</em> &ndash; Luigi Meneghello &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il conte di Montecristo</em> &ndash; Alexandre Dumas &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Alla ricerca del tempo perduto</em> &ndash; Marcel Proust &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Viaggio al termine della notte</em> &ndash; Louis-Ferdinand Céline &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>I viaggi di Gulliver</em> &ndash; Jonathan Swift &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Le avventure di Huckleberry Finn</em> &ndash; Mark Twain &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Le avventure di Tom Sawyer</em> &ndash; Mark Twain &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Moby Dick</em> &ndash; Herman Melville &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il Circolo Pickwick</em> &ndash; Charles Dickens &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Le vicende del bravo soldato Švejk</em> &ndash; Jaroslav Hašek &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il processo</em> &ndash; Franz Kafka &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Detti e contraddetti</em> &ndash; Karl Kraus &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La metamorfosi e tutti i racconti pubblicati in vita</em> &ndash; Franz Kafka &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Anna Karenina</em> &ndash; Leo Tolstoy &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il dottor Živago</em> &ndash; Boris Pasternak &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Forse Queneau</em> &ndash; Paolo Della Bella &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Le avanguardie artistiche del Novecento</em> &ndash; Mario De Micheli &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;unico e la sua proprietà</em> &ndash; Max Stirner &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Pastorale Americana</em> &ndash; Philip Roth &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Storia del Medio Oriente moderno</em> &ndash; James L. Gelvin &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La montagna incantata</em> &ndash; Thomas Mann &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Storia degli ebrei</em> &ndash; Paul Johnson &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>I miserabili</em> &ndash; Victor Hugo &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La struttura delle rivoluzioni scientifiche</em> &ndash; Thomas S. Kuhn &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Tre donne</em> &ndash; Robert Musil &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;uomo senza qualità vol. I</em> &ndash; Robert Musil &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;uomo senza qualità vol. II</em> &ndash; Robert Musil &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Tractatus logico-philosophicus e Quaderni 1914-1916</em> &ndash; Ludwig Wittgenstein &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Al di là di ogni ragionevole dubbio</em> &ndash; Sean B. Carroll &#x2b50;&#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Pasque di sangue</em> &ndash; Ariel Toaff &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Le correnti dello spazio­ - Il tiranno dei mondi­ - Paria dei cieli</em> &ndash; Isaac Asimov &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Work of Art in the Age of Mechanical Reproduction</em> &ndash; Walter Benjamin &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Spillover</em> &ndash; David Quammen &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Road to Serfdom</em> &ndash; Friedrich A. Hayek &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Logic of Scientific Discovery</em> &ndash; Karl Popper &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Open Society and Its Enemies</em> &ndash; Karl Popper &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Against Method</em> &ndash; Paul Karl Feyerabend &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Moscow to the End of the Line</em> &ndash; Venedikt Erofeev &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Cathedral</em> &ndash; Raymond Carver &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>A Handlist of Rhetorical Terms</em> &ndash; Richard A. Lanham &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Black Rights / White Wrongs</em> &ndash; Charles W. Mills &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Diamond Age</em> &ndash; Neal Stephenson &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>How to Read a Book</em> &ndash; Mortimer J. Adler &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Revolutionary Road</em> &ndash; Richard Yates &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il Signore degli Anelli</em> &ndash; J.R.R. Tolkien &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Cuore di tenebra</em> &ndash; Joseph Conrad &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Lo hobbit o La riconquista del tesoro</em> &ndash; J.R.R. Tolkien &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>I tre moschettieri</em> &ndash; Alexandre Dumas &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Ho sposato un comunista</em> &ndash; Philip Roth &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Tenera è la notte</em> &ndash; F. Scott Fitzgerald &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Robinson Crusoe</em> &ndash; Daniel Defoe &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Cavalli selvaggi</em> &ndash; Cormac McCarthy &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>French Theory</em> &ndash; François Cusset &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;urlo e il furore</em> &ndash; William Faulkner &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Ulisse</em> &ndash; James Joyce &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il deserto dei Tartari</em> &ndash; Dino Buzzati &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;ultima partita a carte</em> &ndash; Mario Rigoni Stern &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Le stagioni di Giacomo</em> &ndash; Mario Rigoni Stern &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Sentieri sotto la neve</em> &ndash; Mario Rigoni Stern &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il sistema periodico</em> &ndash; Primo Levi &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Momo</em> &ndash; Michael Ende &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>I piccoli maestri</em> &ndash; Luigi Meneghello &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Sommario di decomposizione</em> &ndash; Emil M. Cioran &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Lo straniero</em> &ndash; Albert Camus &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Luce d&rsquo;agosto</em> &ndash; William Faulkner &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Mattatoio n. 5</em> &ndash; Kurt Vonnegut Jr. &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Frankenstein</em> &ndash; Mary Wollstonecraft Shelley &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>I fratelli Tanner</em> &ndash; Robert Walser &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Le anime morte</em> &ndash; Nikolai Gogol &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La figlia del capitano</em> &ndash; Alexander Pushkin &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Cuore di cane</em> &ndash; Mikhail Bulgakov &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Lolita</em> &ndash; Vladimir Nabokov &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Padre Sergij</em> &ndash; Leo Tolstoy &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>I demonî</em> &ndash; Fyodor Dostoevsky &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Gli oggetti frattali</em> &ndash; Benoît B. Mandelbrot &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La strada che porta alla realtà</em> &ndash; Roger Penrose &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il sole nudo</em> &ndash; Isaac Asimov &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>I racconti dei Vedovi Neri</em> &ndash; Isaac Asimov &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Lezioni di politica sociale</em> &ndash; Luigi Einaudi &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;origine sportiva dello Stato</em> &ndash; José Ortega y Gasset &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Esercizi di stile</em> &ndash; Raymond Queneau &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La peste</em> &ndash; Albert Camus &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Chourmo</em> &ndash; Jean-Claude Izzo &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Educazione di una canaglia</em> &ndash; Edward Bunker &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il ciclo delle Fondazioni</em> &ndash; Isaac Asimov &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Alice nel paese delle meraviglie</em> &ndash; Lewis Carroll &#x2b50;&#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;uomo che scambiò sua moglie per un cappello</em> &ndash; Oliver Sacks &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;etica protestante e lo spirito del capitalismo</em> &ndash; Max Weber &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Storia della follia nell&rsquo;età classica</em> &ndash; Michel Foucault &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Attention Merchants</em> &ndash; Tim Wu &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Chaos</em> &ndash; James Gleick &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Incerto</em> &ndash; Nassim Nicholas Taleb &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Formula</em> &ndash; Albert-László Barabási &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>How Not to Be Wrong</em> &ndash; Jordan Ellenberg &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The World According to Garp</em> &ndash; John Irving &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Finding Ultra</em> &ndash; Rich Roll &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Thank You for Arguing</em> &ndash; Jay Heinrichs &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Cent&rsquo;anni di solitudine</em> &ndash; Gabriel García Márquez &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;amore ai tempi del colera</em> &ndash; Gabriel García Márquez &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Sulla strada</em> &ndash; Jack Kerouac &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Comma 22</em> &ndash; Joseph Heller &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Uomini e topi</em> &ndash; John Steinbeck &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il libro nero della guerra</em> &ndash; Gabriel Kolko &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Storia d&rsquo;Europa dalle invasioni al XVI secolo</em> &ndash; Henri Pirenne &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La democrazia in America</em> &ndash; Alexis de Tocqueville &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Stato e anarchia</em> &ndash; Mikhail Bakunin &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Una teoria della giustizia</em> &ndash; John Rawls &#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;origine delle specie</em> &ndash; Charles Darwin &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Gli indifferenti</em> &ndash; Alberto Moravia &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Tra due guerre e altre storie</em> &ndash; Mario Rigoni Stern &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Le città invisibili</em> &ndash; Italo Calvino &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;Aleph</em> &ndash; Jorge Luis Borges &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La morte felice</em> &ndash; Albert Camus &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Quel fantastico giovedì</em> &ndash; John Steinbeck &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Espiazione</em> &ndash; Ian McEwan &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Nel ventre della balena e altri saggi</em> &ndash; George Orwell &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>1984</em> &ndash; George Orwell &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il vecchio e il mare</em> &ndash; Ernest Hemingway &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La fattoria degli animali</em> &ndash; George Orwell &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;arcobaleno della gravità</em> &ndash; Thomas Pynchon &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Dracula</em> &ndash; Bram Stoker &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Lo strano caso del dottor Jekyll e del signor Hyde</em> &ndash; Robert Louis Stevenson &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il Caffè dell&rsquo;Undicesima Musa</em> &ndash; Joseph Roth &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il libro dei motti e delle riflessioni</em> &ndash; Arthur Schnitzler &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Le due città</em> &ndash; Charles Dickens &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Lettere a Milena</em> &ndash; Franz Kafka &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il gene egoista</em> &ndash; Richard Dawkins &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Siamo davvero liberi?</em> &ndash; Mario De Caro &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Starship Troopers</em> &ndash; Robert A. Heinlein &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Per la pace perpetua</em> &ndash; Immanuel Kant &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;essenza del Cristianesimo</em> &ndash; Ludwig Feuerbach &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Trattato sulla tolleranza</em> &ndash; Voltaire &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Sorvegliare e punire</em> &ndash; Michel Foucault &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>La banalità del male</em> &ndash; Hannah Arendt &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Auto-da-Fé</em> &ndash; Elias Canetti &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Tristi Tropici</em> &ndash; Claude Lévi-Strauss &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Per chi suona la campana</em> &ndash; Ernest Hemingway &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Addio alle armi</em> &ndash; Ernest Hemingway &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Chiedi alla polvere</em> &ndash; John Fante &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Siddharta</em> &ndash; Hermann Hesse &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Critica della ragion cinica</em> &ndash; Peter Sloterdijk &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Cattedrale</em> &ndash; Raymond Carver &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il grado zero della scrittura</em> &ndash; Roland Barthes &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Il libro di sabbia</em> &ndash; Jorge Luis Borges &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Chess Fundamentals</em> &ndash; José Raúl Capablanca &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Faust e Urfaust - Vol. II</em> &ndash; Johann Wolfgang von Goethe &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>Scienza e filosofia</em> &ndash; Alfred North Whitehead &#x2b50;&#x2b50;&#x2b50;</li>
+<li><em>The Better Angels of Our Nature</em> &ndash; Steven Pinker &#x2b50;&#x2b50;</li>
+<li><em>A PhD Is Not Enough!</em> &ndash; Peter J. Feibelman &#x2b50;&#x2b50;</li>
+<li><em>12 Rules for Life</em> &ndash; Jordan B. Peterson &#x2b50;&#x2b50;</li>
+<li><em>Atlas Shrugged</em> &ndash; Ayn Rand &#x2b50;&#x2b50;</li>
+<li><em>Il piccolo principe</em> &ndash; Antoine de Saint-Exupéry &#x2b50;&#x2b50;</li>
+<li><em>La coscienza di Zeno</em> &ndash; Italo Svevo &#x2b50;&#x2b50;</li>
+<li><em>Tropico del Cancro</em> &ndash; Henry Miller &#x2b50;&#x2b50;</li>
+<li><em>Il capitalismo ha i secoli contati</em> &ndash; Giorgio Ruffolo &#x2b50;&#x2b50;</li>
+<li><em>Libera scienza in libero Stato</em> &ndash; Margherita Hack &#x2b50;&#x2b50;</li>
+<li><em>Perché non possiamo essere cristiani</em> &ndash; Piergiorgio Odifreddi &#x2b50;&#x2b50;</li>
+<li><em>I bottoni di Napoleone</em> &ndash; Penny Le Couteur &#x2b50;&#x2b50;</li>
+<li><em>L&rsquo;illusione di Dio</em> &ndash; Richard Dawkins &#x2b50;&#x2b50;</li>
+<li><em>Ti amerò per sempre</em> &ndash; Piero Angela &#x2b50;&#x2b50;</li>
+<li><em>Perché non sono cristiano</em> &ndash; Bertrand Russell &#x2b50;&#x2b50;</li>
+<li><em>La conquista della felicità</em> &ndash; Bertrand Russell &#x2b50;&#x2b50;</li>
+<li><em>Inizio del tempo e fine della fisica</em> &ndash; Stephen Hawking &#x2b50;&#x2b50;</li>
+<li><em>Linguaggio e libertà</em> &ndash; Noam Chomsky &#x2b50;&#x2b50;</li>
+<li><em>Anatomia della distruttività umana</em> &ndash; Erich Fromm &#x2b50;&#x2b50;</li>
+<li><em>I Borgia</em> &ndash; Alexandre Dumas &#x2b50;&#x2b50;</li>
+<li><em>Le correzioni</em> &ndash; Jonathan Franzen &#x2b50;&#x2b50;</li>
+<li><em>Fahrenheit 451</em> &ndash; Ray Bradbury &#x2b50;&#x2b50;</li>
+<li><em>Il funesto demiurgo</em> &ndash; Emil M. Cioran &#x2b50;&#x2b50;</li>
+<li><em>Le lettere di Groucho Marx</em> &ndash; Groucho Marx &#x2b50;&#x2b50;</li>
+<li><em>Il richiamo della foresta</em> &ndash; Jack London &#x2b50;&#x2b50;</li>
+<li><em>Altai</em> &ndash; Wu Ming &#x2b50;&#x2b50;</li>
+<li><em>Fiesta</em> &ndash; Ernest Hemingway &#x2b50;&#x2b50;</li>
+<li><em>Goethe muore</em> &ndash; Thomas Bernhard &#x2b50;&#x2b50;</li>
+<li><em>Il vecchio che leggeva romanzi d&rsquo;amore</em> &ndash; Luis Sepúlveda &#x2b50;&#x2b50;</li>
+<li><em>Signor Malaussène</em> &ndash; Daniel Pennac &#x2b50;&#x2b50;</li>
+<li><em>La nausea</em> &ndash; Jean-Paul Sartre &#x2b50;</li>
+<li><em>The War of Art</em> &ndash; Steven Pressfield &#x2b50;</li>
+<li><em>Marx e Freud</em> &ndash; Erich Fromm &#x2b50;</li>
+<li><em>Il rinvio</em> &ndash; Jean-Paul Sartre &#x2b50;</li>
+<li><em>Atei o credenti?</em> &ndash; Onfray, Vattimo Gianni, Flores D&rsquo;Arcais &#x2b50;</li>
+<li><em>Sante ragioni</em> &ndash; Carla Castellacci &#x2b50;</li>
+<li><em>Per ragioni di stato</em> &ndash; Noam Chomsky &#x2b50;</li>
+<li><em>Pirati e imperatori</em> &ndash; Noam Chomsky &#x2b50;</li>
+<li><em>Trattato del Ribelle</em> &ndash; Ernst Jünger &#x2b50;</li>
+<li><em>Der Mann ohne Eigenschaften</em> &ndash; Robert Musil</li>
+<li><em>Le stelle fredde</em> &ndash; Guido Piovene</li>
+<li><em>Less</em> &ndash; Andrew Sean Greer</li>
+<li><em>Il Capitale</em> &ndash; Karl Marx</li>
+<li><em>The Bonfire of the Vanities</em> &ndash; Tom Wolfe</li>
+<li><em>A Rhetoric of Motives</em> &ndash; Kenneth Burke</li>
+<li><em>Walden ovvero vita nei boschi</em> &ndash; Henry David Thoreau</li>
+<li><em>A Grammar of Motives</em> &ndash; Kenneth Burke</li>
+<li><em>Anarchy, State, and Utopia</em> &ndash; Robert Nozick</li>
+<li><em>Lezioni di letteratura</em> &ndash; Vladimir Nabokov</li>
+<li><em>The Metamorphosis</em> &ndash; Franz Kafka</li>
+<li><em>La variante di Lüneburg</em> &ndash; Paolo Maurensig</li>
+<li><em>Novella degli scacchi</em> &ndash; Stefan Zweig</li>
+<li><em>Man and Superman</em> &ndash; George Bernard Shaw</li>
+<li><em>Pygmalion</em> &ndash; George Bernard Shaw</li>
+<li><em>One-Dimensional Man</em> &ndash; Herbert Marcuse</li>
+<li><em>The Eyre Affair</em> &ndash; Jasper Fforde</li>
+<li><em>Three Novels: Molloy / Malone Dies / The Unnamable</em> &ndash; Samuel Beckett</li>
+<li><em>The Electric Kool-Aid Acid Test</em> &ndash; Tom Wolfe</li>
+<li><em>The Lonely City</em> &ndash; Olivia Laing</li>
+<li><em>Against Interpretation and Other Essays</em> &ndash; Susan Sontag</li>
+<li><em>The Medium is the Massage</em> &ndash; Marshall McLuhan</li>
+<li><em>Understanding Media</em> &ndash; Marshall McLuhan</li>
+<li><em>In Cold Blood</em> &ndash; Truman Capote</li>
+<li><em>On Booze</em> &ndash; F. Scott Fitzgerald</li>
+<li><em>The Intelligent Woman&rsquo;s Guide to Socialism, Capitalism, Sovietism and Fascism</em> &ndash; George Bernard Shaw</li>
+<li><em>100 Things Every Designer Needs to Know About People</em> &ndash; Susan M. Weinschenk</li>
+<li><em>The Design of Everyday Things</em> &ndash; Donald A. Norman</li>
+<li><em>Thinking With Type</em> &ndash; Ellen Lupton</li>
+<li><em>Geometry of Design</em> &ndash; Kimberly Elam</li>
+<li><em>How to use graphic design to sell things, explain things, make things look better, make people laugh, make people cry, and (every once in a while) change the world</em> &ndash; Bierut Michael</li>
+<li><em>Keys to Drawing</em> &ndash; Bert Dodson</li>
+<li><em>Deep Work</em> &ndash; Cal Newport</li>
+<li><em>Good to Go</em> &ndash; Christie Aschwanden</li>
+<li><em>A Pale View of Hills</em> &ndash; Kazuo Ishiguro</li>
+<li><em>The Matter Factory</em> &ndash; Peter J.T. Morris</li>
+<li><em>Tristes Tropiques</em> &ndash; Claude Lévi-Strauss</li>
+<li><em>A History of the Jews</em> &ndash; Paul Johnson</li>
+<li><em>Society of the Spectacle</em> &ndash; Guy Debord</li>
+<li><em>The Development of Modern Chemistry</em> &ndash; Aaron J. Ihde</li>
+<li><em>Pensieri</em> &ndash; Blaise Pascal</li>
+<li><em>L&rsquo;ossessione dei numeri primi</em> &ndash; John Derbyshire</li>
+<li><em>The Crowded Universe</em> &ndash; Alan Boss</li>
+<li><em>Il programma dell&rsquo;universo</em> &ndash; Seth Lloyd</li>
+<li><em>Link</em> &ndash; Albert-László Barabási</li>
+<li><em>Dieci domande alle quali la scienza non può (ancora) rispondere</em> &ndash; Michael Hanlon</li>
+<li><em>Mappe della storia dell&rsquo;uomo</em> &ndash; Steve Olson</li>
+<li><em>Fatti di musica</em> &ndash; Daniel J. Levitin</li>
+<li><em>Alla ricerca della memoria</em> &ndash; Eric R. Kandel</li>
+<li><em>Origini</em> &ndash; Neil deGrasse Tyson</li>
+<li><em>La fine del tempo</em> &ndash; Julian Barbour</li>
+<li><em>Il velo di Einstein</em> &ndash; Anton Zeilinger</li>
+<li><em>Alfa e Omega</em> &ndash; Charles Seife</li>
+<li><em>La lunga estate</em> &ndash; Brian M. Fagan</li>
+<li><em>Human Action</em> &ndash; Ludwig von Mises</li>
+<li><em>Libertà e proprietà</em> &ndash; Ludwig von Mises</li>
+<li><em>America&rsquo;s Great Depression</em> &ndash; Murray N. Rothbard</li>
+<li><em>Socialism</em> &ndash; Ludwig von Mises</li>
+<li><em>Teoria e storia</em> &ndash; Ludwig von Mises</li>
+<li><em>Tutta la vita è risolvere problemi</em> &ndash; Karl Popper</li>
+<li><em>I Limiti Della Libertà</em> &ndash; James M. Buchanan</li>
+<li><em>Denationalisation of Money</em> &ndash; Friedrich A. Hayek</li>
+<li><em>Investigations into the Method of the Social Sciences with Special Reference to Economics</em> &ndash; Carl Menger</li>
+<li><em>Freedom and the Law</em> &ndash; Bruno Leoni</li>
+<li><em>The Machinery of Freedom</em> &ndash; David D. Friedman</li>
+<li><em>The Ethics of Liberty</em> &ndash; Murray N. Rothbard</li>
+<li><em>Democracy</em> &ndash; Hans-Hermann Hoppe</li>
+<li><em>Il sacco del Nord</em> &ndash; Luca Ricolfi</li>
+<li><em>On Power</em> &ndash; Bertrand de Jouvenel</li>
+<li><em>The Iron Wall</em> &ndash; Avi Shlaim</li>
+<li><em>Free Market Environmentalism</em> &ndash; Terry L. Anderson</li>
+<li><em>L&rsquo;arte di ottenere ragione</em> &ndash; Arthur Schopenhauer</li>
+<li><em>Così parlò Zarathustra</em> &ndash; Friedrich Nietzsche</li>
+<li><em>Psicologia delle folle</em> &ndash; Gustave Le Bon</li>
+<li><em>L&rsquo;Anticristo / Crepuscolo degli idoli / Ecce homo / La volontà di potenza</em> &ndash; Friedrich Nietzsche</li>
+<li><em>101 storie Zen</em> &ndash; Unknown</li>
+<li><em>Il principe</em> &ndash; Niccolò Machiavelli</li>
+<li><em>Il giudizio degli altri</em> &ndash; Arthur Schopenhauer</li>
+</ul>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
