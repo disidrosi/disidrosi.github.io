@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://tobiacavalli.com/'
 languageCode = "en-us"
 title = "Tobia Cavalli"
 
@@ -44,7 +44,7 @@ images = ["images/share.webp"]
 
 # This title is used as the site_name on the Hugo's internal opengraph
 # structured data template
-title = "Tobia's blog"
+title = "Tobia Cavalli"
 
 # Dates are displayed following the format below. For more information about
 # formatting, see https://gohugo.io/functions/format/
@@ -66,4 +66,3 @@ generateSocialCard = true
 # link by using a `hideReply` param in front matter.
 [params.author]
 name = "Tobia Cavalli"            # Your name as shown in the RSS feed metadata
-email = "cavalli.tobia@gmail.com" # Added to the footer so readers can reply to posts
