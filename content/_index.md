@@ -24,4 +24,4 @@ about chemistry, materials science, and anything else I might find interesting.
 Want to get in touch? You can write me at :email:
 [cavalli.tobia@gmail.com](mailto:cavalli.tobia@gmail.com) or you can reach out
 to me via Linkedin at :link:
-[tobia-cavalli](www.linkedin.com/in/tobia-cavalli).
+[tobia-cavalli](https://www.linkedin.com/in/tobia-cavalli).
