@@ -2,18 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tobia Cavalli</title>
-    <link>https://example.org/</link>
+    <link>https://tobiacavalli.com/</link>
     <description>Recent content on Tobia Cavalli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <managingEditor>cavalli.tobia@gmail.com (Tobia Cavalli)</managingEditor>
-    <webMaster>cavalli.tobia@gmail.com (Tobia Cavalli)</webMaster>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tobiacavalli.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CV</title>
-      <link>https://example.org/cv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>cavalli.tobia@gmail.com (Tobia Cavalli)</author>
-      <guid>https://example.org/cv/</guid>
+      <link>https://tobiacavalli.com/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tobiacavalli.com/cv/</guid>
       <description>Where I worked December 2022 &amp;ndash; current: R&amp;amp;D Project Manager @ Barberini, EssilorLuxottica, Pescara, Italy and Grünenplan, Germany.&#xA;June 2021 &amp;ndash; August 2021: Freelance Consultant @ Sastre Consulting Ltd, Vienna, Austria. Consultant for in-depth country analysis to help guide investment decisions.&#xA;April 2017 &amp;ndash; June 2017: Project Assistant @ Technische Universität Wien, Vienna, Austria. Research role in synthesis and characterization of polyimide-based membranes.&#xA;2004 &amp;ndash; 2017: Exhibition Assistant @ Lineasette Snc, Marostica, Italy.</description>
       <content:encoded><![CDATA[<h2 id="where-i-worked">Where I worked</h2>
 <p><strong>December 2022 &ndash; current:</strong> R&amp;D Project Manager @ Barberini, EssilorLuxottica, Pescara, Italy and Grünenplan, Germany.</p>
@@ -91,9 +89,9 @@
     </item>
     <item>
       <title>Reading</title>
-      <link>https://example.org/reading/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>cavalli.tobia@gmail.com (Tobia Cavalli)</author>
-      <guid>https://example.org/reading/</guid>
+      <link>https://tobiacavalli.com/reading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tobiacavalli.com/reading/</guid>
       <description>Currently reading How to Read a Book &amp;ndash; Mortimer J. Adler Books I read 2024 An Elegant Puzzle &amp;ndash; Will Larson Never Split the Difference &amp;ndash; Chris Voss Four Thousand Weeks &amp;ndash; Oliver Burkeman Good Strategy &amp;ndash; Bad Strategy &amp;ndash; Richard Rumelt Essentialism &amp;ndash; Greg McEwon 2021 Die unendliche Geschichte &amp;ndash; Michael Ende &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Die Vermessung der Welt &amp;ndash; Daniel Kehlmann &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Der Vorleser &amp;ndash; Bernhard Schlink &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Tschick &amp;ndash; Wolfgang Herrndorf &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; 2020 L&amp;rsquo;amica geniale &amp;ndash; Elena Ferrante &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; A Room of One&amp;rsquo;s Own &amp;ndash; Virginia Woolf &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Epitaph of a Small Winner &amp;ndash; Machado de Assis &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Uno, nessuno e centomila &amp;ndash; Luigi Pirandello &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Clear and Simple as the Truth &amp;ndash; Francis-Noel Thomas &amp;#x2b50;&amp;#x2b50;&amp;#x2b50;&amp;#x2b50; White Teeth &amp;ndash; Zadie Smith &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Storia di chi fugge e di chi resta &amp;ndash; Elena Ferrante &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Storia del nuovo cognome &amp;ndash; Elena Ferrante &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; On Writing &amp;ndash; Jorge Luis Borges &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Confessions of a Mask &amp;ndash; Yukio Mishima &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Story of the Eye &amp;ndash; Georges Bataille &amp;#x2b50;&amp;#x2b50;&amp;#x2b50; Flow &amp;ndash; Mihály Csíkszentmihályi &amp;#x2b50;&amp;#x2b50; Reasons to Stay Alive &amp;ndash; Matt Haig &amp;#x2b50;&amp;#x2b50; Scritti corsari &amp;ndash; Pier Paolo Pasolini &amp;#x2b50;&amp;#x2b50; L&amp;rsquo;Invenzione Occasionale &amp;ndash; Elena Ferrante &amp;#x2b50;&amp;#x2b50; The Presentation of Self in Everyday Life &amp;ndash; Erving Goffman &amp;#x2b50;&amp;#x2b50; The Sense of Style &amp;ndash; Steven Pinker &amp;#x2b50;&amp;#x2b50; Lezioni americane &amp;ndash; Italo Calvino &amp;#x2b50;&amp;#x2b50; The Procrastination Equation &amp;ndash; Piers Steel &amp;#x2b50; Bird by Bird &amp;ndash; Anne Lamott Procrastination &amp;ndash; Jane B.</description>
       <content:encoded><![CDATA[<h2 id="currently-reading">Currently reading</h2>
 <ul>
