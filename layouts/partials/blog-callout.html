@@ -1,0 +1,19 @@
+<div class="callout-container">
+    <h4 class="callout-heading">Tags for this post</h4>
+    <div class="callout-text">
+        {{ range (.GetTerms "tags") }}
+        <a class="blog-tags" href="{{ .RelPermalink }}">#{{ lower .LinkTitle }}</a>
+        {{ end }}
+    </div>
+</div>
+
+<div class="callout-container">
+    <h4 class="callout-heading">
+        Did you like my work?
+    </h4>
+    <div class="callout-text">
+        The content I share on this website is free from ads and free to read for everyone. I do not ask for donations
+        or contributions, but if you like what I wrote or you found a mistake, consider
+        <a href="mailto:{{ .Site.Params.mail}}">letting me know</a>!
+    </div>
+</div>

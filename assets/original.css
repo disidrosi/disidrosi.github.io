@@ -9,6 +9,7 @@ body {
   overflow-wrap: break-word;
   line-height: 1.5;
   color: #c9d1d9;
+  counter-reset: figureCounter;
 }
 
 h1,
@@ -176,4 +177,126 @@ figcaption > p {
   text-align: center;
   font-style: italic;
   color: #ccc;
+}
+
+.callout-container {
+  margin-top: 2em;
+  /* margin: 1em 0 1em 0; */
+}
+
+.callout-heading {
+  padding: 0.3em 1em;
+  margin: 0;
+  background-color: #ccc;
+  color: #1d1f27;
+  font-weight: bold;
+  border-radius: 6px 6px 0 0;
+}
+
+.callout-text {
+  border: 2px solid #ccc;
+  padding: 1em 1em;
+  border-radius: 0px 0px 6px 6px;
+  color: #fff;
+}
+
+.alert-heading {
+  padding: 0.3em 1em;
+  margin: 0;
+  background-color: #ccc;
+  color: #1d1f27;
+  font-weight: bold;
+  border-radius: 6px 6px 0 0;
+}
+
+.alert-text {
+  border: 2px solid #ccc;
+  margin: 0;
+  padding: 0 1em;
+  border-radius: 0px 0px 6px 6px;
+  color: #fff;
+}
+
+.alert-warning {
+  border: #e93147;
+  color: #e93147;
+}
+
+.alert-heading-warning {
+  background-color: #e93147;
+  color: #1d1f27;
+}
+
+.alert-tip {
+  border: 2px solid #e0ac00;
+  color: #ccc;
+}
+
+.alert-heading-tip {
+  background-color: #e0ac00;
+  color: #1d1f27;
+}
+
+.alert-note {
+  border: 2px solid #086ddd;
+  color: #ccc;
+}
+
+.alert-heading-note {
+  background-color: #086ddd;
+  color: #1d1f27;
+}
+
+.alert-important {
+  border: 2px solid #ec7500;
+  color: #ccc;
+}
+
+.alert-heading-important {
+  background-color: #ec7500;
+  color: #1d1f27;
+}
+
+.alert-success {
+  border: 2px solid #08b94e;
+  color: #ccc;
+}
+
+.alert-heading-success {
+  background-color: #08b94e;
+  color: #1d1f27;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  border: 0;
+  border-top: 2px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.styled-table thead tr {
+  background-color: #282a36;
+  color: #ccc;
+  text-align: left;
+  font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 0.4em 1em;
+  border: 0;
+  border-bottom: 0.5px dashed #ccc;
+}
+
+.md-figure-caption {
+  padding: 0em 2em 0em 2em;
+  font-style: italic;
+  font-size: 0.9em;
+  counter-increment: figureCounter;
+}
+
+.md-figure-caption::before {
+  content: "Figure " counter(figureCounter) ": ";
 }
