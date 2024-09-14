@@ -1,20 +1,129 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Blog on Tobia Cavalli</title>
-    <link>https://tobiacavalli.com/blog/</link>
-    <description>Recent content in Blog on Tobia Cavalli</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sat, 14 Sep 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tobiacavalli.com/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Calculating the CIE color of Chlorophyll A and B using Python</title>
-      <link>https://tobiacavalli.com/blog/cie-colors-python/</link>
-      <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://tobiacavalli.com/blog/cie-colors-python/</guid>
-      <description>&lt;h2 id=&#34;outline&#34;&gt;Outline&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#1-what-is-color&#34;&gt;1. What is color?&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#2-the-cie-colorimetry-system&#34;&gt;2. The CIE colorimetry system&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#3-python-code&#34;&gt;3. Python code&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#31-python-libraries-for-color-analysis&#34;&gt;3.1. Python libraries for color analysis&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#32-plot-settings&#34;&gt;3.2. Plot settings&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#33-plotting-the-cie-2-color-space&#34;&gt;3.3. Plotting the CIE (2°) color space&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#34-importing-and-scaling-data&#34;&gt;3.4. Importing and scaling data&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#35-converting-absorbance-to-transmittance&#34;&gt;3.5. Converting absorbance to transmittance&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#36-calculating-the-cie-colors&#34;&gt;3.6. Calculating the CIE colors&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#37-visualizing-colors-on-the-cie-color-space&#34;&gt;3.7. Visualizing colors on the CIE color space&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#4-conclusion&#34;&gt;4. Conclusion&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/cie-colors-python/#5-bibliography&#34;&gt;5. Bibliography&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&#xA;&#xA;&lt;div&gt;&#xA;    &lt;p class=&#34;alert-heading alert-heading-note&#34;&gt;&#xA;        &#xA;        &#xA;        Summary&#xA;        &#xA;    &lt;/p&gt;&#xA;    &lt;div class=&#34;alert-text alert-note&#34;&gt;&#xA;        &lt;p&gt;This post provides a step-by-step guide on how to calculate CIE colors from UV-Vis spectra using Python. We&amp;rsquo;ll look at the CIE colorimetry system and the underlying principles behind color perception.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="outline">Outline</h2>
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://tobiacavalli.com/images/favicon.png" />
+<title>Calculating the CIE color of Chlorophyll A and B using Python | Tobia Cavalli</title>
+<meta name="title" content="Calculating the CIE color of Chlorophyll A and B using Python" />
+<meta name="description" content="Guide to calculating CIE colors from UV-Vis spectra using Python" />
+<meta name="author" content="Tobia Cavalli" />
+<meta name="keywords" content="colorimetry,python,spectroscopy," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Calculating the CIE color of Chlorophyll A and B using Python" />
+<meta property="og:description" content="Guide to calculating CIE colors from UV-Vis spectra using Python" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tobiacavalli.com/blog/cie-colors-python/" />
+
+<meta property="og:image" content="https://tobiacavalli.com/images/social_card_bg_hu986599523371763084.webp"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-09-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-09-14T00:00:00+00:00" /><meta property="og:site_name" content="Tobia Cavalli" />
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tobiacavalli.com/images/social_card_bg_hu986599523371763084.webp"/>
+<meta name="twitter:title" content="Calculating the CIE color of Chlorophyll A and B using Python"/>
+<meta name="twitter:description" content="Guide to calculating CIE colors from UV-Vis spectra using Python"/>
+
+
+
+<meta itemprop="name" content="Calculating the CIE color of Chlorophyll A and B using Python">
+<meta itemprop="description" content="Guide to calculating CIE colors from UV-Vis spectra using Python"><meta itemprop="datePublished" content="2024-09-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2024-09-14T00:00:00+00:00" />
+<meta itemprop="wordCount" content="4000">
+
+<meta itemprop="image" content="https://tobiacavalli.com/images/social_card_bg_hu986599523371763084.webp"/>
+
+
+<meta itemprop="keywords" content="colorimetry,python,spectroscopy," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+    
+    <link href="/syntax.min.css" rel="stylesheet">
+  
+
+  
+
+  
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]      
+    }
+  };
+</script>
+  
+
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Tobia Cavalli</h1></a>
+<nav>
+  <a href="/">Home</a>
+
+  <a href="/blog/">Blog</a>
+
+  <a href="/cv/">CV</a>
+
+  <a href="/reading/">Reading</a>
+
+
+
+
+<a href='https://tobiacavalli.com/index.xml'>RSS</a></nav>
+</header>
+  <main id="main-content">
+
+<h1>Calculating the CIE color of Chlorophyll A and B using Python</h1>
+<p class="byline">
+  <time datetime='2024-09-14' pubdate>
+    2024-09-14
+  </time>
+  · Tobia Cavalli
+</p>
+
+<content>
+  <h2 id="outline">Outline</h2>
 <ul>
 <li><a href="/blog/cie-colors-python/#1-what-is-color">1. What is color?</a></li>
 <li><a href="/blog/cie-colors-python/#2-the-cie-colorimetry-system">2. The CIE colorimetry system</a></li>
@@ -890,7 +999,41 @@ $$<p>Using the normalized absorbance values, we can easily perform this conversi
 <p>(5) Fairman, H. S.; Brill, M. H.; Hemmendinger, H. How the Cie 1931 Color-Matching Functions Were Derived from Wright-Guild Data. <em>Color Res. Appl.</em> <strong>1997</strong>, <em>22</em> (1), 11&ndash;23. <a href="https://doi.org/10.1002/%28SICI%291520-6378%28199702%2922:1%3C11::AID-COL4%3E3.0.CO;2-7">https://doi.org/10.1002/(SICI)1520-6378(199702)22:1&lt;11::AID-COL4&gt;3.0.CO;2-7</a>.</p>
 <p>(6) Chazaux, M.; Schiphorst, C.; Lazzari, G.; Caffarri, S. Precise Estimation of Chlorophyll a , b and Carotenoid Content by Deconvolution of the Absorption Spectrum and New Simultaneous Equations for Chl Determination. <em>Plant J.</em> <strong>2022</strong>, <em>109</em> (6), 1630&ndash;1648. <a href="https://doi.org/10.1111/tpj.15643">https://doi.org/10.1111/tpj.15643</a>.</p>
 <p>(7) Otto, M. <em>Chemometrics: Statistics and Computer Application in Analytical Chemistry</em>, 4th ed.; Wiley-VCH Verlag: Weinheim, DE, 2024; pp. 137&ndash;140. <a href="https://doi.org/10.1002/9783527843800">https://doi.org/10.1002/9783527843800</a>.</p>
-]]></content:encoded>
-    </item>
-  </channel>
-</rss>
+
+</content>
+
+<section><div class="callout-container">
+    <h4 class="callout-heading">Tags for this post</h4>
+    <div class="callout-text">
+        
+        <a class="blog-tags" href="/tags/colorimetry/">#colorimetry</a>
+        
+        <a class="blog-tags" href="/tags/python/">#python</a>
+        
+        <a class="blog-tags" href="/tags/spectroscopy/">#spectroscopy</a>
+        
+    </div>
+</div>
+
+<div class="callout-container">
+    <h4 class="callout-heading">
+        Did you like my work?
+    </h4>
+    <div class="callout-text">
+        The content I share on this website is free from ads and free to read for everyone. I do not ask for donations
+        or contributions, but if you like what I wrote or you found a mistake, consider
+        <a href="mailto:cavalli.tobia@gmail.com">letting me know</a>!
+    </div>
+</div></section>
+
+
+  </main>
+  <footer><hr>
+<small>
+  Copyright © Tobia Cavalli 2024. Opinions listed here are my own and not representative of any of my employers, past, future, and/or present.
+</small></footer>
+
+    
+</body>
+
+</html>

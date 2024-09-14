@@ -2,6 +2,7 @@
 title: "Home"
 menu: "main"
 weight: 1
+kind: "home"
 ---
 
 # Hi there! :wave:
