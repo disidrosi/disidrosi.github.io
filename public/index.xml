@@ -573,22 +573,22 @@
 <p>Given the subjectivity of color perception, how can we objectively measure and communicate colors? The <strong>CIE colorimetry system</strong> provides a solution by using <strong>color matching</strong> experiments to establish a statistical representation of human color vision, which provides a standardized method for relating spectral light distributions to perceived colors.</p>
 <p>In these experiments, observers compare two stimuli under controlled conditions. If they appear identical despite their physical differences, they are considered perceptually equivalent. The CIE system, developed by the Commission Internationale d&rsquo;Éclairage, quantifies the relationship between wavelength distributions and perceived colors.<sup>3,4</sup></p>
 <figure>
-    <img src="img/cie_color_matching.png" alt="CIE color matching experiment"><figcaption class="md-figure-caption">CIE color matching experiment. Adapted from literature.</figcaption></figure><p>The CIE 1931 model, introduced in 1931, uses additive color mixing based on <strong>Color Matching Functions (CMFs)</strong>. These functions represent the spectral sensitivity of the three types of cone cells in the human eye, denoted as $\bar{x}$, $\bar{y}$, and $\bar{z}$.</p>
+    <img src="img/cie_color_matching.png" alt="CIE color matching experiment"><figcaption class="md-figure-caption">CIE color matching experiment. Adapted from literature.</figcaption></figure><p>The CIE 1931 model, introduced in 1931, uses additive color mixing based on <strong>Color Matching Functions (CMFs)</strong>. These functions represent the spectral sensitivity of the three types of cone cells in the human eye, denoted as \(\bar{x}\), \(\bar{y}\), and \(\bar{z}\).</p>
 <p>CMFs are derived from standardized experiments involving foveal vision, specific field sizes, dark surroundings, and average observations from multiple individuals, providing a statistical measure of color receptor sensitivity.</p>
-<p>By convolution of the sample spectrum $M(\lambda)$ with the CMFs, we calculate <strong>tristimulus values</strong> $X$, $Y$, and $Z$. These values represent the amounts of the three primary colors (red, green, and blue) required to match the given color.</p>
+<p>By convolution of the sample spectrum \(M(\lambda)\) with the CMFs, we calculate <strong>tristimulus values</strong> \(X\), \(Y\), and \(Z\). These values represent the amounts of the three primary colors (red, green, and blue) required to match the given color.</p>
 $$
 \begin{align}
     X &= \int_{380}^{780} M(\lambda) \bar{x}(\lambda)  \, d\lambda \tag{1}\\
     Y &= \int_{380}^{780} M(\lambda) \bar{y}(\lambda)  \, d\lambda \tag{2}\\
     Z &= \int_{380}^{780} M(\lambda) \bar{z}(\lambda)  \, d\lambda \tag{3}
 \end{align}
-$$<p>The tristimulus values define a point in a three-dimensional color space. However, for practical purposes, this space is often reduced to two dimensions using the $x$ and $y$ chromaticity coordinates:</p>
+$$<p>The tristimulus values define a point in a three-dimensional color space. However, for practical purposes, this space is often reduced to two dimensions using the \(x\) and \(y\) chromaticity coordinates:</p>
 $$
 \begin{align}
     x &= \frac{X}{X + Y + Z} \tag{4}\\
     y &= \frac{Y}{X + Y + Z} \tag{5}
 \end{align}
-$$<p>The $x$ and $y$ coordinates uniquely specify a color within the CIE color space, enabling a standardized and objective representation of color perception. This system has been (and is!) used in various industries, including printing, photography, lighting design, and digital media, where accurate color reproduction and communication are essential.</p>
+$$<p>The \(x\) and \(y\) coordinates uniquely specify a color within the CIE color space, enabling a standardized and objective representation of color perception. This system has been (and is!) used in various industries, including printing, photography, lighting design, and digital media, where accurate color reproduction and communication are essential.</p>
 <h2 id="3-python-code">3. Python code</h2>
 <h3 id="31-python-libraries-for-color-analysis">3.1. Python libraries for color analysis</h3>
 <p>Before diving into the code, let&rsquo;s import the necessary Python libraries:</p>
@@ -797,7 +797,7 @@ $$<p>The $x$ and $y$ coordinates uniquely specify a color within the CIE color s
         </tr>
     </tbody>
 </table><p><em>1001 rows × 4 columns</em></p>
-<p>The imported data represents the absorbance ($A$) of each chlorophyll type, which is measured at regular intervals of light (lambda). In simpler terms, absorbance indicates the amount of light absorbed by a specific molecule at a particular wavelength. Let&rsquo;s take a quick look at these spectra:</p>
+<p>The imported data represents the absorbance (\(A\)) of each chlorophyll type, which is measured at regular intervals of light (lambda). In simpler terms, absorbance indicates the amount of light absorbed by a specific molecule at a particular wavelength. Let&rsquo;s take a quick look at these spectra:</p>
 
 
 
@@ -835,7 +835,7 @@ $$<p>The $x$ and $y$ coordinates uniquely specify a color within the CIE color s
 <p>The simplest approach for this is to normalize the spectra, transforming them into a range between 0 and 1 while preserving their overall shapes. We&rsquo;ll use a technique called range scaling (also known as MinMax scaling), described by the following equation:<sup>7</sup></p>
 $$
     x_{scaled} = \frac{x - x_{min}}{x_{max} - x_{min}} \tag{6}
-$$<p>Here, $x$ represents a single measured value, $x_{min}$​ and $x_{max}$​ represent the minimum and maximum values within the spectrum, respectively, and $x_{scaled}$ represents the resulting normalized value.</p>
+$$<p>Here, \(x\) represents a single measured value, \(x_{min}\)​ and \(x_{max}\)​ represent the minimum and maximum values within the spectrum, respectively, and \(x_{scaled}\) represents the resulting normalized value.</p>
 <p>While the <code>scikit-learn</code> library offers built-in functions for this task (see <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html">here</a>), I prefer to avoid introducing unnecessary dependencies for a simple function. Therefore, we&rsquo;ll define a custom function named normalize to perform the MinMax scaling:</p>
 
 
@@ -984,7 +984,7 @@ $$<p>Here, $x$ represents a single measured value, $x_{min}$​ and $x_{max}$​
 </span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span></span></code></pre></div><figure>
     <img src="img/chl_a_b_UV_Vis_abs_norm.png" alt="Normalized UV-Vis absorption spectra of Chlorophyll A and B in 70% and 90 % acetone solutions."><figcaption class="md-figure-caption">Normalized UV-Vis absorption spectra of Chlorophyll A and B in 70% and 90 % acetone solutions.</figcaption></figure><h3 id="35-converting-absorbance-to-transmittance">3.5. Converting absorbance to transmittance</h3>
 <p>Before calculating the colors from our spectra, it&rsquo;s important to remember that these spectra represent the <strong>light absorbed</strong> by the molecules. To determine the color we actually perceive, we need to convert absorbance to <strong>transmittance</strong>. Transmittance represents the light that passes through the molecules and reaches our eyes.</p>
-<p>The conversion from absorbance ($A$) to transmittance ($T$) is straightforward and follows this equation:</p>
+<p>The conversion from absorbance (\(A\)) to transmittance (\(T\)) is straightforward and follows this equation:</p>
 $$
     T = 10^{(2 - A)} \tag{7}
 $$<p>Using the normalized absorbance values, we can easily perform this conversion by defining the <code>abs_to_trans</code> function:</p>
@@ -1174,10 +1174,10 @@ $$<p>Using the normalized absorbance values, we can easily perform this conversi
 <li><strong>Select the color matching functions:</strong> We&rsquo;ll use the CIE 1931 system, specified as <code>cie_2_1931</code> in <code>colour-science</code>.</li>
 <li><strong>Select the appropriate illuminant:</strong> Since we&rsquo;re interested in daylight conditions, we&rsquo;ll use the <code>D65</code> illuminant.</li>
 <li><strong>Create spectral distributions:</strong> For each spectrum, we&rsquo;ll create a <code>SpectralDistribution</code> object from <code>colour-science</code>. This provides useful methods like <code>interpolate</code>, which is necessary to ensure the spectra conform to CIE specifications (1 nm intervals).</li>
-<li><strong>Calculate CIE $XYZ$ coordinates:</strong> Using the <code>sd_to_XYZ</code> function, we&rsquo;ll compute the CIE XYZ coordinates for each spectrum based on the spectral distribution, color matching functions, and illuminant.</li>
-<li>Convert to CIE $xy$ coordinated: The $XYZ$ coordinates are then converted to CIE $xy$ coordinates, which are more convenient for plotting on the color space.</li>
+<li><strong>Calculate CIE \(XYZ\) coordinates:</strong> Using the <code>sd_to_XYZ</code> function, we&rsquo;ll compute the CIE XYZ coordinates for each spectrum based on the spectral distribution, color matching functions, and illuminant.</li>
+<li>Convert to CIE \(xy\) coordinated: The \(XYZ\) coordinates are then converted to CIE \(xy\) coordinates, which are more convenient for plotting on the color space.</li>
 </ul>
-<p>This code iterates over each spectrum, calculates the CIE $XYZ$ coordinates, converts them to $xy$ coordinates, and stores the results in two lists: <code>chl_abs_clr</code> for the absorbance-based colors and <code>chl_transm_clr</code> for the transmittance-based colors. Finally, the results are merged into a single DataFrame for easier analysis.</p>
+<p>This code iterates over each spectrum, calculates the CIE \(XYZ\) coordinates, converts them to \(xy\) coordinates, and stores the results in two lists: <code>chl_abs_clr</code> for the absorbance-based colors and <code>chl_transm_clr</code> for the transmittance-based colors. Finally, the results are merged into a single DataFrame for easier analysis.</p>
 
 
 
@@ -1277,7 +1277,7 @@ $$<p>Using the normalized absorbance values, we can easily perform this conversi
         </tr>
     </tbody>
 </table><h3 id="37-visualizing-colors-on-the-cie-color-space">3.7. Visualizing colors on the CIE color space</h3>
-<p>Now that we have the $x$ and $y$ values for both absorbed and transmitted colors, let&rsquo;s plot them on the CIE 1931 color space. This code first plots the CIE color space as we have seen <a href="/blog/cie-colors-python/#33-plotting-the-cie-2-color-space">at the beginning</a>. Then, it iterates through the colors DataFrame and plots the absorbed colors (based on the <code>x_A</code> and <code>y_A</code> columns) as scattered points on the color space with corresponding labels, colors, and edge colors.</p>
+<p>Now that we have the \(x\) and \(y\) values for both absorbed and transmitted colors, let&rsquo;s plot them on the CIE 1931 color space. This code first plots the CIE color space as we have seen <a href="/blog/cie-colors-python/#33-plotting-the-cie-2-color-space">at the beginning</a>. Then, it iterates through the colors DataFrame and plots the absorbed colors (based on the <code>x_A</code> and <code>y_A</code> columns) as scattered points on the color space with corresponding labels, colors, and edge colors.</p>
 
 
 

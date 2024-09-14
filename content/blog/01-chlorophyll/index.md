@@ -62,11 +62,11 @@ In these experiments, observers compare two stimuli under controlled conditions.
 
 ![CIE color matching experiment](img/cie_color_matching.png "CIE color matching experiment. Adapted from literature.")
 
-The CIE 1931 model, introduced in 1931, uses additive color mixing based on **Color Matching Functions (CMFs)**. These functions represent the spectral sensitivity of the three types of cone cells in the human eye, denoted as $\bar{x}$, $\bar{y}$, and $\bar{z}$.
+The CIE 1931 model, introduced in 1931, uses additive color mixing based on **Color Matching Functions (CMFs)**. These functions represent the spectral sensitivity of the three types of cone cells in the human eye, denoted as \(\bar{x}\), \(\bar{y}\), and \(\bar{z}\).
 
 CMFs are derived from standardized experiments involving foveal vision, specific field sizes, dark surroundings, and average observations from multiple individuals, providing a statistical measure of color receptor sensitivity.
 
-By convolution of the sample spectrum $M(\lambda)$ with the CMFs, we calculate **tristimulus values** $X$, $Y$, and $Z$. These values represent the amounts of the three primary colors (red, green, and blue) required to match the given color.
+By convolution of the sample spectrum \(M(\lambda)\) with the CMFs, we calculate **tristimulus values** \(X\), \(Y\), and \(Z\). These values represent the amounts of the three primary colors (red, green, and blue) required to match the given color.
 
 $$
 \begin{align}
@@ -76,7 +76,7 @@ $$
 \end{align}
 $$
 
-The tristimulus values define a point in a three-dimensional color space. However, for practical purposes, this space is often reduced to two dimensions using the $x$ and $y$ chromaticity coordinates:
+The tristimulus values define a point in a three-dimensional color space. However, for practical purposes, this space is often reduced to two dimensions using the \(x\) and \(y\) chromaticity coordinates:
 
 $$
 \begin{align}
@@ -85,7 +85,7 @@ $$
 \end{align}
 $$
 
-The $x$ and $y$ coordinates uniquely specify a color within the CIE color space, enabling a standardized and objective representation of color perception. This system has been (and is!) used in various industries, including printing, photography, lighting design, and digital media, where accurate color reproduction and communication are essential.
+The \(x\) and \(y\) coordinates uniquely specify a color within the CIE color space, enabling a standardized and objective representation of color perception. This system has been (and is!) used in various industries, including printing, photography, lighting design, and digital media, where accurate color reproduction and communication are essential.
 
 ## 3. Python code
 
@@ -224,7 +224,7 @@ measured_samples
 
 _1001 rows × 4 columns_
 
-The imported data represents the absorbance ($A$) of each chlorophyll type, which is measured at regular intervals of light (lambda). In simpler terms, absorbance indicates the amount of light absorbed by a specific molecule at a particular wavelength. Let's take a quick look at these spectra:
+The imported data represents the absorbance (\(A\)) of each chlorophyll type, which is measured at regular intervals of light (lambda). In simpler terms, absorbance indicates the amount of light absorbed by a specific molecule at a particular wavelength. Let's take a quick look at these spectra:
 
 ```python
 fig, ax = plt.subplots(1, 1, figsize=figure_size)
@@ -269,7 +269,7 @@ $$
     x_{scaled} = \frac{x - x_{min}}{x_{max} - x_{min}} \tag{6}
 $$
 
-Here, $x$ represents a single measured value, $x_{min}$​ and $x_{max}$​ represent the minimum and maximum values within the spectrum, respectively, and $x_{scaled}$ represents the resulting normalized value.
+Here, \(x\) represents a single measured value, \(x_{min}\)​ and \(x_{max}\)​ represent the minimum and maximum values within the spectrum, respectively, and \(x_{scaled}\) represents the resulting normalized value.
 
 While the `scikit-learn` library offers built-in functions for this task (see [here](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)), I prefer to avoid introducing unnecessary dependencies for a simple function. Therefore, we'll define a custom function named normalize to perform the MinMax scaling:
 
@@ -343,7 +343,7 @@ plt.show()
 
 Before calculating the colors from our spectra, it's important to remember that these spectra represent the **light absorbed** by the molecules. To determine the color we actually perceive, we need to convert absorbance to **transmittance**. Transmittance represents the light that passes through the molecules and reaches our eyes.
 
-The conversion from absorbance ($A$) to transmittance ($T$) is straightforward and follows this equation:
+The conversion from absorbance (\(A\)) to transmittance (\(T\)) is straightforward and follows this equation:
 
 $$
     T = 10^{(2 - A)} \tag{7}
@@ -460,10 +460,10 @@ Now that we have the normalized absorbance and transmittance spectra, we can fin
 - **Select the color matching functions:** We'll use the CIE 1931 system, specified as `cie_2_1931` in `colour-science`.
 - **Select the appropriate illuminant:** Since we're interested in daylight conditions, we'll use the `D65` illuminant.
 - **Create spectral distributions:** For each spectrum, we'll create a `SpectralDistribution` object from `colour-science`. This provides useful methods like `interpolate`, which is necessary to ensure the spectra conform to CIE specifications (1 nm intervals).
-- **Calculate CIE $XYZ$ coordinates:** Using the `sd_to_XYZ` function, we'll compute the CIE XYZ coordinates for each spectrum based on the spectral distribution, color matching functions, and illuminant.
-- Convert to CIE $xy$ coordinated: The $XYZ$ coordinates are then converted to CIE $xy$ coordinates, which are more convenient for plotting on the color space.
+- **Calculate CIE \(XYZ\) coordinates:** Using the `sd_to_XYZ` function, we'll compute the CIE XYZ coordinates for each spectrum based on the spectral distribution, color matching functions, and illuminant.
+- Convert to CIE \(xy\) coordinated: The \(XYZ\) coordinates are then converted to CIE \(xy\) coordinates, which are more convenient for plotting on the color space.
 
-This code iterates over each spectrum, calculates the CIE $XYZ$ coordinates, converts them to $xy$ coordinates, and stores the results in two lists: `chl_abs_clr` for the absorbance-based colors and `chl_transm_clr` for the transmittance-based colors. Finally, the results are merged into a single DataFrame for easier analysis.
+This code iterates over each spectrum, calculates the CIE \(XYZ\) coordinates, converts them to \(xy\) coordinates, and stores the results in two lists: `chl_abs_clr` for the absorbance-based colors and `chl_transm_clr` for the transmittance-based colors. Finally, the results are merged into a single DataFrame for easier analysis.
 
 ```python
 # Define color matching functions
@@ -524,10 +524,9 @@ colors
 | 2    | chl_b_70   | 0.3558  | 0.4365  | 0.2036  | 0.0930  |
 | 3    | chl_b_90   | 0.3538  | 0.4334  | 0.2048  | 0.0904  |
 
-
 ### 3.7. Visualizing colors on the CIE color space
 
-Now that we have the $x$ and $y$ values for both absorbed and transmitted colors, let's plot them on the CIE 1931 color space. This code first plots the CIE color space as we have seen [at the beginning](#33-plotting-the-cie-2-color-space). Then, it iterates through the colors DataFrame and plots the absorbed colors (based on the `x_A` and `y_A` columns) as scattered points on the color space with corresponding labels, colors, and edge colors.
+Now that we have the \(x\) and \(y\) values for both absorbed and transmitted colors, let's plot them on the CIE 1931 color space. This code first plots the CIE color space as we have seen [at the beginning](#33-plotting-the-cie-2-color-space). Then, it iterates through the colors DataFrame and plots the absorbed colors (based on the `x_A` and `y_A` columns) as scattered points on the color space with corresponding labels, colors, and edge colors.
 
 ```python
 # Instantiate figure and axes
