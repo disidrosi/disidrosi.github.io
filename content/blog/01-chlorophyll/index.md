@@ -96,7 +96,7 @@ Before diving into the code, let's import the necessary Python libraries:
 - `numpy`: This library is used for numerical computing. It defines efficient data structures and mathematical functions for working with arrays and matrices.
 - `pandas`: This library is used for data analysis and manipulation. It defines data structures like DataFrames and Series for handling tabular data.
 - `matplotlib`: This library is a standard for data visualization. It includes plotting functions for creating various types of charts and graphs.
-- `colour-science`: This library provides specific tools for colorimetric analysis. It supports most major color systems and boasts powerful color space conversions, color difference metrics, and other color-related operations. You can read the corresponding documentation at [https://colour.readthedocs.io](https://colour.readthedocs.io).
+- `colour-science`: This library provides specific tools for colorimetric analysis. It supports most major color systems and includes many color space conversions utilities, color difference metrics, and other color-related operations. You can read the corresponding documentation at [https://colour.readthedocs.io](https://colour.readthedocs.io).
 
 If you'd like to replicate this analysis on your machine, you can install these libraries using the following `pip` command in your terminal or PowerShell (assuming you don't have them installed already):
 
@@ -129,7 +129,7 @@ Here, I am importing `seaborn`, a powerful library for statistical data visualiz
 
 In addition, I am importing `golden_ratio` from the `scipy` library, which is equivalent to defining a variable containing the value 1.618. This is a mathematical constant als known as the _divine proportion_, which I will use to set the aspect ratio of the plots, specifically the ratio between the shorter and longer axes. It is absolutely not necessary, but I find that it helps create a more aesthetically pleasing visual balance.
 
-```python
+```python {linenostart=9}
 import seaborn as sns
 from scipy.constants import golden_ratio
 
@@ -157,7 +157,7 @@ We're going to use the `plot_chromaticity_diagram_CIE1931` function to show the 
 
 By plotting this color space, we can get a better feel for the colors we can perceive and compare different colors to see how similar or different they are. We'll use it later to analyze colors and create a color model.
 
-```python
+```python {hl_lines=["5-11"],linenostart=26}
 # Instantiate figure and axes
 fig, ax = plt.subplots(1, 1, figsize=(7, 7))
 
@@ -199,7 +199,7 @@ plt.show()
 
 Let's see if we can calculate the actual color of some interesting molecules! In this example, we'll determine the colors of Chlorophyll A and Chlorophyll B in solution, two pigments essential for photosynthesis in plants. The data used here consists of pre-recorded UV-Vis spectra for Chlorophyll A and B in both 70% and 90% acetone solutions, obtained from a scientific publication.<sup>6</sup> You can download the `.csv` file containing this data [here](include/chlorophyll_uv_vis.csv).
 
-```python
+```python {linenostart=59}
 column_names = ["lambda", "chl_a_70", "chl_a_90", "chl_b_70", "chl_b_90"]
 measured_samples = pd.read_csv(
     "chlorophyll_uv_vis.csv", names=column_names, header=0, index_col="lambda"
@@ -226,7 +226,7 @@ _1001 rows × 4 columns_
 
 The imported data represents the absorbance (\(A\)) of each chlorophyll type, which is measured at regular intervals of light (lambda). In simpler terms, absorbance indicates the amount of light absorbed by a specific molecule at a particular wavelength. Let's take a quick look at these spectra:
 
-```python
+```python {hl_lines=["12-15"],linenostart=60}
 fig, ax = plt.subplots(1, 1, figsize=figure_size)
 
 # Define the labels for the plot's legend
@@ -239,7 +239,9 @@ chl_labels = [
 
 # Iterate over dataframe and plot each spectrum
 for col, sample_label in zip(measured_samples.columns, chl_labels):
-    ax.plot(measured_samples.index, measured_samples[col], label=sample_label)
+    ax.plot(measured_samples.index,
+            measured_samples[col],
+            label=sample_label)
 
 # Ticks separation
 ax.xaxis.set_major_locator(tck.MultipleLocator(50))
@@ -273,7 +275,7 @@ Here, \(x\) represents a single measured value, \(x_{min}\)​ and \(x_{max}\)�
 
 While the `scikit-learn` library offers built-in functions for this task (see [here](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)), I prefer to avoid introducing unnecessary dependencies for a simple function. Therefore, we'll define a custom function named normalize to perform the MinMax scaling:
 
-```python
+```python {linenostart=86}
 def normalize(x: pd.Series | np.ndarray) -> pd.Series | np.ndarray:
     """MinMax scaling from 0 to 1
 
@@ -291,7 +293,7 @@ This function takes a pandas Series or NumPy array (`x`) as input and performs t
 
 Now, we can leverage vectorization to efficiently apply the `normalize` function to the entire DataFrame containing the absorbance values. This will create a new DataFrame with the normalized values, stored in the variable `abs_norm`:
 
-```python
+```python {linenostart=97}
 abs_norm = normalize(measured_samples)
 abs_norm
 ```
@@ -315,11 +317,13 @@ _1001 rows × 4 columns_
 
 The resulting DataFrame (`abs_norm`) now has absorbance values between 0 and 1, which can be verified by plotting them:
 
-```python
+```python {linenostart=99}
 fig, ax = plt.subplots(1, 1, figsize=figure_size)
 
 for col, sample_label in zip(abs_norm.columns, chl_labels):
-    ax.plot(abs_norm.index, normalize(abs_norm[col]), label=f"{sample_label} norm")
+    ax.plot(abs_norm.index,
+            normalize(abs_norm[col]),
+            label=f"{sample_label} norm")
 
 # Ticks separation
 ax.xaxis.set_major_locator(tck.MultipleLocator(50))
@@ -351,7 +355,7 @@ $$
 
 Using the normalized absorbance values, we can easily perform this conversion by defining the `abs_to_trans` function:
 
-```python
+```python {linenostart=120}
 def abs_to_trans(A: pd.Series | np.ndarray) -> pd.Series | np.ndarray:
     """Convert absorbance to transmittance
 
@@ -369,7 +373,7 @@ This function takes a Series or array of absorbance values as input and returns 
 
 Now, we can apply this function to the entire `abs_norm` DataFrame to efficiently calculate the transmittance for each spectrum. This will create a new DataFrame (`transm_norm`) containing the normalized transmittance values for each chlorophyll sample.
 
-```python
+```python {linenostart=131}
 transm_norm = abs_to_trans(abs_norm)
 transm_norm
 ```
@@ -393,7 +397,7 @@ _1001 rows × 4 columns_
 
 Let's verify that the conversion to transmittance worked as expected by plotting the new values:
 
-```python
+```python {hl_lines=["3-4"],linenostart=133}
 fig, ax = plt.subplots(1, 1, figsize=figure_size)
 
 for col, sample_label in zip(transm_norm.columns, chl_labels):
@@ -419,7 +423,7 @@ plt.show()
 
 As expected, the normalized transmittance values range between 0 and 1 (or 0% and 100% transmittance). We can see the inverse relationship between absorbance and transmittance: higher absorbance corresponds to lower transmittance, and vice versa. For a more direct comparison, we can visualize both absorbance and transmittance in a single plot.
 
-```python
+```python {hl_lines=["4-5", "8-9"],linenostart=152}
 fig, ax = plt.subplots(2, 1, sharex=True, figsize=figure_size)
 
 # Iterate over absorbance dataframe
@@ -465,7 +469,7 @@ Now that we have the normalized absorbance and transmittance spectra, we can fin
 
 This code iterates over each spectrum, calculates the CIE \(XYZ\) coordinates, converts them to \(xy\) coordinates, and stores the results in two lists: `chl_abs_clr` for the absorbance-based colors and `chl_transm_clr` for the transmittance-based colors. Finally, the results are merged into a single DataFrame for easier analysis.
 
-```python
+```python {linenostart=181}
 # Define color matching functions
 cmfs = cl.MSDS_CMFS["cie_2_1931"]
 
@@ -528,7 +532,7 @@ colors
 
 Now that we have the \(x\) and \(y\) values for both absorbed and transmitted colors, let's plot them on the CIE 1931 color space. This code first plots the CIE color space as we have seen [at the beginning](#33-plotting-the-cie-2-color-space). Then, it iterates through the colors DataFrame and plots the absorbed colors (based on the `x_A` and `y_A` columns) as scattered points on the color space with corresponding labels, colors, and edge colors.
 
-```python
+```python {linenostart=230}
 # Instantiate figure and axes
 fig, ax = plt.subplots(1, 1, figsize=figure_size)
 
@@ -583,7 +587,7 @@ plt.show()
 
 To visualize the transmitted colors, we can reuse most of the existing code and simply modify the data source:
 
-```python
+```python {linenostart=278}
 # Instantiate figure and axes
 fig, ax = plt.subplots(1, 1, figsize=figure_size)
 

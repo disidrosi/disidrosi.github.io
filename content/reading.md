@@ -6,12 +6,14 @@ weight: 2
 
 ## Currently reading
 
-- _How to Read a Book_ -- Mortimer J. Adler
+- _Getting to Yes_ -- Roger Fisher and William Ury
 
 ## Books I read
 
 ### 2024
 
+- _Pieces of the Action_ -- Vannevar Bush
+- _How to Read a Book_ -- Mortimer J. Adler
 - _An Elegant Puzzle_ -- Will Larson
 - _Never Split the Difference_ -- Chris Voss
 - _Four Thousand Weeks_ -- Oliver Burkeman
