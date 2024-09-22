@@ -41,7 +41,7 @@ math: true
 
 ## 1. What is color?
 
-Color isn't just a thing; it's a _feeling_. It's how our brains interpret light, and it's pretty subjective. Think about it: the same light can look different to different people, even under the same conditions. From a pure physical and biological point of view, it is a phenomenon arising from the human eye's interpretation of light within the visible spectrum (380--780 nm). It's not a physical property of light itself but a sensation created by the brain's processing of visual information.
+Color isn't just a thing; it's a _feeling_. It's how our brains interpret light, and it's pretty subjective. Think about it: the same light can look different to different people, even under the same conditions. From a pure physical and biological point of view, it is a phenomenon arising from the human eye's interpretation of light within the visible spectrum (380--780 nm). It's not a physical property of light itself, but a sensation created by the brain's processing of visual information.
 
 Factors like lighting conditions, color vision deficiencies, and individual variations can influence how we perceive color. This subjectivity makes traditional scientific measurements, like spectroscopy, insufficient for directly quantifying color perception, as they focus only on the physical properties of light without considering their corresponding perceptual aspects.
 
@@ -125,9 +125,9 @@ Here, I am importing `seaborn`, a powerful library for statistical data visualiz
 
 - `set_context("notebook")`: This setting ensures the plots are scaled appropriately for notebook environments, adjusting factors like label size and line thickness.
 - `set_style("ticks")`: This sets the plot style to include ticks on the axes, providing visual reference points for the data.
-- `set_palette("colorblind")`: Sets the default palette of colors that will be used for plottings, electing a color palette specifically designed for viewers with color blindness. The `color_codes` option remaps `matplotlib`'s shorthand color codes (such as `r`, `g`, `b`, etc.).
+- `set_palette("colorblind")`: Sets the default palette of colors that will be used for plots, selecting a color palette specifically designed for viewers with color blindness. The `color_codes` option remaps `matplotlib`'s shorthand color codes (such as `r`, `g`, `b`, etc.).
 
-In addition, I am importing `golden_ratio` from the `scipy` library, which is equivalent to defining a variable containing the value 1.618. This is a mathematical constant als known as the _divine proportion_, which I will use to set the aspect ratio of the plots, specifically the ratio between the shorter and longer axes. It is absolutely not necessary, but I find that it helps create a more aesthetically pleasing visual balance.
+In addition, I am importing `golden_ratio` from the `scipy` library, which is equivalent to defining a variable containing the value 1.618. This is a mathematical constant also known as the _divine proportion_, which I will use to set the aspect ratio of the plots, specifically the ratio between the shorter and longer axes. It is absolutely not necessary, but I find that it helps create a more aesthetically pleasing visual balance.
 
 ```python {linenostart=9}
 import seaborn as sns
@@ -273,7 +273,7 @@ $$
 
 Here, \(x\) represents a single measured value, \(x_{min}\)​ and \(x_{max}\)​ represent the minimum and maximum values within the spectrum, respectively, and \(x_{scaled}\) represents the resulting normalized value.
 
-While the `scikit-learn` library offers built-in functions for this task (see [here](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)), I prefer to avoid introducing unnecessary dependencies for a simple function. Therefore, we'll define a custom function named normalize to perform the MinMax scaling:
+While the `scikit-learn` library offers built-in functions for this task (see [here](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)), I prefer to avoid introducing unnecessary dependencies for a simple function. Therefore, we'll define a custom function named `normalize` to perform the MinMax scaling:
 
 ```python {linenostart=86}
 def normalize(x: pd.Series | np.ndarray) -> pd.Series | np.ndarray:
@@ -465,7 +465,7 @@ Now that we have the normalized absorbance and transmittance spectra, we can fin
 - **Select the appropriate illuminant:** Since we're interested in daylight conditions, we'll use the `D65` illuminant.
 - **Create spectral distributions:** For each spectrum, we'll create a `SpectralDistribution` object from `colour-science`. This provides useful methods like `interpolate`, which is necessary to ensure the spectra conform to CIE specifications (1 nm intervals).
 - **Calculate CIE \(XYZ\) coordinates:** Using the `sd_to_XYZ` function, we'll compute the CIE XYZ coordinates for each spectrum based on the spectral distribution, color matching functions, and illuminant.
-- Convert to CIE \(xy\) coordinated: The \(XYZ\) coordinates are then converted to CIE \(xy\) coordinates, which are more convenient for plotting on the color space.
+- Convert to CIE \(xy\) coordinates: The \(XYZ\) coordinates are then converted to CIE \(xy\) coordinates, which are more convenient for plotting on the color space.
 
 This code iterates over each spectrum, calculates the CIE \(XYZ\) coordinates, converts them to \(xy\) coordinates, and stores the results in two lists: `chl_abs_clr` for the absorbance-based colors and `chl_transm_clr` for the transmittance-based colors. Finally, the results are merged into a single DataFrame for easier analysis.
 
@@ -530,7 +530,7 @@ colors
 
 ### 3.7. Visualizing colors on the CIE color space
 
-Now that we have the \(x\) and \(y\) values for both absorbed and transmitted colors, let's plot them on the CIE 1931 color space. This code first plots the CIE color space as we have seen [at the beginning](#33-plotting-the-cie-2-color-space). Then, it iterates through the colors DataFrame and plots the absorbed colors (based on the `x_A` and `y_A` columns) as scattered points on the color space with corresponding labels, colors, and edge colors.
+Now that we have the \(x\) and \(y\) values for both absorbed and transmitted colors, let's plot them on the CIE 1931 color space. This code first plots the CIE color space as we have seen [at the beginning](#33-plotting-the-cie-2-color-space). Then, it iterates through the `colors` DataFrame and plots the absorbed colors (based on the `x_A` and `y_A` columns) as scattered points on the color space with corresponding labels, colors, and edge colors.
 
 ```python {linenostart=230}
 # Instantiate figure and axes
