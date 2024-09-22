@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Software on Tobia Cavalli</title>
+    <link>https://tobiacavalli.com/tags/software/</link>
+    <description>Recent content in Software on Tobia Cavalli</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 22 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tobiacavalli.com/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing ORCA on Mac OS Arm64</title>
+      <link>https://tobiacavalli.com/blog/installing-orca-macos/</link>
+      <pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://tobiacavalli.com/blog/installing-orca-macos/</guid>
+      <description>&lt;h2 id=&#34;outline&#34;&gt;Outline&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/installing-orca-macos/#what-is-orca&#34;&gt;What is ORCA?&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/installing-orca-macos/#installation&#34;&gt;Installation&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/installing-orca-macos/#getting-the-files&#34;&gt;Getting the files&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/installing-orca-macos/#setting-file-permissions&#34;&gt;Setting file permissions&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/installing-orca-macos/#running-the-installer&#34;&gt;Running the installer&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/installing-orca-macos/#setting-the-path&#34;&gt;Setting the &lt;code&gt;PATH&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/installing-orca-macos/#parallelization-with-open-mpi&#34;&gt;Parallelization with Open MPI&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tobiacavalli.com/blog/installing-orca-macos/#testing&#34;&gt;Testing&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&#xA;&#xA;&lt;div&gt;&#xA;    &lt;p class=&#34;alert-heading alert-heading-note&#34;&gt;&#xA;        &#xA;        &#xA;        Summary&#xA;        &#xA;    &lt;/p&gt;&#xA;    &lt;div class=&#34;alert-text alert-note&#34;&gt;&#xA;        &lt;p&gt;This post is a step-by-step guide to installing and configuring ORCA, a powerful quantum chemistry software, on macOS with Arm64 architecture. It includes steps for downloading packages, setting up Open MPI for parallel computations, and testing the installation with sample calculations.&lt;/p&gt;&#xA;&#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;h2 id=&#34;what-is-orca&#34;&gt;What is ORCA?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.faccts.de/orca/&#34;&gt;ORCA&lt;/a&gt; is a powerful and versatile quantum chemistry program designed for molecular electronic structure calculations, developed and maintained by Frank Neese&amp;rsquo;s research group at the Max-Planck-Institut für Kohlenforschung in Mülheim an der Ruhr, Germany.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="outline">Outline</h2>
+<ul>
+<li><a href="/blog/installing-orca-macos/#what-is-orca">What is ORCA?</a></li>
+<li><a href="/blog/installing-orca-macos/#installation">Installation</a>
+<ul>
+<li><a href="/blog/installing-orca-macos/#getting-the-files">Getting the files</a></li>
+<li><a href="/blog/installing-orca-macos/#setting-file-permissions">Setting file permissions</a></li>
+<li><a href="/blog/installing-orca-macos/#running-the-installer">Running the installer</a></li>
+<li><a href="/blog/installing-orca-macos/#setting-the-path">Setting the <code>PATH</code></a></li>
+<li><a href="/blog/installing-orca-macos/#parallelization-with-open-mpi">Parallelization with Open MPI</a></li>
+</ul>
+</li>
+<li><a href="/blog/installing-orca-macos/#testing">Testing</a></li>
+</ul>
+
+
+
+<div>
+    <p class="alert-heading alert-heading-note">
+        
+        
+        Summary
+        
+    </p>
+    <div class="alert-text alert-note">
+        <p>This post is a step-by-step guide to installing and configuring ORCA, a powerful quantum chemistry software, on macOS with Arm64 architecture. It includes steps for downloading packages, setting up Open MPI for parallel computations, and testing the installation with sample calculations.</p>
+
+    </div>
+</div>
+<h2 id="what-is-orca">What is ORCA?</h2>
+<p><a href="https://www.faccts.de/orca/">ORCA</a> is a powerful and versatile quantum chemistry program designed for molecular electronic structure calculations, developed and maintained by Frank Neese&rsquo;s research group at the Max-Planck-Institut für Kohlenforschung in Mülheim an der Ruhr, Germany.</p>
+<p>Think of ORCA as the Swiss Army knife of computational chemistry&mdash;compact yet packed with a range of capabilities to tackle a wide variety of scientific problems. Straight out of the box, ORCA offers numerous computational methods such as Density Functional Theory (DFT), coupled-cluster theory (CCT), and semi-empirical approaches.</p>
+<p>In August 2024, ORCA released its latest version, <code>6.0.0</code>, which is a major redesign of the software (see the <a href="https://www.faccts.de/docs/orca/6.0/manual/contents/foreword.html">foreword to its release</a>). Having used ORCA in the past for my research, I was curious to try out this new version and see what&rsquo;s new.</p>
+<p>If you&rsquo;re using a Mac equipped with an Arm64 architecture (such as Apple&rsquo;s M1 or M2 chips), this post will guide you through the process of downloading, installing, and configuring ORCA <code>6.0.0</code> on your system. Let&rsquo;s dive in!</p>
+<h2 id="installation">Installation</h2>
+<h3 id="getting-the-files">Getting the files</h3>
+<p>To get started, download the ORCA package from the <a href="https://orcaforum.kofo.mpg.de/app.php/dlext/">official ORCA download page</a>. Note that you&rsquo;ll need a registered account to access the download&mdash;registration is free if you don&rsquo;t have an account yet.</p>
+<p>For this installation, I&rsquo;ll be using version <code>6.0.0</code> for macOS running on Arm64 chips. On the website, you&rsquo;ll find two options for this version, both containing pre-compiled binaries linked to Open MPI <code>4.1.1</code>:</p>
+<ol>
+<li><strong>ORCA 6.0.0, MacOS X, Arm64, Installer Version:</strong> This is the more convenient option, as it includes pre-compiled binaries along with a utility that automatically extracts and installs ORCA, and adds the binaries to your system&rsquo;s path.</li>
+<li><strong>ORCA 6.0.0, MacOS X, Arm64, .tar.bz2 Archive:</strong> This is a compressed archive of the pre-compiled binaries. This option gives you more control over where you install the software, but you&rsquo;ll need to manually add ORCA to your system&rsquo;s path.</li>
+</ol>
+<p>For simplicity, I&rsquo;ll be using the <strong>Installer Version</strong>, which downloads a file named <code>orca_6_0_0_macosx_arm64_openmpi411.run</code>.</p>
+<h3 id="setting-file-permissions">Setting file permissions</h3>
+<p>Before we can run the installer, we need to make the file executable. To do this, open your terminal and navigate to the directory where the file was saved. By default, this will likely be in the <code>~/Downloads</code> directory (unless you saved it elsewhere). Once you&rsquo;re in the correct directory, change the file permissions to make it executable using the <code>chmod</code> command with the <code>+x</code> option:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Navigate to the directory where the file is stored</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/Downloads
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Add execute permissions to the installer</span>
+</span></span><span class="line"><span class="cl">chmod +x orca_6_0_0_macosx_arm64_openmpi411.run</span></span></code></pre></div><p>After running these commands, you won&rsquo;t see any output, but the file permissions will be updated. To confirm that the file is now executable, you can check its status using the <code>ls</code> command with the <code>-l</code> option:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ ls -l orca_6_0_0_macosx_arm64_openmpi411.run
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-rwxr-xr-x@ <span class="m">1</span> &lt;username&gt;  staff  <span class="m">579539683</span> Sep <span class="m">21</span> 14:29 orca_6_0_0_macosx_arm64_openmpi411.run</span></span></code></pre></div><p>In the output, the <code>x</code> characters in the <code>-rwxr-xr-x@</code> indicate that the file is now executable. This means you&rsquo;re ready to proceed by running the installer directly.</p>
+<h3 id="running-the-installer">Running the installer</h3>
+<p>Now that the file is executable, we can proceed with the installation by simply running the installer from the same directory:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ ./orca_6_0_0_macosx_arm64_openmpi411.run
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Creating directory orca_6_0_0
+</span></span><span class="line"><span class="cl">Verifying archive integrity...  100%   MD5 checksums are OK. All good.
+</span></span><span class="line"><span class="cl">Uncompressing ORCA 6.0.0 Installer ...  100%</span></span></code></pre></div><p>By default, this operation installs the ORCA binaries in the directory <code>/Users/&lt;username&gt;/Library/Orca/</code>, where <code>&lt;username&gt;</code> is your system&rsquo;s user.</p>
+<h3 id="setting-the-path">Setting the <code>PATH</code></h3>
+<p>The installer should automatically add ORCA to your system&rsquo;s <code>PATH</code>&mdash;a variable that tells your terminal where to find executables, allowing you to run <code>orca</code> directly from the command line. To verify that ORCA has been properly added to your <code>PATH</code>, simply type the following command in your terminal:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ orca
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">This program requires the name of a parameterfile as argument
+</span></span><span class="line"><span class="cl">For example ORCA TEST.INP</span></span></code></pre></div><p>If you see this output, ORCA has been successfully installed and recognized by your terminal.</p>
+<p>You can also confirm this by checking your shell&rsquo;s configuration file. Since macOS ships with <strong>zsh</strong> by default, the configuration file is called <code>.zshrc</code> and is located in your home directory. Open this file and scroll to the bottom to look for a line similar to:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="c1"># ORCA 6.0.0 section</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/Users/&lt;username&gt;/Library/orca_6_0_0:<span class="nv">$PATH</span></span></span></code></pre></div><p>If this line is missing, you will need to manually add it, ensuring that the path points to the correct installation directory.</p>
+<p>Once you&rsquo;ve added or confirmed the correct <code>PATH</code>, save the configuration file and restart your terminal for the changes to take effect.</p>
+<h3 id="parallelization-with-open-mpi">Parallelization with Open MPI</h3>
+<p>While ORCA is now installed and ready to use, to take full advantage of its capabilities&mdash;such as running calculations in parallel&mdash;we need to install <strong>Open MPI</strong>. The ORCA binaries are linked against Open MPI <code>4.1.1</code>, but I&rsquo;ll be using a newer version, <code>4.1.6</code>, as I encountered issues compiling the earlier version.</p>
+<p>First, download the latest Open MPI version (<code>4.1.6</code>) from the <a href="https://www.open-mpi.org/software/ompi/v4.1/">official Open MPI page</a>. The downloaded file will be named <code>openmpi-4.1.6.tar.gz</code>.</p>
+<p>Before compiling Open MPI, we need to ensure we have the Fortran compiler installed. This can be easily done using <a href="https://brew.sh/">Homebrew</a>:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install gcc</span></span></code></pre></div><p>Once the Fortran compiler is ready, unpack the Open MPI binaries and prepare them for compilation. I&rsquo;ll install Open MPI in a dedicated folder in the home directory:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Create a directory for Open MPI</span>
+</span></span><span class="line"><span class="cl">$ mkdir <span class="nv">$HOME</span>/openmpi
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> <span class="nv">$HOME</span>/openmpi
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Move the downloaded file and extract it</span>
+</span></span><span class="line"><span class="cl">$ cp ~/Downloads/openmpi-4.1.6.tar.gz .
+</span></span><span class="line"><span class="cl">$ tar -xzvf openmpi-4.1.6.tar.gz
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> openmpi-4.1.6</span></span></code></pre></div><p>Now, we&rsquo;re ready to compile Open MPI. The following configuration options ensure it works smoothly with ORCA and that Fortran is enabled:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ ./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/openmpi --without-verbs --enable-mpi-fortran --disable-builtin-atomics
+</span></span><span class="line"><span class="cl">$ make all
+</span></span><span class="line"><span class="cl">$ make install</span></span></code></pre></div><p>These steps can take some time. If you want to speed things up, you can compile using multiple cores by adding the <code>-jN</code> option to the <code>make</code> commands, where <code>N</code> is the number of cores you want to use. For example:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ make -j4 all
+</span></span><span class="line"><span class="cl">$ make -j4 install</span></span></code></pre></div><p>After the compilation is complete, the folder <code>openmpi</code> will contain the following directories: <code>bin</code>, <code>etc</code>, <code>include</code>, <code>lib</code>, and <code>share</code>, holding the compiled binaries and libraries.</p>
+<p>To make Open MPI accessible system-wide, we need to create a symbolic link to the <code>libmpi.40.dylib</code> library:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ sudo ln -s <span class="nv">$HOME</span>/openmpi/lib/libmpi.40.dylib /usr/local/lib/libmpi.40.dylib</span></span></code></pre></div><p>To ensure the system recognizes Open MPI, we need to update the <code>PATH</code> and <code>LD_LIBRARY_PATH</code> environment variables. Add the following lines to your <code>.zshrc</code> (or <code>.bash_profile</code> if using bash):</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/openmpi/bin:<span class="nv">$PATH</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/openmpi/lib:<span class="nv">$LD_LIBRARY_PATH</span></span></span></code></pre></div><p>Once you&rsquo;ve updated the file, run <code>source ~/.zshrc</code> (or restart your terminal) for the changes to take effect.</p>
+<p>Finally, verify that Open MPI is correctly installed by running:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ mpirun --version
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mpirun <span class="o">(</span>Open MPI<span class="o">)</span> 4.1.6
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Report bugs to http://www.open-mpi.org/community/help/</span></span></code></pre></div><p>If you see this output, Open MPI is installed and ready to work with ORCA for parallel calculations!</p>
+<h2 id="testing">Testing</h2>
+<p>Now that ORCA and Open MPI are set up, let&rsquo;s verify everything is working correctly by running a simple calculation. We&rsquo;ll start by creating a folder on the desktop to hold the files generated during the test.</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Navigate to the desktop</span>
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> ~/Desktop
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create a new folder for the test</span>
+</span></span><span class="line"><span class="cl">$ mkdir orca_test
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> orca_test
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create an input file for the calculation</span>
+</span></span><span class="line"><span class="cl">$ touch water.inp</span></span></code></pre></div><p>In the <code>water.inp</code> file, we&rsquo;ll add instructions to perform a basic Hartree-Fock (HF) calculation using the Def2-SVP basis set on a water molecule. These instructions are based on the <a href="https://www.faccts.de/docs/orca/6.0/tutorials/first_steps/first_calc.html">official ORCA tutorial</a>:</p>
+
+
+
+
+
+<pre tabindex="0"><code class="language-orca" data-lang="orca">!HF DEF2-SVP
+
+* xyz 0 1
+O   0.0000   0.0000   0.0626
+H  -0.7920   0.0000  -0.4973
+H   0.7920   0.0000  -0.4973
+*</code></pre><p>Save the file. Now, in the terminal (from within the <code>orca_test</code> folder), run the following command to execute ORCA in serial mode, using a single core:</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ orca water.inp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                                 *****************
+</span></span><span class="line"><span class="cl">                                 * O   R   C   A *
+</span></span><span class="line"><span class="cl">                                 *****************
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">--- truncated output ---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Timings <span class="k">for</span> individual modules:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Sum of individual <span class="nb">times</span>          ...        0.245 sec <span class="o">(=</span>   0.004 min<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Startup calculation              ...        0.081 sec <span class="o">(=</span>   0.001 min<span class="o">)</span>  33.0 %
+</span></span><span class="line"><span class="cl">SCF iterations                   ...        0.114 sec <span class="o">(=</span>   0.002 min<span class="o">)</span>  46.5 %
+</span></span><span class="line"><span class="cl">Property calculations            ...        0.050 sec <span class="o">(=</span>   0.001 min<span class="o">)</span>  20.6 %
+</span></span><span class="line"><span class="cl">                             ****ORCA TERMINATED NORMALLY****
+</span></span><span class="line"><span class="cl">TOTAL RUN TIME: <span class="m">0</span> days <span class="m">0</span> hours <span class="m">0</span> minutes <span class="m">0</span> seconds <span class="m">302</span> msec</span></span></code></pre></div><p>If you see the above message, the serial calculation has completed successfully!</p>
+<p>Next, let&rsquo;s test ORCA&rsquo;s parallel capabilities. Modify your input file to enable parallel processing by adding the <code>%PAL</code> block, which specifies the number of processes (<code>NPROCS</code>) to use. Update <code>water.inp</code> to the following:</p>
+
+
+
+
+
+<pre tabindex="0"><code class="language-orca" data-lang="orca">!HF DEF2-SVP
+
+%PAL NPROCS 4 END
+
+* xyz 0 1
+O   0.0000   0.0000   0.0626
+H  -0.7920   0.0000  -0.4973
+H   0.7920   0.0000  -0.4973
+*</code></pre><p>To run the parallel version, we need to specify the complete path to the ORCA executable. In this case, use the following command (replace <code>&lt;username&gt;</code> with your actual macOS username):</p>
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ /Users/&lt;username&gt;/Library/orca_6_0_0/orca water.inp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">           ************************************************************
+</span></span><span class="line"><span class="cl">           *        Program running with <span class="m">4</span> parallel MPI-processes     *
+</span></span><span class="line"><span class="cl">           *              working on a common directory               *
+</span></span><span class="line"><span class="cl">           ************************************************************
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">--- truncated output ---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Timings <span class="k">for</span> individual modules:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Sum of individual <span class="nb">times</span>          ...       17.403 sec <span class="o">(=</span>   0.290 min<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Startup calculation              ...       16.408 sec <span class="o">(=</span>   0.273 min<span class="o">)</span>  94.3 %
+</span></span><span class="line"><span class="cl">SCF iterations                   ...        0.721 sec <span class="o">(=</span>   0.012 min<span class="o">)</span>   4.1 %
+</span></span><span class="line"><span class="cl">Property calculations            ...        0.275 sec <span class="o">(=</span>   0.005 min<span class="o">)</span>   1.6 %
+</span></span><span class="line"><span class="cl">                             ****ORCA TERMINATED NORMALLY****
+</span></span><span class="line"><span class="cl">TOTAL RUN TIME: <span class="m">0</span> days <span class="m">0</span> hours <span class="m">0</span> minutes <span class="m">17</span> seconds <span class="m">708</span> msec</span></span></code></pre></div><p>If everything ran successfully, ORCA and Open MPI are correctly installed and functioning. You can now take full advantage of ORCA&rsquo;s capabilities for parallel quantum chemical calculations!</p>
+<p><strong>Note:</strong> The parallel calculation took 17 seconds and 708 milliseconds, while the identical calculation in serial took only 302 milliseconds. Setting up the parallel environment and managing communication between processes adds time. This overhead can offset the benefits of parallel execution, which becomes evident in calculations of simple molecules.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

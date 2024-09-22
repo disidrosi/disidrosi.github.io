@@ -158,7 +158,7 @@
     </div>
 </div>
 <h2 id="1-what-is-color">1. What is color?</h2>
-<p>Color isn&rsquo;t just a thing; it&rsquo;s a <em>feeling</em>. It&rsquo;s how our brains interpret light, and it&rsquo;s pretty subjective. Think about it: the same light can look different to different people, even under the same conditions. From a pure physical and biological point of view, it is a phenomenon arising from the human eye&rsquo;s interpretation of light within the visible spectrum (380&ndash;780 nm). It&rsquo;s not a physical property of light itself but a sensation created by the brain&rsquo;s processing of visual information.</p>
+<p>Color isn&rsquo;t just a thing; it&rsquo;s a <em>feeling</em>. It&rsquo;s how our brains interpret light, and it&rsquo;s pretty subjective. Think about it: the same light can look different to different people, even under the same conditions. From a pure physical and biological point of view, it is a phenomenon arising from the human eye&rsquo;s interpretation of light within the visible spectrum (380&ndash;780 nm). It&rsquo;s not a physical property of light itself, but a sensation created by the brain&rsquo;s processing of visual information.</p>
 <p>Factors like lighting conditions, color vision deficiencies, and individual variations can influence how we perceive color. This subjectivity makes traditional scientific measurements, like spectroscopy, insufficient for directly quantifying color perception, as they focus only on the physical properties of light without considering their corresponding perceptual aspects.</p>
 <p><strong>Psychophysics</strong> bridges this gap by quantifying the relationship between physical stimuli and the sensations they generate. As a field, it is primarily concerned with how humans perceive and interpret sensory inputs like colors, sounds, and textures. Guy Brindley&rsquo;s work in 1970 was a significant contribution to this field.<sup>1,2</sup></p>
 <p>Brindley introduced the concept of observations to describe perceptual states during psychophysical tasks. He categorized observations into two types:</p>
@@ -221,9 +221,9 @@ $$<p>The \(x\) and \(y\) coordinates uniquely specify a color within the CIE col
 <ul>
 <li><code>set_context(&quot;notebook&quot;)</code>: This setting ensures the plots are scaled appropriately for notebook environments, adjusting factors like label size and line thickness.</li>
 <li><code>set_style(&quot;ticks&quot;)</code>: This sets the plot style to include ticks on the axes, providing visual reference points for the data.</li>
-<li><code>set_palette(&quot;colorblind&quot;)</code>: Sets the default palette of colors that will be used for plottings, electing a color palette specifically designed for viewers with color blindness. The <code>color_codes</code> option remaps <code>matplotlib</code>&rsquo;s shorthand color codes (such as <code>r</code>, <code>g</code>, <code>b</code>, etc.).</li>
+<li><code>set_palette(&quot;colorblind&quot;)</code>: Sets the default palette of colors that will be used for plots, selecting a color palette specifically designed for viewers with color blindness. The <code>color_codes</code> option remaps <code>matplotlib</code>&rsquo;s shorthand color codes (such as <code>r</code>, <code>g</code>, <code>b</code>, etc.).</li>
 </ul>
-<p>In addition, I am importing <code>golden_ratio</code> from the <code>scipy</code> library, which is equivalent to defining a variable containing the value 1.618. This is a mathematical constant als known as the <em>divine proportion</em>, which I will use to set the aspect ratio of the plots, specifically the ratio between the shorter and longer axes. It is absolutely not necessary, but I find that it helps create a more aesthetically pleasing visual balance.</p>
+<p>In addition, I am importing <code>golden_ratio</code> from the <code>scipy</code> library, which is equivalent to defining a variable containing the value 1.618. This is a mathematical constant also known as the <em>divine proportion</em>, which I will use to set the aspect ratio of the plots, specifically the ratio between the shorter and longer axes. It is absolutely not necessary, but I find that it helps create a more aesthetically pleasing visual balance.</p>
 
 
 
@@ -436,7 +436,7 @@ $$<p>The \(x\) and \(y\) coordinates uniquely specify a color within the CIE col
 $$
     x_{scaled} = \frac{x - x_{min}}{x_{max} - x_{min}} \tag{6}
 $$<p>Here, \(x\) represents a single measured value, \(x_{min}\)​ and \(x_{max}\)​ represent the minimum and maximum values within the spectrum, respectively, and \(x_{scaled}\) represents the resulting normalized value.</p>
-<p>While the <code>scikit-learn</code> library offers built-in functions for this task (see <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html">here</a>), I prefer to avoid introducing unnecessary dependencies for a simple function. Therefore, we&rsquo;ll define a custom function named normalize to perform the MinMax scaling:</p>
+<p>While the <code>scikit-learn</code> library offers built-in functions for this task (see <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html">here</a>), I prefer to avoid introducing unnecessary dependencies for a simple function. Therefore, we&rsquo;ll define a custom function named <code>normalize</code> to perform the MinMax scaling:</p>
 
 
 
@@ -777,7 +777,7 @@ $$<p>Using the normalized absorbance values, we can easily perform this conversi
 <li><strong>Select the appropriate illuminant:</strong> Since we&rsquo;re interested in daylight conditions, we&rsquo;ll use the <code>D65</code> illuminant.</li>
 <li><strong>Create spectral distributions:</strong> For each spectrum, we&rsquo;ll create a <code>SpectralDistribution</code> object from <code>colour-science</code>. This provides useful methods like <code>interpolate</code>, which is necessary to ensure the spectra conform to CIE specifications (1 nm intervals).</li>
 <li><strong>Calculate CIE \(XYZ\) coordinates:</strong> Using the <code>sd_to_XYZ</code> function, we&rsquo;ll compute the CIE XYZ coordinates for each spectrum based on the spectral distribution, color matching functions, and illuminant.</li>
-<li>Convert to CIE \(xy\) coordinated: The \(XYZ\) coordinates are then converted to CIE \(xy\) coordinates, which are more convenient for plotting on the color space.</li>
+<li>Convert to CIE \(xy\) coordinates: The \(XYZ\) coordinates are then converted to CIE \(xy\) coordinates, which are more convenient for plotting on the color space.</li>
 </ul>
 <p>This code iterates over each spectrum, calculates the CIE \(XYZ\) coordinates, converts them to \(xy\) coordinates, and stores the results in two lists: <code>chl_abs_clr</code> for the absorbance-based colors and <code>chl_transm_clr</code> for the transmittance-based colors. Finally, the results are merged into a single DataFrame for easier analysis.</p>
 
@@ -879,7 +879,7 @@ $$<p>Using the normalized absorbance values, we can easily perform this conversi
         </tr>
     </tbody>
 </table><h3 id="37-visualizing-colors-on-the-cie-color-space">3.7. Visualizing colors on the CIE color space</h3>
-<p>Now that we have the \(x\) and \(y\) values for both absorbed and transmitted colors, let&rsquo;s plot them on the CIE 1931 color space. This code first plots the CIE color space as we have seen <a href="/blog/cie-colors-python/#33-plotting-the-cie-2-color-space">at the beginning</a>. Then, it iterates through the colors DataFrame and plots the absorbed colors (based on the <code>x_A</code> and <code>y_A</code> columns) as scattered points on the color space with corresponding labels, colors, and edge colors.</p>
+<p>Now that we have the \(x\) and \(y\) values for both absorbed and transmitted colors, let&rsquo;s plot them on the CIE 1931 color space. This code first plots the CIE color space as we have seen <a href="/blog/cie-colors-python/#33-plotting-the-cie-2-color-space">at the beginning</a>. Then, it iterates through the <code>colors</code> DataFrame and plots the absorbed colors (based on the <code>x_A</code> and <code>y_A</code> columns) as scattered points on the color space with corresponding labels, colors, and edge colors.</p>
 
 
 
