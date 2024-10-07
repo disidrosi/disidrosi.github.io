@@ -7,21 +7,21 @@
 }}
 
 {{ if eq .Type "alert" }}
-<div>
-    <p class="alert-heading alert-heading-{{ .AlertType }}">
-        {{ transform.Emojify (index $emojis .AlertType) }}
-        {{ with .AlertTitle }}
-        {{ . }}
-        {{ else }}
-        {{ or (i18n .AlertType) (title .AlertType) }}
-        {{ end }}
-    </p>
-    <div class="alert-text alert-{{ .AlertType }}">
-        {{ .Text }}
+    <div class="callout callout-{{ .AlertType }}">
+        <h4>
+            {{ transform.Emojify (index $emojis .AlertType) }}
+            {{ with .AlertTitle }}
+            {{ . }}
+            {{ else }}
+            {{ or (i18n .AlertType) (title .AlertType) }}
+            {{ end }}
+        </h4>
+        <p>
+            {{ .Text }}
+        </p>
     </div>
-</div>
 {{ else }}
-<blockquote>
-    {{ .Text }}
-</blockquote>
+    <blockquote>
+        {{ .Text }}
+    </blockquote>
 {{ end }}

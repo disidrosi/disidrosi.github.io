@@ -1,0 +1,288 @@
+$color_text: #c9d1d9;
+$color_strong: #eee;
+$color_bg: #1d1f27;
+$color_link: #8cc2dd;
+$color_link_hover: #ef7b45;
+$color_code_bg: #282a36;
+$color_code_text: #f8f8f2;
+$color_blockquote_text: #ccc;
+$color_blockquote_border: #999;
+$color_warning: #e93147;
+$color_note: #086ddd;
+$color_tip: #e0ac00;
+$color_important: #ec7500;
+$color_success: #08b94e;
+$line_height: 1.5;
+$content_line_height: 1.6;
+$font_size: 16px;
+
+body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: $color_bg;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: $line_height;
+    color: $color_text;
+    counter-reset: figureCounter;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+    color: $color_strong;
+}
+
+a {
+    color: $color_link;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        color: $color_link_hover;
+    }
+}
+
+.title {
+    text-decoration: none;
+    border: 0;
+
+    h1 {
+        font-size: 24px;
+        margin: 19.92px 0 19.92px 0;
+    }
+
+    span {
+        font-weight: 400;
+    }
+}
+
+nav a {
+    margin-right: 10px;
+}
+
+textarea {
+    background-color: #252525;
+    color: #ddd;
+    width: 100%;
+    font-size: $font_size;
+}
+
+input {
+    background-color: #252525;
+    color: #ddd;
+    font-size: $font_size;
+}
+
+content {
+    line-height: $content_line_height;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    border: 0;
+    border-top: 2px solid $color_strong;
+    border-bottom: 1px solid $color_strong;
+
+    thead {
+        background-color: #282a36;
+        border-bottom: 0.5px solid $color_strong;
+        font-weight: bold;
+    }
+
+    thead,
+    tr {
+        color: $color_strong;
+        text-align: left;
+    }
+
+    th,
+    td {
+        padding: 0.4em 1em;
+        border: 0;
+        border-bottom: 0.5px dashed $color_strong;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+code {
+    padding: 2px 5px;
+    color: $color_code_text;
+    background-color: $color_code_bg;
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+pre code {
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+    text-wrap: nowrap;
+}
+
+blockquote {
+    border-left: 1px solid $color_blockquote_border;
+    color: $color_blockquote_text;
+    padding-left: 20px;
+    font-style: italic;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, $color_bg, $color_strong, $color_bg);
+}
+
+.helptext {
+    color: #aaa;
+    font-size: small;
+}
+
+.errorlist {
+    color: #eba613;
+    font-size: small;
+}
+
+/* blog posts */
+ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+}
+
+ul.blog-posts li {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+ul.blog-posts li span {
+    flex: 0 0 130px;
+}
+
+a.blog-tags {
+    line-height: 2;
+    margin-right: 12px;
+}
+
+h3.blog-filter {
+    margin-bottom: 0;
+}
+
+.disabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+p.byline {
+    font-style: italic;
+}
+
+/* "Skip to main content" link */
+.skip-link {
+    position: absolute;
+    top: 5;
+    transform: translateY(-600%);
+    transition: transform 0.5s;
+    background-color: $color_bg;
+    padding: 6px;
+}
+
+.skip-link:focus {
+    transform: translateY(0%);
+}
+
+figure {
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
+}
+
+figcaption > p {
+    margin-block-start: 0px;
+    text-align: center;
+    font-style: italic;
+    color: $color_blockquote_text;
+}
+
+.md-figure-caption {
+    padding: 0em 2em 0em 2em;
+    font-style: italic;
+    font-size: 0.9em;
+    counter-increment: figureCounter;
+
+    &::before {
+        content: "Figure " counter(figureCounter) ": ";
+    }
+}
+
+.callout {
+    margin: 1em 0em;
+    border: 2px solid $color_blockquote_text;
+    border-radius: 6px;
+    h4 {
+        padding: 0.3em 1em;
+        margin: 0;
+        background-color: $color_blockquote_text;
+        color: $color_bg;
+        font-weight: bold;
+    }
+    p {
+        padding: 0.4em 1em;
+        margin: 0;
+    }
+}
+
+.callout-warning {
+    border: 2px solid $color_warning;
+    h4 {
+        background-color: $color_warning;
+    }
+}
+
+.callout-tip {
+    border: 2px solid $color_tip;
+    h4 {
+        background-color: $color_tip;
+    }
+}
+
+.callout-note {
+    border: 2px solid $color_note;
+    h4 {
+        background-color: $color_note;
+    }
+}
+
+.callout-important {
+    border: 2px solid $color_important;
+    h4 {
+        background-color: $color_important;
+    }
+}
+
+.callout-success {
+    border: 2px solid $color_success;
+    h4 {
+        background-color: $color_success;
+    }
+}

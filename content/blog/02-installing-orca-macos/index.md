@@ -19,16 +19,7 @@ categories: [
 ]
 ---
 
-## Outline
-
-- [What is ORCA?](#what-is-orca)
-- [Installation](#installation)
-  - [Getting the files](#getting-the-files)
-  - [Setting file permissions](#setting-file-permissions)
-  - [Running the installer](#running-the-installer)
-  - [Setting the `PATH`](#setting-the-path)
-  - [Parallelization with Open MPI](#parallelization-with-open-mpi)
-- [Testing](#testing)
+{{% toc %}}
 
 > [!Note] Summary
 > This post is a step-by-step guide to installing and configuring ORCA, a powerful quantum chemistry software, on macOS with Arm64 architecture. It includes steps for downloading packages, setting up Open MPI for parallel computations, and testing the installation with sample calculations.
