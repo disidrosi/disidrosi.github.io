@@ -1,6 +1,9 @@
-baseURL = 'https://tobiacavalli.com/'
+theme = "hugo-bearcub"
+
+baseURL = "https://tobiacavalli.com/"
 languageCode = "en-us"
 title = "Tobia Cavalli"
+copyright = "Copyright © Tobia Cavalli"
 
 # Generate a nice robots.txt for SEO
 enableRobotsTXT = true
@@ -8,8 +11,6 @@ enableRobotsTXT = true
 # Enable displaying emojis
 enableEmoji = true
 
-# Quarto configuration
-ignoreFiles = ["\\.qmd$", "\\.ipynb$", "\\.py$"]
 
 [markup]
     [markup.goldmark]
@@ -41,6 +42,8 @@ ignoreFiles = ["\\.qmd$", "\\.ipynb$", "\\.py$"]
         languageName = "en-US 🇺🇸"
         LanguageCode = "en-US"
         contentDir = "content"
+    [languages.en.params]
+      disclaimer = "Opinions listed here are my own and not representative of any of my employers, past, future, and/or present."
 
 [params]
     # The description of your website

@@ -1,4 +1,4 @@
 <hr>
 <small>
-  Copyright © Tobia Cavalli {{ time.Now.Year }}. Opinions listed here are my own and not representative of any of my employers, past, future, and/or present.
+    {{ .Site.Copyright }} {{ time.Now.Year }} — {{ markdownify .Site.Params.disclaimer }}
 </small>
