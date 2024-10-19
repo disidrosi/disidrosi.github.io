@@ -19,20 +19,7 @@ categories: [
 math: true
 ---
 
-## Outline
-
-- [1. What is color?](#1-what-is-color)
-- [2. The CIE colorimetry system](#2-the-cie-colorimetry-system)
-- [3. Python code](#3-python-code)
-  - [3.1. Python libraries for color analysis](#31-python-libraries-for-color-analysis)
-  - [3.2. Plot settings](#32-plot-settings)
-  - [3.3. Plotting the CIE (2°) color space](#33-plotting-the-cie-2-color-space)
-  - [3.4. Importing and scaling data](#34-importing-and-scaling-data)
-  - [3.5. Converting absorbance to transmittance](#35-converting-absorbance-to-transmittance)
-  - [3.6. Calculating the CIE colors](#36-calculating-the-cie-colors)
-  - [3.7. Visualizing colors on the CIE color space](#37-visualizing-colors-on-the-cie-color-space)
-- [4. Conclusion](#4-conclusion)
-- [5. Bibliography](#5-bibliography)
+{{% toc %}}
 
 > [!NOTE] Summary
 > This post provides a step-by-step guide on how to calculate CIE colors from UV-Vis spectra using Python. We'll look at the CIE colorimetry system and the underlying principles behind color perception.

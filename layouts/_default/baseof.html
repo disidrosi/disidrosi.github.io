@@ -11,8 +11,10 @@
   {{- partial "seo_tags.html" . -}}
   <meta name="referrer" content="no-referrer-when-downgrade" />
 
-  {{ $style := print (default "original" .Site.Params.themeStyle) ".css" | resources.Get | minify }}
-  <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+  {{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
+  {{ with resources.Get "sass/main.scss" | toCSS $opts | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{ end }}
 
   {{ if (.Page.Store.Get "hasCodeBlock") }}
     {{ $syntax := resources.Get "syntax.css" | minify }}
@@ -27,10 +29,6 @@
   {{ with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
-  {{ if .Param "math" }}
-    {{ partialCached "math.html" . }}
-  {{ end }}
-
 
   <!-- A partial to be overwritten by the user.
   Simply place a custom_head.html into

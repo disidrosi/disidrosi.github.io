@@ -12,8 +12,14 @@
   {{ .Content }}
 </content>
 
+<hr>
+
 <section>
-    {{- partial "blog-callout.html" . -}}
+  {{- partial "tags_section.html" . -}}
+</section>
+
+<section>
+  {{- partial "blog_callout.html" . -}}
 </section>
 
 {{ end }}

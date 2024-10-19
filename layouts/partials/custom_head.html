@@ -1,3 +1,5 @@
-<!-- A partial to be overwritten by the user.
-  Simply place a custom_head.html into
-  your local /layouts/partials-directory -->
+{{ partial "plausible_head.html" . }}
+
+{{ if .Param "math" }}
+    {{ partialCached "math.html" . }}
+{{ end }}
