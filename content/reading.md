@@ -22,6 +22,7 @@ weight: 2
 8. _Nonviolent Communication_ -- Marshall Rosenberg
 9. _Pieces of the Action_ -- Vannevar Bush
 10. _Power_ -- Jeffrey Pfeffer
+11. _The Art and Business of Online Writing_ -- Nicolas Cole
 
 ### 2023
 
