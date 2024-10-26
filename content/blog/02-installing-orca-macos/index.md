@@ -19,10 +19,10 @@ categories: [
 ]
 ---
 
-{{% toc %}}
-
 > [!Note] Summary
 > This post is a step-by-step guide to installing and configuring ORCA, a powerful quantum chemistry software, on macOS with Arm64 architecture. It includes steps for downloading packages, setting up Open MPI for parallel computations, and testing the installation with sample calculations.
+
+{{% toc %}}
 
 ## What is ORCA?
 

@@ -19,20 +19,20 @@ categories: [
 math: true
 ---
 
-{{% toc %}}
-
 > [!NOTE] Summary
 > This post provides a step-by-step guide on how to calculate CIE colors from UV-Vis spectra using Python. We'll look at the CIE colorimetry system and the underlying principles behind color perception.
 >
-> The core of the post focuses on practical implementation, guiding you through the Python code that performs the necessary calculations. If you're primarily interested in the coding aspect, you can skip directly to the [Python code section](#3-python-code).
+> The core of the post focuses on practical implementation, guiding you through the Python code that performs the necessary calculations. If you're primarily interested in the coding aspect, you can skip directly to the [Python code section](#python-code).
 
-## 1. What is color?
+{{% toc %}}
+
+## What is color?
 
 Color isn't just a thing; it's a _feeling_. It's how our brains interpret light, and it's pretty subjective. Think about it: the same light can look different to different people, even under the same conditions. From a pure physical and biological point of view, it is a phenomenon arising from the human eye's interpretation of light within the visible spectrum (380--780 nm). It's not a physical property of light itself, but a sensation created by the brain's processing of visual information.
 
 Factors like lighting conditions, color vision deficiencies, and individual variations can influence how we perceive color. This subjectivity makes traditional scientific measurements, like spectroscopy, insufficient for directly quantifying color perception, as they focus only on the physical properties of light without considering their corresponding perceptual aspects.
 
-**Psychophysics** bridges this gap by quantifying the relationship between physical stimuli and the sensations they generate. As a field, it is primarily concerned with how humans perceive and interpret sensory inputs like colors, sounds, and textures. Guy Brindley's work in 1970 was a significant contribution to this field.<sup>1,2</sup>
+**Psychophysics** bridges this gap by quantifying the relationship between physical stimuli and the sensations they generate. As a field, it is primarily concerned with how humans perceive and interpret sensory inputs like colors, sounds, and textures. Guy Brindley's work in 1970 was a significant contribution to this field.[^1] [^2]
 
 Brindley introduced the concept of observations to describe perceptual states during psychophysical tasks. He categorized observations into two types:
 
@@ -41,11 +41,11 @@ Brindley introduced the concept of observations to describe perceptual states du
 
 Color is a prime example of Class A observations. Two lights with different physical compositions can appear identical under certain conditions. For instance, a pure red light and a mixture of red, green, and blue light can be perceived as the same shade of red if viewed in low light or by someone with limited color sensitivity.
 
-## 2. The CIE colorimetry system
+## The CIE colorimetry system
 
 Given the subjectivity of color perception, how can we objectively measure and communicate colors? The **CIE colorimetry system** provides a solution by using **color matching** experiments to establish a statistical representation of human color vision, which provides a standardized method for relating spectral light distributions to perceived colors.
 
-In these experiments, observers compare two stimuli under controlled conditions. If they appear identical despite their physical differences, they are considered perceptually equivalent. The CIE system, developed by the Commission Internationale d'Éclairage, quantifies the relationship between wavelength distributions and perceived colors.<sup>3,4</sup>
+In these experiments, observers compare two stimuli under controlled conditions. If they appear identical despite their physical differences, they are considered perceptually equivalent. The CIE system, developed by the Commission Internationale d'Éclairage, quantifies the relationship between wavelength distributions and perceived colors.[^3] [^4]
 
 ![CIE color matching experiment](img/cie_color_matching.png "CIE color matching experiment. Adapted from literature.")
 
@@ -74,9 +74,9 @@ $$
 
 The \(x\) and \(y\) coordinates uniquely specify a color within the CIE color space, enabling a standardized and objective representation of color perception. This system has been (and is!) used in various industries, including printing, photography, lighting design, and digital media, where accurate color reproduction and communication are essential.
 
-## 3. Python code
+## Python code
 
-### 3.1. Python libraries for color analysis
+### Python libraries for color analysis
 
 Before diving into the code, let's import the necessary Python libraries:
 
@@ -104,7 +104,7 @@ import pandas as pd
 cl.utilities.filter_warnings(colour_usage_warnings=True)
 ```
 
-### 3.2. Plot settings
+### Plot settings
 
 I want the plot aesthetics to match the style of the blog, and therefore I'm adding the following settings to customize the appearance of the graphics I am going to generate. If you're following along on your own machine (e.g., using Jupyter notebooks), you can skip this step.
 
@@ -136,7 +136,7 @@ plt.rcParams["axes.facecolor"] = "none"
 figure_size = (7, 7 / golden_ratio)
 ```
 
-### 3.3. Plotting the CIE (2°) color space
+### Plotting the CIE (2°) color space
 
 Now that we have our tools in place, let's create our first color plot. One thing that I like very much about the `colour-science` library is that it provides handy functions for plotting color spaces according to different colorimetric systems.
 
@@ -182,9 +182,9 @@ plt.show()
 
 ![CIE color space for a 2° observer.](img/CIE_2deg_color_space.png "CIE color space for a 2° observer.")
 
-### 3.4. Importing and scaling data
+### Importing and scaling data
 
-Let's see if we can calculate the actual color of some interesting molecules! In this example, we'll determine the colors of Chlorophyll A and Chlorophyll B in solution, two pigments essential for photosynthesis in plants. The data used here consists of pre-recorded UV-Vis spectra for Chlorophyll A and B in both 70% and 90% acetone solutions, obtained from a scientific publication.<sup>6</sup> You can download the `.csv` file containing this data [here](include/chlorophyll_uv_vis.csv).
+Let's see if we can calculate the actual color of some interesting molecules! In this example, we'll determine the colors of Chlorophyll A and Chlorophyll B in solution, two pigments essential for photosynthesis in plants. The data used here consists of pre-recorded UV-Vis spectra for Chlorophyll A and B in both 70% and 90% acetone solutions, obtained from a scientific publication.[^6] You can download the `.csv` file containing this data [here](include/chlorophyll_uv_vis.csv).
 
 ```python {linenostart=59}
 column_names = ["lambda", "chl_a_70", "chl_a_90", "chl_b_70", "chl_b_90"]
@@ -252,7 +252,7 @@ Additionally, the concentration of acetone in the solution seems to influence th
 
 The current spectra also have significantly different absolute absorbance values. Therefore, some data pre-processing is required before calculating color. To enable meaningful comparisons, we need to normalize the data. This normalization will change the original absorbance values, which might be a disadvantage for _quantitative_ analyses (e.g., concentration determination). However, since our focus here is _qualitative_ (comparing spectra), these intensity scale differences would not provide an effective comparison.
 
-The simplest approach for this is to normalize the spectra, transforming them into a range between 0 and 1 while preserving their overall shapes. We'll use a technique called range scaling (also known as MinMax scaling), described by the following equation:<sup>7</sup>
+The simplest approach for this is to normalize the spectra, transforming them into a range between 0 and 1 while preserving their overall shapes. We'll use a technique called range scaling (also known as MinMax scaling), described by the following equation:[^7]
 
 $$
     x_{scaled} = \frac{x - x_{min}}{x_{max} - x_{min}} \tag{6}
@@ -330,7 +330,7 @@ plt.show()
 
 ![Normalized UV-Vis absorption spectra of Chlorophyll A and B in 70% and 90 % acetone solutions.](img/chl_a_b_UV_Vis_abs_norm.png "Normalized UV-Vis absorption spectra of Chlorophyll A and B in 70% and 90 % acetone solutions.")
 
-### 3.5. Converting absorbance to transmittance
+### Converting absorbance to transmittance
 
 Before calculating the colors from our spectra, it's important to remember that these spectra represent the **light absorbed** by the molecules. To determine the color we actually perceive, we need to convert absorbance to **transmittance**. Transmittance represents the light that passes through the molecules and reaches our eyes.
 
@@ -444,7 +444,7 @@ plt.show()
 
 ![Normalized UV-Vis absorption and transmission spectra of Chlorophyll A and B in 70% and 90 % acetone solutions.](img/chl_a_b_UV_Vis_abs_trans_norm.png "Normalized UV-Vis absorption and transmission spectra of Chlorophyll A and B in 70% and 90 % acetone solutions.")
 
-### 3.6. Calculating the CIE colors
+### Calculating the CIE colors
 
 Now that we have the normalized absorbance and transmittance spectra, we can finally calculate the corresponding CIE colors. To do this, we need to do the following:
 
@@ -515,9 +515,9 @@ colors
 | 2    | chl_b_70   | 0.3558  | 0.4365  | 0.2036  | 0.0930  |
 | 3    | chl_b_90   | 0.3538  | 0.4334  | 0.2048  | 0.0904  |
 
-### 3.7. Visualizing colors on the CIE color space
+### Visualizing colors on the CIE color space
 
-Now that we have the \(x\) and \(y\) values for both absorbed and transmitted colors, let's plot them on the CIE 1931 color space. This code first plots the CIE color space as we have seen [at the beginning](#33-plotting-the-cie-2-color-space). Then, it iterates through the `colors` DataFrame and plots the absorbed colors (based on the `x_A` and `y_A` columns) as scattered points on the color space with corresponding labels, colors, and edge colors.
+Now that we have the \(x\) and \(y\) values for both absorbed and transmitted colors, let's plot them on the CIE 1931 color space. This code first plots the CIE color space as we have seen [at the beginning](#plotting-the-cie-2-color-space). Then, it iterates through the `colors` DataFrame and plots the absorbed colors (based on the `x_A` and `y_A` columns) as scattered points on the color space with corresponding labels, colors, and edge colors.
 
 ```python {linenostart=230}
 # Instantiate figure and axes
@@ -629,24 +629,16 @@ plt.show()
 
 From the CIE color space plots, we can observe some key differences between the perceived colors of Chlorophyll A and B under both absorbance and transmittance conditions. Chlorophyll A primarily absorbs light in the red and blue regions of the spectrum, reflecting green-yellow light. Chlorophyll B absorbs a greater proportion of blue light than Chlorophyll A, reflecting a more yellowish hue.
 
-## 4. Conclusion
+## Conclusion
 
 While both chlorophyll A and B are primarily responsible for the green color of plants, their slight differences in absorption spectra can lead to subtle variations in the exact shade of green. Despite being closely related pigments, they show distinct spectral absorption profiles, which ultimately influence their perceived colors.
 
 Since both chlorophyll A and B absorb light in the blue and red regions, the light that is transmitted is primarily in the green region, which is why leaves appear green to our eyes. However, due to the slight difference in absorption peaks, Chlorophyll A tends to give a more deep green or olive green color, while Chlorophyll B gives a slightly lighter green or yellowish-green hue.
 
-## 5. Bibliography
-
-(1) Kingdom, F. A. A.; Prins, N. _Psychophysics: A Practical Introduction_, 2nd ed.; Academic Press: Amsterdam, NL, 2016; pp. 19--20. [https://doi.org/10.1016/C2012-0-01278-1](https://doi.org/10.1016/C2012-0-01278-1).
-
-(2) Schanda, J. _Colorimetry: Understanding the CIE System_; John Wiley & Sons: Hoboken, NJ, USA, 2007; pp. 56--59. [https://doi.org/10.1002/9780470175637](https://doi.org/10.1002/9780470175637).
-
-(3) Guild, J. The Colorimetric Properties of the Spectrum. _Phil. Trans. R. Soc. Lond. A_ **1931**, _230_ (681-693), 149--187. [https://doi.org/10.1098/rsta.1932.0005](https://doi.org/10.1098/rsta.1932.0005).
-
-(4) Smith, T.; Guild, J. The C.I.E. Colorimetric Standards and Their Use. _Trans. Opt. Soc._ **1931**, _33_ (3), 73--134. [https://doi.org/10.1088/1475-4878/33/3/301](https://doi.org/10.1088/1475-4878/33/3/301).
-
-(5) Fairman, H. S.; Brill, M. H.; Hemmendinger, H. How the Cie 1931 Color-Matching Functions Were Derived from Wright-Guild Data. _Color Res. Appl._ **1997**, _22_ (1), 11--23. [https://doi.org/10.1002/(SICI)1520-6378(199702)22:1\<11::AID-COL4\>3.0.CO;2-7](https://doi.org/10.1002/(SICI)1520-6378(199702)22:1<11::AID-COL4>3.0.CO;2-7).
-
-(6) Chazaux, M.; Schiphorst, C.; Lazzari, G.; Caffarri, S. Precise Estimation of Chlorophyll a , b and Carotenoid Content by Deconvolution of the Absorption Spectrum and New Simultaneous Equations for Chl Determination. _Plant J._ **2022**, _109_ (6), 1630--1648. [https://doi.org/10.1111/tpj.15643](https://doi.org/10.1111/tpj.15643).
-
-(7) Otto, M. _Chemometrics: Statistics and Computer Application in Analytical Chemistry_, 4th ed.; Wiley-VCH Verlag: Weinheim, DE, 2024; pp. 137--140. [https://doi.org/10.1002/9783527843800](https://doi.org/10.1002/9783527843800).
+[^1]: Kingdom, F. A. A.; Prins, N. _Psychophysics: A Practical Introduction_, 2nd ed.; Academic Press: Amsterdam, NL, 2016; pp. 19--20. [https://doi.org/10.1016/C2012-0-01278-1](https://doi.org/10.1016/C2012-0-01278-1).
+[^2]: Schanda, J. _Colorimetry: Understanding the CIE System_; John Wiley & Sons: Hoboken, NJ, USA, 2007; pp. 56--59. [https://doi.org/10.1002/9780470175637](https://doi.org/10.1002/9780470175637).
+[^3]: Guild, J. The Colorimetric Properties of the Spectrum. _Phil. Trans. R. Soc. Lond. A_ **1931**, _230_ (681-693), 149--187. [https://doi.org/10.1098/rsta.1932.0005](https://doi.org/10.1098/rsta.1932.0005).
+[^4]: Smith, T.; Guild, J. The C.I.E. Colorimetric Standards and Their Use. _Trans. Opt. Soc._ **1931**, _33_ (3), 73--134. [https://doi.org/10.1088/1475-4878/33/3/301](https://doi.org/10.1088/1475-4878/33/3/301).
+[^5]: Fairman, H. S.; Brill, M. H.; Hemmendinger, H. How the Cie 1931 Color-Matching Functions Were Derived from Wright-Guild Data. _Color Res. Appl._ **1997**, _22_ (1), 11--23. [https://doi.org/10.1002/(SICI)1520-6378(199702)22:1\<11::AID-COL4\>3.0.CO;2-7](https://doi.org/10.1002/(SICI)1520-6378(199702)22:1<11::AID-COL4>3.0.CO;2-7).
+[^6]: Chazaux, M.; Schiphorst, C.; Lazzari, G.; Caffarri, S. Precise Estimation of Chlorophyll a , b and Carotenoid Content by Deconvolution of the Absorption Spectrum and New Simultaneous Equations for Chl Determination. _Plant J._ **2022**, _109_ (6), 1630--1648. [https://doi.org/10.1111/tpj.15643](https://doi.org/10.1111/tpj.15643).
+[^7]: Otto, M. _Chemometrics: Statistics and Computer Application in Analytical Chemistry_, 4th ed.; Wiley-VCH Verlag: Weinheim, DE, 2024; pp. 137--140. [https://doi.org/10.1002/9783527843800](https://doi.org/10.1002/9783527843800).

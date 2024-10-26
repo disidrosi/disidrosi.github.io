@@ -21,7 +21,7 @@ categories: [
 
 ![Book cover of Pieces of the Action by Vannevar Bush](img/book_cover_bush_pieces_of_the_action.jpg)
 
-## 1. The Book In Synthesis
+## The Book In Synthesis
 
 What if you were tasked with leading the development of technology that could decide the fate of World War II?
 
@@ -29,9 +29,9 @@ Managing such an effort would require balancing not just logistics but also the 
 
 This book is a unique recollection and analysis of how these monumental efforts were managed, straight from the man who orchestrated them.
 
-## 2. Managing R&D Means Managing The Unpredictable
+## Managing R&D Means Managing The Unpredictable
 
-What makes research and development (R&D) so challenging to manage is not just the science, but the inherent unpredictability.<sup>1</sup>
+What makes research and development (R&D) so challenging to manage is not just the science, but the inherent unpredictability.[^1]
 
 R&D isn't a straightforward process of following steps to reach a goal. In fact, the goal itself might be unknown until much later in the journey.
 
@@ -41,7 +41,7 @@ This uncertainty is also what makes R&D uniquely valuable. The breakthroughs tha
 
 In the end, effective R&D management is less about control and more about nurturing flexibility and creativity.
 
-## 3. Successful R&D Is The Result Of Culture And Methodology
+## Successful R&D Is The Result Of Culture And Methodology
 
 R&D is a key driver of an organization's long-term success. In fact, some of the world's most successful companies, like Amazon, Alphabet, Meta, Apple, and Microsoft, spent over $200 billion on R&D in 2022 alone. This massive investment is a crucial part of their strategy to stay ahead of the competition in a fast-evolving tech landscape.
 
@@ -51,31 +51,31 @@ This is why companies that excel in R&D are not just pouring resources into inno
 
 Ultimately, successful R&D isn't just about money---it's about having a system that transforms investment into innovation.
 
-## 4. R&D Is Closely Tied to Its Context
+## R&D Is Closely Tied to Its Context
 
 Every R&D project is a unique challenge with countless variables at play.
 
-For each problem or idea, there are potentially infinite choices, approaches, and solutions. What works for one project might not work for another, given the vast differences in context.<sup>2</sup>
+For each problem or idea, there are potentially infinite choices, approaches, and solutions. What works for one project might not work for another, given the vast differences in context.[^2]
 
-R&D is highly contextual, which means that success is never guaranteed by a one-size-fits-all formula. While traditional constraints like time, cost, and scope---the "iron triangle"---are essential, they are just the starting point. Additional factors such as team culture, conflicting stakeholder interests, and the chosen development approach can make or break a project. How the project is tracked, how it transitions from development to production, and how deployment is handled are equally important. Each of these elements introduces complexity that can drastically change how an R&D project unfolds and ultimately succeeds.<sup>3</sup>
+R&D is highly contextual, which means that success is never guaranteed by a one-size-fits-all formula. While traditional constraints like time, cost, and scope---the "iron triangle"---are essential, they are just the starting point. Additional factors such as team culture, conflicting stakeholder interests, and the chosen development approach can make or break a project. How the project is tracked, how it transitions from development to production, and how deployment is handled are equally important. Each of these elements introduces complexity that can drastically change how an R&D project unfolds and ultimately succeeds.[^3]
 
 This variability means that project managers need to be adaptable, adjusting strategies based on the unique circumstances of each R&D effort. Teams that thrive in R&D know how to assess and prioritize these factors, allowing them to navigate the inherent uncertainty. The more agile and responsive the team, the better they are equipped to steer projects toward successful outcomes.
 
 In R&D, success depends on understanding the context and fine-tuning the approach to match the project's unique challenges.
 
-## 5. World War II As A Large Scale Case Study
+## World War II As A Large Scale Case Study
 
 R&D isn't the only field that deals with complex, context-dependent problems.
 
 Many disciplines have developed approaches to better understand and navigate these kinds of challenges. One of the most influential methods is the case study approach, widely used in fields like law and social sciences.
 
-The case study method, initially developed by Christopher Columbus Langdell in the legal field, is a powerful tool for analyzing context-dependent problems.<sup>4,5</sup> By examining real-world situations in their natural context, this approach allows us to explore the nuanced factors that influence outcomes. In the world of R&D, particularly during large-scale efforts like those in wartime, this approach can offer deep insights into what makes such projects successful. Vannevar Bush's *Pieces of the Action* is, in essence, a case study of one of the largest coordinated R&D efforts in history: the U.S. application of science and technology during World War II. As head of the Office of Scientific Research and Development (OSRD), Bush was central in overseeing the scientific advancements that contributed to the Allied victory. His account provides not only a historical narrative but also a framework for understanding the principles that made this immense R&D effort a success.
+The case study method, initially developed by Christopher Columbus Langdell in the legal field, is a powerful tool for analyzing context-dependent problems.[^4] [^5] By examining real-world situations in their natural context, this approach allows us to explore the nuanced factors that influence outcomes. In the world of R&D, particularly during large-scale efforts like those in wartime, this approach can offer deep insights into what makes such projects successful. Vannevar Bush's *Pieces of the Action* is, in essence, a case study of one of the largest coordinated R&D efforts in history: the U.S. application of science and technology during World War II. As head of the Office of Scientific Research and Development (OSRD), Bush was central in overseeing the scientific advancements that contributed to the Allied victory. His account provides not only a historical narrative but also a framework for understanding the principles that made this immense R&D effort a success.
 
 Bush's leadership at the OSRD shows the importance of coordination and strategy in large-scale R&D. His insights reflect how wartime R&D was a complex, multifaceted challenge that required balancing scientific innovation with logistical constraints. The lessons he shares through his case study resonate beyond their historical context, and are still precious for modern leaders in science, technology, and management.
 
 In this way, *Pieces of the Action* serves as both a historical record and a case study in effective R&D management under extraordinary conditions.
 
-## 6. Should You Read It?
+## Should You Read It?
 
 Many of the most important innovations of the 20th century were born out of the R&D efforts during World War II.
 
@@ -87,14 +87,8 @@ What makes Bush's book particularly valuable is its dual focus on both technical
 
 Through *Pieces of the Action*, Bush teaches us that successful R&D requires both technical expertise and a deep understanding of the human factors that drive project success. Should you read it? Absolutely yes.
 
-## 7. Further Reading
-
-(1) Wingate, L. M. *Project Management for Research and Development: Guiding Innovation for Positive R&D Outcomes*; Levin, G., Series Ed.; Best Practices and Advances in Program Management; CRC Press: Boca Raton, FL, USA, 2015.
-
-(2) Some would say it is a *wicked problem*. For more on this, see: Senge, P. M. *The Fifth Discipline: The Art and Practice of the Learning Organization*, 2nd ed.; Doubleday/Currency: New York, NY, USA, 2006.
-
-(3) *The Standard for Project Management and a Guide to the Project Management Body of Knowledge (PMBOK Guide)*, 7th ed.; Project Management Institute, Inc.: Newtown Square, PA, USA, 2017.
-
-(4) *The Case Study Teaching Method*. [https://casestudies.law.harvard.edu/the-case-study-teaching-method/](https://casestudies.law.harvard.edu/the-case-study-teaching-method/) (accessed 2024-08-26).
-
-(5) Crowe, S.; Cresswell, K.; Robertson, A.; Huby, G.; Avery, A.; Sheikh, A. The Case Study Approach. *BMC Med. Res. Methodol.* **2011**, *11* (1), 100. [https://doi.org/10.1186/1471-2288-11-100](https://doi.org/10.1186/1471-2288-11-100).
+[^1]: Wingate, L. M. *Project Management for Research and Development: Guiding Innovation for Positive R&D Outcomes*; Levin, G., Series Ed.; Best Practices and Advances in Program Management; CRC Press: Boca Raton, FL, USA, 2015.
+[^2]: Some would say it is a *wicked problem*. For more on this, see: Senge, P. M. *The Fifth Discipline: The Art and Practice of the Learning Organization*, 2nd ed.; Doubleday/Currency: New York, NY, USA, 2006.
+[^3]: *The Standard for Project Management and a Guide to the Project Management Body of Knowledge (PMBOK Guide)*, 7th ed.; Project Management Institute, Inc.: Newtown Square, PA, USA, 2017.
+[^4]: *The Case Study Teaching Method*. [https://casestudies.law.harvard.edu/the-case-study-teaching-method/](https://casestudies.law.harvard.edu/the-case-study-teaching-method/) (accessed 2024-08-26).
+[^5]: Crowe, S.; Cresswell, K.; Robertson, A.; Huby, G.; Avery, A.; Sheikh, A. The Case Study Approach. *BMC Med. Res. Methodol.* **2011**, *11* (1), 100. [https://doi.org/10.1186/1471-2288-11-100](https://doi.org/10.1186/1471-2288-11-100).
