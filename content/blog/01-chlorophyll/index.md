@@ -16,7 +16,8 @@ categories: [
     "python",
     "colorimetry"
 ]
-math: true
+params:
+    math: true
 ---
 
 > [!NOTE] Summary

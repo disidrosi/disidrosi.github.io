@@ -21,6 +21,8 @@ categories: [
     "glass",
     "thermodynamics"
 ]
+params:
+    math: true
 ---
 
 > [!Note] tl;dr
