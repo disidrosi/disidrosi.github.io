@@ -11,10 +11,9 @@
   {{- partial "seo_tags.html" . -}}
   <meta name="referrer" content="no-referrer-when-downgrade" />
 
-  {{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
-  {{ with resources.Get "sass/main.scss" | toCSS $opts | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-  {{ end }}
+  {{ $sass := resources.Get "sass/main.scss" }}
+  {{ $style := $sass | css.Sass | resources.Fingerprint | minify }}
+  <link href="{{ $style.RelPermalink }}" rel="stylesheet">
 
   {{ if (.Page.Store.Get "hasCodeBlock") }}
     {{ $syntax := resources.Get "syntax.css" | minify }}

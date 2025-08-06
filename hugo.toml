@@ -33,10 +33,9 @@ enableEmoji = true
         lineNos = true
         lineNumbersInTable = false
 
-
-    # This allows to use a variation of Dracula that is more accessible to
-    # people with poor eyesight.
-    noClasses = false
+        # This allows to use a variation of Dracula that is more accessible to
+        # people with poor eyesight.
+        noClasses = false
 
 # Multilingual mode config.
 [languages]
