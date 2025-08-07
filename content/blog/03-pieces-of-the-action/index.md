@@ -1,5 +1,4 @@
 ---
-layout: article
 slug: "review-pieces-of-the-action"
 author: "Tobia Cavalli"
 title: "Book review: Pieces of the Action by Vannevar Bush"
@@ -15,12 +14,9 @@ categories: [
     "R&D",
     "project management"
 ]
+showTableOfContents: true
+feature: "*book_cover_bush_pieces_of_the_action*"
 ---
-
-{{% toc %}}
-
-![Book cover of Pieces of the Action by Vannevar
-Bush](img/book_cover_bush_pieces_of_the_action.jpg)
 
 ## The Book In Synthesis
 

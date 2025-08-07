@@ -1,9 +1,9 @@
 ---
-layout: article
 slug: "installing-orca-macos"
 author: "Tobia Cavalli"
 title: "Installing ORCA on Mac OS Arm64"
 date: "2024-09-22"
+lastmod: "2025-07-30"
 description: "Guide to installing ORCA on Mac OS Arm64"
 tags: [
     "software",
@@ -17,15 +17,16 @@ categories: [
     "computational chemistry",
     "Mac OS"
 ]
+showTableOfContents: true
+showDateUpdated: true
 ---
 
-> [!Note] Summary
-> This post is a step-by-step guide to installing and configuring ORCA, a
-> powerful quantum chemistry software, on macOS with Arm64 architecture. It
-> includes steps for downloading packages, setting up Open MPI for parallel
-> computations, and testing the installation with sample calculations.
-
-{{% toc %}}
+{{< lead >}}
+This post is a step-by-step guide to installing and configuring ORCA, a
+powerful quantum chemistry software, on macOS with Arm64 architecture. It
+includes steps for downloading packages, setting up Open MPI for parallel
+computations, and testing the installation with sample calculations.
+{{< /lead >}}
 
 ## What is ORCA?
 
@@ -209,7 +210,7 @@ command should be:
 ```
 
 See this [Github issue](https://github.com/open-mpi/ompi/issues/11935) for more
-details.
+details
 
 These steps can take some time. If you want to speed things up, you can compile
 using multiple cores by adding the `-jN` option to the `make` commands, where

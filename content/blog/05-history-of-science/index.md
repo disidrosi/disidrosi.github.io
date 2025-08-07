@@ -1,5 +1,4 @@
 ---
-layout: article
 slug: "looking-back-to-move-forward"
 author: "Tobia Cavalli"
 title: "Looking Back to Move Forward: The Power of Scientific History"
@@ -19,17 +18,18 @@ categories: [
     "innovation",
     "history",
 ]
+showTableOfContents: true
+thumbnail: "*galileo_san_marco_tower*"
 ---
 
-> [!Note] tl;dr
-> Scientists often ignore their field's history, viewing it as irrelevant to
-> current research. This article explores why that's a mistake. Historical
-> awareness helps avoid past errors, reveals patterns in scientific
-> breakthroughs, and creates more thoughtful researchers. Drawing from real
-> examples and current debates, we'll see how understanding science's past can
-> drive future innovation.
-
-{{% toc %}}
+{{< lead >}}
+Scientists often ignore their field's history, viewing it as irrelevant to
+current research. This article explores why that's a mistake. Historical
+awareness helps avoid past errors, reveals patterns in scientific
+breakthroughs, and creates more thoughtful researchers. Drawing from real
+examples and current debates, we'll see how understanding science's past can
+drive future innovation.
+{{< /lead >}}
 
 Scientists are always pushing forward, racing to make the next breakthrough.
 But sometimes the best way forward is to look back at your own field's history.
@@ -57,7 +57,7 @@ medical establishment rejected his findings. Powerful figures destroyed his
 career simply because his ideas challenged their authority.
 
 ![Plate in memory of Galileo at San Marco's square in
-Venice](img/galileo_san_marco_tower.png "I took this photo on the tower of San
+Venice](galileo_san_marco_tower.png "I took this photo on the tower of San
 Marco's square in Venice. The plate says: Galileo Galilei with his telescope
 from here on August 21, 1609, broadened man's horizons")
 

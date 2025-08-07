@@ -1,7 +1,9 @@
 ---
 title: Reading
-menu: main
-weight: 2
+showdate: false
+showReadingTime: false
+showWordCount: false
+showTableOfContents: true
 ---
 
 ## Books I'm currently reading
@@ -451,4 +453,3 @@ weight: 2
 272. _Uomini e topi_ -- John Steinbeck
 273. _Viaggio al termine della notte_ -- Louis-Ferdinand Céline
 274. _Walden ovvero vita nei boschi_ -- Henry David Thoreau
-

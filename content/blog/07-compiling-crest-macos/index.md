@@ -1,9 +1,9 @@
 ---
-layout: article
 slug: "compiling-crest-macos-m1"
 author: "Tobia Cavalli"
 title: "Compiling CREST on MacOS with M-series Chips"
 date: "2025-03-14"
+lastmod: "2025-05-19"
 description: "A step-by-step guide to properly compiling CREST on Apple Silicon
     (M1/M2) Macs"
 tags: [
@@ -17,16 +17,17 @@ categories: [
     "software",
     "MacOS"
 ]
+showTableOfContents: true
+showDateUpdated: true
 ---
 
-> [!NOTE] Summary
-> This post provides a step-by-step guide for correctly compiling CREST on
-> Apple Silicon Macs (M1, M2, etc.). The standard installation method often
-> fails on these systems due to issues with the accelerate libraries. I'll walk
-> you through an alternative approach that properly compiles CREST against
-> openblas and lapack instead.
-
-{{% toc %}}
+{{< lead >}}
+This post provides a step-by-step guide for correctly compiling CREST on Apple
+Silicon Macs (M1, M2, etc.). The standard installation method often fails on
+these systems due to issues with the accelerate libraries. I'll walk you
+through an alternative approach that properly compiles CREST against openblas
+and lapack instead.
+{{< /lead >}}
 
 ## What is CREST?
 
@@ -94,10 +95,11 @@ compilers you just installed via Homebrew:
 export FC=gfortran-14 CC=gcc-14
 ```
 
-> [!IMPORTANT]
-> Check which specific version of gcc Homebrew installed on your system. In my
-> case, this was version 14, but you might have a different one. You can check
-> with `brew info gcc`.
+{{< alert >}}
+Check which specific version of gcc Homebrew installed on your system. In my
+case, this was version 14, but you might have a different one. You can check
+with `brew info gcc`.
+{{< /alert >}}
 
 Now comes the truly crucial part that fixes the whole problem. When using
 CMake, you need to explicitly tell it where to find the `lapack` and `openblas`

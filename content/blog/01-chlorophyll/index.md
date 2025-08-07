@@ -1,9 +1,9 @@
 ---
-layout: article
 slug: "cie-colors-python"
 author: "Tobia Cavalli"
 title: "Calculating the CIE color of Chlorophyll A and B using Python"
 date: "2024-09-14"
+lastmod: "2025-08-07"
 description: "Guide to calculating CIE colors from UV-Vis spectra using Python"
 tags: [
     "colorimetry",
@@ -16,21 +16,21 @@ categories: [
     "python",
     "colorimetry"
 ]
-params:
-    math: true
+showTableOfContents: true
+showDateUpdated: true
+thumbnail: "*cie_color_matching*"
 ---
 
-> [!NOTE] Summary
-> This post provides a step-by-step guide on how to calculate CIE colors from
-> UV-Vis spectra using Python. We'll look at the CIE colorimetry system and the
-> underlying principles behind color perception.
->
-> The core of the post focuses on practical implementation, guiding you through
-> the Python code that performs the necessary calculations. If you're primarily
-> interested in the coding aspect, you can skip directly to the [Python code
-> section](#python-code).
+{{< katex >}}
 
-{{% toc %}}
+{{< lead >}}
+This post provides a step-by-step guide on how to calculate CIE colors from
+UV-Vis spectra using Python. We'll look at the CIE colorimetry system and the
+underlying principles behind color perception.
+
+The core of the post focuses on practical implementation, guiding you through
+the Python code that performs the necessary calculations.
+{{< /lead >}}
 
 ## What is color?
 
@@ -82,43 +82,48 @@ are considered perceptually equivalent. The CIE system, developed by the
 Commission Internationale d'Éclairage, quantifies the relationship between
 wavelength distributions and perceived colors.[^3] [^4]
 
-![CIE color matching experiment](img/cie_color_matching.png "CIE color matching
+![CIE color matching experiment](cie_color_matching.png "CIE color matching
 experiment. Adapted from literature.")
 
 The CIE 1931 model, introduced in 1931, uses additive color mixing based on
 **Color Matching Functions (CMFs)**. These functions represent the spectral
 sensitivity of the three types of cone cells in the human eye, denoted as
-\(\bar{x}\), \(\bar{y}\), and \(\bar{z}\).
+\\(\bar{x}\\), \\(\bar{y}\\), and \\(\bar{z}\\).
 
 CMFs are derived from standardized experiments involving foveal vision,
 specific field sizes, dark surroundings, and average observations from multiple
 individuals, providing a statistical measure of color receptor sensitivity.
 
-By convolution of the sample spectrum \(M(\lambda)\) with the CMFs, we
-calculate **tristimulus values** \(X\), \(Y\), and \(Z\). These values
+By convolution of the sample spectrum \\(M(\lambda)\\) with the CMFs, we
+calculate **tristimulus values** \\(X\\), \\(Y\\), and \\(Z\\). These values
 represent the amounts of the three primary colors (red, green, and blue)
 required to match the given color.
 
 $$
-\begin{align}
-    X &= \int_{380}^{780} M(\lambda) \bar{x}(\lambda)  \, d\lambda \tag{1}\\
-    Y &= \int_{380}^{780} M(\lambda) \bar{y}(\lambda)  \, d\lambda \tag{2}\\
-    Z &= \int_{380}^{780} M(\lambda) \bar{z}(\lambda)  \, d\lambda \tag{3}
-\end{align}
+X = \int_{380}^{780} M(\lambda) \bar{x}(\lambda)  \, d\lambda \tag{1}
+$$
+
+$$
+Y = \int_{380}^{780} M(\lambda) \bar{y}(\lambda)  \, d\lambda \tag{2}
+$$
+
+$$
+Z = \int_{380}^{780} M(\lambda) \bar{z}(\lambda)  \, d\lambda \tag{3}
 $$
 
 The tristimulus values define a point in a three-dimensional color space.
 However, for practical purposes, this space is often reduced to two dimensions
-using the \(x\) and \(y\) chromaticity coordinates:
+using the \\(x\\) and \\(y\\) chromaticity coordinates:
 
 $$
-\begin{align}
-    x &= \frac{X}{X + Y + Z} \tag{4}\\
-    y &= \frac{Y}{X + Y + Z} \tag{5}
-\end{align}
+x = \frac{X}{X + Y + Z} \tag{4}
 $$
 
-The \(x\) and \(y\) coordinates uniquely specify a color within the CIE color
+$$
+y = \frac{Y}{X + Y + Z} \tag{5}
+$$
+
+The \\(x\\) and \\(y\\) coordinates uniquely specify a color within the CIE color
 space, enabling a standardized and objective representation of color
 perception. This system has been (and is!) used in various industries,
 including printing, photography, lighting design, and digital media, where
@@ -268,7 +273,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![CIE color space for a 2° observer.](img/CIE_2deg_color_space.png "CIE color
+![CIE color space for a 2° observer.](CIE_2deg_color_space.png "CIE color
 space for a 2° observer.")
 
 ### Importing and scaling data
@@ -306,7 +311,7 @@ measured_samples
 
 _1001 rows × 4 columns_
 
-The imported data represents the absorbance (\(A\)) of each chlorophyll type,
+The imported data represents the absorbance (\\(A\\)) of each chlorophyll type,
 which is measured at regular intervals of light (lambda). In simpler terms,
 absorbance indicates the amount of light absorbed by a specific molecule at a
 particular wavelength. Let's take a quick look at these spectra:
@@ -341,7 +346,7 @@ plt.show()
 ```
 
 ![UV-Vis absorption spectra of Chlorophyll A and B in 70% and 90 % acetone
-solutions.](img/chl_a_b_UV_Vis_abs.png "UV-Vis absorption spectra of
+solutions.](chl_a_b_UV_Vis_abs.png "UV-Vis absorption spectra of
 Chlorophyll A and B in 70% and 90 % acetone solutions.")
 
 From this initial inspection, we can see that Chlorophyll A absorbs light
@@ -373,9 +378,9 @@ $$
     x_{scaled} = \frac{x - x_{min}}{x_{max} - x_{min}} \tag{6}
 $$
 
-Here, \(x\) represents a single measured value, \(x_{min}\)​ and
-\(x_{max}\)​ represent the minimum and maximum values within the spectrum,
-respectively, and \(x_{scaled}\) represents the resulting normalized value.
+Here, \\(x\\) represents a single measured value, \\(x_{min}\\)​ and
+\\(x_{max}\\)​ represent the minimum and maximum values within the spectrum,
+respectively, and \\(x_{scaled}\\) represents the resulting normalized value.
 
 While the `scikit-learn` library offers built-in functions for this task (see
 [here](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)),
@@ -456,7 +461,7 @@ plt.show()
 ```
 
 ![Normalized UV-Vis absorption spectra of Chlorophyll A and B in 70% and 90 %
-acetone solutions.](img/chl_a_b_UV_Vis_abs_norm.png "Normalized UV-Vis
+acetone solutions.](chl_a_b_UV_Vis_abs_norm.png "Normalized UV-Vis
 absorption spectra of Chlorophyll A and B in 70% and 90 % acetone solutions.")
 
 ### Converting absorbance to transmittance
@@ -467,7 +472,7 @@ the color we actually perceive, we need to convert absorbance to
 **transmittance**. Transmittance represents the light that passes through the
 molecules and reaches our eyes.
 
-The conversion from absorbance (\(A\)) to transmittance (\(T\)) is
+The conversion from absorbance (\\(A\\)) to transmittance (\\(T\\)) is
 straightforward and follows this equation:
 
 $$
@@ -547,7 +552,7 @@ plt.show()
 ```
 
 ![Normalized UV-Vis transmission spectra of Chlorophyll A and B in 70% and 90 %
-acetone solutions.](img/chl_a_b_UV_Vis_trans_norm.png "Normalized UV-Vis
+acetone solutions.](chl_a_b_UV_Vis_trans_norm.png "Normalized UV-Vis
 transmission spectra of Chlorophyll A and B in 70% and 90 % acetone
 solutions.")
 
@@ -590,7 +595,7 @@ plt.show()
 ```
 
 ![Normalized UV-Vis absorption and transmission spectra of Chlorophyll A and B
-in 70% and 90 % acetone solutions.](img/chl_a_b_UV_Vis_abs_trans_norm.png
+in 70% and 90 % acetone solutions.](chl_a_b_UV_Vis_abs_trans_norm.png
 "Normalized UV-Vis absorption and transmission spectra of Chlorophyll A and B
 in 70% and 90 % acetone solutions.")
 
@@ -608,15 +613,15 @@ following:
   `SpectralDistribution` object from `colour-science`. This provides useful
   methods like `interpolate`, which is necessary to ensure the spectra conform
   to CIE specifications (1 nm intervals).
-- **Calculate CIE \(XYZ\) coordinates:** Using the `sd_to_XYZ` function, we'll
+- **Calculate CIE \\(XYZ\\) coordinates:** Using the `sd_to_XYZ` function, we'll
   compute the CIE XYZ coordinates for each spectrum based on the spectral
   distribution, color matching functions, and illuminant.
-- Convert to CIE \(xy\) coordinates: The \(XYZ\) coordinates are then converted
-  to CIE \(xy\) coordinates, which are more convenient for plotting on the
+- Convert to CIE \\(xy\\) coordinates: The \\(XYZ\\) coordinates are then converted
+  to CIE \\(xy\\) coordinates, which are more convenient for plotting on the
   color space.
 
-This code iterates over each spectrum, calculates the CIE \(XYZ\) coordinates,
-converts them to \(xy\) coordinates, and stores the results in two lists:
+This code iterates over each spectrum, calculates the CIE \\(XYZ\\) coordinates,
+converts them to \\(xy\\) coordinates, and stores the results in two lists:
 `chl_abs_clr` for the absorbance-based colors and `chl_transm_clr` for the
 transmittance-based colors. Finally, the results are merged into a single
 DataFrame for easier analysis.
@@ -682,7 +687,7 @@ colors
 
 ### Visualizing colors on the CIE color space
 
-Now that we have the \(x\) and \(y\) values for both absorbed and transmitted
+Now that we have the \\(x\\) and \\(y\\) values for both absorbed and transmitted
 colors, let's plot them on the CIE 1931 color space. This code first plots the
 CIE color space as we have seen [at the
 beginning](#plotting-the-cie-2-color-space). Then, it iterates through the
@@ -743,7 +748,7 @@ plt.show()
 
 ![CIE color space for a 2° observer and calculated absorbed colors for
 Chlorophyll A and B in 70 % and 90 % acetone with D65
-illuminant.](img/CIE_chl_abs.png "CIE color space for a 2° observer and
+illuminant.](CIE_chl_abs.png "CIE color space for a 2° observer and
 calculated absorbed colors for Chlorophyll A and B in 70 % and 90 % acetone
 with D65 illuminant.")
 
@@ -803,7 +808,7 @@ plt.show()
 
 ![CIE color space for a 2° observer and calculated transmitted colors for
 Chlorophyll A and B in 70 % and 90 % acetone with D65
-illuminant.](img/CIE_chl_transm.png "CIE color space for a 2° observer and
+illuminant.](CIE_chl_transm.png "CIE color space for a 2° observer and
 calculated transmitted colors for Chlorophyll A and B in 70 % and 90 % acetone
 with D65 illuminant.")
 

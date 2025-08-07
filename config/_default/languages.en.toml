@@ -1,0 +1,71 @@
+languageCode = "en"
+languageName = "English"
+languageDirection = "ltr"
+weight = 1
+
+title = "Tobia Cavalli"
+copyright = """Copyright © Tobia Cavalli <br> Opinions listed here are my own
+and not representative of any of my employers, past, future, and/or present."""
+
+[params]
+dateFormat = "2006-01-02"
+
+# mainSections = ["section1", "section2"]
+description = "My personal website"
+
+[params.author]
+name = "Tobia Cavalli"
+image = "img/profile.jpg"
+headline = """R&D Project Manager Engineer"""
+bio = """I am a materials scientist with a passion for designing and developing
+functional materials. I have an academic background in computational chemistry
+and materials synthesis and characterization, which I now use to bridge
+fundamental research and industrial applications."""
+links = [
+  { email = "mailto:tobiablogs@pm.me" },
+  { link = "https://tobiacavalli.com" },
+  #   { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
+  #   { apple = "https://www.apple.com" },
+  #   { blogger = "https://username.blogspot.com/" },
+  #   { codepen = "https://codepen.io/username" },
+  #   { dev = "https://dev.to/username" },
+  #   { discord = "https://discord.gg/invitecode" },
+  #   { dribbble = "https://dribbble.com/username" },
+  #   { facebook = "https://facebook.com/username" },
+  #   { flickr = "https://www.flickr.com/photos/username/" },
+  #   { foursquare = "https://foursquare.com/username" },
+  { github = "https://github.com/disidrosi" },
+  #   { gitlab = "https://gitlab.com/username" },
+  #   { google = "https://www.google.com/" },
+  #   { google-scholar = "https://scholar.google.com/citations?user=user-id" },
+  #   { hashnode = "https://username.hashnode.dev" },
+  #   { instagram = "https://instagram.com/username" },
+  #   { keybase = "https://keybase.io/username" },
+  #   { kickstarter = "https://www.kickstarter.com/profile/username" },
+  #   { kofi = "https://ko-fi.com/username" },
+  #   { lastfm = "https://lastfm.com/user/username" },
+  { linkedin = "https://www.linkedin.com/in/tobia-cavalli" },
+  #   { mastodon = "https://mastodon.instance/@username" },
+  #   { medium = "https://medium.com/username" },
+  #   { mendeley = "https://www.mendeley.com/" },
+  #   { microsoft = "https://www.microsoft.com/" },
+  { orcid = "https://orcid.org/0000-0002-7987-5701" },
+  #   { patreon = "https://www.patreon.com/username" },
+  #   { pinterest = "https://pinterest.com/username" },
+  #   { reddit = "https://reddit.com/user/username" },
+  #   { researchgate = "https://www.researchgate.net/profile/username" },
+  #   { slack = "https://workspace.url/team/userid" },
+  #   { snapchat = "https://snapchat.com/add/username" },
+  #   { soundcloud = "https://soundcloud.com/username" },
+  #   { stack-overflow = "https://stackoverflow.com/users/userid/username" },
+  #   { steam = "https://steamcommunity.com/profiles/userid" },
+  #   { telegram = "https://t.me/username" },
+  #   { threads = "https://threads.net/@username" },
+  #   { tiktok = "https://tiktok.com/@username" },
+  #   { tumblr = "https://username.tumblr.com" },
+  #   { twitch = "https://twitch.tv/username" },
+  #   { whatsapp = "https://wa.me/phone-number" },
+  #   { x-twitter = "https://twitter.com/username" },
+  #   { youtube = "https://youtube.com/username" },
+  #   { xing = "https://xing.com/profile/username" },
+]

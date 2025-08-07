@@ -1,3 +1,4 @@
-[submodule "themes/hugo-bearcub"]
-	path = themes/hugo-bearcub
-	url = https://github.com/clente/hugo-bearcub
+[submodule "themes/congo"]
+	path = themes/congo
+	url = https://github.com/jpanther/congo.git
+	branch = stable

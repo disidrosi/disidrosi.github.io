@@ -1,5 +1,4 @@
 ---
-layout: article
 slug: "from-yttria-to-promethium"
 author: "Tobia Cavalli"
 title: "From Yttria to Promethium: The 200-Year Search for Rare Earth Elements"
@@ -25,29 +24,30 @@ categories: [
     "Technology and Innovation",
     "Chemistry"
 ]
+showTableOfContents: true
+thumbnail: "*periodic_table_rees*"
 ---
 
-> [!NOTE] tl;dr
-> Rare earth elements are essential to modern technology, powering everything
-> from smartphones to electric vehicles, but their discovery was anything but
-> straightforward.
->
-> This article traces the centuries-long journey of chemists who, starting with
-> mysterious minerals found in Swedish mines, unraveled the identities of 17
-> elusive elements.
->
-> Through persistent experimentation and breakthroughs in spectral analysis,
-> these once-misunderstood "rare earths" transformed from scientific
-> curiosities into indispensable resources, showing that real progress is built
-> on patience and generations of discovery.
+{{< lead >}}
+Rare earth elements are essential to modern technology, powering everything
+from smartphones to electric vehicles, but their discovery was anything but
+straightforward.
 
-{{% toc %}}
+This article traces the centuries-long journey of chemists who, starting with
+mysterious minerals found in Swedish mines, unraveled the identities of 17
+elusive elements.
 
-> For more on the importance of understanding scientific history, see my
-> earlier post, [Looking Back to Move Forward: The Power of Scientific
-> History]({{< ref "/blog/05-history-of-science/index.md" >}} "Looking Back to
-> Move Forward: The Power of Scientific History"), where I explore why
-> awareness of past discoveries can deepen our perspective on current science.
+Through persistent experimentation and breakthroughs in spectral analysis,
+these once-misunderstood "rare earths" transformed from scientific curiosities
+into indispensable resources, showing that real progress is built on patience
+and generations of discovery.
+
+For more on the importance of understanding scientific history, see my earlier
+post, [Looking Back to Move Forward: The Power of Scientific History]({{< ref
+"/blog/05-history-of-science/index.md" >}} "Looking Back to Move Forward: The
+Power of Scientific History"), where I explore why awareness of past
+discoveries can deepen our perspective on current science.
+{{< /lead >}}
 
 Rare earth elements don't get much attention in daily conversation, but they're
 the hidden heroes of modern technology. Without them, your smartphone wouldn't
@@ -61,8 +61,8 @@ lanthanides, which sit between barium and hafnium on the periodic table. The
 story begins with yttrium, discovered by Finnish chemist Johan Gadolin in the
 late 1700s. But this was just the first piece of a much larger puzzle.[^2] [^3]
 
-![Rees](./img/periodic_table_rees.png "The rare earth elements stand out here
-in orange—a small section of the periodic table, but crucial for powering
+![Rees](periodic_table_rees.png "The rare earth elements stand out here in
+orange—a small section of the periodic table, but crucial for powering
 everything from smartphones to wind turbines.")
 
 At the time, the scientific world was buzzing with new discoveries. Researchers
@@ -95,7 +95,7 @@ thousand euros in cents scattered across a beach rather than a single ten-euro
 bill in your pocket.
 
 ![Plot of the natural abundance (in ppm) on Earth's crust of each rare earth
-element.](./img/rees_abundance.png "Surprisingly abundant: Though called
+element.](rees_abundance.png "Surprisingly abundant: Though called
 'rare,' many rare earth elements are more common in the Earth's crust than
 precious metals like gold—just harder to find in concentrated deposits.")
 

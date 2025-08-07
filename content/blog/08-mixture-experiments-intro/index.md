@@ -1,9 +1,9 @@
 ---
-layout: article
 slug: "getting-started-mixture-experiments"
 author: "Tobia Cavalli"
 title: "Getting started with mixture experiments"
 date: "2025-08-05"
+lastmod: "2025-08-07"
 description: "Learn the basics of mixture experimental design. Includes
     step-by-step polymer formulation example, Scheffé polynomials, response
     surface modeling, and software recommendations for R, Python, and
@@ -20,20 +20,22 @@ categories: [
     "data analysis"
     
 ]
-params:
-    math: true
+showTableOfContents: true
+showDateUpdated: true
+thumbnail: "*rsm_contour*"
 ---
 
-> [!NOTE] Summary
-> This post is an introduction to mixture experimental design. I'll walk you
-> through a complete polymer yarn example, showing how to plan, analyze, and
-> interpret the results of a simple mixture design.
->
-> The second half covers practical resources including books, commercial
-> software solutions and open-source alternatives, helping you choose the right
-> tools for your projects.
+{{< katex >}}
 
-{{% toc %}}
+{{< lead >}}
+This post is an introduction to mixture experimental design. I'll walk you
+through a complete polymer yarn example, showing how to plan, analyze, and
+interpret the results of a simple mixture design.
+
+The second half covers practical resources including books, commercial
+software solutions and open-source alternatives, helping you choose the right
+tools for your projects.
+{{< /lead >}}
 
 ## What are mixture experiments?
 
@@ -72,7 +74,7 @@ an efficient way to get a clear understanding of this effect?
 ### Planning and designing the experiments
 
 First, you need to choose a property that you can measure --- your response
-variable \(y\). You decide to take a closer look at the elongation of fibers
+variable \\(y\\). You decide to take a closer look at the elongation of fibers
 produced with different polymer blends, which measures how much you can
 lengthen your fibers before they break.[^1]
 
@@ -95,16 +97,16 @@ experimental run is optimally placed inside the simplex, ensuring that the
 compositional space is properly explored.
 
 The simplest mixture design is the **Simplex Lattice Design (SLD)**. In this
-type of design, each *factor* (in this case, PE, PP, and PS) can take \(m+1\)
-values (\(0, 1/m, 2/m, \dots, m/m\)) where \(m\) represents the number of
+type of design, each *factor* (in this case, PE, PP, and PS) can take \\(m+1\\)
+values (\\(0, 1/m, 2/m, \dots, m/m\\)) where \\(m\\) represents the number of
 levels. A level is nothing more than the specific value that a factor is going
-to take in a given run. The value of \(m\) is also important for later
+to take in a given run. The value of \\(m\\) is also important for later
 modeling, because it defines the order of the polynomial that can be fitted to
-the data: \(m=1\) means you'll only be able to fit first order polynomials,
-\(m=2\) second order, \(m=3\) third order, and so on.
+the data: \\(m=1\\) means you'll only be able to fit first order polynomials,
+\\(m=2\\) second order, \\(m=3\\) third order, and so on.
 
 You decide to keep it simple and explore only pure or binary blend
-compositions, meaning that each factor is going to take two levels (\(m=2\)).
+compositions, meaning that each factor is going to take two levels (\\(m=2\\)).
 This setup includes three points for each component: 1 for a single-component,
 0.5 for the binary blend, and 0 for blends that do not include that component.
 This approach will allow you to fit a second order polynomial and get an idea
@@ -113,7 +115,7 @@ of how two components interact with each other.
 After calculating the relative proportions of each component and plotting them,
 your experimental design looks like the following:
 
-![SLD design](./img/design_points.svg "Simplex Lattice Design (SLD) for a
+![SLD design](design_points.svg "Simplex Lattice Design (SLD) for a
 three-component system. The triangle shows the entire compositional space
 defined by the three components (polyethylene, polypropylene, and polystyrene).
 The red dots indicate the experimental runs required to map the entire space.")
@@ -122,12 +124,12 @@ The red dots indicate the experimental runs required to map the entire space.")
 
 Time to execute. You go to the lab, prepare your 6 polymer blends, spin them
 into yarns and measure their elongation. Writing out the name of each component
-quickly gets boring, so you introduce some notation: \(x_{1}\) for
-polyethylene, \(x_{2}\) for polystyrene, and \(x_{3}\) for polypropylene. You
+quickly gets boring, so you introduce some notation: \\(x_{1}\\) for
+polyethylene, \\(x_{2}\\) for polystyrene, and \\(x_{3}\\) for polypropylene. You
 repeat each run three times and average the measured elongation, obtaining the
 following results:
 
-| Design point | \(x_{1}\) | \(x_{2}\) | \(x_{3}\) | Average elongation |
+| Design point | \\(x_{1}\\) | \\(x_{2}\\) | \\(x_{3}\\) | Average elongation |
 |--------------|----------:|----------:|----------:|-------------------:|
 | 1            | 1         | 0         | 0         | 11.7               |
 | 2            | 1/2       | 1/2       | 0         | 15.3               |
@@ -138,23 +140,23 @@ following results:
 
 At this point, you'll want to fit this data into a model that can be used to
 extrapolate the behavior of the system. There is one, problem though. Consider
-a standard polynomial with an intercept \(\beta_{0}\):
+a standard polynomial with an intercept \\(\beta_{0}\\):
 
-\[
+$$
 y = \beta_{0} + \beta_{1}x_{1} + \beta_{2}x_{2} + \beta_{3}x_{3} + \dots
-\]
+$$
 
-Where \(\beta_{1}\), \(\beta_{2}\), and \(\beta_{3}\) are the regression
+Where \\(\beta_{1}\\), \\(\beta_{2}\\), and \\(\beta_{3}\\) are the regression
 coefficients of each component. In mixture space, when all components approach
-zero we have \(x_{1} \rightarrow 0\), \(x_{2} \rightarrow 0\), \(x_{3}
-\rightarrow 0\). However, this violates the mixture constraint, since the sum
-of all components \(\sum_{i} x_{i}\) must equal 1. There's literally no point
-in mixture space where all \(x_{i} = 0\), so the intercept \(\beta_{0}\) has no
+zero we have \\(x_{1} \rightarrow 0\\), \\(x_{2} \rightarrow 0\\), \\(x_{3}
+\rightarrow 0\\). However, this violates the mixture constraint, since the sum
+of all components \\(\sum_{i} x_{i}\\) must equal 1. There's literally no point
+in mixture space where all \\(x_{i} = 0\\), so the intercept \\(\beta_{0}\\) has no
 physical meaning.[^2]
 
 [^2]: The mixture constraint creates perfect multicollinearity. If you know the
-    values of \(q-1\) components in a \(q\)-component mixture, the last
-    component is completely determined: \(x_{q} = 1 - \sum_{i=1}^{q} x_{i}\).
+    values of \\(q-1\\) components in a \\(q\\)-component mixture, the last
+    component is completely determined: \\(x_{q} = 1 - \sum_{i=1}^{q} x_{i}\\).
     This means that the design matrix is singular, and therefore the
     coefficients cannot be estimated through standard least squares.
 
@@ -162,30 +164,30 @@ To solve this problem, you are going to use Scheffé polynomials. These are
 special polynomial forms that respect the mixture constraint. For a ternary
 mixture system, the second-order Scheffé polynomial is:
 
-\[
+$$
 y = \beta_{1}x_{1} + \beta_{2}x_{2} + \beta_{3}x_{3} + \beta_{12}x_{1}x_{2} +
 \beta_{13}x_{1}x_{3} + \beta_{23}x_{2}x_{3}
-\]
+$$
 
-Here, \(\beta_{1}\), \(\beta_{2}\), and \(\beta_{3}\) represent the expected
+Here, \\(\beta_{1}\\), \\(\beta_{2}\\), and \\(\beta_{3}\\) represent the expected
 response when component 1, 2, and 3 respectively comprise 100% of the mixture,
-whereas the terms \(\beta_{12}\), \(\beta_{13}\) and \(\beta_{23}\) represent
+whereas the terms \\(\beta_{12}\\), \\(\beta_{13}\\) and \\(\beta_{23}\\) represent
 binary interactions. These latter terms have physical meaning and represent
 synergistic or antagonistic effects between components.
 
 The linear model becomes:
 
-\[
+$$
 y = 11.7 \cdot x_{1} + 9.4 \cdot x_{2} + 16.4 \cdot x_{3} + 19.0 \cdot
 x_{1}x_{2} + 11.4 \cdot x_{1}x_{3} -9.6 \cdot x_{2}x_{3}
-\]
+$$
 
 This is already a great result, because with just six experiments you obtained
 a model that describes the elongation for **any binary blend** obtained by
 mixing the three polymers. But there's more. You can go one step further and
 plot the model over the simplex, like so:
 
-![Polymer response surface](./img/rsm_contour.svg "Response surface modeled on the
+![Polymer response surface](rsm_contour.svg "Response surface modeled on the
 collected data")
 
 This type of visualization is called **response surface**, and it allows to
@@ -229,8 +231,9 @@ that I haven't considered here are:
 If you're interested in learning more about this topic and designing your own
 mixture experiments, below you'll find some resources to get you started.
 
-**Note:** I am not affiliated with any of the following publishers or software
-companies.
+{{< alert >}}
+I am not affiliated with any of the following publishers or software companies.
+{{< /alert >}}
 
 ### Books
 
@@ -270,7 +273,7 @@ companies.
   approaches, they also include short chapters on the basics of mixture
   experiments.
 
-## Software
+### Software
 
 Let's say you are ready to crunch some numbers. Where do you start? You have
 two main options, each with different tradeoffs between ease-of-use and cost:
@@ -278,7 +281,7 @@ two main options, each with different tradeoffs between ease-of-use and cost:
 1. Buy a license for a proprietary DOE program.
 2. Use R or Python and do some programming.
 
-### Commercial solutions
+#### Commercial solutions
 
 If you're looking for an all-in-one solution with a graphical interface, you
 have several options:
@@ -304,7 +307,7 @@ I am not a fan of using this kind of software for two fundamental reasons:
    be a concern for you now, but it might be in the future when you need to
    understand exactly how a result was obtained.
 
-### Free coding alternatives
+#### Free coding alternatives
 
 All functionality provided by paid software can be replicated using programming
 languages. Coding your own analyses gives you greater flexibility and provides
