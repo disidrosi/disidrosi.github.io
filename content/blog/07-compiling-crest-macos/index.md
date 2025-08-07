@@ -4,6 +4,8 @@ author: "Tobia Cavalli"
 title: "Compiling CREST on MacOS with M-series Chips"
 date: "2025-03-14"
 lastmod: "2025-05-19"
+summary: "Solve CREST compilation problems on Apple Silicon Macs compiling
+    against openblas and lapack."
 description: "A step-by-step guide to properly compiling CREST on Apple Silicon
     (M1/M2) Macs"
 tags: [
@@ -19,6 +21,7 @@ categories: [
 ]
 showTableOfContents: true
 showDateUpdated: true
+thumbnail: "*crest_logo*"
 ---
 
 {{< lead >}}

@@ -3,6 +3,9 @@ slug: "looking-back-to-move-forward"
 author: "Tobia Cavalli"
 title: "Looking Back to Move Forward: The Power of Scientific History"
 date: "2024-11-03"
+summary: "Exploring how historical awareness helps scientists avoid old traps,
+    recognize hidden patterns, and become more thoughtful researchers in our rush
+    toward the future."
 description: "Discover why studying the history of science is crucial for
     scientific progress. This article examines how historical awareness can
     prevent research pitfalls, drive innovation, and create more thoughtful

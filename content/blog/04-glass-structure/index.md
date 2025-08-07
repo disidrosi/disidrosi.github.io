@@ -3,6 +3,8 @@ slug: "glass-structure-stability"
 author: "Tobia Cavalli"
 title: "The Science of Glass: From Structure to Stability"
 date: "2024-10-27"
+summary: "Explore the science behind glass---from its disordered
+    atomic structure and metastable nature to the glass transition process."
 description: "An exploration of the atomic structure of glass: its amorphous
     nature, non-equilibrium state, glass transition, and formation from
     supercooled liquids. Discover what makes glass unique compared to

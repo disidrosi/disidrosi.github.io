@@ -4,6 +4,8 @@ author: "Tobia Cavalli"
 title: "Installing ORCA on Mac OS Arm64"
 date: "2024-09-22"
 lastmod: "2025-07-30"
+summary: "Complete setup of ORCA 6.0.0 quantum chemistry software on Apple
+    Silicon Macs."
 description: "Guide to installing ORCA on Mac OS Arm64"
 tags: [
     "software",
@@ -19,6 +21,7 @@ categories: [
 ]
 showTableOfContents: true
 showDateUpdated: true
+thumbnail: "*orca_logo*"
 ---
 
 {{< lead >}}

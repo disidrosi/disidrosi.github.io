@@ -4,6 +4,8 @@ author: "Tobia Cavalli"
 title: "Calculating the CIE color of Chlorophyll A and B using Python"
 date: "2024-09-14"
 lastmod: "2025-08-07"
+summary: "Learn how to bridge the gap between spectroscopy and perception by
+    calculating the actual CIE colors of chlorophyll A and B using Python."
 description: "Guide to calculating CIE colors from UV-Vis spectra using Python"
 tags: [
     "colorimetry",

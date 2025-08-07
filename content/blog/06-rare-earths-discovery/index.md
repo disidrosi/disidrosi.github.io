@@ -3,6 +3,8 @@ slug: "from-yttria-to-promethium"
 author: "Tobia Cavalli"
 title: "From Yttria to Promethium: The 200-Year Search for Rare Earth Elements"
 date: "2024-11-10"
+summary: "A 200-year scientific story about the unraveling of the complex
+    identities of 17 elusive rare earth elements."
 description: "Explore the two-century journey of rare earth element
     discovery---from obscure minerals in 18th-century Sweden to the
     indispensable components of modern technology. Learn how scientists like

@@ -12,7 +12,7 @@ autoSwitchAppearance = false
 defaultThemeColor = "#FFFFFF"
 
 enableSearch = false
-enableCodeCopy = false
+enableCodeCopy = true
 enableImageLazyLoading = true
 enableImageWebp = true
 
@@ -33,7 +33,7 @@ showScrollToTop = true
 
 [homepage]
 layout = "profile" # valid options: page, profile, custom
-showRecent = true
+showRecent = false
 recentLimit = 5
 
 [article]
@@ -57,7 +57,7 @@ showComments = false
 
 [list]
 showBreadcrumbs = false
-showSummary = false
+showSummary = true
 showTableOfContents = false
 showTaxonomies = false
 groupByYear = true

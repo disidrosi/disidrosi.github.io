@@ -4,6 +4,9 @@ author: "Tobia Cavalli"
 title: "Getting started with mixture experiments"
 date: "2025-08-05"
 lastmod: "2025-08-07"
+summary: "Learn mixture experimental design through a complete polymer yarn
+    formulation example covering planning, Scheffé polynomial analysis, and
+    practical software recommendations for R, Python, and commercial tools."
 description: "Learn the basics of mixture experimental design. Includes
     step-by-step polymer formulation example, Scheffé polynomials, response
     surface modeling, and software recommendations for R, Python, and

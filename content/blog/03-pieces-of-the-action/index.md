@@ -3,6 +3,8 @@ slug: "review-pieces-of-the-action"
 author: "Tobia Cavalli"
 title: "Book review: Pieces of the Action by Vannevar Bush"
 date: "2024-10-22"
+summary: "R&D management wisdom from Vannevar Bush's firsthand account of
+    orchestrating World War II's most crucial scientific breakthroughs."
 description: "Book review: Pieces of the Action by Vannevar Bush"
 tags: [
     "books",
