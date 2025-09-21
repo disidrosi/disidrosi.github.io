@@ -6,11 +6,18 @@ showWordCount: false
 showTableOfContents: true
 ---
 
-## Books I'm currently reading
-
-1. _Getting to Yes_ -- Roger Fisher and William Ury
-
 ## Books I read
+
+### 2025
+
+1. _The Man Who Changed Everything_ -- Basil Mahon
+2. _The Craft of Research_ -- Wayne C. Booth et al.
+3. _Where Research Begins_ -- Thomas S. Mullaney and Christopher Rea
+4. _Wordcraft_ -- Jack Hart
+5. _Storycraft_ -- Jack Hart
+5. _Digital Minimalism_ -- Cal Newport
+6. _Financial Intelligence_ -- Karen Berman, Joe Knight and John Case
+7. _Wherever You Go, There You Are_ -- Jon Kabat-Zinn
 
 ### 2024
 
@@ -25,6 +32,7 @@ showTableOfContents: true
 9. _Pieces of the Action_ -- Vannevar Bush
 10. _Power_ -- Jeffrey Pfeffer
 11. _The Art and Business of Online Writing_ -- Nicolas Cole
+12. _Getting to Yes_ -- Roger Fisher and William Ury
 
 ### 2023
 

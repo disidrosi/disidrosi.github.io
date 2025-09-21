@@ -348,7 +348,8 @@ designs to analyzing results.
   experiments, and even plot some basic response surfaces. If you're wondering:
   All the plots and analyses in this post were done in R using `mixexp` and the
   `Ternary` package ([see Ternary
-  documentation](https://ms609.github.io/Ternary/)).
+  documentation](https://ms609.github.io/Ternary/)). You can find the
+  corresponding script that I wrote [here](cornell-plot.R).
 - Python libraries: I love Python. However, when I compare it to R in the
   context of generating experimental designs, there seems to be no game at all.
   Nonetheless, the following libraries allow doing some basic mixture designs:
