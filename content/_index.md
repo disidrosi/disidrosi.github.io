@@ -1,12 +1,11 @@
 ---
-title: "Hi there! :wave:"
+title: "Hi there!"
 ---
 
-<br>
-
-I am a materials scientist with a passion for designing and developing
-functional materials.
-
-I love reading and writing about science, technology, and philosophy. I use my
-[blog](/blog/) as a learning space to improve my understanding about chemistry,
-materials science, and anything else I might find interesting.
+I studied chemistry in Padova, then moved to Vienna for a PhD in materials
+science at TU Wien, where I worked on computational chemistry and materials
+synthesis. Today I work at Barberini (EssilorLuxottica) in Germany, leading
+R&D projects on new glasses for sun lenses.
+I write here about the things I'm trying to understand better: materials
+science, computational chemistry, systems thinking, and the history of how
+scientific ideas actually develop.

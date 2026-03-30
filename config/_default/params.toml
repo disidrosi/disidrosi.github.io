@@ -5,7 +5,7 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://jpanther.github.io/congo/docs/configuration/#theme-parameters
 
-colorScheme = "fire"
+colorScheme = "slate"
 defaultAppearance = "dark"   # valid options: light or dark
 autoSwitchAppearance = false
 
@@ -33,7 +33,7 @@ showScrollToTop = true
 
 [homepage]
 layout = "profile" # valid options: page, profile, custom
-showRecent = false
+showRecent = true
 recentLimit = 5
 
 [article]
@@ -50,7 +50,7 @@ showPagination = true
 invertPagination = false
 showReadingTime = true
 showTableOfContents = false
-showTaxonomies = false
+showTaxonomies = true
 showWordCount = true
 showComments = false
 # sharingLinks = ["facebook", "x-twitter", "mastodon", "pinterest", "reddit", "linkedin", "email", "threads", "telegram", "line", "weibo", "xing", "bluesky"]
@@ -59,7 +59,7 @@ showComments = false
 showBreadcrumbs = false
 showSummary = true
 showTableOfContents = false
-showTaxonomies = false
+showTaxonomies = true
 groupByYear = true
 paginationWidth = 1
 

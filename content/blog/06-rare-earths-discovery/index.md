@@ -12,19 +12,9 @@ description: "Explore the two-century journey of rare earth element
     yttrium, cerium, and more, building the foundation for innovations in clean
     energy, electronics, and optics."
 tags: [
-    "rare earths",
+    "materials-science",
+    "history-of-science",
     "chemistry",
-    "materials science",
-    "history",
-    "science",
-    "technology",
-]
-categories: [
-    "Rare Earth Elements",
-    "History of Chemistry",
-    "Scientific Discoveries",
-    "Technology and Innovation",
-    "Chemistry"
 ]
 showTableOfContents: true
 thumbnail: "*periodic_table_rees*"

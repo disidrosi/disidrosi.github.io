@@ -5,8 +5,8 @@
 unsafe = true
 
 [highlight]
-style = 'gruvbox'
-noClasses = true
+style = 'nord'
+noClasses = false
 
 [tableOfContents]
 startLevel = 2

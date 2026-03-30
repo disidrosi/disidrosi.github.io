@@ -16,11 +16,11 @@ description = "My personal website"
 [params.author]
 name = "Tobia Cavalli"
 image = "img/profile.jpg"
-headline = """R&D Project Manager Engineer"""
-bio = """I am a materials scientist with a passion for designing and developing
-functional materials. I have an academic background in computational chemistry
-and materials synthesis and characterization, which I now use to bridge
-fundamental research and industrial applications."""
+headline = """Materials scientist and R&D project manager"""
+bio = """I studied chemistry in Padova, then moved to Vienna for a PhD in
+materials science at TU Wien, where I worked on computational chemistry and
+materials synthesis. Today I work at Barberini (EssilorLuxottica) in Germany,
+leading R&D projects on new glasses for sun lenses."""
 links = [
   { email = "mailto:tobiablogs@pm.me" },
   { link = "https://tobiacavalli.com" },

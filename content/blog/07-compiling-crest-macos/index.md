@@ -9,15 +9,8 @@ summary: "Solve CREST compilation problems on Apple Silicon Macs compiling
 description: "A step-by-step guide to properly compiling CREST on Apple Silicon
     (M1/M2) Macs"
 tags: [
-    "computational chemistry",
-    "software installation",
-    "CREST",
-    "MacOS",
-]
-categories: [
-    "computational chemistry",
-    "software",
-    "MacOS"
+    "computational-chemistry",
+    "macos",
 ]
 showTableOfContents: true
 showDateUpdated: true

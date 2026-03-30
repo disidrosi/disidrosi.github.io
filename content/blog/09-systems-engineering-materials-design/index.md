@@ -6,15 +6,8 @@ date: "2026-03-30"
 description: "Materials are not properties on a datasheet. They are systems of interacting scales, feedback loops, and processing history. The PSPP framework makes those connections explicit and invertible."
 summary: "Replacing one element in an alloy forces changes to processing, structure, and performance all at once. This post introduces the PSPP framework and the systems concepts behind it. If the chain from processing to performance is causal in both directions, it can be read backward, turning material substitution into a design problem."
 tags: [
-    "PSPP",
-    "materials-design",
+    "materials-science",
     "systems-thinking",
-    "materials-science",
-]
-categories: [
-    "materials-science",
-    "systems-engineering",
-    "materials-design",
 ]
 showTableOfContents: true
 feature: systems.svg

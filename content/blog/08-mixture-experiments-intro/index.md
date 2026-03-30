@@ -12,16 +12,8 @@ description: "Learn the basics of mixture experimental design. Includes
     surface modeling, and software recommendations for R, Python, and
     commercial tools."
 tags: [
-    "design-of-experiments",
-    "mixture-experiments",
     "materials-science",
-    "response-surface-methodology"
-]
-categories: [
-    "DOE",
-    "materials science",
-    "data analysis"
-    
+    "design-of-experiments",
 ]
 showTableOfContents: true
 showDateUpdated: true
@@ -234,9 +226,8 @@ that I haven't considered here are:
 If you're interested in learning more about this topic and designing your own
 mixture experiments, below you'll find some resources to get you started.
 
-{{< alert >}}
-I am not affiliated with any of the following publishers or software companies.
-{{< /alert >}}
+> [!note]
+> I am not affiliated with any of the following publishers or software companies.
 
 ### Books
 

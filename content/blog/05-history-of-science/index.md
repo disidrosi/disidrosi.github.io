@@ -12,14 +12,7 @@ description: "Discover why studying the history of science is crucial for
     scientists. Through examples and current debates, learn why looking back
     might be the key to moving science forward."
 tags: [
-    "science",
-    "innovation",
-    "history",
-]
-categories: [
-    "science",
-    "innovation",
-    "history",
+    "history-of-science",
 ]
 showTableOfContents: true
 thumbnail: "*galileo_san_marco_tower*"

@@ -7,14 +7,8 @@ summary: "R&D management wisdom from Vannevar Bush's firsthand account of
     orchestrating World War II's most crucial scientific breakthroughs."
 description: "Book review: Pieces of the Action by Vannevar Bush"
 tags: [
-    "books",
-    "R&D",
-    "project management"
-]
-categories: [
-    "books",
-    "R&D",
-    "project management"
+    "book-review",
+    "project-management",
 ]
 showTableOfContents: true
 feature: "*book_cover_bush_pieces_of_the_action*"

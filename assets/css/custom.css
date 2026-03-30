@@ -1,0 +1,144 @@
+/* Remove backtick pseudo-elements from inline code */
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::before,
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::after {
+  content: none;
+}
+
+/* Style inline code with monospace font and subtle background */
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)):not(.chroma code) {
+  font-weight: 400;
+  background-color: rgba(var(--color-neutral-400), 0.15);
+  padding: 0.15em 0.35em;
+  border-radius: 0.25em;
+}
+
+/* Callouts (Obsidian-style) */
+.callout {
+  margin: 1.5em 0;
+  padding: 0.75em 1em;
+  border-left: 3px solid;
+  border-radius: 0.25em;
+  font-style: normal;
+}
+
+.callout-title {
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-bottom: 0.3em;
+}
+
+.callout-content {
+  font-size: 0.92em;
+}
+
+.callout-content > p:first-child { margin-top: 0; }
+.callout-content > p:last-child { margin-bottom: 0; }
+
+.callout-note {
+  border-color: #89b4fa;
+  background-color: rgba(137, 180, 250, 0.07);
+}
+.callout-note .callout-title { color: #89b4fa; }
+
+.callout-tip {
+  border-color: #94e2d5;
+  background-color: rgba(148, 226, 213, 0.07);
+}
+.callout-tip .callout-title { color: #94e2d5; }
+
+.callout-important {
+  border-color: #cba6f7;
+  background-color: rgba(203, 166, 247, 0.07);
+}
+.callout-important .callout-title { color: #cba6f7; }
+
+.callout-warning {
+  border-color: #fab387;
+  background-color: rgba(250, 179, 135, 0.07);
+}
+.callout-warning .callout-title { color: #fab387; }
+
+.callout-caution {
+  border-color: #f38ba8;
+  background-color: rgba(243, 139, 168, 0.07);
+}
+.callout-caution .callout-title { color: #f38ba8; }
+
+/* Catppuccin Mocha syntax highlighting
+   Uses :is(.dark *) to override the theme's dark-mode Chroma rules */
+.chroma,
+.chroma:is(.dark *) { color: #cdd6f4; background-color: #1e1e2e; }
+.chroma .err:is(.dark *) { color: #f38ba8; }
+.chroma .hl,
+.chroma .hl:is(.dark *) { background-color: #45475a; }
+.chroma .lnt:is(.dark *),
+.chroma .ln:is(.dark *) { color: #7f849c; }
+.chroma .k:is(.dark *) { color: #cba6f7; }
+.chroma .kc:is(.dark *) { color: #fab387; font-weight: normal; }
+.chroma .kd:is(.dark *) { color: #f38ba8; }
+.chroma .kn:is(.dark *) { color: #94e2d5; }
+.chroma .kp:is(.dark *) { color: #cba6f7; }
+.chroma .kr:is(.dark *) { color: #cba6f7; }
+.chroma .kt:is(.dark *) { color: #f38ba8; }
+.chroma .na:is(.dark *) { color: #89b4fa; }
+.chroma .nc:is(.dark *) { color: #f9e2af; }
+.chroma .no:is(.dark *),
+.chroma .ne:is(.dark *),
+.chroma .vg:is(.dark *) { color: #f9e2af; font-weight: normal; }
+.chroma .nd:is(.dark *) { color: #89b4fa; font-weight: bold; }
+.chroma .ni:is(.dark *) { color: #94e2d5; }
+.chroma .nl:is(.dark *) { color: #89dceb; }
+.chroma .nn:is(.dark *) { color: #fab387; }
+.chroma .py:is(.dark *) { color: #fab387; }
+.chroma .nt:is(.dark *) { color: #cba6f7; }
+.chroma .nb:is(.dark *),
+.chroma .bp:is(.dark *) { color: #89dceb; }
+.chroma .nv:is(.dark *),
+.chroma .vc:is(.dark *),
+.chroma .vi:is(.dark *),
+.chroma .vm:is(.dark *) { color: #f5e0dc; }
+.chroma .nf:is(.dark *),
+.chroma .fm:is(.dark *) { color: #89b4fa; }
+.chroma .n:is(.dark *),
+.chroma .nx:is(.dark *) { color: #cdd6f4; }
+.chroma .s:is(.dark *),
+.chroma .sb:is(.dark *),
+.chroma .sc:is(.dark *),
+.chroma .s2:is(.dark *),
+.chroma .si:is(.dark *),
+.chroma .sx:is(.dark *),
+.chroma .s1:is(.dark *),
+.chroma .ss:is(.dark *) { color: #a6e3a1; }
+.chroma .sa:is(.dark *) { color: #f38ba8; }
+.chroma .dl:is(.dark *),
+.chroma .se:is(.dark *) { color: #89b4fa; font-weight: normal; }
+.chroma .sd:is(.dark *),
+.chroma .sh:is(.dark *) { color: #6c7086; }
+.chroma .sr:is(.dark *) { color: #94e2d5; }
+.chroma .m:is(.dark *),
+.chroma .mb:is(.dark *),
+.chroma .mf:is(.dark *),
+.chroma .mh:is(.dark *),
+.chroma .mi:is(.dark *),
+.chroma .il:is(.dark *),
+.chroma .mo:is(.dark *) { color: #fab387; }
+.chroma .o:is(.dark *),
+.chroma .ow:is(.dark *) { color: #89dceb; font-weight: bold; }
+.chroma .c:is(.dark *),
+.chroma .cm:is(.dark *),
+.chroma .c1:is(.dark *),
+.chroma .cs:is(.dark *),
+.chroma .cp:is(.dark *),
+.chroma .cpf:is(.dark *) { color: #6c7086; font-style: italic; }
+.chroma .ch:is(.dark *) { color: #585b70; font-style: italic; }
+.chroma .gd:is(.dark *) { color: #f38ba8; background-color: #313244; }
+.chroma .ge:is(.dark *) { font-style: italic; }
+.chroma .gr:is(.dark *) { color: #f38ba8; }
+.chroma .gh:is(.dark *) { color: #fab387; font-weight: bold; }
+.chroma .gi:is(.dark *) { color: #a6e3a1; background-color: #313244; }
+.chroma .gs:is(.dark *) { font-weight: bold; }
+.chroma .gu:is(.dark *) { color: #fab387; font-weight: bold; }
+.chroma .gt:is(.dark *) { color: #f38ba8; }
+.chroma .gl:is(.dark *) { text-decoration: underline; }
+.chroma .go:is(.dark *),
+.chroma .gp:is(.dark *) { color: #a6e3a1; }

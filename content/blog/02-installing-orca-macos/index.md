@@ -8,16 +8,8 @@ summary: "Complete setup of ORCA 6.0.0 quantum chemistry software on Apple
     Silicon Macs."
 description: "Guide to installing ORCA on Mac OS Arm64"
 tags: [
-    "software",
-    "orca",
-    "computational chemistry",
-    "Mac OS"
-]
-categories: [
-    "software",
-    "orca",
-    "computational chemistry",
-    "Mac OS"
+    "computational-chemistry",
+    "macos",
 ]
 showTableOfContents: true
 showDateUpdated: true

@@ -11,20 +11,8 @@ description: "An exploration of the atomic structure of glass: its amorphous
     crystalline solids and how its properties are shaped by its atomic
     arrangement."
 tags: [
-    "science",
-    "materials science",
-    "chemistry",
-    "crystallography",
+    "materials-science",
     "glass",
-    "thermodynamics"
-]
-categories: [
-    "science",
-    "materials science",
-    "chemistry",
-    "crystallography",
-    "glass",
-    "thermodynamics"
 ]
 showTableOfContents: true
 thumbnail: "*silica_structure*"
