@@ -1,0 +1,62 @@
+{{ define "main" }}
+{{ if not .Params.menu }}
+<h1>{{ .Title }}</h1>
+<div class="post-meta">
+  <span class="post-meta-item">
+    <span class="post-meta-label">Published:</span>
+    <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+      {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+    </time>
+  </span>
+  {{ if and .Lastmod (ne .Lastmod .Date) }}
+  <span class="post-meta-item">
+    <span class="post-meta-label">Modified:</span>
+    <time datetime='{{ .Lastmod.Format "2006-01-02" }}'>
+      {{ .Lastmod.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+    </time>
+  </span>
+  {{ end }}
+  {{ with .Params.author }}
+  <span class="post-meta-item">
+    <span class="post-meta-label">Author:</span>
+    {{ . }}
+  </span>
+  {{ end }}
+  <span class="post-meta-item">
+    <span class="post-meta-label">Reading time:</span>
+    {{ .ReadingTime }} min
+  </span>
+</div>
+{{ with .GetTerms "tags" }}
+<p class="post-tags">
+  <span class="tags-label">Tags:</span>
+  {{ range . }}
+    <a class="blog-tags" href="{{ .RelPermalink }}">{{ lower .LinkTitle }}</a>
+  {{ end }}
+</p>
+{{ end }}
+{{ end }}
+{{ with .Params.lead }}
+<p class="post-lead">{{ . }}</p>
+{{ end }}
+{{ if .Params.toc }}
+<nav class="toc" aria-label="Table of Contents">
+  <details open>
+    <summary>Table of Contents</summary>
+    {{ .TableOfContents }}
+  </details>
+</nav>
+{{ end }}
+<article class="post-content">
+  {{ .Content }}
+</article>
+{{ if not .Params.hideReply }}
+{{ with .Site.Params.author.email }}
+  <p>
+    <a href='mailto:{{ . }}?subject={{ i18n "email-subject" }}"{{ default $.Site.Title $.Page.Title }}"'>
+      {{ i18n "email-reply" }} ↪
+    </a>
+  </p>
+{{ end }}
+{{ end }}
+{{ end }}

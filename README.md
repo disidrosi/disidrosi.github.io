@@ -1,8 +1,8 @@
 # Tobia Cavalli – Personal Website
 
 This repository contains the source code for my personal website, built using
-the [Hugo](https://gohugo.io/) static site generator and the
-[Congo](https://github.com/jpanther/congo) theme.
+the [Hugo](https://gohugo.io/) static site generator and a modified version of
+the [Bear Cub](https://github.com/clente/hugo-bearcub) theme.
 
 You can find my website at 🔗
 [https://tobiacavalli.com](https://tobiacavalli.com)

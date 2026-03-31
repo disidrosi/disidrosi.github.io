@@ -1,0 +1,9 @@
+{{ $alt := or .Text "Image" }}
+{{ if .Title }}
+<figure>
+  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" />
+  <figcaption><span class="figure-number"></span>{{ .Title | markdownify }}</figcaption>
+</figure>
+{{ else }}
+<img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" />
+{{ end }}

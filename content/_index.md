@@ -1,11 +1,13 @@
 ---
-title: "Hi there!"
+title: "Home"
 ---
 
-I studied chemistry in Padova, then moved to Vienna for a PhD in materials
-science at TU Wien, where I worked on computational chemistry and materials
-synthesis. Today I work at Barberini (EssilorLuxottica) in Germany, leading
-R&D projects on new glasses for sun lenses.
-I write here about the things I'm trying to understand better: materials
-science, computational chemistry, systems thinking, and the history of how
-scientific ideas actually develop.
+## Hi there!
+
+I'm a materials scientist working at Barberini (EssilorLuxottica) in Germany,
+where I lead R&D projects on new glasses for sun lenses.
+
+I have an academic background in computational chemistry and materials
+synthesis, and here I write about the things I'm trying to understand better:
+materials science, computational chemistry, engineering, and the history of
+science.

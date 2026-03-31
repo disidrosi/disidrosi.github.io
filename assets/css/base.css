@@ -1,0 +1,27 @@
+:root {
+  --color-primary: #8cc2dd;
+  --color-primary-tint: rgba(140, 194, 221, 0.12);
+  --color-primary-hover: rgba(140, 194, 221, 0.22);
+  --color-primary-faint: rgba(140, 194, 221, 0.06);
+  --color-primary-underline: rgba(140, 194, 221, 0.35);
+  --color-text-muted: #aaa;
+  --color-text-dimmed: #999;
+  --color-border: #333;
+  --color-heading: #eee;
+  --color-lead: #b0b8c4;
+  --callout-note: #8cc2dd;
+  --callout-tip: #50fa7b;
+  --callout-tip-bg: rgba(80, 250, 123, 0.07);
+  --callout-warning: #f1fa8c;
+  --callout-warning-bg: rgba(241, 250, 140, 0.07);
+  --callout-danger: #ff5555;
+  --callout-danger-bg: rgba(255, 85, 85, 0.07);
+  --callout-info: #8be9fd;
+  --callout-info-bg: rgba(139, 233, 253, 0.07);
+  --callout-question: #bd93f9;
+  --callout-question-bg: rgba(189, 147, 249, 0.07);
+  --callout-example: #ffb86c;
+  --callout-example-bg: rgba(255, 184, 108, 0.07);
+  --callout-quote: #999;
+  --callout-quote-bg: rgba(153, 153, 153, 0.07);
+}

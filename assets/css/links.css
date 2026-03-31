@@ -1,0 +1,22 @@
+a {
+  text-decoration-color: var(--color-primary-underline);
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s;
+}
+
+a:hover {
+  text-decoration-color: var(--color-primary);
+}
+
+nav a.active {
+  text-decoration-color: var(--color-primary);
+  color: var(--color-heading);
+}
+
+.post-content a[href^="http"]::after,
+.post-content a[href^="//"]::after {
+  content: " ↗";
+  font-size: 0.75em;
+  opacity: 0.5;
+}

@@ -1,0 +1,5 @@
+<a href="/"{{ if eq .RelPermalink "/" }} class="active"{{ end }}>Home</a>
+{{ range .Site.Menus.main.ByWeight }}
+  <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}{{ if $.HasMenuCurrent "main" . }} class="active"{{ end }}>{{ .Name }}</a>
+{{ end }}
+<a href='{{ absURL "index.xml" }}'>RSS</a>

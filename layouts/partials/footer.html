@@ -1,0 +1,4 @@
+<small>
+  {{ .Site.Copyright }} {{ now.Year }}<br>
+  {{ with .Site.Params.madeWith }}{{ markdownify . }}{{ end }}
+</small>
