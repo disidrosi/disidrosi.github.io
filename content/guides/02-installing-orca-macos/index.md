@@ -2,44 +2,32 @@
 slug: "installing-orca-macos"
 aliases: ["/blog/installing-orca-macos/"]
 author: "Tobia Cavalli"
-title: "Installing ORCA on Mac OS Arm64"
+title: "Installing ORCA on macOS Arm64"
 date: "2024-09-22"
-lastmod: "2025-07-30"
-summary: "Complete setup of ORCA 6.0.0 quantum chemistry software on Apple
-    Silicon Macs."
-description: "Guide to installing ORCA on Mac OS Arm64"
-lead: "This post is a step-by-step guide to installing and configuring ORCA, a
-    powerful quantum chemistry software, on macOS with Arm64 architecture. It
-    includes steps for downloading packages, setting up Open MPI for parallel
-    computations, and testing the installation with sample calculations."
+lastmod: "2026-04-02"
+summary: "Installing and configuring ORCA 6.0.0 on Apple Silicon Macs,
+    including Open MPI compilation for parallel calculations."
+description: "Step-by-step installation of ORCA 6.0.0 on macOS Arm64
+    (Apple Silicon), with Open MPI setup for parallel execution and a
+    test calculation to verify the setup."
 tags: ["computational-chemistry","macos"]
 toc: true
 ---
 
 ![Orca logo](orca_logo.svg)
 
-## What is ORCA?
+[ORCA](https://www.faccts.de/orca/) is a quantum chemistry program for
+molecular electronic structure calculations, developed and maintained
+by Frank Neese's research group at the Max-Planck-Institut für
+Kohlenforschung in Mülheim an der Ruhr, Germany. It supports density
+functional theory (DFT), coupled-cluster theory, semi-empirical
+methods, and more.
 
-[ORCA](https://www.faccts.de/orca/) is a powerful and versatile quantum
-chemistry program designed for molecular electronic structure calculations,
-developed and maintained by Frank Neese's research group at the
-Max-Planck-Institut für Kohlenforschung in Mülheim an der Ruhr, Germany.
-
-Think of ORCA as the Swiss Army knife of computational chemistry---compact yet
-packed with a range of capabilities to tackle a wide variety of scientific
-problems. Straight out of the box, ORCA offers numerous computational methods
-such as Density Functional Theory (DFT), coupled-cluster theory (CCT), and
-semi-empirical approaches.
-
-In August 2024, ORCA released its latest version, `6.0.0`, which is a major
-redesign of the software (see the [foreword to its
+Version `6.0.0`, released in August 2024, is a major redesign (see
+the [foreword to its
 release](https://www.faccts.de/docs/orca/6.0/manual/contents/foreword.html)).
-Having used ORCA in the past for my research, I was curious to try out this new
-version and see what's new.
-
-If you're using a Mac equipped with an Arm64 architecture (such as Apple's M1
-or M2 chips), this post will guide you through the process of downloading,
-installing, and configuring ORCA `6.0.0` on your system. Let's dive in!
+This guide covers installing it on macOS with Apple Silicon (M1, M2,
+etc.), including Open MPI setup for parallel calculations.
 
 ## Installation
 
@@ -50,57 +38,30 @@ page](https://orcaforum.kofo.mpg.de/app.php/dlext/). Note that you'll need a
 registered account to access the download---registration is free if you don't
 have an account yet.
 
-For this installation, I'll be using version `6.0.0` for macOS running on Arm64
-chips. On the website, you'll find two options for this version, both
-containing pre-compiled binaries linked to Open MPI `4.1.1`:
+For macOS on Arm64, the download page lists two options (both
+containing pre-compiled binaries linked to Open MPI `4.1.1`):
 
-1. **ORCA 6.0.0, MacOS X, Arm64, Installer Version:** This is the more
-   convenient option, as it includes pre-compiled binaries along with a utility
-   that automatically extracts and installs ORCA, and adds the binaries to your
-   system's path.
-2. **ORCA 6.0.0, MacOS X, Arm64, .tar.bz2 Archive:** This is a compressed
-   archive of the pre-compiled binaries. This option gives you more control
-   over where you install the software, but you'll need to manually add ORCA to
-   your system's path.
+1. **ORCA 6.0.0, MacOS X, Arm64, Installer Version:** Extracts,
+   installs, and adds ORCA to your `PATH` automatically.
+2. **ORCA 6.0.0, MacOS X, Arm64, .tar.bz2 Archive:** Manual
+   extraction and `PATH` setup, but more control over the installation
+   location.
 
-For simplicity, I'll be using the **Installer Version**, which downloads a file
-named `orca_6_0_0_macosx_arm64_openmpi411.run`.
+This guide uses the **Installer Version**, which downloads as
+`orca_6_0_0_macosx_arm64_openmpi411.run`.
 
 ### Setting file permissions
 
-Before we can run the installer, we need to make the file executable. To do
-this, open your terminal and navigate to the directory where the file was
-saved. By default, this will likely be in the `~/Downloads` directory (unless
-you saved it elsewhere). Once you're in the correct directory, change the file
-permissions to make it executable using the `chmod` command with the `+x`
-option:
+Before running the installer, make it executable:
 
 ```shell {lineNos = false}
-# Navigate to the directory where the file is stored
 cd ~/Downloads
-
-# Add execute permissions to the installer
 chmod +x orca_6_0_0_macosx_arm64_openmpi411.run
 ```
 
-After running these commands, you won't see any output, but the file
-permissions will be updated. To confirm that the file is now executable, you
-can check its status using the `ls` command with the `-l` option:
-
-```shell {lineNos = false}
-$ ls -l orca_6_0_0_macosx_arm64_openmpi411.run
-
--rwxr-xr-x@ 1 <username>  staff  579539683 Sep 21 14:29 orca_6_0_0_macosx_arm64_openmpi411.run
-```
-
-In the output, the `x` characters in the `-rwxr-xr-x@` indicate that the file
-is now executable. This means you're ready to proceed by running the installer
-directly.
-
 ### Running the installer
 
-Now that the file is executable, we can proceed with the installation by simply
-running the installer from the same directory:
+Run the installer from the same directory:
 
 ```shell {lineNos = false}
 $ ./orca_6_0_0_macosx_arm64_openmpi411.run
@@ -115,11 +76,8 @@ By default, this operation installs the ORCA binaries in the directory
 
 ### Setting the `PATH`
 
-The installer should automatically add ORCA to your system's `PATH`---a
-variable that tells your terminal where to find executables, allowing you to
-run `orca` directly from the command line. To verify that ORCA has been
-properly added to your `PATH`, simply type the following command in your
-terminal:
+The installer should automatically add ORCA to your system's `PATH`.
+Verify by running:
 
 ```shell {lineNos = false}
 $ orca
@@ -128,47 +86,40 @@ This program requires the name of a parameterfile as argument
 For example ORCA TEST.INP
 ```
 
-If you see this output, ORCA has been successfully installed and recognized by
-your terminal.
-
-You can also confirm this by checking your shell's configuration file. Since
-macOS ships with **zsh** by default, the configuration file is called `.zshrc`
-and is located in your home directory. Open this file and scroll to the bottom
-to look for a line similar to:
+If you see this output, ORCA is installed. You can also confirm by
+checking your `.zshrc` (macOS ships with zsh by default) for a line
+like:
 
 ```zsh {lineNos = false}
 # ORCA 6.0.0 section
 export PATH=/Users/<username>/Library/orca_6_0_0:$PATH
 ```
 
-If this line is missing, you will need to manually add it, ensuring that the
-path points to the correct installation directory.
-
-Once you've added or confirmed the correct `PATH`, save the configuration file
-and restart your terminal for the changes to take effect.
+If this line is missing, add it manually, pointing to the correct
+installation directory. Save the file and restart your terminal.
 
 ### Parallelization with Open MPI
 
-While ORCA is now installed and ready to use, to take full advantage of its
-capabilities---such as running calculations in parallel---we need to install
-**Open MPI**. The ORCA binaries are linked against Open MPI `4.1.1`, but I'll
-be using a newer version, `4.1.6`, as I encountered issues compiling the
-earlier version.
+To run calculations in parallel, ORCA needs **Open MPI**.
 
-First, download the latest Open MPI version (`4.1.6`) from the [official Open
-MPI page](https://www.open-mpi.org/software/ompi/v4.1/). The downloaded file
-will be named `openmpi-4.1.6.tar.gz`.
+> [!warning]
+> The ORCA `6.0.0` binaries are linked against Open MPI `4.1.1`. This
+> guide installs `4.1.6` instead, because `4.1.1` failed to compile on
+> Apple Silicon in my testing. Version `4.1.6` works without issues.
 
-Before compiling Open MPI, we need to ensure we have the Fortran compiler
-installed. This can be easily done using [Homebrew](https://brew.sh/):
+Download Open MPI `4.1.6` from the [official Open MPI
+page](https://www.open-mpi.org/software/ompi/v4.1/). The file is
+`openmpi-4.1.6.tar.gz`.
+
+Before compiling, install the Fortran compiler via
+[Homebrew](https://brew.sh/):
 
 ```shell {lineNos = false}
 brew install gcc
 ```
 
-Once the Fortran compiler is ready, unpack the Open MPI binaries and prepare
-them for compilation. I'll install Open MPI in a dedicated folder in the home
-directory:
+Unpack and prepare Open MPI for compilation. This example installs it
+in a dedicated folder in the home directory:
 
 ```shell {lineNos = false}
 # Create a directory for Open MPI
@@ -181,8 +132,7 @@ $ tar -xzvf openmpi-4.1.6.tar.gz
 $ cd openmpi-4.1.6
 ```
 
-Now, we're ready to compile Open MPI. The following configuration options
-ensure it works smoothly with ORCA and that Fortran is enabled:
+Compile Open MPI with Fortran support and the flags needed for ORCA:
 
 ```shell {lineNos = false}
 ./configure --prefix=$HOME/openmpi --without-verbs --enable-mpi-fortran --disable-builtin-atomics
@@ -190,51 +140,43 @@ make all
 make install
 ```
 
-**Update 2025-07-30**: A reader has reported that compiling `openmpi` on newer
-versions of Xcode-devtools (Ventura 13.5 to Sonoma 14.x) requires the
-additional flag `LDFLAGS="-ld_classic"`. In this case, the full configuration
-command should be:
+> [!note] Update 2025-07-30
+> A reader has reported that compiling `openmpi` on newer
+> versions of Xcode-devtools (Ventura 13.5 to Sonoma 14.x) requires the
+> additional flag `LDFLAGS="-ld_classic"`. In this case, the full configuration
+> command should be:
+> 
+> ```shell {lineNos = false}
+> ./configure --prefix=$HOME/openmpi --without-verbs --enable-mpi-fortran --disable-builtin-atomicsC LDFLAGS="-ld_classic"
+> ```
+> 
+> See this [GitHub issue](https://github.com/open-mpi/ompi/issues/11935) for
+> details.
 
-```shell {lineNos = false}
-./configure --prefix=$HOME/openmpi --without-verbs --enable-mpi-fortran --disable-builtin-atomicsC LDFLAGS="-ld_classic"
-```
-
-See this [Github issue](https://github.com/open-mpi/ompi/issues/11935) for more
-details
-
-These steps can take some time. If you want to speed things up, you can compile
-using multiple cores by adding the `-jN` option to the `make` commands, where
-`N` is the number of cores you want to use. For example:
+Compilation takes time. To speed it up, use multiple cores with the
+`-jN` flag:
 
 ```shell {lineNos = false}
 make -j4 all
 make -j4 install
 ```
 
-After the compilation is complete, the folder `openmpi` will contain the
-following directories: `bin`, `etc`, `include`, `lib`, and `share`, holding the
-compiled binaries and libraries.
-
-To make Open MPI accessible system-wide, we need to create a symbolic link to
-the `libmpi.40.dylib` library:
+After compilation, create a symbolic link to make Open MPI accessible
+system-wide:
 
 ```shell {lineNos = false}
 sudo ln -s $HOME/openmpi/lib/libmpi.40.dylib /usr/local/lib/libmpi.40.dylib
 ```
 
-To ensure the system recognizes Open MPI, we need to update the `PATH` and
-`LD_LIBRARY_PATH` environment variables. Add the following lines to your
-`.zshrc` (or `.bash_profile` if using bash):
+Update the `PATH` and `LD_LIBRARY_PATH` in your `.zshrc` (or
+`.bash_profile` if using bash):
 
 ```zsh {lineNos = false}
 export PATH=$HOME/openmpi/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/openmpi/lib:$LD_LIBRARY_PATH
 ```
 
-Once you've updated the file, run `source ~/.zshrc` (or restart your terminal)
-for the changes to take effect.
-
-Finally, verify that Open MPI is correctly installed by running:
+Run `source ~/.zshrc` (or restart your terminal), then verify:
 
 ```shell {lineNos = false}
 $ mpirun --version
@@ -244,14 +186,12 @@ mpirun (Open MPI) 4.1.6
 Report bugs to http://www.open-mpi.org/community/help/
 ```
 
-If you see this output, Open MPI is installed and ready to work with ORCA for
-parallel calculations!
+If you see this output, Open MPI is ready.
 
 ## Testing
 
-Now that ORCA and Open MPI are set up, let's verify everything is working
-correctly by running a simple calculation. We'll start by creating a folder on
-the desktop to hold the files generated during the test.
+Verify the setup by running a simple calculation. Create a folder for
+the test files:
 
 ```shell {lineNos = false}
 # Navigate to the desktop
@@ -265,10 +205,9 @@ $ cd orca_test
 $ touch water.inp
 ```
 
-In the `water.inp` file, we'll add instructions to perform a basic Hartree-Fock
-(HF) calculation using the Def2-SVP basis set on a water molecule. These
-instructions are based on the [official ORCA
-tutorial](https://www.faccts.de/docs/orca/6.0/tutorials/first_steps/first_calc.html):
+Add a basic Hartree-Fock (HF) calculation on a water molecule using the
+Def2-SVP basis set (from the [official ORCA
+tutorial](https://www.faccts.de/docs/orca/6.0/tutorials/first_steps/first_calc.html)):
 
 ```orca
 !HF DEF2-SVP
@@ -280,8 +219,7 @@ H   0.7920   0.0000  -0.4973
 *
 ```
 
-Save the file. Now, in the terminal (from within the `orca_test` folder), run
-the following command to execute ORCA in serial mode, using a single core:
+Save the file and run ORCA in serial mode:
 
 ```shell {lineNos = false}
 $ orca water.inp
@@ -302,12 +240,9 @@ Property calculations            ...        0.050 sec (=   0.001 min)  20.6 %
 TOTAL RUN TIME: 0 days 0 hours 0 minutes 0 seconds 302 msec
 ```
 
-If you see the above message, the serial calculation has completed
-successfully!
-
-Next, let's test ORCA's parallel capabilities. Modify your input file to enable
-parallel processing by adding the `%PAL` block, which specifies the number of
-processes (`NPROCS`) to use. Update `water.inp` to the following:
+If the output ends with `ORCA TERMINATED NORMALLY`, the serial setup
+works. Next, test parallel execution by adding a `%PAL` block that
+specifies the number of processes. Update `water.inp`:
 
 ```orca
 !HF DEF2-SVP
@@ -321,9 +256,8 @@ H   0.7920   0.0000  -0.4973
 *
 ```
 
-To run the parallel version, we need to specify the complete path to the ORCA
-executable. In this case, use the following command (replace `<username>` with
-your actual macOS username):
+For parallel runs, use the full path to the ORCA executable (replace
+`<username>` with your macOS username):
 
 ```shell {lineNos = false}
 $ /Users/<username>/Library/orca_6_0_0/orca water.inp
@@ -345,12 +279,11 @@ Property calculations            ...        0.275 sec (=   0.005 min)   1.6 %
 TOTAL RUN TIME: 0 days 0 hours 0 minutes 17 seconds 708 msec
 ```
 
-If everything ran successfully, ORCA and Open MPI are correctly installed and
-functioning. You can now take full advantage of ORCA's capabilities for
-parallel quantum chemical calculations!
+If the output confirms 4 parallel MPI processes and terminates
+normally, both ORCA and Open MPI are working.
 
-**Note:** The parallel calculation took 17 seconds and 708 milliseconds, while
-the identical calculation in serial took only 302 milliseconds. Setting up the
-parallel environment and managing communication between processes adds time.
-This overhead can offset the benefits of parallel execution, which becomes
-evident in calculations of simple molecules.
+> [!note]
+> The parallel run took 17.7 seconds versus 0.3 seconds in
+serial. MPI startup and inter-process communication add overhead that
+outweighs the benefit for small calculations. The speedup becomes
+visible on larger systems.

@@ -4,82 +4,63 @@ aliases: ["/blog/cie-colors-python/"]
 author: "Tobia Cavalli"
 title: "Calculating the CIE color of Chlorophyll A and B using Python"
 date: "2024-09-14"
-lastmod: "2025-08-07"
-summary: "Learn how to bridge the gap between spectroscopy and perception by
-    calculating the actual CIE colors of chlorophyll A and B using Python."
-description: "Guide to calculating CIE colors from UV-Vis spectra using Python"
-lead: "This post provides a step-by-step guide on how to calculate CIE colors from
-    UV-Vis spectra using Python. We'll look at the CIE colorimetry system and the
-    underlying principles behind color perception.
-
-    The core of the post focuses on practical implementation, guiding you through
-    the Python code that performs the necessary calculations."
+lastmod: "2026-04-02"
+summary: "A UV-Vis spectrum tells you what light a molecule absorbs, but not
+    what color it looks. This guide uses the CIE 1931 colorimetry system and
+    Python to calculate the perceived color of Chlorophyll A and B from their
+    absorption spectra."
+description: "Calculating CIE colors from UV-Vis spectra of Chlorophyll A
+    and B using Python and the colour-science library."
 tags: ["python","colorimetry"]
 toc: true
 math: true
 ---
 
-## What is color?
+A UV-Vis spectrum records how much light a molecule absorbs at each wavelength,
+but it says nothing about what the molecule actually looks like. Chlorophyll A
+has absorption peaks near 430 nm and 670 nm — but what color does a solution of
+it appear to the eye?
 
-Color isn't just a thing; it's a _feeling_. It's how our brains interpret
-light, and it's pretty subjective. Think about it: the same light can look
-different to different people, even under the same conditions. From a pure
-physical and biological point of view, it is a phenomenon arising from the
-human eye's interpretation of light within the visible spectrum (380--780 nm).
-It's not a physical property of light itself, but a sensation created by the
-brain's processing of visual information.
+Answering that question requires crossing from physics into perception. Color is
+a sensation produced by the brain's processing of signals from the retina, not a
+property of light itself. The same spectral power distribution can look
+different under different illuminants; different distributions can look
+identical. This is metamerism: two lights with different spectral compositions
+produce the same cone responses and appear identical to a normal observer under
+standard conditions.[^1] [^2]
 
-Factors like lighting conditions, color vision deficiencies, and individual
-variations can influence how we perceive color. This subjectivity makes
-traditional scientific measurements, like spectroscopy, insufficient for
-directly quantifying color perception, as they focus only on the physical
-properties of light without considering their corresponding perceptual aspects.
+**Psychophysics** quantifies this relationship between physical stimuli and
+perceived sensations. Guy Brindley formalized the distinction in 1970 by
+categorizing perceptual observations into two types:
 
-**Psychophysics** bridges this gap by quantifying the relationship between
-physical stimuli and the sensations they generate. As a field, it is primarily
-concerned with how humans perceive and interpret sensory inputs like colors,
-sounds, and textures. Guy Brindley's work in 1970 was a significant
-contribution to this field.[^1] [^2]
-
-Brindley introduced the concept of observations to describe perceptual states
-during psychophysical tasks. He categorized observations into two types:
-
-1. **Class A observations:** When two physically different stimuli are
-   perceived as identical. Despite their distinct physical properties, the
-   observer cannot distinguish between them.
+1. **Class A observations:** Two physically different stimuli are perceived as
+   identical --- the observer cannot distinguish them.
 2. **Class B observations:** All other cases where stimuli are distinguishable.
 
-Color is a prime example of Class A observations. Two lights with different
-physical compositions can appear identical under certain conditions. For
-instance, a pure red light and a mixture of red, green, and blue light can be
-perceived as the same shade of red if viewed in low light or by someone with
-limited color sensitivity.
+Color matching is the canonical Class A case. It is also the experimental
+foundation of the CIE colorimetry system.
 
 ## The CIE colorimetry system
 
-Given the subjectivity of color perception, how can we objectively measure and
-communicate colors? The **CIE colorimetry system** provides a solution by using
-**color matching** experiments to establish a statistical representation of
-human color vision, which provides a standardized method for relating spectral
-light distributions to perceived colors.
+The **CIE colorimetry system**, developed by the Commission Internationale
+d'Éclairage, translates spectral power distributions into standardized color
+coordinates using **color matching** experiments.[^3] [^4]
 
-In these experiments, observers compare two stimuli under controlled
-conditions. If they appear identical despite their physical differences, they
-are considered perceptually equivalent. The CIE system, developed by the
-Commission Internationale d'Éclairage, quantifies the relationship between
-wavelength distributions and perceived colors.[^3] [^4]
+In these experiments, observers view a split field: one half shows a test color,
+the other a mixture of three primary lights. The observer adjusts the primaries
+until both halves match. Repeating this across the visible spectrum and
+averaging over many observers produces a statistical model of human color
+vision.
 
 ![CIE color matching experiment](cie_color_matching.png "CIE color matching
 experiment. Adapted from literature.")
 
-The CIE 1931 model, introduced in 1931, uses additive color mixing based on
-**Color Matching Functions (CMFs)**. These functions represent the spectral
-sensitivity of the three types of cone cells in the human eye, denoted as
-\\(\bar{x}\\), \\(\bar{y}\\), and \\(\bar{z}\\).
-
-CMFs are derived from standardized experiments involving foveal vision,
-specific field sizes, dark surroundings, and average observations from multiple
-individuals, providing a statistical measure of color receptor sensitivity.
+The CIE 1931 model uses additive color mixing based on **Color Matching
+Functions (CMFs)**, denoted \\(\bar{x}\\), \\(\bar{y}\\), and \\(\bar{z}\\).
+CMFs are not the spectral sensitivities of the cone cells directly, but linear
+transformations of them, derived from standardized color matching experiments
+involving foveal vision, specific field sizes, dark surroundings, and averaged
+observations from multiple individuals.
 
 By convolution of the sample spectrum \\(M(\lambda)\\) with the CMFs, we
 calculate **tristimulus values** \\(X\\), \\(Y\\), and \\(Z\\). These values
@@ -98,9 +79,9 @@ $$
 Z = \int_{380}^{780} M(\lambda) \bar{z}(\lambda)  \, d\lambda \tag{3}
 $$
 
-The tristimulus values define a point in a three-dimensional color space.
-However, for practical purposes, this space is often reduced to two dimensions
-using the \\(x\\) and \\(y\\) chromaticity coordinates:
+The tristimulus values define a point in a three-dimensional color space. For
+visualization, this space is reduced to two dimensions using the \\(x\\) and
+\\(y\\) chromaticity coordinates:
 
 $$
 x = \frac{X}{X + Y + Z} \tag{4}
@@ -110,41 +91,24 @@ $$
 y = \frac{Y}{X + Y + Z} \tag{5}
 $$
 
-The \\(x\\) and \\(y\\) coordinates uniquely specify a color within the CIE color
-space, enabling a standardized and objective representation of color
-perception. This system has been (and is!) used in various industries,
-including printing, photography, lighting design, and digital media, where
-accurate color reproduction and communication are essential.
+The \\(x\\) and \\(y\\) coordinates specify a chromaticity (hue and saturation)
+independently of luminance. This is what makes the diagram useful for comparing
+colors across different brightness levels.
 
 ## Python code
 
-### Python libraries for color analysis
+### Dependencies
 
-Before diving into the code, let's import the necessary Python libraries:
-
-- `numpy`: This library is used for numerical computing. It defines efficient
-  data structures and mathematical functions for working with arrays and
-  matrices.
-- `pandas`: This library is used for data analysis and manipulation. It defines
-  data structures like DataFrames and Series for handling tabular data.
-- `matplotlib`: This library is a standard for data visualization. It includes
-  plotting functions for creating various types of charts and graphs.
-- `colour-science`: This library provides specific tools for colorimetric
-  analysis. It supports most major color systems and includes many color space
-  conversions utilities, color difference metrics, and other color-related
-  operations. You can read the corresponding documentation at
-  [https://colour.readthedocs.io](https://colour.readthedocs.io).
-
-If you'd like to replicate this analysis on your machine, you can install these
-libraries using the following `pip` command in your terminal or PowerShell
-(assuming you don't have them installed already):
+The heavy lifting is done by [`colour-science`](https://colour.readthedocs.io),
+a Python library that implements most major colorimetric systems, color space
+conversions, and color difference metrics. The remaining dependencies are
+standard: `numpy`, `pandas`, and `matplotlib`. Install them with:
 
 ```sh
 pip install numpy pandas matplotlib colour-science
 ```
 
-With the libraries installed, we can now import them into our script or Jupyter
-notebook:
+Then import them:
 
 ```python
 import colour as cl
@@ -159,32 +123,10 @@ cl.utilities.filter_warnings(colour_usage_warnings=True)
 
 ### Plot settings
 
-I want the plot aesthetics to match the style of the blog, and therefore I'm
-adding the following settings to customize the appearance of the graphics I am
-going to generate. If you're following along on your own machine (e.g., using
-Jupyter notebooks), you can skip this step.
-
-Here, I am importing `seaborn`, a powerful library for statistical data
-visualization. I won't be using its statistical functions, but I prefer its
-default presets over the ones provided by `matplotlib`. After importing the
-library, I am setting:
-
-- `set_context("notebook")`: This setting ensures the plots are scaled
-  appropriately for notebook environments, adjusting factors like label size
-  and line thickness.
-- `set_style("ticks")`: This sets the plot style to include ticks on the axes,
-  providing visual reference points for the data.
-- `set_palette("colorblind")`: Sets the default palette of colors that will be
-  used for plots, selecting a color palette specifically designed for viewers
-  with color blindness. The `color_codes` option remaps `matplotlib`'s
-  shorthand color codes (such as `r`, `g`, `b`, etc.).
-
-In addition, I am importing `golden_ratio` from the `scipy` library, which is
-equivalent to defining a variable containing the value 1.618. This is a
-mathematical constant also known as the _divine proportion_, which I will use
-to set the aspect ratio of the plots, specifically the ratio between the
-shorter and longer axes. It is absolutely not necessary, but I find that it
-helps create a more aesthetically pleasing visual balance.
+The following settings match the blog's plot style. If you are following along
+in a Jupyter notebook, you can skip this block. I use `seaborn` for its default
+presets (context, ticks, colorblind palette) and the golden ratio from `scipy`
+to set the figure aspect ratio.
 
 ```python {linenostart=9}
 import seaborn as sns
@@ -208,21 +150,11 @@ figure_size = (7, 7 / golden_ratio)
 
 ### Plotting the CIE (2°) color space
 
-Now that we have our tools in place, let's create our first color plot. One
-thing that I like very much about the `colour-science` library is that it
-provides handy functions for plotting color spaces according to different
-colorimetric systems.
-
-We're going to use the `plot_chromaticity_diagram_CIE1931` function to show the
-CIE color space for a 2° observer. This is like a map of all the colors humans
-can see within a small area of the eye. The CIE color space is a triangle where
-the corners represent pure red, green, and blue. Any color can be plotted
-somewhere inside this triangle by mixing different amounts of these primary
-colors.
-
-By plotting this color space, we can get a better feel for the colors we can
-perceive and compare different colors to see how similar or different they are.
-We'll use it later to analyze colors and create a color model.
+The `colour-science` library provides a ready-made function for plotting the CIE
+1931 chromaticity diagram. The diagram shows all chromaticities visible to a 2°
+standard observer; the spectral locus traces the monochromatic wavelengths, and
+any real color falls inside it. We will plot our chlorophyll colors on this
+diagram later.
 
 ```python {hl_lines=["5-11"],linenostart=26}
 # Instantiate figure and axes
@@ -265,13 +197,9 @@ space for a 2° observer.")
 
 ### Importing and scaling data
 
-Let's see if we can calculate the actual color of some interesting molecules!
-In this example, we'll determine the colors of Chlorophyll A and Chlorophyll B
-in solution, two pigments essential for photosynthesis in plants. The data used
-here consists of pre-recorded UV-Vis spectra for Chlorophyll A and B in both
-70% and 90% acetone solutions, obtained from a scientific publication.[^6] You
-can download the `.csv` file containing this data
-[here](include/chlorophyll_uv_vis.csv).
+The data are pre-recorded UV-Vis absorption spectra of Chlorophyll A and
+Chlorophyll B in 70% and 90% acetone solutions, taken from Chazaux et al.[^6]
+You can download the `.csv` file [here](include/chlorophyll_uv_vis.csv).
 
 ```python {linenostart=59}
 column_names = ["lambda", "chl_a_70", "chl_a_90", "chl_b_70", "chl_b_90"]
@@ -298,10 +226,8 @@ measured_samples
 
 _1001 rows × 4 columns_
 
-The imported data represents the absorbance (\\(A\\)) of each chlorophyll type,
-which is measured at regular intervals of light (lambda). In simpler terms,
-absorbance indicates the amount of light absorbed by a specific molecule at a
-particular wavelength. Let's take a quick look at these spectra:
+Each column records absorbance (\\(A\\)) as a function of wavelength
+(\\(\lambda\\)) for one chlorophyll–solvent combination:
 
 ```python {hl_lines=["12-15"],linenostart=60}
 fig, ax = plt.subplots(1, 1, figsize=figure_size)
@@ -333,47 +259,28 @@ plt.show()
 ```
 
 ![UV-Vis absorption spectra of Chlorophyll A and B in 70% and 90 % acetone
-solutions.](chl_a_b_UV_Vis_abs.png "UV-Vis absorption spectra of
-Chlorophyll A and B in 70% and 90 % acetone solutions.")
+solutions.](chl_a_b_UV_Vis_abs.png "UV-Vis absorption spectra of Chlorophyll A
+and B in 70% and 90 % acetone solutions.")
 
-From this initial inspection, we can see that Chlorophyll A absorbs light
-primarily in the blue and red regions of the spectrum, corresponding to the
-peaks at around 430 nm and 670 nm. Chlorophyll B also absorbs light in the blue
-and red regions, with peaks near 460 nm and 650 nm, but its absorption peak in
-the blue region is slightly shifted towards the green compared to chlorophyll
-A.
+Chlorophyll A absorbs primarily in the blue (~430 nm) and red (~670 nm) regions.
+Chlorophyll B shows a similar pattern with peaks near 460 nm and 650 nm, its
+blue peak shifted slightly toward the green. The acetone concentration affects
+peak intensities but not spectral shape.
 
-Additionally, the concentration of acetone in the solution seems to influence
-the peak intensities. While the overall spectral shapes remain consistent for
-each chlorophyll type, the intensity variations likely affect their perceived
-colors.
+Because the four spectra have different absolute absorbance values, we need to
+normalize them before comparing colors. Normalization discards quantitative
+information (concentrations), but since our goal is qualitative (what color does
+each spectrum produce?), this is acceptable.
 
-The current spectra also have significantly different absolute absorbance
-values. Therefore, some data pre-processing is required before calculating
-color. To enable meaningful comparisons, we need to normalize the data. This
-normalization will change the original absorbance values, which might be a
-disadvantage for _quantitative_ analyses (e.g., concentration determination).
-However, since our focus here is _qualitative_ (comparing spectra), these
-intensity scale differences would not provide an effective comparison.
-
-The simplest approach for this is to normalize the spectra, transforming them
-into a range between 0 and 1 while preserving their overall shapes. We'll use a
-technique called range scaling (also known as MinMax scaling), described by the
-following equation:[^7]
+We use MinMax scaling to map each spectrum to the 0–1 range while preserving its
+shape:[^7]
 
 $$
     x_{scaled} = \frac{x - x_{min}}{x_{max} - x_{min}} \tag{6}
 $$
 
-Here, \\(x\\) represents a single measured value, \\(x_{min}\\)​ and
-\\(x_{max}\\)​ represent the minimum and maximum values within the spectrum,
-respectively, and \\(x_{scaled}\\) represents the resulting normalized value.
-
-While the `scikit-learn` library offers built-in functions for this task (see
-[here](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)),
-I prefer to avoid introducing unnecessary dependencies for a simple function.
-Therefore, we'll define a custom function named `normalize` to perform the
-MinMax scaling:
+A simple custom function avoids pulling in `scikit-learn` for a one-line
+operation:
 
 ```python {linenostart=86}
 def normalize(x: pd.Series | np.ndarray) -> pd.Series | np.ndarray:
@@ -389,16 +296,8 @@ def normalize(x: pd.Series | np.ndarray) -> pd.Series | np.ndarray:
     return x_scaled
 ```
 
-This function takes a pandas Series or NumPy array (`x`) as input and performs
-the MinMax scaling operation. It subtracts the minimum value (`x.min()`) from
-each element in `x` and then divides the result by the difference between the
-maximum (`x.max()`) and minimum values. This ensures all values in the output
-(`x_scaled`) fall within the range of 0 to 1.
-
-Now, we can leverage vectorization to efficiently apply the `normalize`
-function to the entire DataFrame containing the absorbance values. This will
-create a new DataFrame with the normalized values, stored in the variable
-`abs_norm`:
+We apply it to the full DataFrame at once, since pandas vectorizes the operation
+across all columns:
 
 ```python {linenostart=97}
 abs_norm = normalize(measured_samples)
@@ -422,8 +321,8 @@ abs_norm
 
 _1001 rows × 4 columns_
 
-The resulting DataFrame (`abs_norm`) now has absorbance values between 0 and 1,
-which can be verified by plotting them:
+A quick plot confirms the spectra now share the same 0–1 scale while retaining
+their characteristic shapes:
 
 ```python {linenostart=99}
 fig, ax = plt.subplots(1, 1, figsize=figure_size)
@@ -448,26 +347,27 @@ plt.show()
 ```
 
 ![Normalized UV-Vis absorption spectra of Chlorophyll A and B in 70% and 90 %
-acetone solutions.](chl_a_b_UV_Vis_abs_norm.png "Normalized UV-Vis
-absorption spectra of Chlorophyll A and B in 70% and 90 % acetone solutions.")
+acetone solutions.](chl_a_b_UV_Vis_abs_norm.png "Normalized UV-Vis absorption
+spectra of Chlorophyll A and B in 70% and 90 % acetone solutions.")
 
 ### Converting absorbance to transmittance
 
-Before calculating the colors from our spectra, it's important to remember that
-these spectra represent the **light absorbed** by the molecules. To determine
-the color we actually perceive, we need to convert absorbance to
-**transmittance**. Transmittance represents the light that passes through the
-molecules and reaches our eyes.
-
-The conversion from absorbance (\\(A\\)) to transmittance (\\(T\\)) is
-straightforward and follows this equation:
+The spectra above record **absorbed** light. The color we perceive depends on
+the light that passes **through** the sample: the transmittance. The conversion
+from absorbance (\\(A\\)) to percent transmittance (\\(\\%T\\)) follows the
+Beer-Lambert law:
 
 $$
-    T = 10^{(2 - A)} \tag{7}
+    \\%T = 100 \times 10^{-A} = 10^{(2 - A)} \tag{7}
 $$
 
-Using the normalized absorbance values, we can easily perform this conversion
-by defining the `abs_to_trans` function:
+Note that because we are using normalized absorbance values (0--1) rather than
+actual absorbance, the resulting transmittance values do not represent true
+physical transmittance. They preserve the spectral shape, which is sufficient
+for a qualitative color comparison, but should not be interpreted
+quantitatively.
+
+In code:
 
 ```python {linenostart=120}
 def abs_to_trans(A: pd.Series | np.ndarray) -> pd.Series | np.ndarray:
@@ -483,13 +383,7 @@ def abs_to_trans(A: pd.Series | np.ndarray) -> pd.Series | np.ndarray:
     return T
 ```
 
-This function takes a Series or array of absorbance values as input and returns
-a Series or array of corresponding transmittance values.
-
-Now, we can apply this function to the entire `abs_norm` DataFrame to
-efficiently calculate the transmittance for each spectrum. This will create a
-new DataFrame (`transm_norm`) containing the normalized transmittance values
-for each chlorophyll sample.
+Running it on the normalized absorbance values:
 
 ```python {linenostart=131}
 transm_norm = abs_to_trans(abs_norm)
@@ -513,8 +407,8 @@ transm_norm
 
 _1001 rows × 4 columns_
 
-Let's verify that the conversion to transmittance worked as expected by
-plotting the new values:
+The transmittance spectra, plotted below, should mirror the absorbance spectra
+inverted:
 
 ```python {hl_lines=["3-4"],linenostart=133}
 fig, ax = plt.subplots(1, 1, figsize=figure_size)
@@ -540,14 +434,10 @@ plt.show()
 
 ![Normalized UV-Vis transmission spectra of Chlorophyll A and B in 70% and 90 %
 acetone solutions.](chl_a_b_UV_Vis_trans_norm.png "Normalized UV-Vis
-transmission spectra of Chlorophyll A and B in 70% and 90 % acetone
-solutions.")
+transmission spectra of Chlorophyll A and B in 70% and 90 % acetone solutions.")
 
-As expected, the normalized transmittance values range between 0 and 1 (or 0%
-and 100% transmittance). We can see the inverse relationship between absorbance
-and transmittance: higher absorbance corresponds to lower transmittance, and
-vice versa. For a more direct comparison, we can visualize both absorbance and
-transmittance in a single plot.
+The inverse relationship between absorbance and transmittance is visible: peaks
+in absorbance correspond to troughs in transmittance. A side-by-side comparison:
 
 ```python {hl_lines=["4-5", "8-9"],linenostart=152}
 fig, ax = plt.subplots(2, 1, sharex=True, figsize=figure_size)
@@ -583,35 +473,21 @@ plt.show()
 
 ![Normalized UV-Vis absorption and transmission spectra of Chlorophyll A and B
 in 70% and 90 % acetone solutions.](chl_a_b_UV_Vis_abs_trans_norm.png
-"Normalized UV-Vis absorption and transmission spectra of Chlorophyll A and B
-in 70% and 90 % acetone solutions.")
+"Normalized UV-Vis absorption and transmission spectra of Chlorophyll A and B in
+70% and 90 % acetone solutions.")
 
 ### Calculating the CIE colors
 
-Now that we have the normalized absorbance and transmittance spectra, we can
-finally calculate the corresponding CIE colors. To do this, we need to do the
-following:
+The pipeline for each spectrum:
 
-- **Select the color matching functions:** We'll use the CIE 1931 system,
-  specified as `cie_2_1931` in `colour-science`.
-- **Select the appropriate illuminant:** Since we're interested in daylight
-  conditions, we'll use the `D65` illuminant.
-- **Create spectral distributions:** For each spectrum, we'll create a
-  `SpectralDistribution` object from `colour-science`. This provides useful
-  methods like `interpolate`, which is necessary to ensure the spectra conform
-  to CIE specifications (1 nm intervals).
-- **Calculate CIE \\(XYZ\\) coordinates:** Using the `sd_to_XYZ` function, we'll
-  compute the CIE XYZ coordinates for each spectrum based on the spectral
-  distribution, color matching functions, and illuminant.
-- Convert to CIE \\(xy\\) coordinates: The \\(XYZ\\) coordinates are then converted
-  to CIE \\(xy\\) coordinates, which are more convenient for plotting on the
-  color space.
+1. Build a `SpectralDistribution` and interpolate to 1 nm intervals (CIE
+   specification).
+2. Compute \\(XYZ\\) tristimulus values with `sd_to_XYZ`, using the CIE 1931 2°
+   observer CMFs and the D65 daylight illuminant.
+3. Convert \\(XYZ\\) to \\(xy\\) chromaticity coordinates.
 
-This code iterates over each spectrum, calculates the CIE \\(XYZ\\) coordinates,
-converts them to \\(xy\\) coordinates, and stores the results in two lists:
-`chl_abs_clr` for the absorbance-based colors and `chl_transm_clr` for the
-transmittance-based colors. Finally, the results are merged into a single
-DataFrame for easier analysis.
+The results for absorbance-based and transmittance-based colors are stored in
+separate lists, then merged into a single DataFrame.
 
 ```python {linenostart=181}
 # Define color matching functions
@@ -674,13 +550,7 @@ colors
 
 ### Visualizing colors on the CIE color space
 
-Now that we have the \\(x\\) and \\(y\\) values for both absorbed and transmitted
-colors, let's plot them on the CIE 1931 color space. This code first plots the
-CIE color space as we have seen [at the
-beginning](#plotting-the-cie-2-color-space). Then, it iterates through the
-`colors` DataFrame and plots the absorbed colors (based on the `x_A` and `y_A`
-columns) as scattered points on the color space with corresponding labels,
-colors, and edge colors.
+Plotting the absorbed colors on the CIE 1931 chromaticity diagram:
 
 ```python {linenostart=230}
 # Instantiate figure and axes
@@ -735,12 +605,11 @@ plt.show()
 
 ![CIE color space for a 2° observer and calculated absorbed colors for
 Chlorophyll A and B in 70 % and 90 % acetone with D65
-illuminant.](CIE_chl_abs.png "CIE color space for a 2° observer and
-calculated absorbed colors for Chlorophyll A and B in 70 % and 90 % acetone
-with D65 illuminant.")
+illuminant.](CIE_chl_abs.png "CIE color space for a 2° observer and calculated
+absorbed colors for Chlorophyll A and B in 70 % and 90 % acetone with D65
+illuminant.")
 
-To visualize the transmitted colors, we can reuse most of the existing code and
-simply modify the data source:
+The same plot for the transmitted colors:
 
 ```python {linenostart=278}
 # Instantiate figure and axes
@@ -799,25 +668,22 @@ illuminant.](CIE_chl_transm.png "CIE color space for a 2° observer and
 calculated transmitted colors for Chlorophyll A and B in 70 % and 90 % acetone
 with D65 illuminant.")
 
-From the CIE color space plots, we can observe some key differences between the
-perceived colors of Chlorophyll A and B under both absorbance and transmittance
-conditions. Chlorophyll A primarily absorbs light in the red and blue regions
-of the spectrum, reflecting green-yellow light. Chlorophyll B absorbs a greater
-proportion of blue light than Chlorophyll A, reflecting a more yellowish hue.
+The transmitted-color coordinates confirm what the spectra suggest. Both
+chlorophylls absorb in the blue and red regions and transmit primarily in the
+green, but the shift in Chlorophyll B's blue absorption peak toward longer
+wavelengths pushes its transmitted color toward yellow-green. Chlorophyll A,
+with its blue peak at shorter wavelengths, sits closer to a neutral green.
 
-## Conclusion
+## Where to go from here
 
-While both chlorophyll A and B are primarily responsible for the green color of
-plants, their slight differences in absorption spectra can lead to subtle
-variations in the exact shade of green. Despite being closely related pigments,
-they show distinct spectral absorption profiles, which ultimately influence
-their perceived colors.
-
-Since both chlorophyll A and B absorb light in the blue and red regions, the
-light that is transmitted is primarily in the green region, which is why leaves
-appear green to our eyes. However, due to the slight difference in absorption
-peaks, Chlorophyll A tends to give a more deep green or olive green color,
-while Chlorophyll B gives a slightly lighter green or yellowish-green hue.
+The same pipeline applies to any molecule with a UV-Vis spectrum: dyes,
+pigments, optical filter glasses, fluorescent proteins. Swapping in the CIE 1976
+\\( L^{\*}a^{\*}b^{\*} \\) color space (via `colour-science`'s `XYZ_to_Lab` function) would
+give perceptually uniform coordinates, making it possible to compute meaningful
+color differences (\\(\Delta E\\)) between samples. For quantitative work, the
+normalization step should be revisited — using actual absorbance values with a
+defined path length and concentration preserves the physical relationship
+between Beer-Lambert transmittance and perceived color.
 
 [^1]: Kingdom, F. A. A.; Prins, N. _Psychophysics: A Practical Introduction_,
     2nd ed.; Academic Press: Amsterdam, NL, 2016; pp. 19--20.
