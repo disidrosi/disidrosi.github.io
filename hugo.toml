@@ -3,39 +3,59 @@ theme = "hugo-bearcub"
 copyright = "Copyright © Tobia Cavalli"
 defaultContentLanguage = "en"
 enableRobotsTXT = true
+enableEmoji = true
+enableGitInfo = true
 
 [markup]
-  [markup.highlight]
-    lineNos = true
-    lineNumbersInTable = false
-    noClasses = false
+    [markup.highlight]
+        lineNos = true
+        lineNumbersInTable = false
+        noClasses = false
+
+    [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+            inline = [['$', '$'], ['\(', '\)']]
+            block = [['$$', '$$'], ['\[', '\]']]
 
 [languages]
-  [languages.en]
-    title = "Tobia Cavalli"
-    languageName = "en-US 🇺🇸"
-    LanguageCode = "en-US"
-    contentDir = "content"
-    [languages.en.params]
-      madeWith = "Opinions listed here are my own and not representative of any of my employers, past, future, and/or present."
+    [languages.en]
+        title = "Tobia Cavalli"
+        languageName = "en-US 🇺🇸"
+        languageCode = "en-US"
+        contentDir = "content"
+        [languages.en.params]
+            madeWith = "Opinions listed here are my own and not representative of any of my employers, past, future, and/or present."
 
 [params]
-  description = "Tobia Cavalli"
-  favicon = "images/favicon.png"
-  title = "Tobia Cavalli"
-  dateFormat = "2006-01-02"
-  hideUntranslated = false
-  themeStyle = "original"
-  generateSocialCard = true
-  profileImage = "images/profile.jpg"
-  katexVersion = "0.16.44"
+    description = "Tobia Cavalli"
+    favicon = "favicon.ico"
+    title = "Tobia Cavalli"
+    dateFormat = "2006-01-02"
+    hideUntranslated = false
+    themeStyle = "original"
+    generateSocialCard = true
+    profileImage = "images/profile.jpg"
+    katexVersion = "0.16.44"
 
-  [params.author]
-    name = "Tobia Cavalli"
-    email = "tobiablogs@proton.me"
+    [params.author]
+        name = "Tobia Cavalli"
+        email = "tobiablogs@proton.me"
 
-  [params.social]
-    email = "tobiablogs@proton.me"
-    linkedin = "https://linkedin.com/in/tobia-cavalli"
-    github = "https://github.com/disidrosi"
-    orcid = "https://orcid.org/0000-0002-7987-5701"
+    [params.footer]
+        licenseName = "CC BY-NC 4.0"
+        licenseUrl = "https://creativecommons.org/licenses/by-nc/4.0/"
+
+        [[params.footer.links]]
+            name = "Home"
+            url = "/"
+
+        [[params.footer.links]]
+            name = "RSS"
+            url = "/index.xml"
+
+    [params.social]
+        email = "tobiablogs@proton.me"
+        linkedin = "https://linkedin.com/in/tobia-cavalli"
+        github = "https://github.com/disidrosi"
+        orcid = "https://orcid.org/0000-0002-7987-5701"

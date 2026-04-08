@@ -1,10 +1,14 @@
+/* Post header — single source of truth for meta + tags sizing */
+.post-header {
+  font-size: 0.9em;
+}
+
 /* Tag pills */
 .post-tags {
   margin: 4px 0 0 0;
 }
 
 .tags-label {
-  font-size: 0.85em;
   color: var(--color-text-dimmed);
   margin-right: 4px;
 }
@@ -21,6 +25,14 @@ a.blog-tags {
   text-decoration: none;
 }
 
+.post-header a.blog-tags {
+  font-size: 0.89em; /* ≈ 0.8 / 0.9 — keeps absolute pill size unchanged inside .post-header */
+}
+
+.tag-cloud a.blog-tags::before {
+  content: "#";
+}
+
 a.blog-tags:hover {
   background: var(--color-primary-hover);
   color: var(--color-primary);
@@ -28,7 +40,6 @@ a.blog-tags:hover {
 
 /* Post meta */
 .post-meta {
-  font-size: 0.9em;
   color: var(--color-text-muted);
   margin: 4px 0 0 0;
 }
@@ -84,4 +95,27 @@ hr {
   line-height: 1.6;
   color: var(--color-lead);
   margin: 1em 0 1.5em 0;
+}
+
+/* Heading anchor links */
+.post-content :is(h1, h2, h3, h4, h5, h6) {
+  position: relative;
+}
+
+.post-content .heading-anchor {
+  position: absolute;
+  left: -1.2em;
+  width: 1.2em;
+  text-align: center;
+  opacity: 0;
+  text-decoration: none;
+  color: var(--color-text-dimmed);
+  font-weight: normal;
+  transition: opacity 0.15s ease;
+}
+
+.post-content :is(h1, h2, h3, h4, h5, h6):hover .heading-anchor,
+.post-content .heading-anchor:hover,
+.post-content .heading-anchor:focus {
+  opacity: 1;
 }

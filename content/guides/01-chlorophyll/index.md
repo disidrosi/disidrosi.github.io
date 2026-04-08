@@ -1,7 +1,6 @@
 ---
 slug: "cie-colors-python"
 aliases: ["/blog/cie-colors-python/"]
-author: "Tobia Cavalli"
 title: "Calculating the CIE color of Chlorophyll A and B using Python"
 date: "2024-09-14"
 lastmod: "2026-04-02"
@@ -12,7 +11,6 @@ summary: "A UV-Vis spectrum tells you what light a molecule absorbs, but not
 description: "Calculating CIE colors from UV-Vis spectra of Chlorophyll A
     and B using Python and the colour-science library."
 tags: ["python","colorimetry"]
-toc: true
 math: true
 ---
 
@@ -56,14 +54,14 @@ vision.
 experiment. Adapted from literature.")
 
 The CIE 1931 model uses additive color mixing based on **Color Matching
-Functions (CMFs)**, denoted \\(\bar{x}\\), \\(\bar{y}\\), and \\(\bar{z}\\).
+Functions (CMFs)**, denoted \(\bar{x}\), \(\bar{y}\), and \(\bar{z}\).
 CMFs are not the spectral sensitivities of the cone cells directly, but linear
 transformations of them, derived from standardized color matching experiments
 involving foveal vision, specific field sizes, dark surroundings, and averaged
 observations from multiple individuals.
 
-By convolution of the sample spectrum \\(M(\lambda)\\) with the CMFs, we
-calculate **tristimulus values** \\(X\\), \\(Y\\), and \\(Z\\). These values
+By convolution of the sample spectrum \(M(\lambda)\) with the CMFs, we
+calculate **tristimulus values** \(X\), \(Y\), and \(Z\). These values
 represent the amounts of the three primary colors (red, green, and blue)
 required to match the given color.
 
@@ -80,8 +78,8 @@ Z = \int_{380}^{780} M(\lambda) \bar{z}(\lambda)  \, d\lambda \tag{3}
 $$
 
 The tristimulus values define a point in a three-dimensional color space. For
-visualization, this space is reduced to two dimensions using the \\(x\\) and
-\\(y\\) chromaticity coordinates:
+visualization, this space is reduced to two dimensions using the \(x\) and
+\(y\) chromaticity coordinates:
 
 $$
 x = \frac{X}{X + Y + Z} \tag{4}
@@ -91,7 +89,7 @@ $$
 y = \frac{Y}{X + Y + Z} \tag{5}
 $$
 
-The \\(x\\) and \\(y\\) coordinates specify a chromaticity (hue and saturation)
+The \(x\) and \(y\) coordinates specify a chromaticity (hue and saturation)
 independently of luminance. This is what makes the diagram useful for comparing
 colors across different brightness levels.
 
@@ -226,8 +224,8 @@ measured_samples
 
 _1001 rows × 4 columns_
 
-Each column records absorbance (\\(A\\)) as a function of wavelength
-(\\(\lambda\\)) for one chlorophyll–solvent combination:
+Each column records absorbance (\(A\)) as a function of wavelength
+(\(\lambda\)) for one chlorophyll–solvent combination:
 
 ```python {hl_lines=["12-15"],linenostart=60}
 fig, ax = plt.subplots(1, 1, figsize=figure_size)
@@ -354,7 +352,7 @@ spectra of Chlorophyll A and B in 70% and 90 % acetone solutions.")
 
 The spectra above record **absorbed** light. The color we perceive depends on
 the light that passes **through** the sample: the transmittance. The conversion
-from absorbance (\\(A\\)) to percent transmittance (\\(\\%T\\)) follows the
+from absorbance (\(A\)) to percent transmittance (\(\%T\)) follows the
 Beer-Lambert law:
 
 $$
@@ -482,9 +480,9 @@ The pipeline for each spectrum:
 
 1. Build a `SpectralDistribution` and interpolate to 1 nm intervals (CIE
    specification).
-2. Compute \\(XYZ\\) tristimulus values with `sd_to_XYZ`, using the CIE 1931 2°
+2. Compute \(XYZ\) tristimulus values with `sd_to_XYZ`, using the CIE 1931 2°
    observer CMFs and the D65 daylight illuminant.
-3. Convert \\(XYZ\\) to \\(xy\\) chromaticity coordinates.
+3. Convert \(XYZ\) to \(xy\) chromaticity coordinates.
 
 The results for absorbance-based and transmittance-based colors are stored in
 separate lists, then merged into a single DataFrame.
@@ -678,9 +676,9 @@ with its blue peak at shorter wavelengths, sits closer to a neutral green.
 
 The same pipeline applies to any molecule with a UV-Vis spectrum: dyes,
 pigments, optical filter glasses, fluorescent proteins. Swapping in the CIE 1976
-\\( L^{\*}a^{\*}b^{\*} \\) color space (via `colour-science`'s `XYZ_to_Lab` function) would
+\(L^{*}a^{*}b^{*}\) color space (via `colour-science`'s `XYZ_to_Lab` function) would
 give perceptually uniform coordinates, making it possible to compute meaningful
-color differences (\\(\Delta E\\)) between samples. For quantitative work, the
+color differences (\(\Delta E\)) between samples. For quantitative work, the
 normalization step should be revisited — using actual absorbance values with a
 defined path length and concentration preserves the physical relationship
 between Beer-Lambert transmittance and perceived color.

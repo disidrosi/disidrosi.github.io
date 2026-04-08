@@ -1,0 +1,31 @@
+.site-footer {
+  background: var(--color-primary-faint);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  margin-top: 3em;
+  padding: 1.2em 1.4em;
+  font-size: 0.85em;
+  color: var(--color-text-muted);
+}
+
+.site-footer-primary {
+  margin-bottom: 0.4em;
+}
+
+.site-footer-primary a {
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+.site-footer-primary a:hover {
+  color: var(--color-primary);
+}
+
+.site-footer-sep {
+  margin: 0 0.5em;
+  color: var(--color-text-dimmed);
+}
+
+.site-footer-secondary {
+  color: var(--color-text-dimmed);
+}

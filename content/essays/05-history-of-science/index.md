@@ -1,7 +1,6 @@
 ---
 slug: "looking-back-to-move-forward"
 aliases: ["/blog/looking-back-to-move-forward/"]
-author: "Tobia Cavalli"
 title: "Looking Back to Move Forward: The Power of Scientific History"
 date: "2024-11-03"
 summary: "Exploring how historical awareness helps scientists avoid old traps,
@@ -19,7 +18,6 @@ lead: "Scientists often ignore their field's history, viewing it as irrelevant t
     examples and current debates, we'll see how understanding science's past can
     drive future innovation."
 tags: ["history-of-science"]
-toc: true
 ---
 
 Scientists are always pushing forward, racing to make the next breakthrough.

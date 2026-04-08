@@ -1,7 +1,6 @@
 ---
 slug: "from-yttria-to-promethium"
 aliases: ["/blog/from-yttria-to-promethium/"]
-author: "Tobia Cavalli"
 title: "From Yttria to Promethium: The 200-Year Search for Rare Earth Elements"
 date: "2024-11-10"
 summary: "A 200-year scientific story about the unraveling of the complex
@@ -25,7 +24,6 @@ lead: 'Rare earth elements are essential to modern technology, powering everythi
     into indispensable resources, showing that real progress is built on patience
     and generations of discovery.'
 tags: ["materials-science", "history-of-science", "chemistry"]
-toc: true
 ---
 
 Rare earth elements don't get much attention in daily conversation, but they're

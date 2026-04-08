@@ -1,7 +1,6 @@
 ---
 slug: "installing-orca-macos"
 aliases: ["/blog/installing-orca-macos/"]
-author: "Tobia Cavalli"
 title: "Installing ORCA on macOS Arm64"
 date: "2024-09-22"
 lastmod: "2026-04-02"
@@ -11,7 +10,6 @@ description: "Step-by-step installation of ORCA 6.0.0 on macOS Arm64
     (Apple Silicon), with Open MPI setup for parallel execution and a
     test calculation to verify the setup."
 tags: ["computational-chemistry","macos"]
-toc: true
 ---
 
 ![Orca logo](orca_logo.svg)

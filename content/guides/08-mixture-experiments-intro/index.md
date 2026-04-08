@@ -1,7 +1,6 @@
 ---
 slug: "getting-started-mixture-experiments"
 aliases: ["/blog/getting-started-mixture-experiments/"]
-author: "Tobia Cavalli"
 title: "Getting started with mixture experiments"
 date: "2025-08-05"
 lastmod: "2026-04-02"
@@ -15,7 +14,6 @@ description: "Mixture experiments handle formulations where component
     commercial tools."
 tags: ["materials-science","design-of-experiments"]
 math: true
-toc: true
 ---
 
 ## What are mixture experiments?
@@ -50,7 +48,7 @@ you want an efficient way to find out.
 ### Planning and designing the experiments
 
 First, you need to choose a property that you can measure --- your response
-variable \\(y\\). You decide to take a closer look at the elongation of fibers
+variable \(y\). You decide to take a closer look at the elongation of fibers
 produced with different polymer blends, which measures how much you can
 lengthen your fibers before they break.[^1]
 
@@ -72,16 +70,16 @@ optimally placed inside the simplex, ensuring that the compositional
 space is properly explored.
 
 The simplest mixture design is the **Simplex Lattice Design (SLD)**. In this
-type of design, each *factor* (in this case, PE, PP, and PS) can take \\(m+1\\)
-values (\\(0, 1/m, 2/m, \dots, m/m\\)) where \\(m\\) represents the number of
+type of design, each *factor* (in this case, PE, PP, and PS) can take \(m+1\)
+values (\(0, 1/m, 2/m, \dots, m/m\)) where \(m\) represents the number of
 levels. A level is the specific value that a factor takes in a given
-run. The value of \\(m\\) is also important for later
+run. The value of \(m\) is also important for later
 modeling, because it defines the order of the polynomial that can be fitted to
-the data: \\(m=1\\) means you'll only be able to fit first order polynomials,
-\\(m=2\\) second order, \\(m=3\\) third order, and so on.
+the data: \(m=1\) means you'll only be able to fit first order polynomials,
+\(m=2\) second order, \(m=3\) third order, and so on.
 
 You decide to keep it simple and explore only pure or binary blend
-compositions, meaning that each factor is going to take two levels (\\(m=2\\)).
+compositions, meaning that each factor is going to take two levels (\(m=2\)).
 This setup includes three points for each component: 1 for a single-component,
 0.5 for the binary blend, and 0 for blends that do not include that component.
 This allows you to fit a second-order polynomial and see how pairs of
@@ -98,11 +96,11 @@ The red dots indicate the experimental runs required to map the entire space.")
 ### Analyzing the results
 
 You prepare the 6 polymer blends, spin them into yarns, and measure
-their elongation. Using shorthand notation --- \\(x_{1}\\) for
-polyethylene, \\(x_{2}\\) for polystyrene, \\(x_{3}\\) for polypropylene
+their elongation. Using shorthand notation --- \(x_{1}\) for
+polyethylene, \(x_{2}\) for polystyrene, \(x_{3}\) for polypropylene
 --- and averaging three replicates per run, the results are:
 
-| Design point | \\(x_{1}\\) | \\(x_{2}\\) | \\(x_{3}\\) | Average elongation |
+| Design point | \(x_{1}\) | \(x_{2}\) | \(x_{3}\) | Average elongation |
 |--------------|----------:|----------:|----------:|-------------------:|
 | 1            | 1         | 0         | 0         | 11.7               |
 | 2            | 1/2       | 1/2       | 0         | 15.3               |
@@ -113,23 +111,23 @@ polyethylene, \\(x_{2}\\) for polystyrene, \\(x_{3}\\) for polypropylene
 
 At this point, you'll want to fit this data into a model that can be used to
 extrapolate the behavior of the system. There is one problem, though. Consider
-a standard polynomial with an intercept \\(\beta_{0}\\):
+a standard polynomial with an intercept \(\beta_{0}\):
 
 $$
 y = \beta_{0} + \beta_{1}x_{1} + \beta_{2}x_{2} + \beta_{3}x_{3} + \dots
 $$
 
-Where \\(\beta_{1}\\), \\(\beta_{2}\\), and \\(\beta_{3}\\) are the regression
+Where \(\beta_{1}\), \(\beta_{2}\), and \(\beta_{3}\) are the regression
 coefficients of each component. In mixture space, when all components approach
-zero we have \\(x_{1} \rightarrow 0\\), \\(x_{2} \rightarrow 0\\), \\(x_{3}
-\rightarrow 0\\). However, this violates the mixture constraint, since the sum
-of all components \\(\sum_{i} x_{i}\\) must equal 1. There is no point
-in mixture space where all \\(x_{i} = 0\\), so the intercept
-\\(\beta_{0}\\) has no physical meaning.[^2]
+zero we have \(x_{1} \rightarrow 0\), \(x_{2} \rightarrow 0\), \(x_{3}
+\rightarrow 0\). However, this violates the mixture constraint, since the sum
+of all components \(\sum_{i} x_{i}\) must equal 1. There is no point
+in mixture space where all \(x_{i} = 0\), so the intercept
+\(\beta_{0}\) has no physical meaning.[^2]
 
 [^2]: The mixture constraint creates perfect multicollinearity. If you know the
-    values of \\(q-1\\) components in a \\(q\\)-component mixture, the last
-    component is completely determined: \\(x_{q} = 1 - \sum_{i=1}^{q-1} x_{i}\\).
+    values of \(q-1\) components in a \(q\)-component mixture, the last
+    component is completely determined: \(x_{q} = 1 - \sum_{i=1}^{q-1} x_{i}\).
     This means that the design matrix is singular, and therefore the
     coefficients cannot be estimated through standard least squares.
 
@@ -142,9 +140,9 @@ y = \beta_{1}x_{1} + \beta_{2}x_{2} + \beta_{3}x_{3} + \beta_{12}x_{1}x_{2} +
 \beta_{13}x_{1}x_{3} + \beta_{23}x_{2}x_{3}
 $$
 
-Here, \\(\beta_{1}\\), \\(\beta_{2}\\), and \\(\beta_{3}\\) represent the expected
+Here, \(\beta_{1}\), \(\beta_{2}\), and \(\beta_{3}\) represent the expected
 response when component 1, 2, and 3 respectively comprise 100% of the mixture,
-whereas the terms \\(\beta_{12}\\), \\(\beta_{13}\\) and \\(\beta_{23}\\) represent
+whereas the terms \(\beta_{12}\), \(\beta_{13}\) and \(\beta_{23}\) represent
 binary interactions. These latter terms have physical meaning and represent
 synergistic or antagonistic effects between components.
 

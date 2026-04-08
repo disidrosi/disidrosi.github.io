@@ -1,0 +1,8 @@
+{{ with .GetTerms "tags" }}
+<p class="post-tags">
+  <span class="tags-label">Tags:</span>
+  {{ range . }}
+    <a class="blog-tags" href="{{ .RelPermalink }}">{{ lower .LinkTitle }}</a>
+  {{ end }}
+</p>
+{{ end }}

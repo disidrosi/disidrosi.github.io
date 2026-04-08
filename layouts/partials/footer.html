@@ -1,4 +1,15 @@
-<small>
-  {{ .Site.Copyright }} {{ now.Year }}<br>
-  {{ with .Site.Params.madeWith }}{{ markdownify . }}{{ end }}
-</small>
+<div class="site-footer">
+  <div class="site-footer-primary">
+    {{ range .Site.Params.footer.links }}
+      <a href="{{ .url }}">{{ .name }}</a>
+      <span class="site-footer-sep">·</span>
+    {{ end }}
+    {{ with .Site.Params.footer }}
+      <a href="{{ .licenseUrl }}" rel="license">{{ .licenseName }}</a>
+    {{ end }}
+  </div>
+  <div class="site-footer-secondary">
+    © {{ now.Year }} {{ .Site.Copyright | replaceRE "^Copyright © " "" }}
+    {{ with .Site.Params.madeWith }} — {{ markdownify . }}{{ end }}
+  </div>
+</div>

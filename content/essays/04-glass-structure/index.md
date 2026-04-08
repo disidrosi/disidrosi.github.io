@@ -1,7 +1,6 @@
 ---
 slug: "glass-structure-stability"
 aliases: ["/blog/glass-structure-stability/"]
-author: "Tobia Cavalli"
 title: "The Science of Glass: From Structure to Stability"
 date: "2024-10-27"
 summary: "Explore the science behind glass---from its disordered
@@ -14,7 +13,6 @@ description: "An exploration of the atomic structure of glass: its amorphous
 lead: "Glass is a unique material, defined by its disordered atomic structure and metastable state. Unlike crystalline solids, which have an orderly arrangement of atoms, glass exists in an amorphous form, constantly seeking but never reaching equilibrium. The glass transition temperature (\\(T_g\\)) marks the point where glass softens and transitions from a rigid solid to a more fluid state, while the behavior of supercooled liquids and structural relaxation explains how glass forms and retains its properties. Through these processes, glass blurs the line between solid and liquid, making it one of the most versatile and scientifically intriguing materials."
 tags: ["materials-science","glass"]
 math: true
-toc: true
 ---
 
 Glass is one of the most versatile materials in the world, found in everything
@@ -93,7 +91,7 @@ force. Because glass lacks the strict order of a crystal, it also doesn't have
 a defined melting point. Instead, it softens gradually as temperature rises,
 transitioning smoothly from a rigid state to a more fluid one.
 
-A classic example of this structural divide is **silica** (\\( \ce{SiO2} \\)). In
+A classic example of this structural divide is **silica** (\(\mathrm{SiO}_2\)). In
 its crystalline form, it becomes quartz, which has a well-defined melting point
 and anisotropic properties. In its amorphous form, as glass, silica behaves
 differently, exhibiting the gradual softening and isotropic properties
@@ -164,7 +162,7 @@ that distinguishes it from other amorphous materials.[^3]
 The glass transition describes the gradual shift from a rigid, solid state to a
 more viscous, rubbery state as temperature increases. This transformation
 occurs over a temperature range and is marked by the **glass transition
-temperature** (\\(T_g\\)). As the temperature rises, glass does not melt like a
+temperature** (\(T_g\)). As the temperature rises, glass does not melt like a
 crystalline solid. Instead, it softens, becoming less brittle and more
 flexible.
 
@@ -177,20 +175,20 @@ a liquid.
 The glass transition temperature isn't a sharp, single point, but rather a
 range that depends on the material's thermal history. Factors like the cooling
 rate can influence where this transition occurs. Faster cooling typically
-results in a higher \\(T_g\\), as the atoms have less time to settle into a more
+results in a higher \(T_g\), as the atoms have less time to settle into a more
 stable arrangement. Slower cooling allows more atomic movement, lowering the
-\\(T_g\\). As glass approaches its \\(T_g\\), its viscosity increases dramatically,
+\(T_g\). As glass approaches its \(T_g\), its viscosity increases dramatically,
 meaning it becomes harder for its atoms to move and rearrange.
 
 ![Glass transition plot](glass_phase_transition.png "This plot illustrates
 the four states of a glass-forming substance: liquid, supercooled liquid,
-glass, and crystal. The melting temperature (\\(T_{m}\\)​) marks the
+glass, and crystal. The melting temperature (\(T_{m}\)​) marks the
 transition to a liquid, while the glass transition temperature
-(\\(T_{g}\\)​) marks the solidification into a glassy, non-equilibrium
+(\(T_{g}\)​) marks the solidification into a glassy, non-equilibrium
 state.")
 
 This behavior is fundamentally different from crystalline solids, which melt at
-a defined melting point (\\(T_m\\)). In glass, the transition from a liquid to a
+a defined melting point (\(T_m\)). In glass, the transition from a liquid to a
 solid is more gradual, and the properties of the material during this range are
 influenced by both temperature and time.
 
@@ -210,7 +208,7 @@ equilibrium is reached, this internal restructuring persists, although more
 slowly as the temperature drops. This process is central to understanding how
 glass forms and maintains its unique properties over time.
 
-The **relaxation time** (\\( \tau_{s} \\))—the time it takes for the atomic
+The **relaxation time** (\( \tau_{s} \))—the time it takes for the atomic
 structure to adjust to temperature changes—increases significantly as the
 liquid cools. When the cooling rate is faster than the material's ability to
 relax, the atoms freeze into a disordered arrangement, creating the glassy,
@@ -219,7 +217,7 @@ which indicates when the material transitions from equilibrium to a frozen,
 non-equilibrium structure.
 
 For many materials, the fictive temperature aligns with the **glass transition
-temperature** (\\(T_g\\)), where the viscosity reaches a level that essentially
+temperature** (\(T_g\)), where the viscosity reaches a level that essentially
 halts atomic movement, and the material becomes glass.
 
 ## Conclusion

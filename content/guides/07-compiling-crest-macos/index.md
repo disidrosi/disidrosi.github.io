@@ -1,7 +1,6 @@
 ---
 slug: "compiling-crest-macos-m1"
 aliases: ["/blog/compiling-crest-macos-m1/"]
-author: "Tobia Cavalli"
 title: "Compiling CREST on macOS with M-series Chips"
 date: "2025-03-14"
 lastmod: "2026-04-02"
@@ -12,7 +11,6 @@ description: "The standard CREST compilation fails on Apple Silicon Macs
     because cmake links against the Accelerate framework. This guide
     compiles CREST against openblas and lapack instead."
 tags: ["computational-chemistry","macos"]
-toc: true
 ---
 
 ![CREST logo](crest_logo.png)

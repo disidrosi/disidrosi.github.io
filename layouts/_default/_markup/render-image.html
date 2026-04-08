@@ -1,9 +1,52 @@
-{{ $alt := or .Text "Image" }}
+{{ $alt := .Text }}
+{{ $resource := .Page.Resources.GetMatch .Destination }}
+
+{{ if .Title }}<figure>{{ end }}
+
+{{- if and $resource (eq $resource.ResourceType "image") -}}
+  {{- $ext := lower (path.Ext .Destination) -}}
+  {{- if or (eq $ext ".svg") (eq $ext ".gif") -}}
+    {{/* Skip processing for SVG and GIF — emit original. */}}
+    <img src="{{ $resource.RelPermalink }}" alt="{{ $alt }}" loading="lazy" decoding="async" />
+  {{- else -}}
+    {{/* Build srcset from candidate widths capped at the original width. */}}
+    {{- $candidates := slice 400 800 1200 1600 -}}
+    {{- $widths := slice -}}
+    {{- range $candidates -}}
+      {{- if lt . $resource.Width -}}
+        {{- $widths = $widths | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $widths = $widths | append $resource.Width -}}
+    {{- $variants := slice -}}
+    {{- range $widths -}}
+      {{- $v := $resource.Resize (printf "%dx webp q82" .) -}}
+      {{- $variants = $variants | append $v -}}
+    {{- end -}}
+    {{- $srcset := slice -}}
+    {{- range $variants -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" .RelPermalink .Width) -}}
+    {{- end -}}
+    {{/* Default src: 800w variant if available, otherwise the largest. */}}
+    {{- $default := index $variants (sub (len $variants) 1) -}}
+    {{- range $variants -}}
+      {{- if eq .Width 800 -}}{{- $default = . -}}{{- end -}}
+    {{- end -}}
+    <img src="{{ $default.RelPermalink }}"
+         srcset="{{ delimit $srcset ", " }}"
+         sizes="(max-width: 800px) 100vw, 800px"
+         width="{{ $resource.Width }}"
+         height="{{ $resource.Height }}"
+         alt="{{ $alt }}"
+         loading="lazy"
+         decoding="async" />
+  {{- end -}}
+{{- else -}}
+  {{/* Fallback: non-bundle destination (absolute URL, missing file). */}}
+  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" decoding="async" />
+{{- end }}
+
 {{ if .Title }}
-<figure>
-  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" />
   <figcaption><span class="figure-number"></span>{{ .Title | markdownify }}</figcaption>
 </figure>
-{{ else }}
-<img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" />
 {{ end }}

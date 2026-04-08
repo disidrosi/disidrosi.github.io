@@ -9,7 +9,7 @@
     <li>
       <span>
         <i>
-          <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+          <time datetime='{{ .Date.Format "2006-01-02" }}'>
             {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
           </time>
         </i>
@@ -27,9 +27,9 @@
     {{ end }}
   </ul>
   {{ if not .Data.Singular }}
-    <div>
+    <div class="tag-cloud">
       {{ range .Site.Taxonomies.tags }}
-        <a class="blog-tags" href="{{ .Page.RelPermalink }}">#{{ lower .Page.Title }}</a>
+        <a class="blog-tags" href="{{ .Page.RelPermalink }}">{{ lower .Page.Title }}</a>
       {{ end }}
     </div>
   {{ end }}

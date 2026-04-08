@@ -1,13 +1,11 @@
 ---
 slug: "systems-engineering-materials-design"
 aliases: ["/blog/systems-engineering-materials-design/"]
-author: "Tobia Cavalli"
 title: "Systems engineering in materials design"
 date: "2026-03-30"
 description: "Materials are not properties on a datasheet. They are systems of interacting scales, feedback loops, and processing history. The PSPP framework makes those connections explicit and invertible."
 summary: "Replacing one element in an alloy forces changes to processing, structure, and performance all at once. This post introduces the PSPP framework and the systems concepts behind it. If the chain from processing to performance is causal in both directions, it can be read backward, turning material substitution into a design problem."
 tags: ["materials-science", "systems-thinking"]
-toc: true
 ---
 
 ![Cover image](systems.svg "Illustration by [@sliceform](https://unsplash.com/@sliceform)")

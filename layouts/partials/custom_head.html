@@ -1,23 +1,9 @@
-{{ $base := resources.Get "css/base.css" }}
-{{ $callouts := resources.Get "css/callouts.css" }}
-{{ $post := resources.Get "css/post.css" }}
-{{ $tables := resources.Get "css/tables.css" }}
-{{ $homepage := resources.Get "css/homepage.css" }}
-{{ $links := resources.Get "css/links.css" }}
-{{ $toc := resources.Get "css/toc.css" }}
-{{ $styles := slice $base $callouts $post $tables $homepage $links $toc | resources.Concat "css/custom.css" | minify | fingerprint }}
+<link rel="canonical" href="{{ .Permalink }}" />
+
+{{ $styles := resources.Get "css/main.scss" | css.Sass | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 
-{{ if .Params.math }}
+{{ if or .Params.math (.Store.Get "hasMath") }}
 {{ $kv := .Site.Params.katexVersion }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@{{ $kv }}/dist/katex.min.css" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ $kv }}/dist/katex.min.js" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ $kv }}/dist/contrib/mhchem.min.js" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ $kv }}/dist/contrib/auto-render.min.js" crossorigin="anonymous"
-    onload="renderMathInElement(document.body, {delimiters: [
-        {left: '$$', right: '$$', display: true},
-        {left: '$', right: '$', display: false},
-        {left: '\\(', right: '\\)', display: false},
-        {left: '\\[', right: '\\]', display: true}
-    ]});"></script>
 {{ end }}
