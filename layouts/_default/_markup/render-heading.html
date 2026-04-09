@@ -1,6 +1,6 @@
 {{- if eq .Page.Kind "page" -}}
 <h{{ .Level }} id="{{ .Anchor }}">
-  <a class="heading-anchor" href="#{{ .Anchor }}" aria-hidden="true" tabindex="-1">#</a>
+  <a class="heading-anchor" href="#{{ .Anchor }}" aria-hidden="true">#</a>
   {{ .Text }}
 </h{{ .Level }}>
 {{- else -}}

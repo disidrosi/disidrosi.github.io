@@ -1,15 +1,12 @@
 {{- $alt := .PlainText -}}
 {{- $resource := .Page.Resources.GetMatch .Destination -}}
-{{- $isFirst := not (.Page.Store.Get "firstImageRendered") -}}
-{{- if $isFirst }}{{- .Page.Store.Set "firstImageRendered" true -}}{{ end -}}
-{{- $loading := cond $isFirst "eager" "lazy" -}}
 
 {{- if .Title -}}<figure>{{- end -}}
 
 {{- if and $resource (eq $resource.ResourceType "image") -}}
   {{- $ext := lower (path.Ext .Destination) -}}
   {{- if or (eq $ext ".svg") (eq $ext ".gif") -}}
-    <img src="{{ $resource.RelPermalink }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async"{{ if $isFirst }} fetchpriority="high"{{ end }} />
+    <img src="{{ $resource.RelPermalink }}" alt="{{ $alt }}" loading="lazy" decoding="async" />
   {{- else -}}
     {{- $candidates := slice 400 800 1200 1600 -}}
     {{- $widths := slice -}}
@@ -38,11 +35,11 @@
          width="{{ $default.Width }}"
          height="{{ $default.Height }}"
          alt="{{ $alt }}"
-         loading="{{ $loading }}"
-         decoding="async"{{ if $isFirst }} fetchpriority="high"{{ end }} />
+         loading="lazy"
+         decoding="async" />
   {{- end -}}
 {{- else -}}
-  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async"{{ if $isFirst }} fetchpriority="high"{{ end }} />
+  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" decoding="async" />
 {{- end -}}
 
 {{- if .Title -}}

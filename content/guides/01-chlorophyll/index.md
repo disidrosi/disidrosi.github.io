@@ -197,7 +197,7 @@ space for a 2° observer.")
 
 The data are pre-recorded UV-Vis absorption spectra of Chlorophyll A and
 Chlorophyll B in 70% and 90% acetone solutions, taken from Chazaux et al.[^6]
-You can download the `.csv` file as [chlorophyll_uv_vis.csv](include/chlorophyll_uv_vis.csv).
+You can download the `.csv` file [here](include/chlorophyll_uv_vis.csv).
 
 ```python {linenostart=59}
 column_names = ["lambda", "chl_a_70", "chl_a_90", "chl_b_70", "chl_b_90"]

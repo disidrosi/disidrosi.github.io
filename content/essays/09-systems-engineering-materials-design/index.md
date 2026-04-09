@@ -64,7 +64,7 @@ future societal need.
 *Nature Materials* gives a similar definition, but with a broader scope:[^9]
 
 > [!note] Definition
-> [...] substances in the condensed states (liquid, solid, colloidal) designed
+> \[...\] substances in the condensed states (liquid, solid, colloidal) designed
 or manipulated for technological ends.
 
 These definitions, together with the broader discussion cited earlier, point to
