@@ -1,0 +1,67 @@
+{{ define "main" }}
+  <article class="post-content bookshelf">
+    {{ range hugo.Data.bookshelf }}
+      <section class="bookshelf-theme">
+        <h2>{{ .name }}</h2>
+        {{ range .sections }}
+          <h3>{{ .type }}</h3>
+          {{ if eq .type "Books" }}
+            <ul class="bookshelf-cards">
+              {{ range .entries }}
+                <li class="bookshelf-card">
+                  {{- $alt := printf "%s cover" .title -}}
+                  {{- with resources.Get (printf "images/bookshelf/%s" .image) }}
+                    {{- $r1x := .Resize "72x webp q82" -}}
+                    {{- $r2x := .Resize "144x webp q82" -}}
+                    <img src="{{ $r1x.RelPermalink }}"
+                         srcset="{{ $r1x.RelPermalink }} 1x, {{ $r2x.RelPermalink }} 2x"
+                         width="{{ $r1x.Width }}"
+                         height="{{ $r1x.Height }}"
+                         alt="{{ $alt }}"
+                         loading="lazy"
+                         decoding="async">
+                  {{- end }}
+                  <div class="bookshelf-card-body">
+                    <div class="bookshelf-card-header">
+                      <span class="bookshelf-title">{{ .title }}</span>
+                      · <span class="bookshelf-author">{{ .author }}</span>
+                      · <span class="bookshelf-year">{{ .year }}</span>
+                      <span class="bookshelf-status bookshelf-status--{{ .status }}">{{ .status }}</span>
+                    </div>
+                    {{ if .annotation }}
+                      <p class="bookshelf-annotation">{{ .annotation }}</p>
+                    {{ end }}
+                  </div>
+                </li>
+              {{ end }}
+            </ul>
+          {{ else }}
+            <ul class="bookshelf-list">
+              {{ range .entries }}
+                <li class="bookshelf-entry">
+                  <div class="bookshelf-entry-header">
+                    <span class="bookshelf-title">{{ .title }}</span>
+                    · <span class="bookshelf-author">{{ .author }}</span>
+                    · <span class="bookshelf-year">{{ .year }}</span>
+                    <span class="bookshelf-status bookshelf-status--{{ .status }}">{{ .status }}</span>
+                    {{ if .doi }}
+                      <a
+                        class="bookshelf-doi"
+                        href="https://doi.org/{{ .doi }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >doi</a>
+                    {{ end }}
+                  </div>
+                  {{ if .annotation }}
+                    <p class="bookshelf-annotation">{{ .annotation }}</p>
+                  {{ end }}
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        {{ end }}
+      </section>
+    {{ end }}
+  </article>
+{{ end }}

@@ -5,7 +5,7 @@
 {{ $styles := resources.Get "css/main.scss" | css.Sass | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 
-{{ if or .Params.math (.Store.Get "hasMath") }}
+{{ if .Params.math }}
   {{ $kv := .Site.Params.katexVersion }}
   <link
     rel="preload"

@@ -1,0 +1,23 @@
+name = "Science and engineering"
+
+[[sections]]
+  type = "Books"
+
+  [[sections.entries]]
+    title = "Pieces of the action"
+    author = "Vannevar Bush"
+    year = 2022
+    status = "read"
+    image = "bush_pieces-of-the-action.jpg"
+    annotation = "A simple description."
+
+[[sections]]
+  type = "Papers"
+
+  [[sections.entries]]
+    title = "Science: The Endless Frontier"
+    author = "Vannevar Bush"
+    year = 1945
+    status = "reading"
+    doi = "10.2307/3224875"
+    annotation = "The report that shaped postwar US science policy and established the model of federal funding for basic research."

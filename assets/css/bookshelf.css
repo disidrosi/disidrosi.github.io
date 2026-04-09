@@ -1,0 +1,120 @@
+/* Bookshelf page */
+
+.bookshelf-theme {
+  margin-bottom: 2.5rem;
+}
+
+.bookshelf-theme h3 {
+  color: var(--color-text-muted);
+  font-size: 0.9em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Book cards */
+
+.bookshelf-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bookshelf-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.bookshelf-card img {
+  display: block;
+  width: 72px;
+  height: auto;
+  margin: 0;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+
+.bookshelf-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.bookshelf-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.6rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Paper / essay list */
+
+.bookshelf-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bookshelf-entry {
+  margin-bottom: 1rem;
+}
+
+.bookshelf-entry-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.6rem;
+}
+
+/* Shared entry elements */
+
+.bookshelf-title,
+.bookshelf-author,
+.bookshelf-year,
+.bookshelf-status,
+.bookshelf-doi {
+  font-size: 0.9em;
+  color: var(--color-text-muted);
+}
+
+.bookshelf-title {
+  font-weight: 500;
+}
+
+.bookshelf-author {
+  font-style: italic;
+}
+
+.bookshelf-status {
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.bookshelf-status--read {
+  background: rgba(153, 153, 153, 0.12);
+}
+
+.bookshelf-status--reading {
+  color: var(--color-primary);
+  background: var(--color-primary-tint);
+}
+
+.bookshelf-doi {
+  text-decoration: none;
+}
+
+.bookshelf-doi:hover {
+  color: var(--color-primary);
+}
+
+.bookshelf-annotation {
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin: 0.25rem 0 0 0;
+  line-height: 1.55;
+}

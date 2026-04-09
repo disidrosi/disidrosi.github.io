@@ -4,7 +4,7 @@
       {{ with .Site.Params.profileImage }}
         <img
           class="profile-photo"
-          src="/{{ . }}"
+          src="{{ absURL . }}"
           alt="{{ $.Site.Params.author.name }}"
           width="150"
           height="150"

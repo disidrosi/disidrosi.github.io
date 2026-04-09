@@ -89,3 +89,17 @@
 /* GenericTraceback .chroma .gt {  } */
 /* GenericUnderline */ .chroma .gl { text-decoration: underline }
 /* TextWhitespace .chroma .w {  } */
+
+/* Contrast fixes for highlighted lines (.hl background is #44475a)         */
+/* Line numbers: #929292 → #b8b8b8 gives 4.87:1 contrast                   */
+.chroma .hl .ln,
+.chroma .hl .lnt { color: #b8b8b8 }
+/* Pink keywords: #ff79c6 → #ffaada gives 5.23:1 contrast                  */
+.chroma .hl .k,
+.chroma .hl .kc,
+.chroma .hl .kn,
+.chroma .hl .kp,
+.chroma .hl .kr,
+.chroma .hl .nt,
+.chroma .hl .o,
+.chroma .hl .ow { color: #ffaada }

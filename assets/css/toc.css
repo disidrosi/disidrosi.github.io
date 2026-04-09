@@ -35,6 +35,10 @@
   line-height: 1.5;
 }
 
+.toc ul ul li {
+  margin: 0.3em 0;
+}
+
 .toc a {
   color: var(--color-primary);
   text-decoration: none;
