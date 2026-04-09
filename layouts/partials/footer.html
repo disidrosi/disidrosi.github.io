@@ -9,7 +9,8 @@
     {{ end }}
   </div>
   <div class="site-footer-secondary">
-    © {{ now.Year }} {{ .Site.Copyright | replaceRE "^Copyright © " "" }}
-    {{ with .Site.Params.madeWith }} — {{ markdownify . }}{{ end }}
+    © {{ now.Year }}
+    {{ .Site.Copyright | replaceRE "^Copyright © " "" }}
+    {{ with .Site.Params.madeWith }}— {{ markdownify . }}{{ end }}
   </div>
 </div>

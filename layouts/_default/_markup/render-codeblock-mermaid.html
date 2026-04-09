@@ -1,4 +1,7 @@
 <pre class="mermaid">
   {{- .Inner | htmlEscape | safeHTML -}}
 </pre>
-{{ .Page.Store.Set "hasMermaid" true }}
+<noscript>
+  <pre><code>{{- .Inner | htmlEscape | safeHTML -}}</code></pre>
+</noscript>
+{{- .Page.Store.Set "hasMermaid" true -}}

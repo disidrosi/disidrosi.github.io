@@ -1,3 +1,10 @@
+.title p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 19.92px 0;
+  color: #eee;
+}
+
 :root {
   --color-primary: #8cc2dd;
   --color-primary-tint: rgba(140, 194, 221, 0.12);

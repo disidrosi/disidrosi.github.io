@@ -6,7 +6,8 @@ table {
   border-bottom: 2px solid var(--color-text-muted);
 }
 
-th, td {
+th,
+td {
   border: none;
   padding: 6px 12px;
 }

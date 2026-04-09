@@ -1,8 +1,8 @@
-{{ if eq .Page.Kind "page" }}
-<h{{ .Level }} id="{{ .Anchor | safeURL }}">
-  <a class="heading-anchor" href="#{{ .Anchor | safeURL }}" aria-label="Permalink to this section">#</a>
-  {{ .Text | safeHTML }}
+{{- if eq .Page.Kind "page" -}}
+<h{{ .Level }} id="{{ .Anchor }}">
+  <a class="heading-anchor" href="#{{ .Anchor }}" aria-hidden="true" tabindex="-1">#</a>
+  {{ .Text }}
 </h{{ .Level }}>
-{{ else }}
-<h{{ .Level }}>{{ .Text | safeHTML }}</h{{ .Level }}>
-{{ end }}
+{{- else -}}
+<h{{ .Level }}>{{ .Text }}</h{{ .Level }}>
+{{- end -}}

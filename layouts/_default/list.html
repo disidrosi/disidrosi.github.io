@@ -1,37 +1,44 @@
 {{ define "main" }}
-<article class="post-content">
-  {{ .Content }}
-  {{ if .Data.Singular }}
-    <h3 class="blog-filter">{{ i18n "filtering-for" }} "{{ .Title }}"</h3>
-  {{ end }}
-  <ul class="blog-posts">
-    {{ range .Pages }}
-    <li>
-      <span>
-        <i>
-          <time datetime='{{ .Date.Format "2006-01-02" }}'>
-            {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
-          </time>
-        </i>
-      </span>
-      {{ if .Params.link }}
-        <a href="{{ .Params.link }}" target="_blank">{{ .Title }} ↪</a>
-      {{ else }}
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      {{ end }}
-    </li>
-    {{ else }}
-    <li>
-      {{ i18n "no-posts" }}
-    </li>
+  <article class="post-content">
+    {{ .Content }}
+    {{ if .Data.Singular }}
+      <h3 class="blog-filter">{{ i18n "filtering-for" }} "{{ .Title }}"</h3>
     {{ end }}
-  </ul>
-  {{ if not .Data.Singular }}
-    <div class="tag-cloud">
-      {{ range .Site.Taxonomies.tags }}
-        <a class="blog-tags" href="{{ .Page.RelPermalink }}">{{ lower .Page.Title }}</a>
+    <ul class="blog-posts">
+      {{ range .Pages }}
+        <li>
+          <span>
+            <i>
+              <time datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+              </time>
+            </i>
+          </span>
+          {{ if .Params.link }}
+            <a
+              href="{{ .Params.link }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ .Title }} ↪</a
+            >
+          {{ else }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ end }}
+        </li>
+      {{ else }}
+        <li>
+          {{ i18n "no-posts" }}
+        </li>
       {{ end }}
-    </div>
-  {{ end }}
-</article>
+    </ul>
+    {{ if not .Data.Singular }}
+      <div class="tag-cloud">
+        {{ range .Site.Taxonomies.tags }}
+          <a class="blog-tags" href="{{ .Page.RelPermalink }}"
+            >{{ lower .Page.Title }}</a
+          >
+        {{ end }}
+      </div>
+    {{ end }}
+  </article>
 {{ end }}

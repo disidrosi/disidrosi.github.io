@@ -1,23 +1,23 @@
 <div class="post-meta">
   <span class="post-meta-item">
     <span class="post-meta-label">Published:</span>
-    <time datetime='{{ .Date.Format "2006-01-02" }}'>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">
       {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
     </time>
   </span>
   {{ if and .Lastmod (ne .Lastmod .Date) }}
-  <span class="post-meta-item">
-    <span class="post-meta-label">Modified:</span>
-    <time datetime='{{ .Lastmod.Format "2006-01-02" }}'>
-      {{ .Lastmod.Format (default "2006-01-02" .Site.Params.dateFormat) }}
-    </time>
-  </span>
+    <span class="post-meta-item">
+      <span class="post-meta-label">Modified:</span>
+      <time datetime="{{ .Lastmod.Format "2006-01-02" }}">
+        {{ .Lastmod.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+      </time>
+    </span>
   {{ end }}
   {{ with .Params.author }}
-  <span class="post-meta-item">
-    <span class="post-meta-label">Author:</span>
-    {{ . }}
-  </span>
+    <span class="post-meta-item">
+      <span class="post-meta-label">Author:</span>
+      {{ . }}
+    </span>
   {{ end }}
   <span class="post-meta-item">
     <span class="post-meta-label">Reading time:</span>

@@ -1,17 +1,20 @@
-{{ if eq .Type "alert" }}
-  {{ $title := .AlertType | strings.FirstUpper }}
-  {{ with .AlertTitle }}{{ $title = . }}{{ end }}
-  {{ if .AlertSign }}
-  <details class="callout callout-{{ .AlertType }}"{{ if eq .AlertSign "+" }} open{{ end }}>
-    <summary>{{ $title }}</summary>
-    {{ .Text }}
-  </details>
-  {{ else }}
-  <div class="callout callout-{{ .AlertType }}">
-    <p class="callout-title">{{ $title }}</p>
-    {{ .Text }}
-  </div>
-  {{ end }}
-{{ else }}
+{{- if eq .Type "alert" -}}
+  {{- $title := .AlertType | strings.FirstUpper -}}
+  {{- with .AlertTitle }}{{ $title = . }}{{ end -}}
+  {{- if .AlertSign -}}
+    <details
+      class="callout callout-{{ .AlertType }}"
+      {{- if eq .AlertSign "+" }}open{{ end -}}
+    >
+      <summary>{{ $title }}</summary>
+      {{ .Text }}
+    </details>
+  {{- else -}}
+    <div class="callout callout-{{ .AlertType }}">
+      <p class="callout-title">{{ $title }}</p>
+      {{ .Text }}
+    </div>
+  {{- end -}}
+{{- else -}}
   <blockquote>{{ .Text }}</blockquote>
-{{ end }}
+{{- end -}}

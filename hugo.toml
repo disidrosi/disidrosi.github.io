@@ -2,9 +2,19 @@ baseURL = "https://tobiacavalli.com"
 theme = "hugo-bearcub"
 copyright = "Copyright © Tobia Cavalli"
 defaultContentLanguage = "en"
+timeZone = "Europe/Berlin"
+disableHugoGeneratorInject = true
 enableRobotsTXT = true
 enableEmoji = true
 enableGitInfo = true
+
+[taxonomies]
+  tag = "tags"
+
+[imaging]
+  quality = 82
+  resampleFilter = "Lanczos"
+  hint = "photo"
 
 [markup]
     [markup.highlight]
@@ -12,10 +22,13 @@ enableGitInfo = true
         lineNumbersInTable = false
         noClasses = false
 
+    [markup.goldmark.parser]
+        wrapStandAloneImageWithinParagraph = false
+
     [markup.goldmark.extensions.passthrough]
         enable = true
         [markup.goldmark.extensions.passthrough.delimiters]
-            inline = [['$', '$'], ['\(', '\)']]
+            inline = [['\(', '\)']]
             block = [['$$', '$$'], ['\[', '\]']]
 
 [languages]
@@ -37,6 +50,7 @@ enableGitInfo = true
     generateSocialCard = true
     profileImage = "images/profile.jpg"
     katexVersion = "0.16.44"
+    mermaidVersion = "11.14.0"
 
     [params.author]
         name = "Tobia Cavalli"

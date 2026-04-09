@@ -1,20 +1,53 @@
 {{ define "main" }}
-<div class="home-intro">
-  <div class="home-profile">
-    {{ with .Site.Params.profileImage }}
-    <img class="profile-photo" src="/{{ . }}" alt="{{ $.Site.Params.author.name }}" />
-    {{ end }}
-    {{ with .Site.Params.social }}
-    <div class="social-links">
-      {{ with .email }}<a class="social-pill" href="mailto:{{ . }}">email</a>{{ end }}
-      {{ with .linkedin }}<a class="social-pill" href="{{ . }}" target="_blank" rel="noopener">linkedin</a>{{ end }}
-      {{ with .github }}<a class="social-pill" href="{{ . }}" target="_blank" rel="noopener">github</a>{{ end }}
-      {{ with .orcid }}<a class="social-pill" href="{{ . }}" target="_blank" rel="noopener">orcid</a>{{ end }}
+  <div class="home-intro">
+    <div class="home-profile">
+      {{ with .Site.Params.profileImage }}
+        <img
+          class="profile-photo"
+          src="/{{ . }}"
+          alt="{{ $.Site.Params.author.name }}"
+          width="150"
+          height="150"
+          decoding="async"
+        />
+      {{ end }}
+      {{ with .Site.Params.social }}
+        <div class="social-links">
+          {{ with .email }}
+            <a class="social-pill" href="mailto:{{ . }}">email</a>
+          {{ end }}
+          {{ with .linkedin }}
+            <a
+              class="social-pill"
+              href="{{ . }}"
+              target="_blank"
+              rel="me noopener"
+              >linkedin</a
+            >
+          {{ end }}
+          {{ with .github }}
+            <a
+              class="social-pill"
+              href="{{ . }}"
+              target="_blank"
+              rel="me noopener"
+              >github</a
+            >
+          {{ end }}
+          {{ with .orcid }}
+            <a
+              class="social-pill"
+              href="{{ . }}"
+              target="_blank"
+              rel="me noopener"
+              >orcid</a
+            >
+          {{ end }}
+        </div>
+      {{ end }}
     </div>
-    {{ end }}
+    <div class="home-content">
+      {{ .Content }}
+    </div>
   </div>
-  <div class="home-content">
-    {{ .Content }}
-  </div>
-</div>
 {{ end }}
