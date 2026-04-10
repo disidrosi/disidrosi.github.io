@@ -2,17 +2,15 @@
   <article class="post-content">
     {{ .Content }}
     {{ if .Data.Singular }}
-      <h3 class="blog-filter">{{ i18n "filtering-for" }} "{{ .Title }}"</h3>
+      <h2 class="blog-filter">{{ i18n "filtering-for" }} "{{ .Title }}"</h2>
     {{ end }}
     <ul class="blog-posts">
       {{ range .Pages }}
         <li>
           <span>
-            <i>
-              <time datetime="{{ .Date.Format "2006-01-02" }}">
-                {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
-              </time>
-            </i>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">
+              {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+            </time>
           </span>
           {{ if .Params.link }}
             <a
@@ -32,13 +30,11 @@
       {{ end }}
     </ul>
     {{ if not .Data.Singular }}
-      <div class="tag-cloud">
+      <ul class="tag-cloud">
         {{ range .Site.Taxonomies.tags }}
-          <a class="blog-tags" href="{{ .Page.RelPermalink }}"
-            >{{ lower .Page.Title }}</a
-          >
+          <li><a class="blog-tags" href="{{ .Page.RelPermalink }}">{{ lower .Page.Title }}</a></li>
         {{ end }}
-      </div>
+      </ul>
     {{ end }}
   </article>
 {{ end }}

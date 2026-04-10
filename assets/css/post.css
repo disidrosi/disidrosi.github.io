@@ -1,32 +1,49 @@
 /* Post header — single source of truth for meta + tags sizing */
 .post-header {
-  font-size: 0.9em;
+  font-size: var(--type-sm);
 }
 
 /* Tag pills */
 .post-tags {
-  margin: 4px 0 0 0;
+  list-style: none;
+  padding: 0;
+  margin: var(--space-1) 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1);
 }
 
 .tags-label {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: var(--type-xs);
   color: var(--color-text-dimmed);
-  margin-right: 4px;
 }
 
 a.blog-tags {
   display: inline-block;
   background: var(--color-primary-tint);
   border-radius: 3px;
-  padding: 1px 7px;
-  margin: 1px 3px 1px 0;
-  font-size: 0.8em;
+  padding: 1px var(--space-2);
+  font-family: var(--font-heading);
+  font-size: var(--type-xs);
   line-height: 1.5;
   color: var(--color-text-muted);
   text-decoration: none;
 }
 
 .post-header a.blog-tags {
-  font-size: 0.89em; /* ≈ 0.8 / 0.9 — keeps absolute pill size unchanged inside .post-header */
+  font-size: calc(var(--type-xs) / 0.875); /* keeps absolute pill size unchanged inside .post-header */
+}
+
+.tag-cloud {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }
 
 .tag-cloud a.blog-tags::before {
@@ -41,15 +58,20 @@ a.blog-tags:hover {
 /* Post meta */
 .post-meta {
   color: var(--color-text-muted);
-  margin: 4px 0 0 0;
+  margin: var(--space-2) 0 0 0;
+  font-variant-numeric: tabular-nums;
 }
 
 .post-meta-item {
   display: inline-block;
-  margin-right: 16px;
+  margin-inline-end: var(--space-4);
 }
 
 .post-meta-label {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: var(--type-xs);
   color: var(--color-text-dimmed);
 }
 
@@ -60,62 +82,165 @@ a.blog-tags:hover {
 
 .post-content img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
 }
 
 figure {
-  margin: 1.5em 0;
+  margin: var(--space-6) 0;
   text-align: center;
 }
 
 figcaption {
-  font-size: 0.9em;
+  font-size: var(--type-sm);
   color: var(--color-text-muted);
-  margin-top: 8px;
-  text-align: left;
+  margin-top: var(--space-2);
+  text-align: start;
 }
 
 figcaption .figure-number::before {
   counter-increment: figures;
   content: "Figure " counter(figures) ". ";
-  font-weight: bold;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text-dimmed);
 }
 
-/* Footnotes separator */
+/* Footnotes section */
+.footnotes {
+  margin-top: var(--space-7);
+  font-size: var(--type-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.footnotes hr {
+  border: 0;
+  border-top: none;
+  text-align: center;
+  margin: 0 0 var(--space-5) 0;
+}
+
+.footnotes hr::after {
+  content: "· · ·";
+  display: block;
+  position: relative;
+  top: -0.7em;
+  font-size: var(--type-sm);
+  letter-spacing: 0.4em;
+  color: var(--color-text-dimmed);
+}
+
+.footnotes ol {
+  padding-inline-start: var(--space-4);
+}
+
+.footnotes li {
+  margin-bottom: var(--space-3);
+  padding-inline-start: var(--space-1);
+  scroll-margin-top: var(--space-5);
+}
+
+/* Inline footnote ref targets */
+sup[id^="fnref"] {
+  scroll-margin-top: var(--space-5);
+}
+
+.footnotes li::marker {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--type-xs);
+  color: var(--color-primary);
+}
+
+/* Footnote inline references */
+.footnote-ref {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.75em;
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-inline-start: 1px;
+}
+
+.footnote-ref:hover {
+  text-decoration: underline;
+}
+
+/* Footnote backref arrow */
+.footnote-backref {
+  font-size: var(--type-xs);
+  color: var(--color-text-dimmed);
+  text-decoration: none;
+  margin-inline-start: var(--space-1);
+}
+
+.footnote-backref:hover {
+  color: var(--color-primary);
+}
+
+/* General HR separator */
 hr {
   border: 0;
-  border-top: 1px dashed var(--color-text-muted);
+  text-align: center;
+  margin: var(--space-6) 0;
+}
+
+hr::after {
+  content: "· · ·";
+  display: block;
+  font-size: var(--type-sm);
+  letter-spacing: 0.4em;
+  color: var(--color-text-dimmed);
+}
+
+/* Preamble — lead paragraph container */
+.post-preamble {
+  margin: var(--space-5) 0 var(--space-6) 0;
+  padding: var(--space-4);
+  background: var(--color-primary-faint);
+  border-radius: 4px;
 }
 
 /* Post lead */
 .post-lead {
-  font-size: 1.1em;
-  font-style: italic;
-  line-height: 1.6;
+  font-size: var(--type-md);
+  line-height: 1.65;
   color: var(--color-lead);
-  margin: 1em 0 1.5em 0;
+  margin: 0;
 }
 
-/* Heading anchor links */
+/* When lead precedes TOC, tighten the gap between preamble and TOC */
+.post-preamble + .toc {
+  margin-top: var(--space-3);
+}
+
+/* Heading anchor links + scroll margin for TOC jumps */
 .post-content :is(h1, h2, h3, h4, h5, h6) {
   position: relative;
+  scroll-margin-top: var(--space-5);
 }
 
 .post-content .heading-anchor {
   position: absolute;
-  left: -1.2em;
+  inset-inline-start: -1.2em;
   width: 1.2em;
   text-align: center;
   opacity: 0;
   text-decoration: none;
-  color: var(--color-text-dimmed);
-  font-weight: normal;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 400;
   transition: opacity 0.15s ease;
 }
 
 .post-content :is(h1, h2, h3, h4, h5, h6):hover .heading-anchor,
 .post-content .heading-anchor:hover,
-.post-content .heading-anchor:focus {
-  opacity: 1;
+.post-content .heading-anchor:focus-visible {
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-content .heading-anchor {
+    transition: none;
+  }
 }

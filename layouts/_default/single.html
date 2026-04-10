@@ -7,7 +7,9 @@
     </header>
   {{ end }}
   {{ with .Params.lead }}
-    <p class="post-lead">{{ $.RenderString (dict "display" "inline") . }}</p>
+    <div class="post-preamble">
+      <p class="post-lead">{{ $.RenderString (dict "display" "inline") . }}</p>
+    </div>
   {{ end }}
   {{ if .Params.toc }}
     <nav class="toc" aria-label="Table of Contents">

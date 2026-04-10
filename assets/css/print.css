@@ -3,7 +3,7 @@
     max-width: 100%;
     color: #000;
     background: #fff;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: "Manrope", system-ui, sans-serif;
   }
 
   a {
@@ -14,7 +14,7 @@
   .post-content a[href^="http"]::after,
   .post-content a[href^="//"]::after {
     content: " (" attr(href) ")";
-    font-size: 0.8em;
+    font-size: var(--type-xs);
     color: #555;
   }
 
@@ -34,12 +34,12 @@
   h5,
   h6 {
     color: #000;
-    page-break-after: avoid;
+    break-after: avoid;
   }
 
   img,
   figure {
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   pre,

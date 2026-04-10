@@ -1,16 +1,23 @@
+/* Callouts — subtle full border + background tint, book-style asides */
+
 .callout {
-  border-left: 3px solid var(--callout-note);
-  background: var(--color-primary-faint);
-  padding: 12px 16px;
-  margin: 1em 0;
+  border: 1px solid var(--callout-note);
+  border-radius: 4px;
+  background: var(--callout-note-bg);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-4) 0;
   font-style: normal;
 }
 
 .callout-title,
 .callout > summary {
-  font-weight: bold;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--type-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--callout-note);
-  margin: 0 0 4px 0;
+  margin: 0 0 var(--space-1) 0;
 }
 
 .callout > summary {
@@ -26,7 +33,7 @@
 .callout-tip,
 .callout-hint,
 .callout-important {
-  border-left-color: var(--callout-tip);
+  border-color: var(--callout-tip);
   background: var(--callout-tip-bg);
 }
 .callout-tip .callout-title,
@@ -41,7 +48,7 @@
 .callout-warning,
 .callout-caution,
 .callout-attention {
-  border-left-color: var(--callout-warning);
+  border-color: var(--callout-warning);
   background: var(--callout-warning-bg);
 }
 .callout-warning .callout-title,
@@ -56,7 +63,7 @@
 .callout-danger,
 .callout-error,
 .callout-bug {
-  border-left-color: var(--callout-danger);
+  border-color: var(--callout-danger);
   background: var(--callout-danger-bg);
 }
 .callout-danger .callout-title,
@@ -73,7 +80,7 @@
 .callout-tldr,
 .callout-info,
 .callout-todo {
-  border-left-color: var(--callout-info);
+  border-color: var(--callout-info);
   background: var(--callout-info-bg);
 }
 .callout-abstract .callout-title,
@@ -92,7 +99,7 @@
 .callout-question,
 .callout-help,
 .callout-faq {
-  border-left-color: var(--callout-question);
+  border-color: var(--callout-question);
   background: var(--callout-question-bg);
 }
 .callout-question .callout-title,
@@ -105,7 +112,7 @@
 }
 
 .callout-example {
-  border-left-color: var(--callout-example);
+  border-color: var(--callout-example);
   background: var(--callout-example-bg);
 }
 .callout-example .callout-title,
@@ -115,7 +122,7 @@
 
 .callout-quote,
 .callout-cite {
-  border-left-color: var(--callout-quote);
+  border-color: var(--callout-quote);
   background: var(--callout-quote-bg);
 }
 .callout-quote .callout-title,
@@ -128,7 +135,7 @@
 .callout-success,
 .callout-check,
 .callout-done {
-  border-left-color: var(--callout-tip);
+  border-color: var(--callout-tip);
   background: var(--callout-tip-bg);
 }
 .callout-success .callout-title,
@@ -143,7 +150,7 @@
 .callout-failure,
 .callout-fail,
 .callout-missing {
-  border-left-color: var(--callout-danger);
+  border-color: var(--callout-danger);
   background: var(--callout-danger-bg);
 }
 .callout-failure .callout-title,

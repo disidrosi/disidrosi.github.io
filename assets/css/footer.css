@@ -1,19 +1,20 @@
 .site-footer {
-  background: var(--color-primary-faint);
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  margin-top: 3em;
-  padding: 1.2em 1.4em;
-  font-size: 0.85em;
-  color: var(--color-text-muted);
+  margin-top: var(--space-6);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--type-sm);
+  color: var(--color-text-dimmed);
+  text-align: center;
 }
 
 .site-footer-primary {
-  margin-bottom: 0.4em;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
 }
 
 .site-footer-primary a {
-  color: var(--color-heading);
+  color: var(--color-text-muted);
   text-decoration: none;
 }
 
@@ -22,10 +23,11 @@
 }
 
 .site-footer-sep {
-  margin: 0 0.5em;
-  color: var(--color-text-dimmed);
+  margin: 0 var(--space-2);
+  color: var(--color-border);
 }
 
 .site-footer-secondary {
   color: var(--color-text-dimmed);
+  font-size: var(--type-xs);
 }

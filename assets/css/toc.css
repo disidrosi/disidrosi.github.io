@@ -1,49 +1,92 @@
 .toc {
-  margin: 1.5em 0;
-  padding: 0.75em 1em;
-  background: var(--color-primary-faint);
+  font-size: var(--type-sm);
+  margin: var(--space-5) 0 var(--space-6) 0;
   border: 1px solid var(--color-border);
   border-radius: 4px;
-  font-size: 0.88em;
+  padding: var(--space-3) var(--space-4);
 }
 
 .toc summary {
   cursor: pointer;
-  font-weight: bold;
-  color: var(--color-text-muted);
-  font-size: 0.9em;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text-dimmed);
+  font-size: var(--type-xs);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 
 .toc summary::marker {
-  color: var(--color-text-dimmed);
+  content: "▸\2002";
+  color: var(--color-primary);
+  font-size: var(--type-base);
+}
+
+.toc details[open] > summary::marker {
+  content: "▾\2002";
+}
+
+/* Hierarchical numbered TOC: 1, 1.1, 1.2, 2, 2.1 etc. */
+.toc #TableOfContents > ul {
+  counter-reset: toc-h2;
+  padding-left: 0;
+  list-style: none;
+  margin: var(--space-2) 0 0 0;
+}
+
+.toc #TableOfContents > ul > li {
+  counter-increment: toc-h2;
+  counter-reset: toc-h3;
+}
+
+.toc #TableOfContents > ul > li > a::before {
+  content: counter(toc-h2) " ";
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary);
+  margin-inline-end: var(--space-1);
+}
+
+/* Nested entries: 1.1, 1.2, etc. */
+.toc #TableOfContents > ul > li > ul {
+  counter-reset: toc-h3;
+}
+
+.toc #TableOfContents > ul > li > ul > li {
+  counter-increment: toc-h3;
+}
+
+.toc #TableOfContents > ul > li > ul > li > a::before {
+  content: counter(toc-h2) "." counter(toc-h3) " ";
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary);
+  margin-inline-end: var(--space-1);
 }
 
 .toc ul {
+  display: block;
   list-style: none;
-  padding-left: 1em;
-  margin: 0.3em 0 0 0;
-}
-
-.toc #TableOfContents > ul {
-  padding-left: 0;
+  padding-inline-start: var(--space-4);
+  margin: var(--space-1) 0 0 0;
 }
 
 .toc li {
-  margin: 0.15em 0;
+  margin: var(--space-1) 0;
   line-height: 1.5;
 }
 
 .toc ul ul li {
-  margin: 0.3em 0;
+  margin: var(--space-1) 0;
 }
 
 .toc a {
-  color: var(--color-primary);
+  color: var(--color-text-muted);
   text-decoration: none;
 }
 
 .toc a:hover {
-  text-decoration: underline;
+  color: var(--color-primary);
 }

@@ -356,7 +356,7 @@ from absorbance (\(A\)) to percent transmittance (\(\%T\)) follows the
 Beer-Lambert law:
 
 $$
-    \\%T = 100 \times 10^{-A} = 10^{(2 - A)} \tag{7}
+    \%T = 100 \times 10^{-A} = 10^{(2 - A)} \tag{7}
 $$
 
 Note that because we are using normalized absorbance values (0--1) rather than

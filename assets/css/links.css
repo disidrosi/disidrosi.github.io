@@ -1,16 +1,21 @@
 a {
-  text-decoration-color: var(--color-primary-underline);
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
-  transition: text-decoration-color 0.2s;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.15s;
 }
 
 a:hover {
-  text-decoration-color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: auto;
+}
+
+nav a {
+  font-family: var(--font-heading);
 }
 
 nav a.active {
-  text-decoration-color: var(--color-primary);
   color: var(--color-heading);
 }
 
@@ -18,5 +23,12 @@ nav a.active {
 .post-content a[href^="//"]::after {
   content: " ↗";
   font-size: 0.75em;
-  opacity: 0.5;
+  opacity: 0.4;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none;
+  }
 }

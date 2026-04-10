@@ -1,10 +1,11 @@
 {{ define "main" }}
   <div class="home-intro">
     <div class="home-profile">
-      {{ with .Site.Params.profileImage }}
+      {{ with resources.Get "images/profile.jpg" }}
+        {{ $img := .Resize "300x webp" }}
         <img
           class="profile-photo"
-          src="{{ absURL . }}"
+          src="{{ $img.RelPermalink }}"
           alt="{{ $.Site.Params.author.name }}"
           width="150"
           height="150"

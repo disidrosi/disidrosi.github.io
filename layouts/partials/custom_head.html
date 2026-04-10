@@ -1,6 +1,20 @@
 <link rel="canonical" href="{{ .Permalink }}" />
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400&family=Manrope:wght@400;600;700&display=swap"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400&family=Manrope:wght@400;600;700&display=swap"
+  />
+</noscript>
 
 {{ $styles := resources.Get "css/main.scss" | css.Sass | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
