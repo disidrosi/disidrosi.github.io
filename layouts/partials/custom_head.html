@@ -3,8 +3,6 @@
 {{ $katexIntegrity := "sha384-irXK0JiCGinqGL+slwVklbhJetrjczNwaP2lANewD8lKAs9n61SbQ3As28iSqXUE" }}
 
 <link rel="canonical" href="{{ .Permalink }}" />
-<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -17,15 +15,15 @@
   <link rel="stylesheet" href="{{ $fontsHref }}" />
 </noscript>
 
-{{ $styles := resources.Get "css/main.scss" | css.Sass (dict "transpiler" "dartsass") | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+{{ $styles := resources.Get "css/main.scss" | css.Sass (dict "transpiler" "dartsass") | minify }}
+<style>{{ $styles.Content | safeCSS }}</style>
 
-{{ if .Page.Store.Get "hasCodeBlock" }}
-  {{ $syntax := resources.Get "syntax.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $syntax.RelPermalink }}" />
-{{ end }}
+{{ $syntax := resources.Get "syntax.css" | minify }}
+<style>{{ $syntax.Content | safeCSS }}</style>
 
 {{ if .Params.math }}
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link
     rel="preload"
     as="style"

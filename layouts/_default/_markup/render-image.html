@@ -9,7 +9,25 @@
 {{- if and $resource (eq $resource.ResourceType "image") -}}
   {{- $ext := lower (path.Ext .Destination) -}}
   {{- if or (eq $ext ".svg") (eq $ext ".gif") -}}
-    <img src="{{ $resource.RelPermalink }}" alt="{{ $alt }}" loading="{{ $loading }}" decoding="async"{{ if $isFirst }} fetchpriority="high"{{ end }} />
+    {{- $svgW := "" -}}
+    {{- $svgH := "" -}}
+    {{- if eq $ext ".svg" -}}
+      {{- $svgPath := path.Join "content" .Page.File.Dir .Destination -}}
+      {{- $svgContent := os.ReadFile $svgPath -}}
+      {{- with findRESubmatch `<svg\b[^>]*?\swidth="([0-9.]+)` $svgContent 1 -}}
+        {{- $svgW = index (index . 0) 1 -}}
+      {{- end -}}
+      {{- with findRESubmatch `<svg\b[^>]*?\sheight="([0-9.]+)` $svgContent 1 -}}
+        {{- $svgH = index (index . 0) 1 -}}
+      {{- end -}}
+      {{- if and (not $svgW) (not $svgH) -}}
+        {{- with findRESubmatch `viewBox="[\-0-9.]+\s+[\-0-9.]+\s+([0-9.]+)\s+([0-9.]+)"` $svgContent 1 -}}
+          {{- $svgW = index (index . 0) 1 -}}
+          {{- $svgH = index (index . 0) 2 -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    <img src="{{ $resource.RelPermalink }}" alt="{{ $alt }}"{{ if and $svgW $svgH }} width="{{ $svgW }}" height="{{ $svgH }}"{{ end }} loading="{{ $loading }}" decoding="async"{{ if $isFirst }} fetchpriority="high"{{ end }} />
   {{- else -}}
     {{- $candidates := slice 400 800 1200 1600 -}}
     {{- $widths := slice -}}
