@@ -50,14 +50,33 @@ Enable KaTeX on a page with `math: true` in front matter, then use standard LaTe
 
 ## Diagrams
 
-No front matter needed. Use a fenced code block with the `mermaid` language tag:
+Diagrams are pre-rendered to SVG at author time using [`mermaid-cli`](https://github.com/mermaid-js/mermaid-cli) — no client-side JavaScript, no CDN dependency, no runtime cost on the page.
 
-````markdown
-```mermaid
-flowchart LR
-  A["Input"] --> B["Processing"] --> C["Output"]
-```
-````
+To add a diagram:
+
+1. Write the diagram source as a `.mmd` file next to the post's `index.md`:
+
+   ```text
+   content/essays/my-post/
+     index.md
+     diagram.mmd
+   ```
+
+2. Render every `.mmd` under `content/` to a sibling `.svg`:
+
+   ```sh
+   npm run render:diagrams
+   ```
+
+3. Reference the rendered `.svg` from the post with standard markdown image syntax:
+
+   ```markdown
+   ![Diagram alt text](diagram.svg "Caption rendered as a figcaption.")
+   ```
+
+Both the `.mmd` source and the generated `.svg` are committed. The `.mmd` files stay co-located with the post for editability but are excluded from the build output via `ignoreFiles` in `hugo.toml`.
+
+Diagram styling (fonts, colors, node fills, edge thickness) is configured in `mermaid-config.json` at the repo root and is keyed to the site's design tokens. Edit it to restyle every diagram at once, then re-run `npm run render:diagrams`.
 
 ## Callouts
 

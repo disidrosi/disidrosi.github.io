@@ -1,0 +1,17 @@
+{
+  "theme": "base",
+  "themeVariables": {
+    "darkMode": true,
+    "fontFamily": "Manrope, system-ui, sans-serif",
+    "fontSize": "14px",
+    "primaryColor": "#353841",
+    "primaryBorderColor": "#969ba3",
+    "primaryTextColor": "#d8dae0",
+    "secondaryColor": "#353841",
+    "lineColor": "#969ba3",
+    "textColor": "#bbbec6",
+    "mainBkg": "#353841",
+    "nodeBorder": "#969ba3",
+    "edgeLabelBackground": "#2b2d35"
+  }
+}

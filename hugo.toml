@@ -6,6 +6,7 @@ timeZone = "Europe/Berlin"
 disableHugoGeneratorInject = true
 enableRobotsTXT = true
 enableEmoji = true
+ignoreFiles = ["\\.mmd$"]
 
 [taxonomies]
   tag = "tags"
@@ -49,7 +50,6 @@ enableEmoji = true
     generateSocialCard = true
     profileImage = "images/profile.jpg"
     katexVersion = "0.16.44"
-    mermaidVersion = "11.14.0"
 
     [params.author]
         name = "Tobia Cavalli"

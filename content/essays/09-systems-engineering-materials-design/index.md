@@ -128,18 +128,7 @@ materials science and engineering, and it is known as
 **process-structure-properties-performance (PSPP)**.[^10] [^11] The diagram
 below shows how it works:
 
-```mermaid
-flowchart LR
-
-processing["Processing"]
-structure["Structure"]
-properties["Properties"]
-performance["Performance"]
-
-processing -."Cause and effect".-> performance
-processing --> structure --> properties --> performance
-performance -."Goals/means".-> processing
-```
+![Process-structure-properties-performance diagram](pspp.svg "The PSPP framework: processing determines structure, structure determines properties, properties determine performance.")
 
 Materials science typically works the chain from left to right: you start with
 a process and ask what properties come out. This is the forward problem. You

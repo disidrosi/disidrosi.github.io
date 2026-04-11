@@ -1,14 +1,16 @@
 // Eyebrow label — uppercase, heading-font, letter-spaced.
-// Defaults match the most common pairing (xs + dimmed). Pass $size and
-// $color to override at sites that diverge (callouts, bookshelf headers).
+// Defaults match the most common pairing (xs + dimmed + 0.04em). Pass $size,
+// $color, or $letter-spacing to override at sites that diverge (callouts,
+// bookshelf headers).
 @mixin eyebrow(
   $size: var(--type-xs),
-  $color: var(--color-text-dimmed)
+  $color: var(--color-text-dimmed),
+  $letter-spacing: 0.04em
 ) {
   font-family: var(--font-heading);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: $letter-spacing;
   font-size: $size;
   color: $color;
 }

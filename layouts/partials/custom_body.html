@@ -1,7 +1,0 @@
-{{ if .Store.Get "hasMermaid" }}
-  {{ $mv := .Site.Params.mermaidVersion }}
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@{{ $mv }}/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { edgeLabelBackground: '#3a3a3a' } });
-</script>
-{{ end }}

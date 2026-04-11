@@ -1,0 +1,10 @@
+flowchart LR
+
+processing["Processing"]
+structure["Structure"]
+properties["Properties"]
+performance["Performance"]
+
+processing -."Cause and effect".-> performance
+processing --> structure --> properties --> performance
+performance -."Goals/means".-> processing

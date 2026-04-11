@@ -7,7 +7,11 @@
 }
 
 .bookshelf-theme h3 {
-  @include m.eyebrow($size: var(--type-sm), $color: var(--color-text-muted));
+  @include m.eyebrow(
+    $size: var(--type-sm),
+    $color: var(--color-text-muted),
+    $letter-spacing: 0.06em
+  );
   margin-top: var(--space-5);
   margin-bottom: var(--space-4);
 }
@@ -82,11 +86,7 @@
   font-style: italic;
 }
 
-/* Status pill — inherits .pill base, overrides padding and the variant background */
-.bookshelf-status {
-  padding: 1px 6px;
-}
-
+/* Status pill — inherits .pill base, variants only set their tint. */
 .bookshelf-status--read {
   background: var(--callout-quote-bg);
 }
