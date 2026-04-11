@@ -1,0 +1,29 @@
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Code */
+code {
+  padding: 2px 5px;
+  color: var(--color-heading);
+  background-color: var(--color-code-bg);
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+pre code {
+  display: grid;
+  padding: var(--space-5);
+  white-space: pre;
+  font-size: var(--type-sm);
+  overflow-x: auto;
+  scrollbar-color: var(--color-border) transparent;
+  scrollbar-width: thin;
+}
+
+/* Figures (post.scss adds margin/text-align inside .post-content) */
+figcaption > p {
+  margin-block-start: 0;
+}

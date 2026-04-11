@@ -1,0 +1,28 @@
+@use '../abstracts/mixins' as m;
+
+/* "Skip to main content" accessibility link.
+   Hidden visually but available to screen readers and keyboard users.
+   Becomes visible on focus. */
+.skip-link {
+  @include m.visually-hidden;
+}
+
+.skip-link:focus-visible {
+  /* Cancel the visually-hidden clipping and reveal at top-left of viewport. */
+  position: fixed;
+  top: var(--space-2);
+  inset-inline-start: var(--space-2);
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  z-index: 1000;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+}

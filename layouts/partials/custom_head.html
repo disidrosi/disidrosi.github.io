@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{{ $fontsHref }}" />
 </noscript>
 
-{{ $styles := resources.Get "css/main.scss" | css.Sass | minify | fingerprint }}
+{{ $styles := resources.Get "css/main.scss" | css.Sass (dict "transpiler" "dartsass") | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 
 {{ if .Page.Store.Get "hasCodeBlock" }}

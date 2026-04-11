@@ -1,3 +1,5 @@
+@use '../abstracts/mixins' as m;
+
 .toc {
   font-size: var(--type-sm);
   margin: var(--space-5) 0 var(--space-6) 0;
@@ -7,13 +9,8 @@
 }
 
 .toc summary {
+  @include m.eyebrow;
   cursor: pointer;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  color: var(--color-text-dimmed);
-  font-size: var(--type-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 
 .toc summary::marker {
@@ -28,10 +25,9 @@
 
 /* Hierarchical numbered TOC: 1, 1.1, 1.2, 2, 2.1 etc. */
 .toc #TableOfContents > ul {
+  @include m.list-reset;
   counter-reset: toc-h2;
-  padding-left: 0;
-  list-style: none;
-  margin: var(--space-2) 0 0 0;
+  margin-top: var(--space-2);
 }
 
 .toc #TableOfContents > ul > li {
@@ -40,12 +36,7 @@
 }
 
 .toc #TableOfContents > ul > li > a::before {
-  content: counter(toc-h2) " ";
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  color: var(--color-primary);
-  margin-inline-end: var(--space-1);
+  @include m.toc-counter(counter(toc-h2) " ");
 }
 
 /* Nested entries: 1.1, 1.2, etc. */
@@ -58,19 +49,13 @@
 }
 
 .toc #TableOfContents > ul > li > ul > li > a::before {
-  content: counter(toc-h2) "." counter(toc-h3) " ";
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  color: var(--color-primary);
-  margin-inline-end: var(--space-1);
+  @include m.toc-counter(counter(toc-h2) "." counter(toc-h3) " ");
 }
 
 .toc ul {
-  display: block;
-  list-style: none;
+  @include m.list-reset;
   padding-inline-start: var(--space-4);
-  margin: var(--space-1) 0 0 0;
+  margin-top: var(--space-1);
 }
 
 .toc li {

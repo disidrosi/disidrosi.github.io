@@ -33,8 +33,8 @@ enableEmoji = true
 [languages]
     [languages.en]
         title = "Tobia Cavalli"
-        languageName = "en-US 🇺🇸"
-        languageCode = "en-US"
+        label = "en-US 🇺🇸"
+        locale = "en-US"
         contentDir = "content"
         [languages.en.params]
             madeWith = "Opinions listed here are my own and not representative of any of my employers, past, future, and/or present."

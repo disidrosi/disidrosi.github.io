@@ -1,0 +1,74 @@
+:root {
+  /* Fonts */
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-heading: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Type scale — 1.25 ratio (Major Third) */
+  --type-xs: 0.8rem;
+  --type-sm: 0.875rem;
+  --type-base: 1rem;
+  --type-md: 1.125rem;
+  --type-lg: 1.25rem;
+  --type-xl: clamp(1.4rem, 1.2rem + 0.5vw, 1.563rem);
+  --type-2xl: clamp(1.6rem, 1.3rem + 0.75vw, 1.953rem);
+
+  /* Spacing scale — 4pt base */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* Radii */
+  --radius-sm: 2px;  /* hairline elements like book cover thumbs */
+  --radius-md: 3px;  /* pills, small chips */
+  --radius-lg: 4px;  /* containers, callouts, preamble, toc */
+
+  /* Colors — OKLCH palette, neutrals tinted toward slate-blue (hue ~250)
+     Designed for low-fatigue dark-mode reading: moderate contrast,
+     warm-leaning blue tint, soft saturation.
+     Hex fallbacks for browsers without OKLCH (pre-2023). */
+  --color-bg: #2b2d35;
+  --color-bg: oklch(0.20 0.012 250);
+  --color-text: #bbbec6;
+  --color-text: oklch(0.78 0.012 250);
+  --color-primary: #7fafc5;
+  --color-primary: oklch(0.68 0.06 230);
+  --color-primary-tint: rgba(127, 175, 197, 0.10);
+  --color-primary-tint: oklch(0.68 0.06 230 / 0.10);
+  --color-primary-hover: oklch(0.68 0.06 230 / 0.20);
+  --color-primary-faint: oklch(0.68 0.06 230 / 0.05);
+  --color-text-muted: #969ba3;
+  --color-text-muted: oklch(0.64 0.012 250);
+  --color-text-dimmed: #8a8f97;
+  --color-text-dimmed: oklch(0.62 0.012 250);
+  --color-border: oklch(0.30 0.008 250);
+  --color-heading: #d8dae0;
+  --color-heading: oklch(0.88 0.008 250);
+  --color-lead: oklch(0.72 0.03 280);
+  --color-code-bg: #353841;
+  --color-code-bg: oklch(0.24 0.012 250);
+
+  /* Callout colors — quiet, desaturated, barely-there.
+     Chroma kept low so they read as tinted neutrals, not signals. */
+  --callout-note: oklch(0.68 0.06 230);
+  --callout-note-bg: oklch(0.68 0.06 230 / 0.06);
+  --callout-tip: oklch(0.64 0.06 165);
+  --callout-tip-bg: oklch(0.64 0.06 165 / 0.06);
+  --callout-warning: oklch(0.68 0.07 75);
+  --callout-warning-bg: oklch(0.68 0.07 75 / 0.06);
+  --callout-danger: oklch(0.62 0.08 25);
+  --callout-danger-bg: oklch(0.62 0.08 25 / 0.06);
+  --callout-info: oklch(0.68 0.06 230);
+  --callout-info-bg: oklch(0.68 0.06 230 / 0.06);
+  --callout-question: oklch(0.64 0.06 300);
+  --callout-question-bg: oklch(0.64 0.06 300 / 0.06);
+  --callout-example: oklch(0.68 0.07 60);
+  --callout-example-bg: oklch(0.68 0.07 60 / 0.06);
+  --callout-quote: oklch(0.62 0.012 250);
+  --callout-quote-bg: oklch(0.62 0.012 250 / 0.06);
+}

@@ -1,3 +1,5 @@
+@use 'abstracts/mixins' as m;
+
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -21,13 +23,13 @@ nav a.active {
 
 .post-content a[href^="http"]::after,
 .post-content a[href^="//"]::after {
-  content: " ↗";
+  /* Empty alt text hides the icon from assistive tech (CSS Generated Content L3). */
+  content: " ↗" / "";
   font-size: 0.75em;
   opacity: 0.4;
 }
 
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
+@include m.reduce-motion {
   a {
     transition: none;
   }

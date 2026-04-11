@@ -1,11 +1,26 @@
-/* base must be first — defines all CSS custom properties (:root) */
-@import "base";
-@import "callouts";
-@import "post";
-@import "tables";
-@import "homepage";
-@import "links";
-@import "toc";
-@import "footer";
-@import "print";
-@import "bookshelf";
+// Abstracts (load order matters: tokens before anything that uses them)
+@use 'abstracts/tokens';
+@use 'abstracts/mixins';
+
+// Base
+@use 'base/typography';
+@use 'base/elements';
+@use 'links';
+
+// Layout
+@use 'layout/header';
+@use 'layout/homepage';
+@use 'layout/footer';
+
+// Components
+@use 'components/skip-link';
+@use 'components/pill';
+@use 'components/callouts';
+@use 'components/toc';
+@use 'components/post';
+@use 'components/bookshelf';
+@use 'components/tables';
+@use 'components/blog-list';
+
+// Pages
+@use 'pages/print';

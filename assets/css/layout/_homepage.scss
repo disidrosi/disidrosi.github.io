@@ -2,7 +2,8 @@
   display: flex;
   gap: var(--space-6);
   align-items: start;
-  margin: var(--space-6) 0;
+  /* Top gap is owned by `main { padding-block-start }`. */
+  margin-block-end: var(--space-6);
 }
 
 .home-profile {

@@ -1,3 +1,5 @@
+@use '../abstracts/mixins' as m;
+
 /* Post header — single source of truth for meta + tags sizing */
 .post-header {
   font-size: var(--type-sm);
@@ -5,9 +7,8 @@
 
 /* Tag pills */
 .post-tags {
-  list-style: none;
-  padding: 0;
-  margin: var(--space-1) 0 0 0;
+  @include m.list-reset;
+  margin-top: var(--space-1);
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -15,11 +16,7 @@
 }
 
 .tags-label {
-  font-family: var(--font-heading);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: var(--type-xs);
-  color: var(--color-text-dimmed);
+  @include m.eyebrow;
 }
 
 .post-header .blog-tags {
@@ -27,8 +24,7 @@
 }
 
 .tag-cloud {
-  list-style: none;
-  padding: 0;
+  @include m.list-reset;
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
@@ -51,11 +47,7 @@
 }
 
 .post-meta-label {
-  font-family: var(--font-heading);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: var(--type-xs);
-  color: var(--color-text-dimmed);
+  @include m.eyebrow;
 }
 
 /* Numbered figures */
@@ -104,13 +96,10 @@ figcaption .figure-number::before {
 }
 
 .footnotes hr::after {
-  content: "· · ·";
-  display: block;
+  @include m.dotted-divider;
+  /* Compensate for the .footnotes hr having no top border. */
   position: relative;
   top: -0.7em;
-  font-size: var(--type-sm);
-  letter-spacing: 0.4em;
-  color: var(--color-text-dimmed);
 }
 
 .footnotes ol {
@@ -120,12 +109,6 @@ figcaption .figure-number::before {
 .footnotes li {
   margin-bottom: var(--space-3);
   padding-inline-start: var(--space-1);
-  scroll-margin-top: var(--space-5);
-}
-
-/* Inline footnote ref targets */
-sup[id^="fnref"] {
-  scroll-margin-top: var(--space-5);
 }
 
 .footnotes li::marker {
@@ -169,11 +152,7 @@ hr {
 }
 
 hr::after {
-  content: "· · ·";
-  display: block;
-  font-size: var(--type-sm);
-  letter-spacing: 0.4em;
-  color: var(--color-text-dimmed);
+  @include m.dotted-divider;
 }
 
 /* Preamble — lead paragraph container */
@@ -197,32 +176,40 @@ hr::after {
   margin-top: var(--space-3);
 }
 
-/* Heading anchor links + scroll margin for TOC jumps */
-.post-content :is(h1, h2, h3, h4, h5, h6) {
-  position: relative;
+/* Anchor jump targets — share scroll-margin so TOC links and footnote
+   refs don't paste content right against the viewport top. */
+.post-content :is(h1, h2, h3, h4, h5, h6),
+.footnotes li,
+sup[id^="fnref"] {
   scroll-margin-top: var(--space-5);
 }
 
+/* Heading anchor links — inline before the heading text, always faintly
+   visible so touch users can actually use them. The render hook already
+   marks them aria-hidden + tabindex="-1", so they're invisible to AT and
+   skipped in keyboard tab order; click-focus brightens them. */
 .post-content .heading-anchor {
-  position: absolute;
-  inset-inline-start: -1.2em;
-  width: 1.2em;
-  text-align: center;
-  opacity: 0;
   text-decoration: none;
   color: var(--color-primary);
   font-family: var(--font-heading);
   font-weight: 400;
+  opacity: 0.3;
+  margin-inline-end: 0.3em;
   transition: opacity 0.15s ease;
 }
 
-.post-content :is(h1, h2, h3, h4, h5, h6):hover .heading-anchor,
 .post-content .heading-anchor:hover,
 .post-content .heading-anchor:focus-visible {
-  opacity: 0.6;
+  opacity: 1;
 }
 
-@media (prefers-reduced-motion: reduce) {
+.post-content .heading-anchor:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+@include m.reduce-motion {
   .post-content .heading-anchor {
     transition: none;
   }

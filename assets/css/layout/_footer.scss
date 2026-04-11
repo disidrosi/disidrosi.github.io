@@ -1,3 +1,9 @@
+/* Footer wrapper element (the styled .site-footer lives inside) */
+footer {
+  padding: var(--space-4);
+  text-align: center;
+}
+
 .site-footer {
   margin-top: var(--space-6);
   padding-block: var(--space-4);

@@ -1,3 +1,5 @@
+@use '../abstracts/mixins' as m;
+
 /* Callouts — subtle full border + background tint, book-style asides */
 
 .callout {
@@ -13,12 +15,7 @@
 
 .callout-title,
 .callout > summary {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: var(--type-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--callout-color);
+  @include m.eyebrow($size: var(--type-sm), $color: var(--callout-color));
   margin: 0 0 var(--space-1) 0;
 }
 

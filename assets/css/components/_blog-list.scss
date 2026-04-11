@@ -1,0 +1,24 @@
+@use '../abstracts/mixins' as m;
+
+/* Blog post list (used on section/list pages) */
+ul.blog-posts {
+  @include m.list-reset;
+}
+
+ul.blog-posts li {
+  display: flex;
+  margin-bottom: var(--space-3);
+}
+
+ul.blog-posts li span {
+  flex: 0 0 130px;
+  font-variant-numeric: tabular-nums;
+}
+
+ul.blog-posts li a:visited {
+  color: var(--color-text-muted);
+}
+
+h2.blog-filter {
+  margin-bottom: 0;
+}
