@@ -2,7 +2,7 @@
   font-size: var(--type-sm);
   margin: var(--space-5) 0 var(--space-6) 0;
   border: 1px solid var(--color-border);
-  border-radius: 4px;
+  border-radius: var(--radius-lg);
   padding: var(--space-3) var(--space-4);
 }
 

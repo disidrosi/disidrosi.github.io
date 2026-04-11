@@ -15,11 +15,11 @@
       {{ with .Site.Params.social }}
         <div class="social-links">
           {{ with .email }}
-            <a class="social-pill" href="mailto:{{ . }}">email</a>
+            <a class="pill social-pill" href="mailto:{{ . }}">email</a>
           {{ end }}
           {{ with .linkedin }}
             <a
-              class="social-pill"
+              class="pill social-pill"
               href="{{ . }}"
               target="_blank"
               rel="me noopener"
@@ -28,7 +28,7 @@
           {{ end }}
           {{ with .github }}
             <a
-              class="social-pill"
+              class="pill social-pill"
               href="{{ . }}"
               target="_blank"
               rel="me noopener"
@@ -37,7 +37,7 @@
           {{ end }}
           {{ with .orcid }}
             <a
-              class="social-pill"
+              class="pill social-pill"
               href="{{ . }}"
               target="_blank"
               rel="me noopener"

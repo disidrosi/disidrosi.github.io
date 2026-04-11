@@ -6,7 +6,6 @@ timeZone = "Europe/Berlin"
 disableHugoGeneratorInject = true
 enableRobotsTXT = true
 enableEmoji = true
-enableGitInfo = false
 
 [taxonomies]
   tag = "tags"

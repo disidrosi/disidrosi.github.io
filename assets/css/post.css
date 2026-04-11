@@ -22,19 +22,7 @@
   color: var(--color-text-dimmed);
 }
 
-a.blog-tags {
-  display: inline-block;
-  background: var(--color-primary-tint);
-  border-radius: 3px;
-  padding: 1px var(--space-2);
-  font-family: var(--font-heading);
-  font-size: var(--type-xs);
-  line-height: 1.5;
-  color: var(--color-text-muted);
-  text-decoration: none;
-}
-
-.post-header a.blog-tags {
+.post-header .blog-tags {
   font-size: calc(var(--type-xs) / 0.875); /* keeps absolute pill size unchanged inside .post-header */
 }
 
@@ -46,13 +34,8 @@ a.blog-tags {
   gap: var(--space-2);
 }
 
-.tag-cloud a.blog-tags::before {
+.tag-cloud .blog-tags::before {
   content: "#";
-}
-
-a.blog-tags:hover {
-  background: var(--color-primary-hover);
-  color: var(--color-primary);
 }
 
 /* Post meta */
@@ -198,7 +181,7 @@ hr::after {
   margin: var(--space-5) 0 var(--space-6) 0;
   padding: var(--space-4);
   background: var(--color-primary-faint);
-  border-radius: 4px;
+  border-radius: var(--radius-lg);
 }
 
 /* Post lead */

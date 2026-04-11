@@ -37,20 +37,8 @@
 
 .social-pill {
   display: block;
-  background: var(--color-primary-tint);
-  border-radius: 3px;
   padding: 2px 0;
-  font-family: var(--font-heading);
-  font-size: var(--type-xs);
-  line-height: 1.5;
-  color: var(--color-text-muted);
-  text-decoration: none;
   text-align: center;
-}
-
-.social-pill:hover {
-  background: var(--color-primary-hover);
-  color: var(--color-primary);
 }
 
 @media (max-width: 480px) {

@@ -24,17 +24,13 @@
 {{ end }}
 {{ if .IsPage }}
   {{ with .Params.tags }}
-    <meta name="keywords" content="{{ delimit . " ," }}" />
+    <meta name="keywords" content="{{ delimit . ", " }}" />
   {{ end }}
 {{ else }}
-  {{ with .Site.Taxonomies.tags }}
-    {{ $terms := slice }}
-    {{ range $term, $val := . }}
-      {{ $terms = $terms | append $term }}
-    {{ end }}
-    {{ with $terms }}
-      <meta name="keywords" content="{{ delimit . " ," }}" />
-    {{ end }}
+  {{ with .Site.Taxonomies.tags.Alphabetical }}
+    {{ $names := slice }}
+    {{ range . }}{{ $names = $names | append .Name }}{{ end }}
+    <meta name="keywords" content="{{ delimit $names ", " }}" />
   {{ end }}
 {{ end }}
 

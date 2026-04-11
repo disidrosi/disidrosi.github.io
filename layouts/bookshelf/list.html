@@ -26,7 +26,7 @@
                       <span class="bookshelf-title">{{ .title }}</span>
                       · <span class="bookshelf-author">{{ .author }}</span>
                       · <span class="bookshelf-year">{{ .year }}</span>
-                      <span class="bookshelf-status bookshelf-status--{{ .status }}">{{ .status }}</span>
+                      <span class="pill bookshelf-status bookshelf-status--{{ .status }}">{{ .status }}</span>
                     </div>
                     {{ if .annotation }}
                       <p class="bookshelf-annotation">{{ .annotation }}</p>
@@ -43,7 +43,7 @@
                     <span class="bookshelf-title">{{ .title }}</span>
                     · <span class="bookshelf-author">{{ .author }}</span>
                     · <span class="bookshelf-year">{{ .year }}</span>
-                    <span class="bookshelf-status bookshelf-status--{{ .status }}">{{ .status }}</span>
+                    <span class="pill bookshelf-status bookshelf-status--{{ .status }}">{{ .status }}</span>
                     {{ if .doi }}
                       <a
                         class="bookshelf-doi"

@@ -1,9 +1,11 @@
 /* Callouts — subtle full border + background tint, book-style asides */
 
 .callout {
-  border: 1px solid var(--callout-note);
-  border-radius: 4px;
-  background: var(--callout-note-bg);
+  --callout-color: var(--callout-note);
+  --callout-bg: var(--callout-note-bg);
+  border: 1px solid var(--callout-color);
+  border-radius: var(--radius-lg);
+  background: var(--callout-bg);
   padding: var(--space-3) var(--space-4);
   margin: var(--space-4) 0;
   font-style: normal;
@@ -16,7 +18,7 @@
   font-size: var(--type-sm);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--callout-note);
+  color: var(--callout-color);
   margin: 0 0 var(--space-1) 0;
 }
 
@@ -29,50 +31,33 @@
   display: none;
 }
 
-/* Type colors */
+/* Type variants — override the two custom props */
+
 .callout-tip,
 .callout-hint,
-.callout-important {
-  border-color: var(--callout-tip);
-  background: var(--callout-tip-bg);
-}
-.callout-tip .callout-title,
-.callout-hint .callout-title,
-.callout-important .callout-title,
-.callout-tip > summary,
-.callout-hint > summary,
-.callout-important > summary {
-  color: var(--callout-tip);
+.callout-important,
+.callout-success,
+.callout-check,
+.callout-done {
+  --callout-color: var(--callout-tip);
+  --callout-bg: var(--callout-tip-bg);
 }
 
 .callout-warning,
 .callout-caution,
 .callout-attention {
-  border-color: var(--callout-warning);
-  background: var(--callout-warning-bg);
-}
-.callout-warning .callout-title,
-.callout-caution .callout-title,
-.callout-attention .callout-title,
-.callout-warning > summary,
-.callout-caution > summary,
-.callout-attention > summary {
-  color: var(--callout-warning);
+  --callout-color: var(--callout-warning);
+  --callout-bg: var(--callout-warning-bg);
 }
 
 .callout-danger,
 .callout-error,
-.callout-bug {
-  border-color: var(--callout-danger);
-  background: var(--callout-danger-bg);
-}
-.callout-danger .callout-title,
-.callout-error .callout-title,
-.callout-bug .callout-title,
-.callout-danger > summary,
-.callout-error > summary,
-.callout-bug > summary {
-  color: var(--callout-danger);
+.callout-bug,
+.callout-failure,
+.callout-fail,
+.callout-missing {
+  --callout-color: var(--callout-danger);
+  --callout-bg: var(--callout-danger-bg);
 }
 
 .callout-abstract,
@@ -80,84 +65,24 @@
 .callout-tldr,
 .callout-info,
 .callout-todo {
-  border-color: var(--callout-info);
-  background: var(--callout-info-bg);
-}
-.callout-abstract .callout-title,
-.callout-summary .callout-title,
-.callout-tldr .callout-title,
-.callout-info .callout-title,
-.callout-todo .callout-title,
-.callout-abstract > summary,
-.callout-summary > summary,
-.callout-tldr > summary,
-.callout-info > summary,
-.callout-todo > summary {
-  color: var(--callout-info);
+  --callout-color: var(--callout-info);
+  --callout-bg: var(--callout-info-bg);
 }
 
 .callout-question,
 .callout-help,
 .callout-faq {
-  border-color: var(--callout-question);
-  background: var(--callout-question-bg);
-}
-.callout-question .callout-title,
-.callout-help .callout-title,
-.callout-faq .callout-title,
-.callout-question > summary,
-.callout-help > summary,
-.callout-faq > summary {
-  color: var(--callout-question);
+  --callout-color: var(--callout-question);
+  --callout-bg: var(--callout-question-bg);
 }
 
 .callout-example {
-  border-color: var(--callout-example);
-  background: var(--callout-example-bg);
-}
-.callout-example .callout-title,
-.callout-example > summary {
-  color: var(--callout-example);
+  --callout-color: var(--callout-example);
+  --callout-bg: var(--callout-example-bg);
 }
 
 .callout-quote,
 .callout-cite {
-  border-color: var(--callout-quote);
-  background: var(--callout-quote-bg);
-}
-.callout-quote .callout-title,
-.callout-cite .callout-title,
-.callout-quote > summary,
-.callout-cite > summary {
-  color: var(--callout-quote);
-}
-
-.callout-success,
-.callout-check,
-.callout-done {
-  border-color: var(--callout-tip);
-  background: var(--callout-tip-bg);
-}
-.callout-success .callout-title,
-.callout-check .callout-title,
-.callout-done .callout-title,
-.callout-success > summary,
-.callout-check > summary,
-.callout-done > summary {
-  color: var(--callout-tip);
-}
-
-.callout-failure,
-.callout-fail,
-.callout-missing {
-  border-color: var(--callout-danger);
-  background: var(--callout-danger-bg);
-}
-.callout-failure .callout-title,
-.callout-fail .callout-title,
-.callout-missing .callout-title,
-.callout-failure > summary,
-.callout-fail > summary,
-.callout-missing > summary {
-  color: var(--callout-danger);
+  --callout-color: var(--callout-quote);
+  --callout-bg: var(--callout-quote-bg);
 }

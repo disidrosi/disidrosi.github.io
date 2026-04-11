@@ -36,7 +36,7 @@
   height: auto;
   margin: 0;
   flex-shrink: 0;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .bookshelf-card-body {
@@ -76,7 +76,6 @@
 .bookshelf-title,
 .bookshelf-author,
 .bookshelf-year,
-.bookshelf-status,
 .bookshelf-doi {
   font-size: var(--type-sm);
   color: var(--color-text-muted);
@@ -90,11 +89,9 @@
   font-style: italic;
 }
 
+/* Status pill — inherits .pill base, overrides padding and the variant background */
 .bookshelf-status {
-  font-family: var(--font-heading);
-  font-size: var(--type-xs);
   padding: 1px 6px;
-  border-radius: 3px;
 }
 
 .bookshelf-status--read {
@@ -103,7 +100,6 @@
 
 .bookshelf-status--reading {
   color: var(--color-primary);
-  background: var(--color-primary-tint);
 }
 
 .bookshelf-doi {

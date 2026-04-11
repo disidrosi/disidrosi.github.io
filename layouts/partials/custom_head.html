@@ -1,3 +1,7 @@
+{{ $fontsHref := "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400&family=Manrope:wght@400;600;700&display=swap" }}
+{{ $katexHref := printf "https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.css" .Site.Params.katexVersion }}
+{{ $katexIntegrity := "sha384-irXK0JiCGinqGL+slwVklbhJetrjczNwaP2lANewD8lKAs9n61SbQ3As28iSqXUE" }}
+
 <link rel="canonical" href="{{ .Permalink }}" />
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -6,34 +10,35 @@
 <link
   rel="preload"
   as="style"
-  href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400&family=Manrope:wght@400;600;700&display=swap"
+  href="{{ $fontsHref }}"
   onload="this.onload=null;this.rel='stylesheet'"
 />
 <noscript>
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400&family=Manrope:wght@400;600;700&display=swap"
-  />
+  <link rel="stylesheet" href="{{ $fontsHref }}" />
 </noscript>
 
 {{ $styles := resources.Get "css/main.scss" | css.Sass | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 
+{{ if .Page.Store.Get "hasCodeBlock" }}
+  {{ $syntax := resources.Get "syntax.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $syntax.RelPermalink }}" />
+{{ end }}
+
 {{ if .Params.math }}
-  {{ $kv := .Site.Params.katexVersion }}
   <link
     rel="preload"
     as="style"
-    href="https://cdn.jsdelivr.net/npm/katex@{{ $kv }}/dist/katex.min.css"
-    integrity="sha384-irXK0JiCGinqGL+slwVklbhJetrjczNwaP2lANewD8lKAs9n61SbQ3As28iSqXUE"
+    href="{{ $katexHref }}"
+    integrity="{{ $katexIntegrity }}"
     crossorigin="anonymous"
     onload="this.onload=null;this.rel='stylesheet'"
   />
   <noscript>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@{{ $kv }}/dist/katex.min.css"
-      integrity="sha384-irXK0JiCGinqGL+slwVklbhJetrjczNwaP2lANewD8lKAs9n61SbQ3As28iSqXUE"
+      href="{{ $katexHref }}"
+      integrity="{{ $katexIntegrity }}"
       crossorigin="anonymous"
     />
   </noscript>
