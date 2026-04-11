@@ -32,7 +32,11 @@
     {{ if not .Data.Singular }}
       <ul class="tag-cloud">
         {{ range .Site.Taxonomies.tags }}
-          <li><a class="pill blog-tags" href="{{ .Page.RelPermalink }}">{{ lower .Page.Title }}</a></li>
+          <li>
+            <a class="pill blog-tags" href="{{ .Page.RelPermalink }}"
+              >{{ lower .Page.Title }}</a
+            >
+          </li>
         {{ end }}
       </ul>
     {{ end }}

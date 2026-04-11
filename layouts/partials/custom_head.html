@@ -2,6 +2,7 @@
 {{ $katexHref := printf "https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.css" .Site.Params.katexVersion }}
 {{ $katexIntegrity := "sha384-irXK0JiCGinqGL+slwVklbhJetrjczNwaP2lANewD8lKAs9n61SbQ3As28iSqXUE" }}
 
+
 <link rel="canonical" href="{{ .Permalink }}" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,10 +18,8 @@
 
 {{ $styles := resources.Get "css/main.scss" | css.Sass (dict "transpiler" "dartsass") | minify }}
 <style>{{ $styles.Content | safeCSS }}</style>
-
 {{ $syntax := resources.Get "syntax.css" | minify }}
 <style>{{ $syntax.Content | safeCSS }}</style>
-
 {{ if .Params.math }}
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />

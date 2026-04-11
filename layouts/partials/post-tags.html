@@ -2,7 +2,11 @@
   <ul class="post-tags">
     <li class="tags-label">Tags:</li>
     {{ range . }}
-      <li><a class="pill blog-tags" href="{{ .RelPermalink }}">{{ lower .LinkTitle }}</a></li>
+      <li>
+        <a class="pill blog-tags" href="{{ .RelPermalink }}"
+          >{{ lower .LinkTitle }}</a
+        >
+      </li>
     {{ end }}
   </ul>
 {{ end }}

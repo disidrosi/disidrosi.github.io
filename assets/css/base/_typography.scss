@@ -3,6 +3,7 @@
 /* Document */
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 @include m.reduce-motion {

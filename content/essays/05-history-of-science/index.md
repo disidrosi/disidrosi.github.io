@@ -1,145 +1,148 @@
 ---
 slug: "looking-back-to-move-forward"
 aliases: ["/blog/looking-back-to-move-forward/"]
-title: "Looking Back to Move Forward: The Power of Scientific History"
+title: "The case for history in scientific training"
 date: "2024-11-03"
-summary: "Exploring how historical awareness helps scientists avoid old traps,
-    recognize hidden patterns, and become more thoughtful researchers in our rush
-    toward the future."
-description: "Discover why studying the history of science is crucial for
-    scientific progress. This article examines how historical awareness can
-    prevent research pitfalls, drive innovation, and create more thoughtful
-    scientists. Through examples and current debates, learn why looking back
-    might be the key to moving science forward."
-lead: "Scientists often ignore their field's history, viewing it as irrelevant to
-    current research. This article explores why that's a mistake. Historical
-    awareness helps avoid past errors, reveals patterns in scientific
-    breakthroughs, and creates more thoughtful researchers. Drawing from real
-    examples and current debates, we'll see how understanding science's past can
-    drive future innovation."
+lastmod: "2026-04-11"
+summary: "Scientific training treats the history of the field as decoration.
+    A working researcher is better off with some of it than without, because
+    the ways good science has been dismissed and bad science accepted repeat,
+    and only the historical record makes the patterns visible."
+description: "Science is usually taught as a sequence of results, with
+    history reduced to a handful of anecdotes. A researcher trained in the
+    history of the field is better equipped to recognize institutional bias,
+    premature abandonment of productive lines, and the social forces shaping
+    peer review."
+lead: "A scientific field has a history, and in most training that history is
+    kept separate from the research itself. This post argues that the
+    decisions, failures, and social pressures behind past discoveries belong
+    in training, because a scientist who has studied them is better equipped
+    to recognize the same forces in their own work."
 tags: ["history-of-science"]
 ---
 
-Scientists are always pushing forward, racing to make the next breakthrough.
-But sometimes the best way forward is to look back at your own field's history.
+Scientists are trained to look forward, not back. The history of the field
+enters graduate training as a handful of first-lecture anecdotes, and after
+that it disappears from the syllabus. A working researcher who knows
+something about how their field developed is better equipped than one who
+does not, and that claim is not obvious.
 
-This isn't just a nice idea---it's crucial for good science. In 2015,
-researchers Casadevall and Fang made this point in _Infection and
-Immunity_.[^1] They showed how understanding past discoveries and mistakes
-helps shape better research today. Without learning from history, we risk
-stumbling into the same old traps or missing promising new directions.
+Casadevall and Fang made the case for it in a 2015 editorial in _Infection
+and Immunity_.[^1] Their argument was that historical awareness shapes
+better research: without it, researchers repeat old mistakes and overlook
+old discoveries. What does the history of a field give a working researcher
+that the current technical literature does not?
 
-The real question is: what makes the history of science so valuable for
-research today?
+## Ideas do not survive on technical merit alone
 
-## When Good Science Hits Dead Ends: Learning from History's Obstacles
+The history of science is full of cases where the best available evidence
+lost to social forces: institutional authority, political protection, or
+inertia. Thomas Kuhn built his account of scientific progress around this
+observation in _The Structure of Scientific Revolutions_.[^2]
 
-Our drive for scientific truth often runs up against an uncomfortable reality:
-even the best ideas don't succeed on their own merits. The path to discovery is
-shaped by the social and historical forces of the time---a fact that Thomas
-Kuhn explored in depth in _The Structure of Scientific Revolutions_.[^2]
-
-History gives us plenty of examples of this pattern. Take Ignaz Semmelweis, who
-discovered that doctors were causing deadly infections in maternity wards
-through poor hygiene. Despite clear evidence that his methods saved lives, the
-medical establishment rejected his findings. Powerful figures destroyed his
-career simply because his ideas challenged their authority.
+Ignaz Semmelweis is the standard example. In the 1840s he found that poor
+hygiene among doctors was causing deadly infections in maternity wards, and
+that a simple handwashing protocol cut mortality. The medical establishment
+rejected the findings and destroyed his career, not because the data was
+wrong but because the conclusion threatened the authority of senior
+physicians.
 
 ![Plate in memory of Galileo at San Marco's square in
 Venice](galileo_san_marco_tower.png "I took this photo on the tower of San
 Marco's square in Venice. The plate says: Galileo Galilei with his telescope
 from here on August 21, 1609, broadened man's horizons")
 
-Or consider the story of Galileo---often portrayed as a simple clash between
-science and religion. The reality is more complex. His ability to challenge
-Church doctrine actually depended on political protection from the Venetian
-Republic. Without that shield, his revolutionary ideas might never have
-spread.[^3]
+Galileo's case is usually told as a clash between science and religion, but
+politics mattered just as much. His telescope observations and his defense
+of Copernican cosmology became publishable in part because the Venetian
+Republic gave him political cover. Without that cover, the work might not
+have spread far beyond his own notebooks.[^3]
 
-Even today, scientists can fall into what Stephen Toulmin called the
-'Alexandrian Trap'---getting so caught up in the formal structure of arguments
-that they miss the actual substance. It's a pattern that keeps repeating
-throughout history.
+Stephen Toulmin called a related pattern the "Alexandrian Trap":
+researchers become so invested in the formal structure of their arguments
+that they lose contact with what the arguments are about. The same thing
+has happened many times in the history of science, and a researcher who
+has seen it before is more likely to recognize it now.
 
-These stories teach us something crucial: scientific progress isn't just about
-having good ideas. Those ideas have to navigate through a maze of social
-forces, power structures, and personal agendas---forces that are still very
-much alive today.
+The common thread is that scientific ideas do not survive on technical
+merit alone. They have to pass through the institutions, careers, and
+allegiances of the people who evaluate them, and those filters are still in
+place.
 
-## The Blind Spot in Scientific Training
+## How scientists are trained to ignore history
 
-While history offers crucial lessons for scientific progress, most scientists
-are trained to see it as irrelevant to their work.
+Most scientists are trained to see the history of their own field as
+irrelevant to their work. Science is taught as a sequence of results, and
+history gets reduced to a handful of anecdotes: Newton's apple, Fleming's
+moldy petri dish, Kekulé's dream of the benzene ring. The context that
+produced those results, and the failures that shaped the methods used to
+produce them, falls out of the syllabus.
 
-Look at how science is taught today. History gets reduced to a handful of
-entertaining stories---Newton's apple, Fleming's moldy petri dish---rather than
-being treated as a meaningful part of scientific training. The context behind
-major discoveries gets lost, and with it, valuable insights about how
-breakthroughs actually happen.
+The contrast with law is instructive. A law student spends years reading
+old cases because legal practice is explicitly shaped by precedent, and an
+argument cannot be made without knowing what has been argued before. A
+scientist is usually trained the opposite way, told to evaluate current
+evidence on its own terms and to treat history as background color.
 
-The contrast with other fields is striking. Take law, where understanding
-historical precedent isn't just encouraged---it's essential. Lawyers spend
-years studying past cases and decisions because they know these shape current
-practice. But in science, we often present discoveries as isolated facts,
-stripped of the messy, human process that led to them.
+The cost is that the same lessons keep being relearned. A researcher who
+stumbles into the trap Semmelweis fell into will not recognize the pattern
+unless someone has taught it. The same holds for the political suppression
+of correct work, the premature abandonment of productive lines, and the
+slow acceptance of findings that should have been obvious at the time. None
+of this shows up in the current literature. It is in the historical record.
 
-This dismissal of history comes at a real cost. When we ignore how past
-scientists navigated their breakthroughs and setbacks, we miss chances to learn
-from their experiences. The very lessons that could help us innovate---or avoid
-costly mistakes---get lost in our rush toward the new.
+## The case against looking back
 
-## The Case for Forgetting: Does History Hold Science Back?
+The counterargument is that science thrives by ignoring its history. Unlike
+law, where precedent is binding, science progresses by overturning earlier
+views, and being too attached to the history of a field encourages
+deference to ideas that should be discarded. A physicist who has
+internalized all of classical mechanics may have a harder time taking a
+radical departure from it seriously.
 
-Some scientists would argue we've got it exactly backwards---that science
-actually thrives by ignoring its history.
+The view is consistent with how experimental science claims to work. A
+hypothesis is tested against evidence and either survives or does not, and
+the historical circumstances under which it was proposed do not change the
+outcome of the test. By that standard, history is at best irrelevant to the
+experiment and at worst a source of bias that gives too much weight to what
+was once believed.
 
-Their reasoning is straightforward: science isn't like law or medicine. It's
-about pushing into the unknown, and too much looking backward might just slow
-us down. By focusing purely on what's ahead, they argue, we can challenge old
-assumptions more freely and push boundaries more boldly.
+This forward-only view has two problems. A hypothesis never gets evaluated
+in a vacuum: the judgment of which results are worth publishing, which data
+is clean enough to trust, and which directions are worth pursuing is not
+mechanical. Those judgments are made by researchers whose intuitions were
+built from experience, and experience is a kind of private history. The
+second problem is that the failure modes of past research are not random.
+They repeat, and a researcher who has studied them can see them coming.
 
-This view is deeply rooted in how modern science works. Take the principle of
-falsification: we test hypotheses against evidence, plain and simple.
-Historical context doesn't make your experiment any more or less valid. In
-fact, stripping away the historical baggage might help us stay objective and
-focused on the data right in front of us.
+## What history gives a researcher
 
-But this "forward-only" approach comes with hidden costs. When we treat science
-as just a mechanical process of testing hypotheses, we lose the human
-element---the stories of inspiration, persistence, and even luck that often
-spark breakthrough insights. More importantly, we might miss crucial patterns
-in how scientific understanding actually develops.
+Casadevall and Fang's point is that science does not happen in a vacuum.
+Every result is produced inside a social and institutional context that
+shapes what questions were asked, what methods were used, and what findings
+got through peer review. A researcher who knows how that context has shaped
+past work is better equipped to recognize how it is shaping current work.
 
-The real challenge isn't choosing between looking forward or backward---it's
-finding the right balance between the two.
+The practical effect is on judgment. A researcher familiar with how
+institutional pressures shaped Galileo's and Semmelweis's work is more
+likely to notice the same forces in a modern grant committee. A researcher
+who has seen productive research programs abandoned prematurely is less
+quick to give up on their own. A researcher who has studied how past
+discoveries were actually made is less likely to believe they came from
+isolated genius, which makes collaboration easier and setbacks less
+discouraging.[^4]
 
-## The Path Forward: Integrating History into Science
+Historical study also corrects a bias in how credit is distributed.
+Contributions from women and from scientists outside the dominant European
+and American institutions become visible only when someone goes back and
+reads the original literature. The same pattern holds for ethics: the rules
+that get written into codes of conduct were usually learned after something
+went wrong, and the case files for those events are in the historical
+record, not in the current methods section.
 
-After weighing both sides of this debate, one thing becomes clear: we need a
-better balance between honoring the past and pushing toward the future.
-
-Casadevall and Fang hit on something crucial---science doesn't exist in a
-vacuum. Each discovery, each breakthrough, happens within a web of social and
-historical forces. By bringing history back into science education, we can help
-future scientists navigate these forces more effectively.
-
-What would this actually change? First, scientists would better understand how
-social and cultural factors shape their research---just as they shaped
-Galileo's and Semmelweis's work. Second, they'd gain practical insights from
-past mistakes, making the scientific process more efficient. But perhaps most
-importantly, they'd see that breakthroughs rarely come from isolated genius.
-Instead, they emerge through collaboration, persistence, and learning from
-failure---patterns that repeat throughout history.
-
-There's something else too: historical awareness makes better scientists. It
-helps them recognize overlooked contributions, especially from marginalized
-voices. It reminds them of their ethical responsibilities---lessons we've often
-learned the hard way. And it shows them that science isn't just about data and
-results---it's about people, stories, and the messy process of discovery.
-
-We don't need to choose between looking backward and moving forward. By
-understanding our history, we can create more thoughtful, ethical, and
-innovative science---not despite the past, but because of it.
+Looking back and looking forward are not in competition. The history of a
+field is the longest-running dataset about how research actually gets done
+in it, and ignoring that dataset means ignoring the one closest to hand.
 
 [^1]: Casadevall, A.; Fang, F. C. (A)Historical Science. _Infect. Immun._
     **2015**, _83_ (12), 4460–4464.
@@ -148,3 +151,7 @@ innovative science---not despite the past, but because of it.
     ed.; University of Chicago Press: Chicago, IL, USA, 2012.
 [^3]: Rossi, P. _The Birth of Modern Science_; The making of Europe; Blackwell:
     Oxford, UK, 2001.
+[^4]: For a concrete example, see my review of Vannevar Bush's
+    [_Pieces of the Action_](/blog/review-pieces-of-the-action/), a
+    first-person account of running a large-scale research program during
+    World War II.

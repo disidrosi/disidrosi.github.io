@@ -1,54 +1,61 @@
 {{- $alt := .PlainText -}}
 {{- $resource := .Page.Resources.GetMatch .Destination -}}
 {{- $isFirst := not (.Page.Store.Get "firstImageRendered") -}}
-{{- if $isFirst }}{{- .Page.Store.Set "firstImageRendered" true -}}{{ end -}}
+{{- if $isFirst }}{{- .Page.Store.Set "firstImageRendered" true -}}{{- end -}}
 {{- $loading := cond $isFirst "eager" "lazy" -}}
 
 {{- if .Title -}}<figure>{{- end -}}
 
 {{- if and $resource (eq $resource.ResourceType "image") -}}
   {{- $ext := lower (path.Ext .Destination) -}}
-  {{- if or (eq $ext ".svg") (eq $ext ".gif") -}}
-    {{- $svgW := "" -}}
-    {{- $svgH := "" -}}
-    {{- if eq $ext ".svg" -}}
-      {{- $svgPath := path.Join "content" .Page.File.Dir .Destination -}}
-      {{- $svgContent := os.ReadFile $svgPath -}}
-      {{- with findRESubmatch `<svg\b[^>]*?\swidth="([0-9.]+)` $svgContent 1 -}}
-        {{- $svgW = index (index . 0) 1 -}}
+
+  {{- if eq $ext ".svg" -}}
+    {{- $svgContent := os.ReadFile (path.Join "content" .Page.File.Dir .Destination) -}}
+    {{/* Prefer the viewBox: it is the canonical source for aspect ratio
+         and is present on virtually every modern SVG. Fall back to
+         numeric width/height attributes only if the viewBox is missing
+         (rare). The closing `"` in the fallback regexes is required so
+         that values like width="100%" are correctly skipped. */}}
+    {{- $w := "" -}}
+    {{- $h := "" -}}
+    {{- with findRESubmatch `viewBox="[\-0-9.]+\s+[\-0-9.]+\s+([0-9.]+)\s+([0-9.]+)"` $svgContent 1 -}}
+      {{- $w = index (index . 0) 1 -}}
+      {{- $h = index (index . 0) 2 -}}
+    {{- end -}}
+    {{- if and (not $w) (not $h) -}}
+      {{- with findRESubmatch `<svg\b[^>]*?\swidth="([0-9.]+)"` $svgContent 1 -}}
+        {{- $w = index (index . 0) 1 -}}
       {{- end -}}
-      {{- with findRESubmatch `<svg\b[^>]*?\sheight="([0-9.]+)` $svgContent 1 -}}
-        {{- $svgH = index (index . 0) 1 -}}
-      {{- end -}}
-      {{- if and (not $svgW) (not $svgH) -}}
-        {{- with findRESubmatch `viewBox="[\-0-9.]+\s+[\-0-9.]+\s+([0-9.]+)\s+([0-9.]+)"` $svgContent 1 -}}
-          {{- $svgW = index (index . 0) 1 -}}
-          {{- $svgH = index (index . 0) 2 -}}
-        {{- end -}}
+      {{- with findRESubmatch `<svg\b[^>]*?\sheight="([0-9.]+)"` $svgContent 1 -}}
+        {{- $h = index (index . 0) 1 -}}
       {{- end -}}
     {{- end -}}
-    <img src="{{ $resource.RelPermalink }}" alt="{{ $alt }}"{{ if and $svgW $svgH }} width="{{ $svgW }}" height="{{ $svgH }}"{{ end }} loading="{{ $loading }}" decoding="async"{{ if $isFirst }} fetchpriority="high"{{ end }} />
+    {{- $renderW := "" -}}
+    {{- $renderH := "" -}}
+    {{- if and $w $h -}}
+      {{- $renderW = "800" -}}
+      {{- $renderH = printf "%.0f" (mul 800.0 (div (float $h) (float $w))) -}}
+    {{- end -}}
+    <img src="{{ $resource.RelPermalink }}" alt="{{ $alt }}"{{ if and $renderW $renderH }} width="{{ $renderW }}" height="{{ $renderH }}"{{ end }} loading="{{ $loading }}" decoding="async"{{ if $isFirst }} fetchpriority="high"{{ end }} />
+
   {{- else -}}
-    {{- $candidates := slice 400 800 1200 1600 -}}
     {{- $widths := slice -}}
-    {{- range $candidates -}}
+    {{- range (slice 400 800 1200 1600) -}}
       {{- if lt . $resource.Width -}}
         {{- $widths = $widths | append . -}}
       {{- end -}}
     {{- end -}}
     {{- $widths = $widths | append $resource.Width -}}
-    {{- $variants := slice -}}
+    {{- $srcset := slice -}}
+    {{- $default := "" -}}
     {{- range $widths -}}
       {{- $v := $resource.Resize (printf "%dx webp q82" .) -}}
-      {{- $variants = $variants | append $v -}}
-    {{- end -}}
-    {{- $srcset := slice -}}
-    {{- range $variants -}}
-      {{- $srcset = $srcset | append (printf "%s %dw" .RelPermalink .Width) -}}
-    {{- end -}}
-    {{- $default := index $variants (sub (len $variants) 1) -}}
-    {{- range $variants -}}
-      {{- if eq .Width 800 -}}{{- $default = . -}}{{- end -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" $v.RelPermalink $v.Width) -}}
+      {{/* Default = 800px variant if it exists, otherwise the source
+           width (which is always the last entry in $widths). */}}
+      {{- if or (eq . 800) (and (not $default) (eq . $resource.Width)) -}}
+        {{- $default = $v -}}
+      {{- end -}}
     {{- end -}}
     <img src="{{ $default.RelPermalink }}"
          srcset="{{ delimit $srcset ", " }}"

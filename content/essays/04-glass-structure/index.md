@@ -1,234 +1,133 @@
 ---
 slug: "glass-structure-stability"
 aliases: ["/blog/glass-structure-stability/"]
-title: "The Science of Glass: From Structure to Stability"
+title: "The structure and metastability of glass"
 date: "2024-10-27"
-summary: "Explore the science behind glass---from its disordered
-    atomic structure and metastable nature to the glass transition process."
-description: "An exploration of the atomic structure of glass: its amorphous
-    nature, non-equilibrium state, glass transition, and formation from
-    supercooled liquids. Discover what makes glass unique compared to
-    crystalline solids and how its properties are shaped by its atomic
-    arrangement."
-lead: "Glass is a unique material, defined by its disordered atomic structure and metastable state. Unlike crystalline solids, which have an orderly arrangement of atoms, glass exists in an amorphous form, constantly seeking but never reaching equilibrium. The glass transition temperature (\\(T_g\\)) marks the point where glass softens and transitions from a rigid solid to a more fluid state, while the behavior of supercooled liquids and structural relaxation explains how glass forms and retains its properties. Through these processes, glass blurs the line between solid and liquid, making it one of the most versatile and scientifically intriguing materials."
+lastmod: "2026-04-11"
+summary: "Glass is amorphous, metastable, and undergoes a gradual rather than
+    sharp transition from liquid to solid. This post covers the structure, the
+    thermodynamics, and the glass transition."
+description: "What glass is, why it is metastable, and how it forms from a
+    supercooled liquid. Covers the amorphous atomic structure, the
+    thermodynamic state, the glass transition, and structural relaxation."
+lead: "Glass is structurally disordered, thermodynamically out of equilibrium, and yet stable enough on human timescales to be a solid material in every practical sense. Its atoms occupy no lattice, and its molar volume, entropy, and free energy are all higher than those of the crystal of the same composition. Its transformation from liquid to solid happens over a range of temperatures rather than at a single point, and the temperature at which the structure stops responding to further cooling depends on how fast the cooling was."
 tags: ["materials-science","glass"]
 math: true
 ---
 
-Glass is one of the most versatile materials in the world, found in everything
-from windows and containers to fiber optics and advanced technologies. Despite
-its everyday use, glass has a unique atomic structure that distinguishes it
-from other materials.[^1]
+Glass is in windows, containers, optical fibers, lenses, and the substrates
+of most electronic displays. Its atomic structure differs from that of most
+solids: in crystals, atoms are arranged in a periodic lattice, but in glass
+they are not.[^1] This disorder is the source of much of what is distinctive about
+glass, including its gradual softening with temperature instead of a sharp
+melting point and its isotropic mechanical response. Glass is also out of
+thermodynamic equilibrium: its structure is slowly relaxing toward a more
+stable arrangement, but the process is too slow to observe at ordinary
+temperatures.
 
-Unlike crystalline solids, glass has a disordered arrangement of atoms. This
-disordered structure results in properties that make glass distinct. Even
-though it appears solid, glass exists in a non-equilibrium state, meaning that
-its atomic arrangement is constantly shifting toward a liquid phase, although
-over extremely long timescales.
+## Crystalline and amorphous solids
 
-So, what exactly sets glass apart from other solids, and how does its structure
-influence its behavior? Understanding these questions reveals the scientific
-significance of glass and its long-lasting technological role.
+Solids fall into two structural categories: crystalline and amorphous. In
+crystalline solids, such as diamond or metallic copper, atoms occupy a highly
+ordered, repeating lattice. In amorphous solids, including glass, the atoms
+are disordered, resembling a liquid frozen in place rather than a regular
+lattice.[^2] [^3]
 
-## The Foundation of Solid Matter
+![Three drinking glasses, each containing one of the classical states of water (ice, liquid, vapor), with diagrams of atomic arrangement below.](states_of_matter.png "Three drinking glasses showing the three classical states of matter: ice (solid), water (liquid), and vapor (gas). The diagrams below show the atomic arrangement of each state: tightly packed in the solid, loosely arranged but still in contact in the liquid, and widely dispersed in the gas. Adapted from https://tinyurl.com/2svcj8dn")
 
-To understand glass, it's important to first understand what defines a solid.
+The periodic arrangement gives crystalline solids two characteristic
+properties. They have a sharp melting point: at the right temperature, the
+entire lattice breaks down at once. They are also anisotropic, meaning their
+mechanical properties depend on the direction of an applied force, because
+some directions in the lattice are stronger than others.
 
-Solids are one of the primary states of matter. Unlike liquids and gases, which
-flow and change shape, solids maintain their form and volume without needing a
-container. This stability comes from the way their atoms are arranged and
-bonded together.
+Glass differs in both respects. Because there is no lattice to break, it does
+not have a sharp melting point and softens gradually as temperature rises,
+transitioning from rigid to fluid over a range. The disordered atomic
+arrangement has no preferred direction, so glass is isotropic: its mechanical
+properties are the same along every axis.
 
-At the atomic level, solids can be categorized into two types: **crystalline**
-and **amorphous**. In crystalline solids—such as diamonds or metals—atoms are
-arranged in a highly ordered, repeating pattern. This regular structure gives
-crystalline materials their rigidity and strength. In contrast, **amorphous**
-solids, like glass, lack this ordered arrangement. Instead, their atoms are
-disorganized, resembling the structure of a liquid that has been rapidly cooled
-and "frozen" in place.[^2] [^3]
+The contrast is sharpest in silica (\(\mathrm{SiO}_2\)). In its crystalline
+form, silica is quartz, with a sharp melting point and anisotropic mechanical
+properties. In its amorphous form, the same chemical composition produces a
+glass with no melting point and isotropic properties.
 
-![Glass transition plot](states_of_matter.png "Each glass represents a
-different state of matter—solid (ice), liquid (water), and gas (vapor)—along
-with their atomic structures shown below. The solid state has tightly packed
-atoms, the liquid state shows atoms loosely arranged but still interacting, and
-the gaseous state has widely dispersed atoms with minimal interaction. Adapted
-from: https://tinyurl.com/2svcj8dn")
+![Side-by-side schematic of the atomic arrangement of amorphous silica (left, disordered) and crystalline silica or quartz (right, ordered).](silica_structure.png "Amorphous silica (left), the basis of most oxide glasses, contrasted with crystalline silica or quartz (right). The composition is identical, and only the atomic arrangement differs.")
 
-This disordered structure is what makes glass unique. It behaves like a solid
-in the short term, but over long periods, it exhibits subtle, almost
-imperceptible movement. This is due to the fact that glass never truly reaches
-a state of thermodynamic equilibrium. Its atomic structure is always in a slow
-process of shifting, inching toward a liquid-like state.
+Glass is not limited to silica. Many other substances, including metals and
+polymers, can form amorphous structures when cooled rapidly enough to suppress
+crystallization. What they all share is the absence of long-range order in the
+atomic arrangement.
 
-Deforming any solid, including glass, requires applying an external force that
-exceeds the material's **yield stress**—the point at which the material starts
-to change shape. For glass, this threshold varies with temperature: higher
-temperatures reduce the force needed for deformation. However, even at room
-temperature, glass exists in this delicate state between solid and liquid,
-which is one of the reasons it has such unusual and fascinating properties.
+## Metastability
 
-So, what exactly sets glass apart from other materials, and how does its
-disordered atomic structure shape its behavior? In the next section, we'll
-explore these questions and see how glass blurs the line between solid and
-liquid.
+Glass is **metastable**: it sits in a local energy minimum that is not the
+global minimum, but the energy barrier separating the two is too large to
+cross under ordinary conditions. For almost any glass-forming substance, the
+global minimum is a crystalline arrangement.[^4] [^5]
 
-## The Structural Divide: What Makes Glass Unique
+Crystallization requires atoms to settle into the periodic positions of a
+lattice, and that takes time. When a melt is cooled fast enough, there is not
+enough time for them to do so, and the resulting solid carries the disordered
+arrangement it had in the liquid state. The faster the cooling, the more
+frozen-in disorder.
 
-The distinct atomic structure of glass is what sets it apart from other
-materials.
+Compared to a crystal of the same composition, a glass has a larger
+**molar volume** (its atoms are not packed as tightly), higher **entropy**
+(the disordered arrangement has more accessible microstates), and higher
+**enthalpy** and **Gibbs free energy**. All of these reflect the same fact:
+glass is in a higher-energy state, but the activation energy required to
+reach the lower-energy crystalline state is too large to cross at ordinary
+temperatures.
 
-In crystalline solids, atoms are arranged in a highly ordered and repeating
-pattern. This arrangement is known as **long-range translational symmetry**. It
-gives crystalline materials predictable properties, such as sharp melting
-points and **anisotropy**—meaning their mechanical properties, like strength or
-elasticity, vary depending on the direction of force applied.
+## The glass transition
 
-Glass, however, is different. It is an **amorphous** solid, meaning its atoms
-are arranged in a disordered way. This lack of regular atomic structure results
-in **isotropic** behavior, where its properties are the same in all directions.
-For example, glass is equally strong regardless of the direction you apply
-force. Because glass lacks the strict order of a crystal, it also doesn't have
-a defined melting point. Instead, it softens gradually as temperature rises,
-transitioning smoothly from a rigid state to a more fluid one.
+The transformation from a glass-forming liquid into a glass is called the
+**glass transition**, and the process of carrying it out (cooling a liquid
+fast enough to bypass crystallization) is called **vitrification**. Unlike the
+melting transition of a crystal, which happens at a single sharp temperature,
+the glass transition is gradual: as a liquid is cooled, its viscosity rises,
+and over some temperature range it becomes so viscous that, on the timescales
+of observation, it stops flowing. The temperature at which this happens is
+called the **glass transition temperature**, \(T_g\).[^3]
 
-A classic example of this structural divide is **silica** (\(\mathrm{SiO}_2\)). In
-its crystalline form, it becomes quartz, which has a well-defined melting point
-and anisotropic properties. In its amorphous form, as glass, silica behaves
-differently, exhibiting the gradual softening and isotropic properties
-characteristic of glasses.
+\(T_g\) is not a thermodynamic constant of the material but a quantity that
+depends on the cooling rate. Faster cooling traps the atoms at a higher
+temperature, before they have time to relax into lower-energy arrangements,
+and produces a higher \(T_g\). Slower cooling gives them more time to relax
+and produces a lower \(T_g\). The same substance can have different glass
+transition temperatures depending on its thermal history.
 
-![Silicon structure](silica_structure.png "Amorphous silica (left), the primary
-component in silicate glasses, has a disordered atomic arrangement, unlike
-crystalline silica (right), commonly known as quartz. Although they share the
-same chemical composition, this structural difference gives each form distinct
-physical and chemical properties.")
+![Phase diagram showing the four states of a glass-forming substance against temperature: liquid, supercooled liquid, glass, and crystal, with the melting temperature and glass transition temperature marked.](glass_phase_transition.png "The four states of a glass-forming substance plotted against temperature: liquid, supercooled liquid, glass, and crystal. The melting temperature \(T_m\) is the boundary between solid crystal and liquid, and the glass transition temperature \(T_g\) is the boundary between supercooled liquid and glass.")
 
-Interestingly, glass isn't limited to materials like silica. Many other
-substances—including metals and polymers—can also form amorphous, glassy
-structures. This happens when they are cooled rapidly enough to avoid
-crystallization. Despite their chemical differences, all these materials share
-one key feature: the disordered, non-crystalline atomic structure that defines
-glass.
+This time-dependence is the central distinction between glass and crystalline
+solids. Crystals melt at a fixed temperature (\(T_m\)), and the transition is
+sharp. Glasses do not melt at all in the strict sense. They pass continuously
+between rigid solid and viscous liquid, and the location of the transition
+depends on time as much as on temperature.
 
-In essence, the fundamental distinction between crystals and glass comes down
-to atomic order: where crystals rely on structured precision, glass embraces
-atomic disorder.
+## Supercooled liquids
 
-## The Metastable Nature of Glass
+A liquid cooled below its freezing point without crystallizing is a
+**supercooled liquid**. As it cools further, its atomic structure continues to
+rearrange through a process called **structural relaxation**, which slows as
+the temperature drops. The characteristic timescale for this rearrangement is
+the **relaxation time**, \(\tau_s\), which increases sharply as the liquid
+approaches the glass transition.
 
-One of the most distinctive features of glass is that it exists in a
-**metastable** state—a non-equilibrium condition that sets it apart from most
-materials.
-
-Typically, when materials cool, their atoms arrange themselves into a stable,
-ordered structure, forming a crystalline solid. This structure is
-thermodynamically favorable because it represents the lowest energy state for
-the material. However, glass breaks this rule. Even though it would be more
-stable as a crystal, glass remains in an **amorphous** state, where its atoms
-are disordered.[^4] [^5]
-
-This disordered structure is what makes glass metastable. It's not in full
-equilibrium, but it can stay in this state for an extremely long time without
-changing. Unlike crystalline solids, which have a precise arrangement of atoms,
-glass lacks this regularity. As a result, it has several distinct thermodynamic
-properties. For example:
-
-- Glass has a **larger molar volume** because its atoms aren't packed as
-  tightly as in crystals.
-- It has higher **entropy** (a measure of disorder) due to the many possible
-  ways its atoms can be arranged.
-- Glass also has higher **enthalpy** and **Gibbs free energy**, meaning it
-  holds more energy than a corresponding crystalline solid.
-
-These characteristics indicate that glass is less stable than a crystal, but
-because it cools so rapidly during its formation, it gets "trapped" in this
-non-equilibrium state. This rapid cooling prevents the atoms from organizing
-into a more stable crystalline structure.
-
-Even though glass would naturally prefer to form a crystal, it remains
-amorphous indefinitely because the energy needed to overcome its metastable
-state and trigger crystallization is too high under normal conditions. This
-balance—disordered, yet stable enough to persist—is what defines the unique
-nature of glass.
-
-In short, glass occupies a middle ground: stable enough to last for centuries,
-yet constantly in a subtle, slow-moving journey toward equilibrium.
-
-## The Glass Transition: From Solid to Liquid-Like Behavior
-
-One of the defining features of glass is the **glass transition**, a process
-that distinguishes it from other amorphous materials.[^3]
-
-The glass transition describes the gradual shift from a rigid, solid state to a
-more viscous, rubbery state as temperature increases. This transformation
-occurs over a temperature range and is marked by the **glass transition
-temperature** (\(T_g\)). As the temperature rises, glass does not melt like a
-crystalline solid. Instead, it softens, becoming less brittle and more
-flexible.
-
-At the glass transition temperature, the atomic arrangement of the material
-becomes essentially fixed, locking the glass into its amorphous state. When the
-material is cooled rapidly enough, preventing crystallization, it undergoes a
-process called **vitrification**, where it transitions into a solid glass from
-a liquid.
-
-The glass transition temperature isn't a sharp, single point, but rather a
-range that depends on the material's thermal history. Factors like the cooling
-rate can influence where this transition occurs. Faster cooling typically
-results in a higher \(T_g\), as the atoms have less time to settle into a more
-stable arrangement. Slower cooling allows more atomic movement, lowering the
-\(T_g\). As glass approaches its \(T_g\), its viscosity increases dramatically,
-meaning it becomes harder for its atoms to move and rearrange.
-
-![Glass transition plot](glass_phase_transition.png "This plot illustrates
-the four states of a glass-forming substance: liquid, supercooled liquid,
-glass, and crystal. The melting temperature (\(T_{m}\)​) marks the
-transition to a liquid, while the glass transition temperature
-(\(T_{g}\)​) marks the solidification into a glassy, non-equilibrium
-state.")
-
-This behavior is fundamentally different from crystalline solids, which melt at
-a defined melting point (\(T_m\)). In glass, the transition from a liquid to a
-solid is more gradual, and the properties of the material during this range are
-influenced by both temperature and time.
-
-Understanding the glass transition is important because it directly affects how
-glass performs in various applications. The temperature range at which glass
-softens and solidifies impacts its durability, stability, and usability in
-everything from everyday objects to advanced technologies.
-
-## The Dynamics of Supercooled Liquids: The Path to Glass Formation
-
-At the heart of glass formation is the behavior of **supercooled
-liquids**—liquids cooled below their freezing point without crystallizing.
-
-As a supercooled liquid approaches the glass transition, its atoms continue to
-shift through a process called **structural relaxation**. Even when thermal
-equilibrium is reached, this internal restructuring persists, although more
-slowly as the temperature drops. This process is central to understanding how
-glass forms and maintains its unique properties over time.
-
-The **relaxation time** (\( \tau_{s} \))—the time it takes for the atomic
-structure to adjust to temperature changes—increases significantly as the
-liquid cools. When the cooling rate is faster than the material's ability to
-relax, the atoms freeze into a disordered arrangement, creating the glassy,
-non-equilibrium state. This point is marked by the **fictive temperature**,
-which indicates when the material transitions from equilibrium to a frozen,
-non-equilibrium structure.
-
-For many materials, the fictive temperature aligns with the **glass transition
-temperature** (\(T_g\)), where the viscosity reaches a level that essentially
-halts atomic movement, and the material becomes glass.
+When the cooling rate exceeds the structural relaxation rate, the atomic
+arrangement is frozen in: continued cooling produces no further structural
+change, and the supercooled liquid becomes a glass. The temperature at which
+this happens is called the **fictive temperature**, and for many materials it
+coincides with \(T_g\).
 
 ## Conclusion
 
-The formation and properties of glass are rooted in a complex balance between
-atomic disorder, temperature, and time. From its metastable nature to the
-dynamics of supercooled liquids, glass is a material that exists between solid
-and liquid, equilibrium and non-equilibrium. Its unique atomic structure,
-combined with the processes that govern its formation, ensures that glass
-remains one of the most scientifically intriguing and versatile materials in
-the world.
+Glass is structurally disordered, thermodynamically out of equilibrium, and
+stable on human timescales. These features, together with the glass transition
+that connects the liquid and solid states, are common to all glasses, whether
+oxide, metallic, or polymeric. What varies between systems is the chemistry
+that sets the relaxation timescales and the value of \(T_g\).
 
 [^1]: Mysen, B.; Richet, P. _Silicate Glasses and Melts_, 2nd ed.; Elsevier:
     Amsterdam, NL, 2019.
