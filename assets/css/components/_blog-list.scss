@@ -1,24 +1,160 @@
 @use '../abstracts/mixins' as m;
 
+/* Section intro — shared with bookshelf */
+.section-intro {
+  font-size: var(--type-md);
+  line-height: 1.65;
+  color: var(--color-lead);
+  margin-bottom: var(--space-6);
+}
+
+.section-intro p {
+  margin: 0;
+}
+
 /* Blog post list (used on section/list pages) */
 ul.blog-posts {
   @include m.list-reset;
+  --date-col-width: 130px;
 }
 
 ul.blog-posts li {
   display: flex;
-  margin-bottom: var(--space-3);
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-bottom: var(--space-5);
 }
 
-ul.blog-posts li span {
-  flex: 0 0 130px;
+/* Post items (not year labels) get hover area + highlight */
+ul.blog-posts li:not(.blog-year-label) {
+  padding: var(--space-2);
+  margin-inline: calc(-1 * var(--space-2));
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+}
+
+ul.blog-posts li:not(.blog-year-label):hover {
+  background: var(--color-primary-faint);
+}
+
+/* Date column */
+.blog-post-date {
+  flex: 0 0 var(--date-col-width);
   font-variant-numeric: tabular-nums;
 }
 
-ul.blog-posts li a:visited {
+/* Arrow nudge on internal post links. */
+ul.blog-posts li .blog-post-link::after {
+  content: " \2192" / "";
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+ul.blog-posts li:not(.blog-year-label):hover .blog-post-link::after {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+/* Visited links */
+ul.blog-posts li .blog-post-link:visited {
   color: var(--color-text-muted);
 }
 
+/* Hover restores brightness even on visited links.
+   Equal specificity to :visited rule above — cascade order lets this win. */
+ul.blog-posts li .blog-post-link:hover {
+  color: var(--color-link-hover);
+}
+
+/* Dim the date when link is visited */
+ul.blog-posts li:has(.blog-post-link:visited) .blog-post-date {
+  color: var(--color-text-dimmed);
+}
+
+/* Summary and tag rows share the same indent as the date column */
+.blog-post-summary,
+.blog-post-tags {
+  flex-basis: 100%;
+  padding-inline-start: var(--date-col-width);
+}
+
+/* Summary — always visible */
+.blog-post-summary {
+  font-size: var(--type-sm);
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-top: var(--space-2);
+}
+
+/* Tag pills — below summary */
+.blog-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+/* Year group separator */
+ul.blog-posts li.blog-year-label {
+  display: block;
+  @include m.eyebrow(
+    $size: var(--type-xs),
+    $color: var(--color-text-dimmed),
+    $letter-spacing: 0.06em
+  );
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-2);
+}
+
+ul.blog-posts li.blog-year-label:first-child {
+  margin-top: 0;
+}
+
+/* Tag cloud count */
+.blog-tag-count {
+  color: var(--color-text-dimmed);
+  margin-inline-start: 2px;
+}
+
+/* Tag cloud section header — · · · divider + eyebrow label */
+.tag-cloud-header {
+  @include m.eyebrow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+.tag-cloud-header::before {
+  @include m.dotted-divider;
+  /* letter-spacing adds trailing space after the last · which shifts the
+     glyphs left of true center; negative margin cancels it exactly. */
+  margin-right: -0.4em;
+  margin-bottom: var(--space-4);
+}
+
+/* Filter heading */
 h2.blog-filter {
   margin-bottom: 0;
+}
+
+/* Reduced motion */
+@include m.reduce-motion {
+  ul.blog-posts li:not(.blog-year-label) {
+    transition: none;
+  }
+
+  ul.blog-posts li .blog-post-link::after {
+    transition: none;
+  }
+}
+
+/* Mobile — collapse date-column indent */
+@media (max-width: 480px) {
+  .blog-post-summary,
+  .blog-post-tags {
+    padding-inline-start: 0;
+  }
 }

@@ -6,7 +6,7 @@
 
     {{/* ---------- Introduction ---------- */}}
     {{ with .Content }}
-      <div class="bookshelf-intro">
+      <div class="section-intro">
         {{ . }}
       </div>
     {{ end }}
@@ -68,7 +68,7 @@
         <ul>
           {{ range $topics }}
             <li>
-              <a href="#topic-{{ .key }}">{{ .name }}</a>
+              <a class="bookshelf-nav-link" href="#topic-{{ .key }}">{{ .name }}</a>
               <span class="bookshelf-nav-count">({{ .count }})</span>
             </li>
           {{ end }}

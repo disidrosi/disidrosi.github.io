@@ -3,14 +3,12 @@
 a {
   color: var(--color-primary);
   text-decoration: none;
-  transition: color 0.15s;
+  transition: color 0.15s, text-decoration-color 0.15s;
 }
 
 a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-  text-decoration-skip-ink: auto;
+  /* Bump chroma to make the hover shift perceptible without raising volume. */
+  color: var(--color-link-hover);
 }
 
 nav a {
@@ -21,8 +19,29 @@ nav a.active {
   color: var(--color-heading);
 }
 
-.post-content a[href^="http"]::after,
-.post-content a[href^="//"]::after {
+/* Prose links only — :not([class]) excludes pills, heading-anchors, footnote-refs,
+   and every other link variant that carries an explicit class. Markdown-rendered
+   body links emit bare <a href="..."> with no class, so this selector is exact. */
+.post-content a:not([class]) {
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary-subtle);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.post-content a:not([class]):hover {
+  text-decoration-color: oklch(0.76 0.12 228 / 0.65);
+}
+
+/* Visited prose links — purple-shifted, desaturated: the classic "read" signal. */
+.post-content a:not([class]):visited {
+  color: oklch(0.62 0.04 255);
+}
+
+/* Bare prose links only — :not([class]) excludes pills, .blog-post-external,
+   .bookshelf-doi, and any other classed link that already has its own indicator. */
+.post-content a:not([class])[href^="http"]::after,
+.post-content a:not([class])[href^="//"]::after {
   /* Empty alt text hides the icon from assistive tech (CSS Generated Content L3). */
   content: " ↗" / "";
   font-size: 0.75em;

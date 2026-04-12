@@ -122,15 +122,12 @@ figcaption .figure-number::before {
 .footnote-ref {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.75em;
+  font-size: 0.85em;
   color: var(--color-primary);
   text-decoration: none;
   margin-inline-start: 1px;
 }
 
-.footnote-ref:hover {
-  text-decoration: underline;
-}
 
 /* Footnote backref arrow */
 .footnote-backref {
@@ -141,7 +138,7 @@ figcaption .figure-number::before {
 }
 
 .footnote-backref:hover {
-  color: var(--color-primary);
+  color: var(--color-link-hover);
 }
 
 /* General HR separator */
@@ -209,8 +206,25 @@ sup[id^="fnref"] {
   border-radius: var(--radius-sm);
 }
 
+/* Back to top */
+.back-to-top {
+  display: block;
+  text-align: end;
+  margin-top: var(--space-7);
+  font-family: var(--font-heading);
+  font-size: var(--type-sm);
+  color: var(--color-text-dimmed);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.back-to-top:hover {
+  color: var(--color-link-hover);
+}
+
 @include m.reduce-motion {
-  .post-content .heading-anchor {
+  .post-content .heading-anchor,
+  .back-to-top {
     transition: none;
   }
 }

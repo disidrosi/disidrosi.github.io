@@ -1,27 +1,49 @@
 {{ define "main" }}
   <article class="post-content">
-    {{ .Content }}
-    {{ if .Data.Singular }}
+    {{ if not .Data.Singular }}
+      <h1>{{ .Title }}</h1>
+      {{ with .Content }}
+        <div class="section-intro">{{ . }}</div>
+      {{ end }}
+    {{ else }}
+      {{ .Content }}
       <h2 class="blog-filter">{{ i18n "filtering-for" }} "{{ .Title }}"</h2>
     {{ end }}
     <ul class="blog-posts">
+      {{- $year := "" -}}
       {{ range .Pages }}
+        {{- $thisYear := .Date.Format "2006" -}}
+        {{ if ne $thisYear $year }}
+          {{- $year = $thisYear -}}
+          <li class="blog-year-label" aria-hidden="true">{{ $thisYear }}</li>
+        {{ end }}
         <li>
-          <span>
+          <span class="blog-post-date">
             <time datetime="{{ .Date.Format "2006-01-02" }}">
               {{ partial "format-date.html" .Date }}
             </time>
           </span>
           {{ if .Params.link }}
             <a
+              class="blog-post-external"
               href="{{ .Params.link }}"
               target="_blank"
               rel="noopener noreferrer"
               >{{ .Title }} ↪</a
             >
           {{ else }}
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <a class="blog-post-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
           {{ end }}
+          {{- with .Params.summary }}
+            <span class="blog-post-summary">{{ . }}</span>
+          {{- end }}
+          {{- with .GetTerms "tags" }}
+            <span class="blog-post-tags">
+              {{- range . }}
+                <a class="pill blog-tags blog-list-tag" href="{{ .RelPermalink }}">{{ lower .LinkTitle }}</a>
+              {{- end }}
+            </span>
+          {{- end }}
         </li>
       {{ else }}
         <li>
@@ -30,11 +52,12 @@
       {{ end }}
     </ul>
     {{ if not .Data.Singular }}
-      <ul class="tag-cloud">
+      <div class="tag-cloud-header" aria-hidden="true">Topics</div>
+      <ul class="tag-cloud" aria-label="Topics">
         {{ range .Site.Taxonomies.tags }}
           <li>
             <a class="pill blog-tags" href="{{ .Page.RelPermalink }}"
-              >{{ lower .Page.Title }}</a
+              >{{ lower .Page.Title }}<span class="blog-tag-count"> ({{ .Count }})</span></a
             >
           </li>
         {{ end }}

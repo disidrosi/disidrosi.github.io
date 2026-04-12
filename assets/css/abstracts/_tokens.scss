@@ -41,7 +41,10 @@
   --color-primary-tint: rgba(127, 175, 197, 0.10);
   --color-primary-tint: oklch(0.68 0.06 230 / 0.10);
   --color-primary-hover: oklch(0.68 0.06 230 / 0.20);
+  --color-primary-subtle: rgba(127, 175, 197, 0.35);
+  --color-primary-subtle: oklch(0.68 0.06 230 / 0.35);
   --color-primary-faint: oklch(0.68 0.06 230 / 0.05);
+  --color-link-hover: oklch(0.76 0.12 228);
   --color-text-muted: #969ba3;
   --color-text-muted: oklch(0.64 0.012 250);
   --color-text-dimmed: #8a8f97;

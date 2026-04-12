@@ -7,3 +7,7 @@ cascade:
   toc: true
   hideReply: true
 ---
+
+Technical guides on computational chemistry, experimental design, and
+scientific software.
+

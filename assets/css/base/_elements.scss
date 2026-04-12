@@ -23,6 +23,12 @@ pre code {
   scrollbar-width: thin;
 }
 
+/* Text selection */
+::selection {
+  background: var(--color-primary-subtle);
+  color: var(--color-heading);
+}
+
 /* Figures (post.scss adds margin/text-align inside .post-content) */
 figcaption > p {
   margin-block-start: 0;

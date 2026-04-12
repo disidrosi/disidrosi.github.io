@@ -4,19 +4,6 @@
    Bookshelf page
    ================================================ */
 
-/* ---------- Introduction ---------- */
-
-.bookshelf-intro {
-  font-size: var(--type-md);
-  line-height: 1.65;
-  color: var(--color-lead);
-  margin-bottom: var(--space-6);
-}
-
-.bookshelf-intro p {
-  margin: 0;
-}
-
 /* ---------- Currently Reading ---------- */
 
 .bookshelf-reading {
@@ -48,9 +35,13 @@
   gap: var(--space-2) var(--space-4);
 }
 
-.bookshelf-nav a {
+.bookshelf-nav-link {
   font-size: var(--type-sm);
   font-weight: 600;
+}
+
+.bookshelf-nav-link:hover {
+  color: var(--color-link-hover);
 }
 
 .bookshelf-nav-count {
@@ -235,10 +226,15 @@
   margin-top: var(--space-2);
 }
 
+.bookshelf-essay-link:hover {
+  color: var(--color-link-hover);
+}
+
 .bookshelf-essay-link::after {
   content: " \2192" / "";
   display: inline-block;
-  transition: transform 0.15s ease;
+  color: inherit;
+  transition: color 0.15s ease, transform 0.15s ease;
 }
 
 .bookshelf-essay-link:hover::after {

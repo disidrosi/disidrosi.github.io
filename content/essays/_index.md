@@ -7,3 +7,7 @@ cascade:
   toc: true
   hideReply: true
 ---
+
+Essays on materials science, engineering, and the history of science. Each post
+explores a specific problem, paper, or concept.
+
