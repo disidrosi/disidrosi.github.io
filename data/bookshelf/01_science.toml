@@ -7,6 +7,6 @@ name = "Science and Engineering"
     title = "Pieces of the Action"
     author = "Vannevar Bush"
     year = 2022
-    status = "read"
     image = "bush_pieces-of-the-action.jpg"
     annotation = "An account of how American science was organized during World War II. Bush ran the Office of Scientific Research and Development and writes about what coordinating scientists, military, and politicians under pressure looked like."
+    essay = "/essays/review-pieces-of-the-action/"

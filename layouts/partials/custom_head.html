@@ -18,8 +18,10 @@
 
 {{ $styles := resources.Get "css/main.scss" | css.Sass (dict "transpiler" "dartsass") | minify }}
 <style>{{ $styles.Content | safeCSS }}</style>
-{{ $syntax := resources.Get "syntax.css" | minify }}
-<style>{{ $syntax.Content | safeCSS }}</style>
+{{ if findRE `class="chroma"` .Content }}
+  {{ $syntax := resources.Get "syntax.css" | minify }}
+  <style>{{ $syntax.Content | safeCSS }}</style>
+{{ end }}
 {{ if .Params.math }}
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />

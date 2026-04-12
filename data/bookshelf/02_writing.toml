@@ -7,7 +7,6 @@ name = "Research and Writing"
     title = "Clear and simple as the truth"
     author = "Francis-Noël Thomas and Mark Turner"
     year = 1994
-    status = "read"
     image = "thomas_clear-and-simple-as-the-truth.jpg"
     annotation = "Prose style treated as an intellectual stance. In classic style, writing is like conversation where the writer has seen something and is pointing it out to the reader."
 
@@ -15,6 +14,5 @@ name = "Research and Writing"
     title = "The craft of research"
     author = "Wayne C. Booth et al."
     year = 2024
-    status = "read"
     image = "booth_craft-of-research.jpg"
     annotation = "A practical guide to research, from forming a question worth asking to building an argument that holds up."
