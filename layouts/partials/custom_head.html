@@ -1,20 +1,6 @@
-{{ $fontsHref := "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400&family=Manrope:wght@400;600;700&display=swap" }}
-{{ $katexHref := printf "https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.css" .Site.Params.katexVersion }}
-{{ $katexIntegrity := "sha384-irXK0JiCGinqGL+slwVklbhJetrjczNwaP2lANewD8lKAs9n61SbQ3As28iSqXUE" }}
-
-
 <link rel="canonical" href="{{ .Permalink }}" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  rel="preload"
-  as="style"
-  href="{{ $fontsHref }}"
-  onload="this.onload=null;this.rel='stylesheet'"
-/>
-<noscript>
-  <link rel="stylesheet" href="{{ $fontsHref }}" />
-</noscript>
+<link rel="preload" href="/fonts/manrope-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/bricolage-grotesque-v9-latin-700.woff2" as="font" type="font/woff2" crossorigin />
 
 {{ $styles := resources.Get "css/main.css" | minify }}
 <style>{{ $styles.Content | safeCSS }}</style>
@@ -23,22 +9,7 @@
   <style>{{ $syntax.Content | safeCSS }}</style>
 {{ end }}
 {{ if .Params.math }}
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link
-    rel="preload"
-    as="style"
-    href="{{ $katexHref }}"
-    integrity="{{ $katexIntegrity }}"
-    crossorigin="anonymous"
-    onload="this.onload=null;this.rel='stylesheet'"
-  />
-  <noscript>
-    <link
-      rel="stylesheet"
-      href="{{ $katexHref }}"
-      integrity="{{ $katexIntegrity }}"
-      crossorigin="anonymous"
-    />
-  </noscript>
+  {{ $katex := resources.Get "katex/katex.min.css" }}
+  {{ $katexCSS := replace $katex.Content "url(fonts/" "url(/katex/fonts/" }}
+  <style>{{ $katexCSS | safeCSS }}</style>
 {{ end }}

@@ -1,5 +1,4 @@
 baseURL = "https://tobiacavalli.com"
-theme = "hugo-bearcub"
 copyright = "Copyright © Tobia Cavalli"
 defaultContentLanguage = "en"
 timeZone = "Europe/Berlin"
@@ -9,12 +8,12 @@ enableEmoji = true
 ignoreFiles = ["\\.mmd$"]
 
 [taxonomies]
-  tag = "tags"
+    tag = "tags"
 
 [imaging]
-  quality = 82
-  resampleFilter = "Lanczos"
-  hint = "photo"
+    quality = 82
+    resampleFilter = "Lanczos"
+    hint = "photo"
 
 [markup]
     [markup.highlight]
@@ -45,11 +44,8 @@ ignoreFiles = ["\\.mmd$"]
     favicon = "favicon.ico"
     title = "Tobia Cavalli"
     dateFormat = "2006-01-02"
-    hideUntranslated = false
-    themeStyle = "original"
     generateSocialCard = true
     profileImage = "images/profile.jpg"
-    katexVersion = "0.16.44"
 
     [params.author]
         name = "Tobia Cavalli"

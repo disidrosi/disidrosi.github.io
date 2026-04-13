@@ -1,15 +1,17 @@
 # Tobia Cavalli – Personal Website
 
-This repository contains the source code for my personal website, built using
-the [Hugo](https://gohugo.io/) static site generator and a modified version of
-the [Bear Cub](https://github.com/clente/hugo-bearcub) theme.
+This repository contains the source code for my personal website, built with
+[Hugo](https://gohugo.io/). All layouts, styles, and assets are self-contained
+in this repo — no external theme dependency.
 
 You can find my website at 🔗
 [https://tobiacavalli.com](https://tobiacavalli.com)
 
 ## Content structure
 
-Posts live in `content/essays/` (long-form) and `content/guides/` (how-to). Each post is a **leaf bundle**: a directory containing `index.md` and any assets it uses.
+Posts live in `content/essays/` (long-form) and `content/guides/` (how-to). Each
+post is a **leaf bundle**: a directory containing `index.md` and any assets it
+uses.
 
 ```text
 content/essays/my-post/
@@ -17,7 +19,17 @@ content/essays/my-post/
   figure-1.png
 ```
 
-Images placed in the bundle directory are automatically processed, resized, and converted to WebP at build time.
+Images placed in the bundle directory are automatically processed, resized, and
+converted to WebP at build time. To add a caption, use the markdown title syntax
+— the image is wrapped in a `<figure>` with a `<figcaption>`:
+
+```markdown
+![Alt text](figure.png "Caption rendered below the image.")
+```
+
+SVGs are embedded as-is with their aspect ratio preserved. Raster images
+generate a responsive `srcset` at 400, 800, 1200, and 1600 px widths (capped at
+the source width).
 
 ## Front matter
 
@@ -36,11 +48,13 @@ Images placed in the bundle directory are automatically processed, resized, and 
 | `aliases` | Array of redirect paths, e.g. `["/old/url/"]` |
 | `draft` | `true` to exclude from production builds |
 
-`author` and `hideReply` are set via cascade in the section `_index.md` files and do not need to be set per post.
+`author` and `hideReply` are set via cascade in the section `_index.md` files
+and do not need to be set per post.
 
 ## Math
 
-Enable KaTeX on a page with `math: true` in front matter, then use standard LaTeX delimiters:
+Enable KaTeX on a page with `math: true` in front matter, then use standard
+LaTeX delimiters:
 
 | Style | Syntax |
 | --- | --- |
@@ -50,7 +64,9 @@ Enable KaTeX on a page with `math: true` in front matter, then use standard LaTe
 
 ## Diagrams
 
-Diagrams are pre-rendered to SVG at author time using [`mermaid-cli`](https://github.com/mermaid-js/mermaid-cli) — no client-side JavaScript, no CDN dependency, no runtime cost on the page.
+Diagrams are pre-rendered to SVG at author time using
+[`mermaid-cli`](https://github.com/mermaid-js/mermaid-cli) — no client-side
+JavaScript, no CDN dependency, no runtime cost on the page.
 
 To add a diagram:
 
@@ -74,9 +90,13 @@ To add a diagram:
    ![Diagram alt text](diagram.svg "Caption rendered as a figcaption.")
    ```
 
-Both the `.mmd` source and the generated `.svg` are committed. The `.mmd` files stay co-located with the post for editability but are excluded from the build output via `ignoreFiles` in `hugo.toml`.
+Both the `.mmd` source and the generated `.svg` are committed. The `.mmd` files
+stay co-located with the post for editability but are excluded from the build
+output via `ignoreFiles` in `hugo.toml`.
 
-Diagram styling (fonts, colors, node fills, edge thickness) is configured in `mermaid-config.json` at the repo root and is keyed to the site's design tokens. Edit it to restyle every diagram at once, then re-run `npm run render:diagrams`.
+Diagram styling (fonts, colors, node fills, edge thickness) is configured in
+`mermaid-config.json` at the repo root and is keyed to the site's design tokens.
+Edit it to restyle every diagram at once, then re-run `npm run render:diagrams`.
 
 ## Callouts
 
@@ -94,24 +114,27 @@ With a custom title:
 > Something important to flag.
 ```
 
-As a `<details>` element (add `+` after the type); starts expanded, can be collapsed:
+As a collapsible `<details>` element, add `+` or `-` after the type:
 
 ```markdown
 > [!note]+
-> This starts expanded and can be collapsed by the reader.
+> Starts expanded; the reader can collapse it.
+
+> [!note]-
+> Starts collapsed; the reader can expand it.
 ```
 
 Available types:
 
 | Color | Types |
 | --- | --- |
-| Blue | `note`, `info`, `abstract`, `summary`, `tldr`, `todo` |
-| Green | `tip`, `hint`, `important`, `success`, `check`, `done` |
-| Orange | `warning`, `caution`, `attention` |
-| Red | `danger`, `error`, `bug`, `failure`, `fail`, `missing` |
-| Purple | `question`, `help`, `faq` |
-| Teal | `example` |
-| Gray | `quote`, `cite` |
+| Blue | `note`, `info` |
+| Green | `tip`, `important` |
+| Orange | `warning`, `caution` |
+| Red | `danger` |
+| Purple | `question` |
+| Amber | `example` |
+| Gray | `quote` |
 
 ## Tags
 
@@ -125,7 +148,9 @@ Each tag generates an archive page at `/tags/<tag-name>/`.
 
 ## Bookshelf
 
-The `/bookshelf` page lists books, papers, and essays organized by theme. Data is stored in `data/bookshelf/`, with one TOML file per theme. Files are rendered in alphabetical order, so numeric prefixes control display order.
+The `/bookshelf` page lists books, papers, and essays organized by theme. Data
+is stored in `data/bookshelf/`, with one TOML file per theme. Files are rendered
+in alphabetical order, so numeric prefixes control display order.
 
 ### Adding a theme
 
@@ -147,7 +172,8 @@ type = "Papers"
   ...
 ```
 
-The `name` field is the heading shown on the page. The `type` field inside each `[[sections]]` block can be `"Books"`, `"Papers"`, or `"Essays"`.
+The `name` field is the heading shown on the page. The `type` field inside each
+`[[sections]]` block can be `"Books"`, `"Papers"`, or `"Essays"`.
 
 ### Entry fields
 
@@ -156,16 +182,35 @@ The `name` field is the heading shown on the page. The `type` field inside each 
 | `title` | yes | all | Title of the work |
 | `author` | yes | all | Author name(s) |
 | `year` | yes | all | Publication year |
-| `status` | yes | all | `"read"` or `"reading"` |
-| `annotation` | no | all | Short personal note, shown in italics below the entry |
+| `annotation` | no | all | Short personal note shown below the entry |
 | `image` | no | Books | Cover image filename (see below) |
-| `doi` | no | Papers, Essays | Bare DOI identifier, e.g. `10.1000/xyz123` — renders as a `doi ↗` link |
-
-Only `"read"` and `"reading"` entries appear on the page. There is no want-to-read status.
+| `essay` | no | Books | Path to a related essay, e.g. `"/essays/review-pieces-of-the-action/"` — renders as a "Related essay" link |
+| `journal` | no | Papers | Journal name, shown in the metadata line |
+| `doi` | no | Papers | Bare DOI identifier, e.g. `10.1000/xyz123` — renders as a `doi` pill link |
 
 ### Book cover images
 
-Cover images go in `assets/images/bookshelf/`. Hugo automatically resizes and converts them to WebP at build time — place the original file at any resolution. The suggested naming convention is `{lastname}_{short_title}.jpg`, e.g. `bush_pieces-of-the-action.jpg`. Reference the filename (not the path) in the `image` field. If the field is absent or the file is not found, no image is shown.
+Cover images go in `assets/images/bookshelf/`. Hugo automatically resizes and
+converts them to WebP at build time — place the original file at any resolution.
+The suggested naming convention is `{lastname}_{short_title}.jpg`, e.g.
+`bush_pieces-of-the-action.jpg`. Reference the filename (not the path) in the
+`image` field. If the field is absent or the file is not found, no image is
+shown.
+
+### Currently Reading
+
+The file `data/bookshelf/reading.toml` is special: its entries render at the top
+of the bookshelf page in a highlighted section. When a book is finished, move
+the entry to the appropriate topic file. Unlike topic files, entries are listed
+directly under `[[entries]]` (no `[[sections]]` wrapper):
+
+```toml
+[[entries]]
+title = "Some Book"
+author = "Author Name"
+year = 2025
+image = "author_some-book.jpg"
+```
 
 ### Example
 
@@ -178,10 +223,10 @@ type = "Books"
   [[sections.entries]]
   title = "Pieces of the Action"
   author = "Vannevar Bush"
-  year = 1970
-  status = "read"
+  year = 2022
   image = "bush_pieces-of-the-action.jpg"
-  annotation = "A firsthand account of how American science was mobilized during World War II."
+  annotation = "An account of how American science was organized during World War II."
+  essay = "/essays/review-pieces-of-the-action/"
 
 [[sections]]
 type = "Papers"
@@ -190,10 +235,20 @@ type = "Papers"
   title = "Science: The Endless Frontier"
   author = "Vannevar Bush"
   year = 1945
-  status = "reading"
+  journal = "Science"
   doi = "10.2307/3224875"
   annotation = "The report that shaped postwar US science policy."
 ```
+
+## Dependencies
+
+The site has no external runtime dependencies. Fonts are self-hosted
+(`static/fonts/`), KaTeX CSS and fonts are self-hosted (`static/katex/`),
+diagrams are pre-rendered to SVG, and all layouts and styles live in this repo.
+No CDN requests are made at page load.
+
+Build-time dependencies: Hugo (extended edition) and optionally `npm` for
+diagram rendering (`mermaid-cli`).
 
 ## Contributing
 

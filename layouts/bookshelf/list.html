@@ -18,33 +18,7 @@
           <h2 id="currently-reading">Currently Reading</h2>
           <ul class="bookshelf-cards">
             {{ range . }}
-              <li class="bookshelf-card">
-                {{- $alt := printf "%s cover" .title -}}
-                {{- with resources.Get (printf "images/bookshelf/%s" .image) }}
-                  {{- $r1x := .Resize "100x webp q82" -}}
-                  {{- $r2x := .Resize "200x webp q82" -}}
-                  <img src="{{ $r1x.RelPermalink }}"
-                       srcset="{{ $r1x.RelPermalink }} 1x, {{ $r2x.RelPermalink }} 2x"
-                       width="{{ $r1x.Width }}"
-                       height="{{ $r1x.Height }}"
-                       alt="{{ $alt }}"
-                       loading="lazy"
-                       decoding="async">
-                {{- end }}
-                <div class="bookshelf-card-body">
-                  <div class="bookshelf-card-header">
-                    <span class="bookshelf-title">{{ .title }}</span>
-                    <span class="bookshelf-meta">
-                      <span class="bookshelf-author">{{ .author }}</span>
-                      <span class="bookshelf-sep" aria-hidden="true">&middot;</span>
-                      <span class="bookshelf-year">{{ .year }}</span>
-                    </span>
-                  </div>
-                  {{ with .annotation }}
-                    <p class="bookshelf-annotation">{{ . }}</p>
-                  {{ end }}
-                </div>
-              </li>
+              {{ partial "bookshelf-card.html" . }}
             {{ end }}
           </ul>
         </section>
@@ -97,36 +71,7 @@
               {{ if eq .type "Books" }}
                 <ul class="bookshelf-cards">
                   {{ range .entries }}
-                    <li class="bookshelf-card">
-                      {{- $alt := printf "%s cover" .title -}}
-                      {{- with resources.Get (printf "images/bookshelf/%s" .image) }}
-                        {{- $r1x := .Resize "100x webp q82" -}}
-                        {{- $r2x := .Resize "200x webp q82" -}}
-                        <img src="{{ $r1x.RelPermalink }}"
-                             srcset="{{ $r1x.RelPermalink }} 1x, {{ $r2x.RelPermalink }} 2x"
-                             width="{{ $r1x.Width }}"
-                             height="{{ $r1x.Height }}"
-                             alt="{{ $alt }}"
-                             loading="lazy"
-                             decoding="async">
-                      {{- end }}
-                      <div class="bookshelf-card-body">
-                        <div class="bookshelf-card-header">
-                          <span class="bookshelf-title">{{ .title }}</span>
-                          <span class="bookshelf-meta">
-                            <span class="bookshelf-author">{{ .author }}</span>
-                            <span class="bookshelf-sep" aria-hidden="true">&middot;</span>
-                            <span class="bookshelf-year">{{ .year }}</span>
-                          </span>
-                        </div>
-                        {{ with .annotation }}
-                          <p class="bookshelf-annotation">{{ . }}</p>
-                        {{ end }}
-                        {{ with .essay }}
-                          <a class="bookshelf-essay-link" href="{{ . }}">Related essay</a>
-                        {{ end }}
-                      </div>
-                    </li>
+                    {{ partial "bookshelf-card.html" . }}
                   {{ end }}
                 </ul>
               {{ else }}
