@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="{{ $fontsHref }}" />
 </noscript>
 
-{{ $styles := resources.Get "css/main.scss" | css.Sass (dict "transpiler" "dartsass") | minify }}
+{{ $styles := resources.Get "css/main.css" | minify }}
 <style>{{ $styles.Content | safeCSS }}</style>
 {{ if findRE `class="chroma"` .Content }}
   {{ $syntax := resources.Get "syntax.css" | minify }}
