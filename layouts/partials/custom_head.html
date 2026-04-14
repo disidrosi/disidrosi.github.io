@@ -2,7 +2,7 @@
 <link rel="preload" href="/fonts/manrope-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/bricolage-grotesque-v9-latin-700.woff2" as="font" type="font/woff2" crossorigin />
 
-{{ $styles := resources.Get "css/main.css" | minify }}
+{{ $styles := resources.Get "scss/main.scss" | toCSS (dict "transpiler" "dartsass") | minify }}
 <style>{{ $styles.Content | safeCSS }}</style>
 {{ if findRE `class="chroma"` .Content }}
   {{ $syntax := resources.Get "syntax.css" | minify }}

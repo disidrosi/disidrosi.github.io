@@ -1,0 +1,227 @@
+@use "mixins" as *;
+
+// Bookshelf section — currently reading, navigation, topic cards, entries.
+
+// --- Currently reading ---
+
+.bookshelf-reading {
+  margin-bottom: var(--space-7);
+  padding: var(--space-4);
+  background: var(--color-primary-faint);
+  border-radius: var(--radius-lg);
+
+  h2 {
+    margin: 0 0 var(--space-4) 0;
+    font-size: var(--type-sm);
+    color: var(--color-primary);
+  }
+}
+
+// --- Navigation ---
+
+.bookshelf-nav {
+  margin-bottom: var(--space-6);
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+  }
+}
+
+.bookshelf-nav-link {
+  font-size: var(--type-sm);
+  font-weight: 600;
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
+.bookshelf-nav-count {
+  font-size: var(--type-xs);
+  color: var(--color-text-dimmed);
+}
+
+// --- Topics ---
+
+.bookshelf-topic {
+  margin-bottom: var(--space-5);
+
+  details {
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    &[open] > summary::marker {
+      content: "\25BE\2002";
+    }
+
+    &[open] .bookshelf-topic-body {
+      animation: bookshelf-reveal 0.2s ease;
+    }
+  }
+
+  summary {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-2);
+    margin: calc(-1 * var(--space-1)) calc(-1 * var(--space-2));
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background var(--transition-duration);
+
+    &:hover {
+      background: var(--color-primary-faint);
+    }
+
+    &::marker {
+      content: "\25B8\2002";
+      font-size: var(--type-base);
+      color: var(--color-primary);
+    }
+  }
+
+  h3 {
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-4);
+    font-size: var(--type-sm);
+    color: var(--color-text-muted);
+  }
+}
+
+@keyframes bookshelf-reveal {
+  from {
+    opacity: 0;
+  }
+}
+
+.bookshelf-topic-body {
+  scroll-margin-top: var(--space-8);
+}
+
+.bookshelf-topic-name {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--type-lg);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: var(--color-heading);
+}
+
+.bookshelf-topic-count {
+  font-size: var(--type-sm);
+  color: var(--color-text-dimmed);
+}
+
+// --- Cards ---
+
+.bookshelf-card {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  margin-bottom: var(--space-5);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  img {
+    display: block;
+    width: 100px;
+    height: auto;
+    margin: 0;
+    flex-shrink: 0;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 1px 3px var(--color-shadow);
+    transition: filter var(--transition-duration);
+  }
+
+  &:hover img {
+    filter: brightness(1.08);
+  }
+}
+
+.bookshelf-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.bookshelf-card-header,
+.bookshelf-entry-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-1);
+}
+
+.bookshelf-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-2);
+}
+
+// --- Entries ---
+
+.bookshelf-entry {
+  margin-bottom: var(--space-4);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.bookshelf-title,
+.bookshelf-author,
+.bookshelf-year,
+.bookshelf-sep,
+.bookshelf-journal {
+  font-size: var(--type-sm);
+  color: var(--color-text-muted);
+}
+
+.bookshelf-title {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.bookshelf-sep {
+  color: var(--color-text-dimmed);
+}
+
+.bookshelf-annotation {
+  margin: var(--space-1) 0 0 0;
+  font-size: var(--type-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-muted);
+}
+
+.bookshelf-essay-link {
+  display: inline-block;
+  margin-top: var(--space-2);
+  font-family: var(--font-heading);
+  font-size: var(--type-xs);
+  font-weight: 600;
+
+  &:hover {
+    color: var(--color-link-hover);
+
+    &::after {
+      transform: translateX(var(--_arrow-distance));
+    }
+  }
+}
+
+@include reduced-motion {
+  .bookshelf-card img,
+  .bookshelf-topic summary,
+  .bookshelf-essay-link::after {
+    transition: none;
+  }
+
+  .bookshelf-topic details[open] .bookshelf-topic-body {
+    animation: none;
+  }
+}

@@ -1,0 +1,191 @@
+@use "mixins" as *;
+
+// Document defaults, headings, elements, links.
+
+// --- Document ---
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+
+  @include reduced-motion {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: auto;
+  padding: var(--space-5);
+  max-width: 42rem;
+  font-family: var(--font-body);
+  font-size: var(--type-base);
+  font-optical-sizing: auto;
+  line-height: var(--leading-prose);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+main {
+  padding-block-start: var(--space-6);
+}
+
+main > :first-child,
+main > :first-child > :first-child,
+main > :first-child > :first-child > :first-child {
+  margin-top: 0;
+}
+
+// --- Headings ---
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  line-height: var(--leading-tight);
+  text-wrap: balance;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  color: var(--color-heading);
+}
+
+h1 {
+  font-size: var(--type-2xl);
+}
+h2 {
+  font-size: var(--type-xl);
+  margin-top: var(--space-7);
+}
+h3 {
+  font-size: var(--type-lg);
+  margin-top: var(--space-6);
+}
+h4 {
+  font-size: var(--type-md);
+  margin-top: var(--space-5);
+}
+h5 {
+  font-size: var(--type-base);
+  margin-top: var(--space-5);
+}
+h6 {
+  font-size: var(--type-sm);
+  margin-top: var(--space-5);
+}
+
+// --- Blockquote ---
+
+blockquote {
+  border-left: 1px solid var(--color-border);
+  padding-inline-start: var(--space-5);
+  font-style: italic;
+  color: var(--color-lead);
+}
+
+// --- Elements ---
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+code {
+  padding: 2px 5px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--color-heading);
+  background-color: var(--color-code-bg);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+pre code {
+  display: grid;
+  padding: var(--space-5);
+  font-size: var(--type-sm);
+  white-space: pre;
+  overflow-x: auto;
+  scrollbar-color: var(--color-border) transparent;
+  scrollbar-width: thin;
+}
+
+::selection {
+  color: var(--color-heading);
+  background: var(--color-primary-subtle);
+}
+
+figcaption > p {
+  margin-block-start: 0;
+}
+
+// --- Links ---
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-duration);
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
+
+  @include reduced-motion {
+    transition: none;
+  }
+}
+
+nav a {
+  font-family: var(--font-heading);
+  transition:
+    color var(--transition-duration),
+    text-decoration-color var(--transition-duration);
+
+  &.active {
+    color: var(--color-heading);
+  }
+}
+
+.toc a,
+.site-footer-primary a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
+.post-content a:not([class]) {
+  text-decoration-color: var(--color-primary-subtle);
+  transition:
+    color var(--transition-duration),
+    text-decoration-color var(--transition-duration);
+
+  &:hover {
+    text-decoration-color: color-mix(
+      in oklch,
+      var(--color-link-hover) 60%,
+      transparent
+    );
+  }
+
+  &:visited {
+    color: var(--color-link-visited);
+  }
+
+  @include reduced-motion {
+    transition: none;
+  }
+}

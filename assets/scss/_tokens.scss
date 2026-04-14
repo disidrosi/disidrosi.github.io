@@ -1,0 +1,78 @@
+// Design tokens — colors, fonts, spacing. Change these to restyle the site.
+
+:root {
+  // Fonts
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-heading: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  // Type scale — 1.25 ratio (Major Third)
+  --type-xs: 0.8rem;
+  --type-sm: 0.875rem;
+  --type-base: 1rem;
+  --type-md: 1.125rem;
+  --type-lg: 1.25rem;
+  --type-xl: clamp(1.4rem, 1.2rem + 0.5vw, 1.563rem);
+  --type-2xl: clamp(1.6rem, 1.3rem + 0.75vw, 1.953rem);
+
+  // Line heights
+  --leading-tight: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-prose: 1.65;
+
+  // Spacing scale — 4pt base
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  // Transitions
+  --transition-duration: 0.15s;
+
+  // Radii
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+
+  // Colors — OKLCH palette, neutrals tinted toward slate-blue (hue ~250)
+  --color-bg: oklch(0.2 0.012 250);
+  --color-text: oklch(0.78 0.012 250);
+  --color-primary: oklch(0.68 0.06 230);
+  --color-primary-tint: oklch(0.68 0.06 230 / 0.1);
+  --color-primary-hover: oklch(0.68 0.06 230 / 0.2);
+  --color-primary-subtle: oklch(0.68 0.06 230 / 0.35);
+  --color-primary-faint: oklch(0.68 0.06 230 / 0.05);
+  --color-link-hover: oklch(0.76 0.12 228);
+  --color-link-visited: oklch(0.62 0.04 255);
+  --color-text-muted: oklch(0.64 0.012 250);
+  --color-text-dimmed: oklch(0.62 0.012 250);
+  --color-border: oklch(0.3 0.008 250);
+  --color-heading: oklch(0.88 0.008 250);
+  --color-lead: oklch(0.72 0.03 280);
+  --color-code-bg: oklch(0.24 0.012 250);
+  --color-shadow: oklch(0.1 0.005 250 / 0.4);
+
+  // Callout colors
+  --callout-note: oklch(0.68 0.06 230);
+  --callout-note-bg: oklch(0.68 0.06 230 / 0.06);
+  --callout-tip: oklch(0.64 0.06 165);
+  --callout-tip-bg: oklch(0.64 0.06 165 / 0.06);
+  --callout-warning: oklch(0.68 0.07 75);
+  --callout-warning-bg: oklch(0.68 0.07 75 / 0.06);
+  --callout-danger: oklch(0.62 0.08 25);
+  --callout-danger-bg: oklch(0.62 0.08 25 / 0.06);
+  --callout-info: var(--callout-note);
+  --callout-info-bg: var(--callout-note-bg);
+  --callout-question: oklch(0.64 0.06 300);
+  --callout-question-bg: oklch(0.64 0.06 300 / 0.06);
+  --callout-example: oklch(0.68 0.07 60);
+  --callout-example-bg: oklch(0.68 0.07 60 / 0.06);
+  // Same base as --color-text-dimmed
+  --callout-quote: oklch(0.62 0.012 250);
+  --callout-quote-bg: oklch(0.62 0.012 250 / 0.06);
+}

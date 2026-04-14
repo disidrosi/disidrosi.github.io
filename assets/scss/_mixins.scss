@@ -1,0 +1,13 @@
+// Shared breakpoint mixins. Mobile breakpoint: 480px.
+
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}

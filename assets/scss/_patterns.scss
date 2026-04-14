@@ -1,0 +1,88 @@
+// Shared styles, each defined once and applied to multiple elements.
+
+// --- list-reset: strips default list bullets and padding ---
+
+header nav ul,
+.post-tags,
+.tag-cloud,
+ul.blog-posts,
+.toc #TableOfContents > ul,
+.toc ul,
+.bookshelf-nav ul,
+.bookshelf-cards,
+.bookshelf-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// --- eyebrow: uppercase heading-font label ---
+
+.callout-title,
+.callout > summary,
+.toc summary,
+.tags-label,
+.post-meta-label,
+ul.blog-posts li.blog-year-label,
+.tag-cloud-header,
+.bookshelf-reading h2,
+.bookshelf-topic h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+ul.blog-posts li.blog-year-label,
+.bookshelf-reading h2,
+.bookshelf-topic h3 {
+  letter-spacing: 0.06em;
+}
+
+// --- focus-ring: keyboard focus indicator ---
+
+a:focus-visible,
+a.pill:focus-visible,
+.toc summary:focus-visible,
+.post-content .heading-anchor:focus-visible,
+.bookshelf-topic summary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: var(--focus-offset, 3px);
+  border-radius: var(--focus-radius, var(--radius-sm));
+}
+
+// --- link-underline: decorated prose and navigation links ---
+
+nav a,
+.post-content a:not([class]),
+ul.blog-posts li .blog-post-link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+// --- dotted-divider: centered · · · section separator ---
+
+.footnotes hr::after,
+.post-content hr::after,
+.tag-cloud-header::before {
+  content: "· · ·";
+  display: block;
+  font-size: var(--type-sm);
+  letter-spacing: 0.4em;
+  color: var(--color-text-dimmed);
+}
+
+// --- link-arrow: animated → after link text ---
+
+ul.blog-posts li .blog-post-link,
+.bookshelf-essay-link {
+  --_arrow-distance: 3px;
+}
+
+ul.blog-posts li .blog-post-link::after,
+.bookshelf-essay-link::after {
+  content: " \2192" / "";
+  display: inline-block;
+  transition: transform var(--transition-duration);
+}

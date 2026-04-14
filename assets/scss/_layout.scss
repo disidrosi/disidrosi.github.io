@@ -1,0 +1,96 @@
+// Header, homepage, footer.
+
+// --- Header ---
+
+.title {
+  h1,
+  p {
+    margin: var(--space-5) 0;
+    font-family: var(--font-heading);
+    font-size: var(--type-xl);
+    font-weight: 700;
+    line-height: var(--leading-tight);
+    color: var(--color-heading);
+  }
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+// --- Homepage ---
+
+.home-intro {
+  display: flex;
+  gap: var(--space-6);
+  align-items: start;
+  margin-block-end: var(--space-6);
+}
+
+.home-profile {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home-content {
+  flex: 1;
+  min-width: 0;
+
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  max-width: 150px;
+}
+
+.social-pill {
+  display: block;
+  padding: 2px 0;
+  text-align: center;
+}
+
+// --- Footer ---
+
+footer {
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.site-footer {
+  margin-top: var(--space-6);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--type-sm);
+  color: var(--color-text-dimmed);
+
+  &-primary {
+    margin-bottom: var(--space-2);
+    font-family: var(--font-heading);
+    letter-spacing: 0.02em;
+  }
+
+  &-sep {
+    margin: 0 var(--space-2);
+    color: var(--color-border);
+  }
+
+  &-secondary {
+    font-size: var(--type-xs);
+    color: var(--color-text-dimmed);
+  }
+}
